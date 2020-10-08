@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_FSV_PMPS" Id="{815b7547-fa6d-4edb-b098-08c05fd49d93}">
+    <Declaration><![CDATA[VAR_GLOBAL
+
+	
+	{'attribute 'pytmc' := 'pv: TMO:VAC:FFO:03  '}
+    //{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1 (EL2202)]^Channel 2^Output'}
+    g_FastFaultOutput3  :   FB_HardwareFFOutput;	//FFO for TV1K4-VFS-1
+	
+    {attribute 'pytmc' := 'pv: TMO:VAC:FFO:04  '}
+   // {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channe2 2^Output'}
+    g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR5K4_KBO_VFS_01
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

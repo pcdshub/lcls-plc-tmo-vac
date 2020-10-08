@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_FEE" Id="{49021430-2479-452d-9fb0-1e4b70e05342}" SpecialFunc="None">
+    <Declaration><![CDATA[ PROGRAM PRG_FEE
+VAR
+ADS_connection_counter : UDINT;	
+
+(*Upstream Interface*)
+	
+    USG_PIP : ST_VG;
+	
+	USG_VGC : ST_VG;
+
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Gauges*)
+   (* Read GCC from upstream PLC - plc-kfe-vac*)
+  (* MR1K4_GCC_01_ADS(
+	sNetId:= '172.21.92.61.1.1', 
+	nPort:=851 , 
+	sVarName:= 'fb_MR1K4_SOMS_GCC_1' , 
+	iWatchdog:=ADS_connection_counter , 
+	IG=> , 
+	bError=> ); *)
+	(* if upstream vacuum ok, set upstream press at good levels *)  
+    IF USVacOk_HI THEN 
+		USG_VGC.xAT_VAC := TRUE;
+		USG_VGC.rPRESS := 5E-7;
+		USG_VGC.xPRESS_OK := TRUE;
+	ELSE
+		USG_VGC.xPRESS_OK := FALSE;
+		USG_VGC.xAT_VAC := FALSE;
+	END_IF
+
+    IF USVacOk_LO THEN 
+		USG_PIP.rPRESS := 5E-5;
+		USG_PIP.xPRESS_OK := TRUE;
+		USG_PIP.xAT_VAC := TRUE;
+	ELSE
+		USG_PIP.xPRESS_OK := FALSE;
+		USG_PIP.xAT_VAC := FALSE;
+	END_IF 
+
+	(* check other gauges*)
+	TV1K4_GPI_01(); 
+	ST1K4_TEST_GPI_01(); 
+	ST2K4_BCS_GPI_01();
+	PC4K4_XTES_GPI_01(); 
+	
+	TV1k4_GCC_01(PG:=TV1k4_GPI_01.PG , IG=> , bEP := TRUE );
+	ST1K4_TEST_GCC_01(PG:=ST1K4_TEST_GPI_01.PG , IG=> , bEP := TRUE); 
+	ST2K4_BCS_GCC_01(PG:=ST2K4_BCS_GPI_01.PG , IG=> , bEP := TRUE);
+	PC4K4_XTES_GCC_01(PG:=PC4K4_XTES_GPI_01.PG , IG=> , bEP := TRUE );
+		
+(* Valves*)
+(*example
+GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE, i_xEPS_OK := TRUE,
+		i_xPMPS_OK := TRUE, i_xExt_OK := xGEM1_AperturesOpnOK, i_xOverrideMode := xGEM1OverrideMode,i_xReset := xFastFaultReset,io_fbFFHWO :=g_FastFaultOutput1);
+*)
+	TV1K4_VGC_01(
+				i_stUSG := USG_VGC, 
+				i_stDSG:= TV1k4_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TRUE, 
+				i_xOverrideMode := xSystemOverrideMode_FEE, 
+				i_xReset := xReset_PMPS_FFO1,
+				io_fbFFHWO :=g_FastFaultOutput1,
+				fbArbiter := g_fbArbiter1);
+	
+ 	TV1K4_VGC_02(
+				i_stUSG := TV1k4_GCC_01.IG, 
+				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TRUE, 
+				i_xOverrideMode := xSystemOverrideMode_FEE, 
+				i_xReset := xReset_PMPS_FFO1,
+				io_fbFFHWO :=g_FastFaultOutput1,
+                fbArbiter := g_fbArbiter1);
+	
+	ST3K4_PPS_VGC_01(
+				i_stUSG := ST2K4_BCS_GCC_01.IG, 
+				i_stDSG:= PC4K4_XTES_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TRUE, 
+				i_xOverrideMode := xSystemOverrideMode_FEE, 
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1);
+				
+(*Ion Pumps*)	
+	(*example
+	SP1L0_KMONO_PIP_01(i_stGauge:=SP1L0_KMONO_GCC_01.IG, stPump=>);*)		
+
+	MR1K4_SOMS_PIP_01(i_stGauge := USG_PIP, stPump=>);
+	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
+	ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
+	ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
+	PC4K4_XTES_PIP_01(i_stGauge := PC4K4_XTES_GCC_01.IG, stPump=>);	
+			]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_FEE">
+      <LineId Id="3" Count="88" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

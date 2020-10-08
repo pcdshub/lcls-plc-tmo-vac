@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000000000000000000010000000000000000000ff00006eb700007fff0002029d000bfc0b00bac2ba00bbc2bb00c0c0c000ff00ff000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff0088888833333333888888887777777388888888770007731888888877000111118888887700077318888888777777738888888877000773182222227700011111222222770007731822222277777773882222227777777388222222777677738822222277547773882222227777777388</ImageData>
+	</ImageDatas>
+	<Box Id="14" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00120050" PortPhys="17219" TimeoutOpenLink1="150" TimeoutOpenLink3="150" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122-0080 2 port EtherCAT junction (Fast Hot Connect)" Desc="EK1122-0080"/>
+	</Box>
+</TcSmItem>

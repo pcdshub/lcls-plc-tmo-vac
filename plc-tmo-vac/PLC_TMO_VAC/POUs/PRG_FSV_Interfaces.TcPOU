@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_FSV_Interfaces" Id="{90b55864-6c2d-488c-9f5f-52239bfc6852}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_FSV_Interfaces
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+(*Vacuum Fast Shutter Valve*)
+TV1K4_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
+
+MR3K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
+
+MR4K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_FSV_Interfaces">
+      <LineId Id="6" Count="2" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_COM" Id="{43613b77-711f-416f-9f17-962c1eb795b0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_COM
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//needs to run on a seperate task
+
+(*Instanitate Serial port com function *) 
+//PA1K4_IP1_PTM_01 , 02 and 03 
+K4S2_02_E10_fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(K4S2_02_E10_stComIn),
+	pComOut:=ADR(K4S2_02_E10_stComOut),
+	SizeComIn:= SIZEOF(K4S2_02_E10_stComOut),
+	TxBuffer:= K4S2_02_E10_SerialTXBuffer,
+	RxBuffer:= K4S2_02_E10_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	
+
+//Granite 2
+	//LI3K4_IP1_OUT_PTM_01-TM1K4_PTM_01-IM5K4_PPM_PTM_01
+	//K4S6_01_E5 (EL6021)
+(*Instanitate Serial port com function *) 
+K4S6_01_E5_fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(K4S6_01_E5_stComIn),
+	pComOut:=ADR(K4S6_01_E5_stComOut),
+	SizeComIn:= SIZEOF(K4S6_01_E5_stComIn),
+	TxBuffer:= K4S6_01_E5_SerialTXBuffer,
+	RxBuffer:= K4S6_01_E5_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+
+//IM4K4_PPM_PTM_01
+	//K4S2_02_E17 (EL6001)
+	(*Instanitate Serial port com function *) 
+K4S2_02_E17_fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(K4S2_02_E17_stComIn),
+	pComOut:=ADR(K4S2_02_E17_stComOut),
+	SizeComIn:= SIZEOF(K4S2_02_E17_stComIn),
+	TxBuffer:= K4S2_02_E17_SerialTXBuffer,
+	RxBuffer:= K4S2_02_E17_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	
+//LI1K4_IP1_PTM_01
+	//K4S2_02_E18 (EL6001)
+(*Instanitate Serial port com function *) 
+K4S2_02_E18_fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(K4S2_02_E18_stComIn),
+	pComOut:=ADR(K4S2_02_E18_stComOut),
+	SizeComIn:= SIZEOF(K4S2_02_E18_stComIn),
+	TxBuffer:= K4S2_02_E18_SerialTXBuffer,
+	RxBuffer:= K4S2_02_E18_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_COM">
+      <LineId Id="3" Count="2" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="6" Count="10" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="17" Count="10" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="51" Count="8" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="38" Count="8" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_PMPS" Id="{4625b23c-c93c-4b67-8375-0fbf2be37f8b}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+//Example implementation of the FFO
+    {attribute 'pytmc' := '
+    {pv: TMO:VAC:FFO:01    '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1 (EL2202)]^Channel 1^Output'}
+    g_FastFaultOutput1  :   FB_HardwareFFOutput;	//FFO for ST3K4_PPS's Upstream Components
+	
+	 {attribute 'pytmc' := 'pv: TMO:VAC:FFO:02  '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1 (EL2202)]^Channel 2^Output'}
+    g_FastFaultOutput2  :   FB_HardwareFFOutput;	//FFO for ST3K4_PPS's Downstream Components
+	
+	
+	
+
+	
+	{attribute 'pytmc' := '    'pv: PLC:TMO:VAC:RESET:FF1    '}
+	xReset_PMPS_FFO1	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Upstream Components
+	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF2  '}
+	xReset_PMPS_FFO2	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Downstream Components
+	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)Arbiter:01
+    '}
+    g_fbArbiter1    :   FB_Arbiter(1);
+	
+	xTMO_FEE_MPS_OK: BOOL := TRUE;
+	
+	xTMO_NEH_MPS_OK: BOOL := TRUE;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

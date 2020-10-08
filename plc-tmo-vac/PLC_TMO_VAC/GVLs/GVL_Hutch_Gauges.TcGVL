@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_Hutch_Gauges" Id="{def8edf1-144c-4ec2-bb9e-c76eb49492a9}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+(* Pirani & Cold Cathode*)
+
+	{attribute 'pytmc' :=' pv: MR2K4:KBO:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E1 (EL3174)^AI Standard Channel 2^Value '}
+	MR2K4_KBO_GPI_01 : FB_MKS275;
+	
+	{attribute 'pytmc' :=' pv: MR2K4:KBO:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E1 (EL3174)^AI Standard Channel 3^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E7 (EL1124)^Channel 3^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E7 (EL1124)^Channel 4^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E5 (EL2624)^Channel 2^Output	'}	
+	MR2K4_KBO_GCC_01 : FB_MKS500;
+	
+	{attribute 'pytmc' :=' pv: PA1K4:IP1:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E2 (EL3174)^AI Standard Channel 1^Value '}	
+	PA1K4_IP1_GPI_01 : FB_MKS275;
+	
+
+	{attribute 'pytmc' :=' pv: PA1K4:IP1:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E1 (EL3174)^AI Standard Channel 4^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E8 (EL1124)^Channel 1^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E8 (EL1124)^Channel 2^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E5 (EL2624)^Channel 3^Output	'}		
+	PA1K4_IP1_GCC_01 : FB_MKS500;
+	
+
+	{attribute 'pytmc' :=' pv: IM4K4:PPM:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E2 (EL3174)^AI Standard Channel 2^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E8 (EL1124)^Channel 3^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E8 (EL1124)^Channel 4^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E5 (EL2624)^Channel 4^Output	'}			
+	IM4K4_PPM_GCC_01 : FB_MKS500;
+	
+	
+	{attribute 'pytmc' := '	pv: LI2K4:IP1:GFS:01
+		io: io
+	'}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E1_MKS937B (EL3064)^AI Standard Channel 1^Value;
+								 .q_xHV_DIS		:= 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E3_MKS937B (EL2794)^Channel 1^Output
+	'}
+    LI2K4_IP1_GFS_01 : FB_MKS422;
+	
+	
+	{attribute 'pytmc' :=' pv: TM1K4:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E15 (EL3174)^AI Standard Channel 1^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E20 (EL1124)^Channel 1^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E20 (EL1124)^Channel 2^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E14 (EL2624)^Channel 1^Output	'}		
+	TM1K4_GCC_01 : FB_MKS500;
+	
+	{attribute 'pytmc' :=' pv: IM5K4:PPM:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E15 (EL3174)^AI Standard Channel 2^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E20 (EL1124)^Channel 3^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E20 (EL1124)^Channel 4^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E14 (EL2624)^Channel 2^Output	'}		
+	IM5K4_PPM_GCC_01 : FB_MKS500;
+	
+	
+	{attribute 'pytmc' :=' pv: PA2K4:IP1:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E15 (EL3174)^AI Standard Channel 4^Value '}	
+	PA2K4_IP1_GPI_01 : FB_MKS275;
+	
+	{attribute 'pytmc' :=' pv: PA2K4:IP1:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E15 (EL3174)^AI Standard Channel 3^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E21 (EL1124)^Channel 1^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E21 (EL1124)^Channel 2^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E14 (EL2624)^Channel 3^Output	'}		
+	PA2K4_IP1_GCC_01 : FB_MKS500;
+
+
+	{attribute 'pytmc' :=' pv: MR4K4:KBO:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E18 (EL3174)^AI Standard Channel 1^Value '}		
+	MR4K4_KBO_GPI_01 : FB_MKS275;
+
+	{attribute 'pytmc' :=' pv: MR4K4:KBO:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E18 (EL3174)^AI Standard Channel 2^Value;
+								 .i_xHV_ON	    :=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E21 (EL1124)^Channel 3^Input;
+								 .i_xDisc_Active:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E21 (EL1124)^Channel 4^Input;								 
+								 .q_xHV_DIS		:= 	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E14 (EL2624)^Channel 4^Output	'}			
+	MR4K4_KBO_GCC_01 : FB_MKS500;
+	
+	(* Roughing gauges *)
+
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_WALL_WEST_EP01 (EP4374-0002)]^AI Inputs Channel 1^Value	'}	
+	TMO_ROUGH1_GPI_01 : FB_9XX;
+	
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:GPI:02 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_ EP1 (EP4374-0002)]^AI Inputs Channel 1^Value	'}	
+	TMO_ROUGH1_GPI_02 : FB_9XX;
+	
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:GPI:03 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_ EP1 (EP4374-0002)]^AI Inputs Channel 1^Value	'}		
+	TMO_ROUGH1_GPI_03 : FB_9XX;
+
+	{attribute 'pytmc' :=' pv: TMO:ROUGH2:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_WALL_WEST_EP01 (EP4374-0002)]^AI Inputs Channel 2^Value	'}	
+	TMO_ROUGH2_GPI_01 : FB_9XX;
+	
+	{attribute 'pytmc' :=' pv: TMO:ROUGH2:GPI:02 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S2_ EP1 (EP4374-0002)]^AI Inputs Channel 2^Value	'}	
+	TMO_ROUGH2_GPI_02 : FB_9XX;	
+	
+// 	Read LAMP devices using ADS interface
+	lamp_turbo_running_reader : FB_TBOOL_ADS;
+	
+	{attribute 'pytmc' :=' pv: LAMP:ROUGH:GPI02:reader '}
+	LAMP_ROUGH_GPI02_reader : FB_TGPI_ADS;
+	
+	{attribute 'pytmc' :=' pv: LAMP:ROUGH:GPI04:reader '}
+	LAMP_ROUGH_GPI04_reader : FB_TGPI_ADS;
+		
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

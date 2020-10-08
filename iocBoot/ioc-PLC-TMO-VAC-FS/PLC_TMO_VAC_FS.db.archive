@@ -1,0 +1,4 @@
+$(PREFIX)LCLSGeneral:LogPort_RBV.VAL	1	scan
+$(PREFIX)LCLSGeneral:LogPort.VAL	1	scan
+$(PREFIX)LCLSGeneral:LogHost_RBV.VAL	1	scan
+$(PREFIX)LCLSGeneral:LogHost.VAL	1	scan

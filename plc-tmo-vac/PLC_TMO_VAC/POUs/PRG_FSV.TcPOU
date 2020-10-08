@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_FSV" Id="{223741e2-9659-48ba-be92-e06c66eee1cf}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_FSV
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+TV1K4_VFS_1(
+	i_xPMPS_OK:= TRUE, 
+	i_xExt_OK:= TRUE, 
+	i_sDevName:= 'TV1K4:VFS:01', 
+	io_fbFFHWO:= g_FastFaultOutput3 );
+	
+
+MR3K4_KBO_VFS_1(
+	i_xPMPS_OK:= TRUE, 
+	i_xExt_OK:= TRUE, 
+	i_sDevName:= 'MR3K4:KBO:VFS:1',
+	io_fbFFHWO:= g_FastFaultOutput4
+);
+
+MR4K4_KBO_VFS_1(
+	i_xPMPS_OK:= TRUE, 
+	i_xExt_OK:= TRUE, 
+	i_sDevName:= 'MR4K4:KBO:VFS:1',
+	io_fbFFHWO:= g_FastFaultOutput4
+);
+(*FastFaultOuput*)	
+g_FastFaultOutput3.Execute(bAutoReset:= TRUE);
+
+g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K_Stopper.ST3K4], bAutoReset:= TRUE);
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_FSV">
+      <LineId Id="23" Count="0" />
+      <LineId Id="26" Count="3" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="6" Count="13" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="36" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

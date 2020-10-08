@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <Task Name="FSVTask" Id="{3784e15f-cbe8-4a1b-8322-bc6675b2ee88}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>2000</CycleTime>
+    <Priority>2</Priority>
+    <PouCall>
+      <Name>PRG_FSV</Name>
+    </PouCall>
+    <TaskFBGuid>{d32d82d6-2c59-4676-a153-ff915a6d40f5}</TaskFBGuid>
+    <Fb_init>{87eab207-4ab4-4028-a3bd-870215acb8fb}</Fb_init>
+    <Fb_exit>{a7d4dbdd-0d6e-43af-ae67-91c2f96cdb00}</Fb_exit>
+    <CycleUpdate>{1838cf50-618f-46ac-951b-7a6de52edc63}</CycleUpdate>
+    <PostCycleUpdate>{c8352782-0e82-47ec-bd7e-2e332432d201}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

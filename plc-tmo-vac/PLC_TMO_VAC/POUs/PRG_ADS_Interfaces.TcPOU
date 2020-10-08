@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_ADS_Interfaces" Id="{a2c26feb-aa2b-4b7d-a0d4-a5da6570030a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_ADS_Interfaces
+VAR
+	
+	counter_x : INT;
+   //Reading from LAMP PLC
+
+	// This variable needs to be instantiated for the Watchdog to work
+	ADS_connection_counter : UDINT;
+	
+	// create watch dog for LAMP PLC
+	ads_watch_dog : FB_ADS_WATCHDOG;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// A counter to confirm that the program is running
+counter_x := counter_x + 1;
+(*vgc_reader(
+	sNetId := '5.54.18.118.1.1', // AMS NET ID of PLC being read from
+	nPort := 851, // ADS port of the PLC reading from this PLC
+	sVarName := 'MAIN.test_vgc', // Full name of the FB containing the valve to be read
+	iWatchdog := ADS_connection_counter // UDINT required for watchdog functionality
+); *)
+
+
+LAMP_ROUGH_GPI02_reader(
+	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
+	nPort := 851, // ADS port of the PLC reading from this PLC
+	sVarName := 'GVL_Devices.LAMP_ROUGH_GPI_02', // Full name of the FB containing the gauge to be read
+	iWatchdog := ADS_connection_counter // UDINT required for watchdog functionality
+);
+
+LAMP_ROUGH_GPI04_reader(
+	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
+	nPort := 851, // ADS port of the PLC reading from this PLC
+	sVarName := 'GVL_Devices.LAMP_ROUGH_GPI_04', // Full name of the FB containing the gauge to be read
+	iWatchdog := ADS_connection_counter // UDINT required for watchdog functionality
+);
+
+
+ads_watch_dog(
+	sNetId := '172.21.132.34.1.1', // AMS NET ID of LAMP PLC reading from this PLC
+	nPort := 851, // ADS port of the PLC reading from this PLC
+	sVarName := 'PLC_TMO_VAC_ADS_connection_counter', // Full name of the UDINT provided to the 'iWatchdog' parameter in the interface functions on the PLC reading from this PLC 
+);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_ADS_Interfaces">
+      <LineId Id="41" Count="0" />
+      <LineId Id="18" Count="7" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="26" Count="5" />
+      <LineId Id="45" Count="5" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="51" Count="1" />
+      <LineId Id="68" Count="3" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

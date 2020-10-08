@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_COM" Id="{7c8ef01c-139d-4a9c-a18a-777693166eb4}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	
+	//PA1K4_IP1_PTM_01 , 02 and 03 
+	//K4S2_02_E10
+	K4S2_02_E10_SerialRXBuffer : ComBuffer;
+	K4S2_02_E10_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	K4S2_02_E10_fbSerialLineControl: SerialLineControl;
+
+	//SERIAL IO //K4S2_02_E10 (EL6021)
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Status;
+								 .D[0]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 0;
+								 .D[1]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 1;
+								 .D[2]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 2;
+								 .D[3]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 3;
+								 .D[4]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 4;
+								 .D[5]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 5;
+								 .D[6]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 6;
+								 .D[7]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 7;
+								 .D[8]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 8;
+								 .D[9]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 9;
+								 .D[10]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 10;
+								 .D[11]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 11;
+								 .D[12]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 12;
+								 .D[13]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 13;
+								 .D[14]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 14;
+								 .D[15]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 15;
+								 .D[16]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 16;
+								 .D[17]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 17;
+								 .D[18]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 18;
+								 .D[19]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 19;
+								 .D[20]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 20;
+								 .D[21]:=TIIB[K4S2_02_E10 (EL6021)]^COM TxPDO-Map Inputs^Data In 21;
+	'}
+	K4S2_02_E10_stComIn		AT %I*	:	EL6inData22B; 
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Ctrl;
+								 .D[0]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 0;
+								 .D[1]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 1;
+								 .D[2]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 2;
+								 .D[3]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 3;
+								 .D[4]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 4;
+								 .D[5]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 5;
+								 .D[6]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 6;
+								 .D[7]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 7;
+								 .D[8]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 8;
+								 .D[9]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 9;
+								 .D[10]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 10;
+								 .D[11]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 11;
+								 .D[12]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 12;
+								 .D[13]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 13;
+								 .D[14]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 14;
+								 .D[15]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 15;
+								 .D[16]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 16;
+								 .D[17]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 17;
+								 .D[18]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 18;
+								 .D[19]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 19;
+								 .D[20]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 20;
+								 .D[21]:=TIIB[K4S2_02_E10 (EL6021)]^COM RxPDO-Map Outputs^Data Out 21;
+	'}
+	K4S2_02_E10_stComOut		AT %Q*	:	EL6outData22B;
+	
+	
+	//Granite 2
+	//LI3K4_IP1_OUT_PTM_01-TM1K4_PTM_01-IM5K4_PPM_PTM_01
+	//K4S6_01_E5 (EL6021)
+	K4S6_01_E5_SerialRXBuffer : ComBuffer;
+	K4S6_01_E5_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	K4S6_01_E5_fbSerialLineControl: SerialLineControl;
+
+	//Serial IO
+		{attribute	'TcLinkTo'	:=	'.Status:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Status;
+								 .D[0]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 0;
+								 .D[1]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 1;
+								 .D[2]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 2;
+								 .D[3]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 3;
+								 .D[4]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 4;
+								 .D[5]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 5;
+								 .D[6]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 6;
+								 .D[7]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 7;
+								 .D[8]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 8;
+								 .D[9]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 9;
+								 .D[10]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 10;
+								 .D[11]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 11;
+								 .D[12]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 12;
+								 .D[13]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 13;
+								 .D[14]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 14;
+								 .D[15]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 15;
+								 .D[16]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 16;
+								 .D[17]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 17;
+								 .D[18]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 18;
+								 .D[19]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 19;
+								 .D[20]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 20;
+								 .D[21]:=TIIB[K4S6_01_E5 (EL6021)]^COM TxPDO-Map Inputs^Data In 21;
+	'}
+	K4S6_01_E5_stComIn		AT %I*	:	EL6inData22B; 
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Ctrl;
+								 .D[0]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 0;
+								 .D[1]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 1;
+								 .D[2]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 2;
+								 .D[3]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 3;
+								 .D[4]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 4;
+								 .D[5]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 5;
+								 .D[6]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 6;
+								 .D[7]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 7;
+								 .D[8]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 8;
+								 .D[9]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 9;
+								 .D[10]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 10;
+								 .D[11]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 11;
+								 .D[12]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 12;
+								 .D[13]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 13;
+								 .D[14]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 14;
+								 .D[15]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 15;
+								 .D[16]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 16;
+								 .D[17]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 17;
+								 .D[18]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 18;
+								 .D[19]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 19;
+								 .D[20]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 20;
+								 .D[21]:=TIIB[K4S6_01_E5 (EL6021)]^COM RxPDO-Map Outputs^Data Out 21;
+	'}
+	K4S6_01_E5_stComOut		AT %Q*	:	EL6outData22B;
+
+	//IM4K4_PPM_PTM_01
+	//K4S2_02_E17 (EL6001)
+	K4S2_02_E17_SerialRXBuffer : ComBuffer;
+	K4S2_02_E17_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	K4S2_02_E17_fbSerialLineControl: SerialLineControl;
+		//Serial IO
+		{attribute	'TcLinkTo'	:=	'.Status:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Status;
+								 .D[0]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 0;
+								 .D[1]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 1;
+								 .D[2]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 2;
+								 .D[3]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 3;
+								 .D[4]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 4;
+								 .D[5]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 5;
+								 .D[6]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 6;
+								 .D[7]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 7;
+								 .D[8]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 8;
+								 .D[9]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 9;
+								 .D[10]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 10;
+								 .D[11]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 11;
+								 .D[12]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 12;
+								 .D[13]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 13;
+								 .D[14]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 14;
+								 .D[15]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 15;
+								 .D[16]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 16;
+								 .D[17]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 17;
+								 .D[18]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 18;
+								 .D[19]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 19;
+								 .D[20]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 20;
+								 .D[21]:=TIIB[K4S2_02_E17 (EL6001)]^COM Inputs^Data In 21;
+	'}
+	K4S2_02_E17_stComIn		AT %I*	:	EL6inData22B; 
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Ctrl;
+								 .D[0]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 0;
+								 .D[1]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 1;
+								 .D[2]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 2;
+								 .D[3]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 3;
+								 .D[4]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 4;
+								 .D[5]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 5;
+								 .D[6]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 6;
+								 .D[7]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 7;
+								 .D[8]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 8;
+								 .D[9]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 9;
+								 .D[10]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 10;
+								 .D[11]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 11;
+								 .D[12]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 12;
+								 .D[13]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 13;
+								 .D[14]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 14;
+								 .D[15]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 15;
+								 .D[16]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 16;
+								 .D[17]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 17;
+								 .D[18]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 18;
+								 .D[19]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 19;
+								 .D[20]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 20;
+								 .D[21]:=TIIB[K4S2_02_E17 (EL6001)]^COM Outputs^Data Out 21;
+	'}
+	K4S2_02_E17_stComOut		AT %Q*	:	EL6outData22B;
+	
+	//LI1K4_IP1_PTM_01
+	//K4S2_02_E18 (EL6001)
+
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	K4S2_02_E18_SerialRXBuffer : ComBuffer;
+	K4S2_02_E18_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	K4S2_02_E18_fbSerialLineControl: SerialLineControl;
+
+	//SERIAL IO
+	{attribute	'TcLinkTo'	:=	'.Status:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Status;
+								 .D[0]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 0;
+								 .D[1]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 1;
+								 .D[2]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 2;
+								 .D[3]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 3;
+								 .D[4]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 4;
+								 .D[5]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 5;
+								 .D[6]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 6;
+								 .D[7]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 7;
+								 .D[8]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 8;
+								 .D[9]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 9;
+								 .D[10]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 10;
+								 .D[11]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 11;
+								 .D[12]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 12;
+								 .D[13]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 13;
+								 .D[14]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 14;
+								 .D[15]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 15;
+								 .D[16]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 16;
+								 .D[17]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 17;
+								 .D[18]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 18;
+								 .D[19]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 19;
+								 .D[20]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 20;
+								 .D[21]:=TIIB[K4S2_02_E18 (EL6001)]^COM Inputs^Data In 21;
+	'}
+	K4S2_02_E18_stComIn		AT %I*	:	EL6inData22B;
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Ctrl;
+								 .D[0]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 0;
+								 .D[1]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 1;
+								 .D[2]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 2;
+								 .D[3]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 3;
+								 .D[4]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 4;
+								 .D[5]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 5;
+								 .D[6]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 6;
+								 .D[7]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 7;
+								 .D[8]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 8;
+								 .D[9]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 9;
+								 .D[10]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 10;
+								 .D[11]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 11;
+								 .D[12]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 12;
+								 .D[13]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 13;
+								 .D[14]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 14;
+								 .D[15]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 15;
+								 .D[16]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 16;
+								 .D[17]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 17;
+								 .D[18]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 18;
+								 .D[19]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 19;
+								 .D[20]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 20;
+								 .D[21]:=TIIB[K4S2_02_E18 (EL6001)]^COM Outputs^Data Out 21;
+	'}
+	K4S2_02_E18_stComOut		AT %Q*	:	EL6outData22B;
+	
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_Hutch_Valves" Id="{5ddb466e-44cc-4224-86e4-d5a4b2428cea}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+(*  Beamline Windows Valve *)
+
+	{attribute 'pytmc' :=' pv: MR2K4:KBO:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E5 (EL1004)^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E5 (EL1004)^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E6 (EL2004)^Channel 1^Output'}
+	MR2K4_KBO_VWC_01 : FB_VGC_2S;
+	
+	
+	{attribute 'pytmc' :=' pv: MR3K4:KBO:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E5 (EL1004)^Channel 3^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E5 (EL1004)^Channel 4^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_01 (EK1100)]^K4S2_01_E6 (EL2004)^Channel 2^Output'}	
+	MR3K4_KBO_VWC_01 : FB_VGC_2S;
+	
+	
+	{attribute 'pytmc' :=' pv: LI3K4:IP1:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E3 (EL1004)^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E3 (EL1004)^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E4 (EL2004)^Channel 1^Output'}		
+	LI3K4_IP1_VWC_01 : FB_VGC_2S;
+	
+	{attribute 'pytmc' :=' pv: PC5K4:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E3 (EL1004)^Channel 3^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E3 (EL1004)^Channel 4^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E4 (EL2004)^Channel 2^Output'}		
+	PC5K4_VWC_01 : FB_VGC_2S;
+
+
+	{attribute 'pytmc' :=' pv: MR4K4:KBO:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E5 (EL1004)^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E5 (EL1004)^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E6 (EL2004)^Channel 1^Output'}		
+	MR4K4_KBO_VWC_01 : FB_VGC_2S;
+	
+	
+	{attribute 'pytmc' :=' pv: MR5K4:KBO:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E5 (EL1004)^Channel 3^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E5 (EL1004)^Channel 4^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E6 (EL2004)^Channel 2^Output'}		
+	MR5K4_KBO_VWC_01 : FB_VGC_2S;
+	
+(* Not installed yet	
+	TM2K4_VWC_01 : FB_VGC;
+	
+	*)
+	
+(*  Roughing valve *)	
+
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:VRC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E20 (EL2004)^Channel 1^Output'}
+	TMO_ROUGH1_VRC_01 : FB_VGC_2S;
+
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:VRC:02 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E2 (EL2004)^Channel 1^Output'}
+	TMO_ROUGH1_VRC_02 : FB_VGC_2S;
+	
+	{attribute 'pytmc' :=' pv: TMO:ROUGH2:VRC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 3^Input;
+								 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 4^Input;
+								.q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E20 (EL2004)^Channel 2^Output'}
+	TMO_ROUGH2_VRC_01 : FB_VGC_2S;
+
+(* MKS248 with MKS1249 solenoid driver *)
+
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:VFV:01 '}
+	{attribute 'TcLinkTo' := 	'.q_iRawPosition	:=	TIIB[TMO_WALL_WEST_EP01 (EP4374-0002)]^AO Outputs Channel 3^Analog output	'}	
+     TMO_ROUGH1_VFV_01 : FB_MKS248;
+	 
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:VFV:02 '}
+	{attribute 'TcLinkTo' := 	'.q_iRawPosition	:=	TIIB[TMO_K4S2_ EP1 (EP4374-0002)]^AO Outputs Channel 3^Analog output	'}	
+	 TMO_ROUGH1_VFV_02 : FB_MKS248;
+	 
+	{attribute 'pytmc' :=' pv: TMO:ROUGH1:VFV:03 '}
+	{attribute 'TcLinkTo' := 	'.q_iRawPosition	:=	TIIB[TMO_K4S6_ EP1 (EP4374-0002)]^AO Outputs Channel 3^Analog output	'}		 
+	 TMO_ROUGH1_VFV_03 : FB_MKS248;
+	 
+	{attribute 'pytmc' :=' pv: TMO:ROUGH2:VFV:01 '}
+	{attribute 'TcLinkTo' := 	'.q_iRawPosition	:=	TIIB[TMO_K4S2_ EP1 (EP4374-0002)]^AO Outputs Channel 4^Analog output	'}		 
+	 TMO_ROUGH2_VFV_01 : FB_MKS248;
+	 
+
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

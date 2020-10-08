@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_Hutch_Pumps" Id="{b72ca84e-5328-4ab7-b44d-f529358c351a}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	
+(* Ion pumps *)
+
+	{attribute 'pytmc' :=' pv: MR2K4:KBO:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 2^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 2^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 2^Output
+	'}
+
+	MR2K4_KBO_PIP_01 : FB_PIP_Gamma;
+	
+	
+	
+	{attribute 'pytmc' :=' pv: PA2K4:IP1:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 3^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 3^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 3^Output
+	'}
+	PA2K4_IP1_PIP_01 : FB_PIP_Gamma;
+
+	{attribute 'pytmc' :=' pv: MR4K4:KBO:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 4^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 4^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 4^Output
+	'}	
+	MR4K4_KBO_PIP_01 : FB_PIP_Gamma;
+	
+
+	
+
+(* Granite 1 *)
+(* Pfeiffer Turbo Pumps TC110 *)
+
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E11 (EL1004)^Channel 2^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E11 (EL1004)^Channel 1^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E12 (EL2794)^Channel 1^Output;
+								 .q_xReset 			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E12 (EL2794)^Channel 2^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: PA1K4:IP1:PTM:01
+		io: io
+	'}
+	PA1K4_IP1_PTM_01 : FB_PTM_Pfeiffer;
+
+
+
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E11 (EL1004)^Channel 4^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E11 (EL1004)^Channel 3^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E12 (EL2794)^Channel 3^Output;
+								 .q_xReset 			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E12 (EL2794)^Channel 4^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: PA1K4:IP1:PTM:02
+		io: io
+	'}	
+	PA1K4_IP1_PTM_02 : FB_PTM_Pfeiffer;
+	
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E13 (EL1004)^Channel 2^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E13 (EL1004)^Channel 1^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E14 (EL2794)^Channel 1^Output;
+								 .q_xReset 			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E14 (EL2794)^Channel 2^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: PA1K4:IP1:PTM:03
+		io: io
+	'}	
+	PA1K4_IP1_PTM_03 : FB_PTM_Pfeiffer;
+	
+	// They share the same serial port
+	st_Pfeiffer_CTRL_PTM_01_02_03			: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_PTM_01_02_03			: ARRAY[1..20] OF ST_PfeifferStatus;
+	PA1K4_IP1_PTM_01_02_03_COM: FB_PFEIFFER_COM;
+
+(* Leybold Turbo Pumps Mag.drive is*)	
+
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E15 (EL1004)^Channel 2^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E15 (EL1004)^Channel 1^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E16 (EL2794)^Channel 1^Output			 
+	'}
+	{attribute 'pytmc' := '
+		pv: IM4K4:PPM:PTM:01
+		io: io
+	'}
+	IM4K4_PPM_PTM_01 : FB_PTM_TurboDrive;
+	IM4K4_PPM_PTM_01_COM:FB_Oerlikon_TD20_COM;
+	
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E15 (EL1004)^Channel 4^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E15 (EL1004)^Channel 3^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E16 (EL2794)^Channel 2^Output			 
+	'}
+	{attribute 'pytmc' := '
+		pv: LI1K4:IP1:PTM:01
+		io: io
+	'}
+	LI1K4_IP1_PTM_01 : FB_PTM_TurboDrive;
+	LI1K4_IP1_PTM_01_COM: FB_Oerlikon_TD20_COM;
+
+(* Granite 2 *)
+(* Pfeiffer Turbo Pumps TM700 *)
+
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E6 (EL1004)^Channel 1^Input;
+								 .i_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E6 (EL1004)^Channel 2^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E6 (EL1004)^Channel 3^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E7 (EL2004)^Channel 1^Output;
+								 .q_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E7 (EL2004)^Channel 2^Output;
+								 .q_PumpingStation	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E7 (EL2004)^Channel 3^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: LI3K4:IP1:OUT:PTM:01
+		io: io
+	'}
+    LI3K4_IP1_OUT_PTM_01 : FB_PTM_Pfeiffer;
+(* Pfeiffer Turbo Pumps TC400 *)
+	
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E6 (EL1004)^Channel 4^Input;
+								 .i_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E8 (EL1004)^Channel 1^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E8 (EL1004)^Channel 2^Input;					 
+								 .q_RunDO			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E7 (EL2004)^Channel 4^Output;
+								 .q_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E9 (EL2004)^Channel 1^Output;
+								 .q_PumpingStation	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E9 (EL2004)^Channel 2^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: TM1K4:PTM:01
+		io: io
+	'}
+	TM1K4_PTM_01 : FB_PTM_Pfeiffer;
+	
+	
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E8 (EL1004)^Channel 3^Input;
+								 .i_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E8 (EL1004)^Channel 4^Input;
+								 .i_xFaultNC		:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E11 (EL1004)^Channel 1^Input;
+								 .q_RunDO			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E9 (EL2004)^Channel 3^Output;
+								 .q_xRemote			:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E9 (EL2004)^Channel 4^Output;
+								 .q_PumpingStation	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E12 (EL2004)^Channel 1^Output				 
+	'}
+	{attribute 'pytmc' := '
+		pv: IM5K4:PPM:PTM:01
+		io: io
+	'}
+	IM5K4_PPM_PTM_01 : FB_PTM_Pfeiffer;
+	// They share the same serial port
+	st_Pfeiffer_CTRL_PTM_Granite2			: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_PTM_Granite2			: ARRAY[1..20] OF ST_PfeifferStatus;
+	Granite2_PTM_COM :FB_PFEIFFER_COM;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

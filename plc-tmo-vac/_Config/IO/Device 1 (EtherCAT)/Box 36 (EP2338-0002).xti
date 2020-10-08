@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424dba000000000000004a00000028000000100000000e000000010004000000000070000000c30e0000c30e0000050000000500000000000000ff00ff0080808000007fff0000ff000011111111111111110000000000000000020202020000044004040404000004400000000000000000000000000000000002020202000004400404040400000440000000000000000033333311111111113333331111111111333333111111111133333311111111113333331111111111</ImageData>
+	</ImageDatas>
+	<Box Id="36" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0304" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x09224052" RevisionNo="#x00170002" RepeatSupport="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EP2338-0002 8 Ch. Dig. Input/Output 24V, 0,5A, M12" Desc="EP2338-0002">
+			<SyncMan>000f01004400010003000000010001000100000f44090000</SyncMan>
+			<SyncMan>001001000000010004000000010001000100001000010000</SyncMan>
+			<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+			<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6020" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6030" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6040" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6050" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6060" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="1">
+				<Entry Name="Input" Index="#x6070" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 9" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7000" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 10" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 11" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7020" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 12" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7030" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 13" Index="#x1604" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7040" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 14" Index="#x1605" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7050" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 15" Index="#x1606" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7060" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Channel 16" Index="#x1607" InOut="1" Flags="#x0011" SyncMan="0">
+				<Entry Name="Output" Index="#x7070" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+			</Pdo>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

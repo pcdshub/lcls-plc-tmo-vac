@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Roughing_Pumps" Id="{87120f5c-8975-4cdd-a125-ee85e558c6d5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Roughing_Pumps
+VAR
+	
+	xRough1Vrc01_OpenOK: BOOL := False;
+	xRough1Vrc02_OpenOK: BOOL := False;
+	xRough2Vrc01_OpenOK: BOOL := False;
+	dummy_FFFO : FB_HardwareFFOutput;
+	dummy_fbArbiter1    :   FB_Arbiter(1);
+		
+	PA1K4_IP1_PTM_01_xExtIlkOK: BOOL := FALSE;
+	PA1K4_IP1_PTM_02_xExtIlkOK: BOOL := FALSE;
+	PA1K4_IP1_PTM_03_xExtIlkOK: BOOL := False;
+	
+	
+
+	tonDelOK : TON;
+	tDelOK	:	TIME := T#30S;
+	xExtIlkOK : BOOL;
+	
+	
+	
+	
+	IM4K4_PPM_PTM_01_xExtIlkOK: BOOL := FALSE;
+	LI1K4_IP1_PTM_01_xExtIlkOK: BOOL := FALSE;
+	LI3K4_IP1_OUT_PTM_01_xExtIlkOK: BOOL := False;
+	IM5K4_PPM_PTM_01_xExtIlkOK: BOOL := False;
+	
+	rTolerance : REAL;
+	xDifPressureOK : BOOL := FALSE;
+	TMO_ROUGH1_VRC_01_xExt_OK : BOOL;
+	TMO_ROUGH1_VRC_02_xExt_OK : BOOL;
+	
+END_VAR
+
+VAR RETAIN
+	TM1K4_PTM_01_xExtIlkOK: BOOL := False;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+(* Roughing Valves *)
+
+(* All three roughing valves permit to open when both side reading pressure below than setpoint, 1E-3 for both sides.
+   When chamber is vented, bypass to open valve to pump down. 
+   FB_VGC_2S is used for VRC controls.
+   
+   For TMO_ROUGH1_VRC_01 & TMO_ROUGH1_VRC_02, additional interlock is implemented using i_xExt_OK input of VGC function:
+   If pressure difference between TMO_ROUGH1_GPI_02 and TMO_ROUGH1_GPI_03 is greater than 20 Torr, 
+   only one of them permit to open.
+   
+*)
+
+
+(* Check the pressure difference between TMO_ROUGH1_GPI_02 and TMO_ROUGH1_GPI_03 *) 
+
+
+
+rTolerance := 0.1;
+xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS ) <= rTolerance ) AND
+				  TMO_ROUGH1_GPI_02.PG.xPRESS_OK AND TMO_ROUGH1_GPI_03.PG.xPRESS_OK;
+				  
+(* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_02 is closed *)				  
+TMO_ROUGH1_VRC_01_xExt_OK := xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS; 
+TMO_ROUGH1_VRC_02_xExt_OK := xDifPressureOK OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS; 
+
+
+TMO_ROUGH1_VRC_01(
+				i_stUSG := TMO_ROUGH1_GPI_02.PG, 
+				i_stDSG:= TMO_ROUGH1_GPI_01.PG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TMO_ROUGH1_VRC_01_xExt_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO AND TMO_ROUGH1_VRC_01_xExt_OK,
+				i_xReset := False,
+				io_fbFFHWO :=dummy_FFFO,
+                fbArbiter := dummy_fbArbiter1,
+);
+
+
+TMO_ROUGH1_VRC_02(
+				i_stUSG := TMO_ROUGH1_GPI_03.PG, 
+				i_stDSG:= TMO_ROUGH1_GPI_01.PG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TMO_ROUGH1_VRC_02_xExt_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO AND TMO_ROUGH1_VRC_02_xExt_OK, 
+				i_xReset := false,
+				io_fbFFHWO :=dummy_FFFO,
+                fbArbiter := dummy_fbArbiter1);
+
+
+TMO_ROUGH2_VRC_01(
+				i_stUSG := TMO_ROUGH2_GPI_02.PG, 
+				i_stDSG:= TMO_ROUGH2_GPI_01.PG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := TRUE, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := false,
+				io_fbFFHWO :=dummy_FFFO,
+                fbArbiter := dummy_fbArbiter1);
+
+
+(* Granite 1 K4S2 Differential Turbo pumps *)
+
+
+(* check if PA1K4_IP1_PTM_03 is Atspd, if it is starting, set up a timer for 30s to *)
+
+xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_01.iq_stPTM, 
+			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
+					
+(* delay 30s to start if PTM03 is not at speed*)
+IF (PA1K4_IP1_PTM_03.iq_stPTM.i_xAtSpd) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault) THEN
+		PA1K4_IP1_PTM_01_xExtIlkOK := xExtIlkOK;
+
+ELSIF (PA1K4_IP1_PTM_03.iq_stPTM.q_RunDO ) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault ) THEN
+	//delay timer
+  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
+	PA1K4_IP1_PTM_01_xExtIlkOK := xExtIlkOK AND tonDelOK.Q;	
+ELSE
+		PA1K4_IP1_PTM_01_xExtIlkOK := FALSE;			
+END_IF
+
+
+xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_02.iq_stPTM, 
+			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
+
+IF (PA1K4_IP1_PTM_03.iq_stPTM.i_xAtSpd) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault) THEN
+		PA1K4_IP1_PTM_02_xExtIlkOK := xExtIlkOK;
+
+ELSIF (PA1K4_IP1_PTM_03.iq_stPTM.q_RunDO ) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault ) THEN
+	//delay timer
+  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
+	PA1K4_IP1_PTM_02_xExtIlkOK := xExtIlkOK AND tonDelOK.Q;	
+ELSE
+		PA1K4_IP1_PTM_02_xExtIlkOK := FALSE;			
+END_IF
+
+PA1K4_IP1_PTM_03_xExtIlkOK  := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_03.iq_stPTM, 
+			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
+
+
+PA1K4_IP1_PTM_01(i_xExtIlkOK := PA1K4_IP1_PTM_01_xExtIlkOK , iq_stPTM => );
+
+PA1K4_IP1_PTM_02(i_xExtIlkOK := PA1K4_IP1_PTM_02_xExtIlkOK, iq_stPTM => );
+PA1K4_IP1_PTM_03(i_xExtIlkOK := PA1K4_IP1_PTM_03_xExtIlkOK, iq_stPTM => );
+
+(*Serial Interface*)
+(*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
+st_Pfeiffer_CTRL_PTM_01_02_03[1].iSerialAddress :=10;//PA1K4_IP1_PTM_01
+st_Pfeiffer_CTRL_PTM_01_02_03[1].xEnableComm := TRUE;
+st_Pfeiffer_CTRL_PTM_01_02_03[2].iSerialAddress :=9;//PA1K4_IP1_PTM_02
+st_Pfeiffer_CTRL_PTM_01_02_03[2].xEnableComm := TRUE;
+st_Pfeiffer_CTRL_PTM_01_02_03[3].iSerialAddress :=1;//PA1K4_IP1_PTM_03
+st_Pfeiffer_CTRL_PTM_01_02_03[3].xEnableComm := TRUE;	
+(* Instanitate the Function block for serial communication with Pfeiffer*)	
+PA1K4_IP1_PTM_01_02_03_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM_01_02_03,
+			   astPfeifferStatus:= st_Pfeiffer_RBK_PTM_01_02_03,
+				SerialRXBuffer:= K4S2_02_E10_SerialRXBuffer,
+				SerialTXBuffer:= K4S2_02_E10_SerialTXBuffer);
+(* Copy Status Pv's into the PTM structure*)
+PA1K4_IP1_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_01_02_03[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_01_02_03[1]);				
+PA1K4_IP1_PTM_02.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_01_02_03[2],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_01_02_03[2]);				
+PA1K4_IP1_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_01_02_03[3],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_01_02_03[3]);				
+		
+(* Leybold turbo pumps on Granite 1 *)
+
+IM4K4_PPM_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := IM4K4_PPM_PTM_01.iq_stPTM, 
+			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
+
+IM4K4_PPM_PTM_01(i_xExtIlkOK := IM4K4_PPM_PTM_01_xExtIlkOK, iq_stPTM => );
+
+(* Instanitate the Function block for serial communication with TD20 *)
+IM4K4_PPM_PTM_01_COM(SerialRXBuffer := K4S2_02_E17_SerialRXBuffer, 
+				SerialTXBuffer:= K4S2_02_E17_SerialTXBuffer,
+				astTD20Status=>);
+(* Copy Status Pv's into the PTM structure*)
+IM4K4_PPM_PTM_01.M_Serial_IO(IM4K4_PPM_PTM_01_COM.astTD20Status);
+
+
+
+LI1K4_IP1_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := LI1K4_IP1_PTM_01.iq_stPTM, 
+			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
+			
+LI1K4_IP1_PTM_01(i_xExtIlkOK := LI1K4_IP1_PTM_01_xExtIlkOK, iq_stPTM => );
+
+(* Instanitate the Function block for serial communication with TD20 *)
+LI1K4_IP1_PTM_01_COM(SerialRXBuffer := K4S2_02_E18_SerialRXBuffer, 
+				SerialTXBuffer:= K4S2_02_E18_SerialTXBuffer,
+				astTD20Status=>);
+(* Copy Status Pv's into the PTM structure*)
+LI1K4_IP1_PTM_01.M_Serial_IO(LI1K4_IP1_PTM_01_COM.astTD20Status);
+
+
+
+(* Granite 2 K4S6 *)
+
+LI3K4_IP1_OUT_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := LI3K4_IP1_OUT_PTM_01.iq_stPTM, 
+			i_stISG := PA2K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_03.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_02.iq_stValve)	;
+
+LI3K4_IP1_OUT_PTM_01(i_xExtIlkOK := LI3K4_IP1_OUT_PTM_01_xExtIlkOK, iq_stPTM => );
+
+TM1K4_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := TM1K4_PTM_01.iq_stPTM, 
+			i_stISG := PA2K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_03.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_02.iq_stValve)	;
+
+TM1K4_PTM_01(i_xExtIlkOK := TM1K4_PTM_01_xExtIlkOK, iq_stPTM => );
+
+IM5K4_PPM_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := IM5K4_PPM_PTM_01.iq_stPTM, 
+			i_stISG := PA2K4_IP1_GPI_01.PG, 
+			i_stBSG := TMO_ROUGH1_GPI_03.PG, 
+			iq_stValve := TMO_ROUGH1_VRC_02.iq_stValve)	;
+			
+IM5K4_PPM_PTM_01(i_xExtIlkOK := IM5K4_PPM_PTM_01_xExtIlkOK, iq_stPTM => );
+
+(*Serial Interface*)
+(*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
+st_Pfeiffer_CTRL_PTM_Granite2[1].iSerialAddress :=1;//LI3K4_IP1_OUT_PTM_01
+st_Pfeiffer_CTRL_PTM_Granite2[1].xEnableComm := TRUE;
+st_Pfeiffer_CTRL_PTM_Granite2[2].iSerialAddress :=7;//TM1K4_PTM_01
+st_Pfeiffer_CTRL_PTM_Granite2[2].xEnableComm := TRUE;
+st_Pfeiffer_CTRL_PTM_Granite2[3].iSerialAddress :=9; //IM5K4_PPM_PTM_01
+st_Pfeiffer_CTRL_PTM_Granite2[3].xEnableComm := TRUE;	
+(* Instanitate the Function block for serial communication with Pfeiffer*)	
+Granite2_PTM_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM_Granite2,
+			   astPfeifferStatus:= st_Pfeiffer_RBK_PTM_Granite2,
+				SerialRXBuffer:= K4S6_01_E5_SerialRXBuffer,
+				SerialTXBuffer:= K4S6_01_E5_SerialTXBuffer);
+(* Copy Status Pv's into the PTM structure*)
+LI3K4_IP1_OUT_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_Granite2[1]);				
+TM1K4_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[2],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_Granite2[2]);				
+IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM_Granite2[3]);				
+		
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_Roughing_Pumps">
+      <LineId Id="308" Count="0" />
+      <LineId Id="314" Count="18" />
+      <LineId Id="334" Count="5" />
+      <LineId Id="341" Count="0" />
+      <LineId Id="82" Count="7" />
+      <LineId Id="129" Count="1" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="99" Count="7" />
+      <LineId Id="125" Count="1" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="111" Count="8" />
+      <LineId Id="127" Count="1" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="182" Count="0" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="201" Count="3" />
+      <LineId Id="188" Count="10" />
+      <LineId Id="161" Count="0" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="219" Count="2" />
+      <LineId Id="214" Count="1" />
+      <LineId Id="222" Count="8" />
+      <LineId Id="216" Count="1" />
+      <LineId Id="231" Count="2" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="381" Count="1" />
+      <LineId Id="384" Count="4" />
+      <LineId Id="407" Count="0" />
+      <LineId Id="389" Count="4" />
+      <LineId Id="383" Count="0" />
+      <LineId Id="415" Count="0" />
+      <LineId Id="397" Count="1" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="396" Count="0" />
+      <LineId Id="239" Count="0" />
+      <LineId Id="244" Count="0" />
+      <LineId Id="241" Count="2" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="401" Count="5" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="399" Count="1" />
+      <LineId Id="251" Count="0" />
+      <LineId Id="247" Count="2" />
+      <LineId Id="245" Count="0" />
+      <LineId Id="250" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="408" Count="6" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="254" Count="3" />
+      <LineId Id="253" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="260" Count="0" />
+      <LineId Id="262" Count="3" />
+      <LineId Id="259" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="270" Count="3" />
+      <LineId Id="269" Count="0" />
+      <LineId Id="274" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="416" Count="16" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

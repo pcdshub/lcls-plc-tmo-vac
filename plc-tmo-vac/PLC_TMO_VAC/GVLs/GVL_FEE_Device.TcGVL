@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_FEE_Device" Id="{1e099b9b-502c-4923-9f77-b69bd66fefa8}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+
+(* upstream vacuum ok *)
+   {attribute 'pytmc' :=' pv: USVAC:OK:HI '}
+   {attribute 'TcLinkTo' := 	' := 	TIIB[CX0_E2_EXILK (EL1008)]^Channel 1^Input	'}	
+   USVacOk_HI AT%I* : BOOL; (* upstream vacuum <10E-6, for mirror VGC interlock *)
+ 
+ 	{attribute 'pytmc' :=' pv: USVAC:OK:LO '}
+   {attribute 'TcLinkTo' := 	'	:= 	TIIB[CX0_E2_EXILK (EL1008)]^Channel 3^Input	'}	  
+   USVacOk_LO AT%I* : BOOL; (* upstream vacuum <10E-4, for Ion pump interlock *)
+
+
+(* Isolation gate valves*)
+
+	{attribute 'pytmc' :=' pv: TV1K4:VGC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 2^Input;
+								.q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 11^Output'}
+	TV1K4_VGC_01: FB_VGC;
+	
+	{attribute 'pytmc' :=' pv: TV1K4:VGC:02 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 5^Input;
+								 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 6^Input;
+								 .q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 15^Output'}	
+ 	TV1K4_VGC_02: FB_VGC;
+
+	{attribute 'pytmc' :=' pv: ST3K4:PPS:VGC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 1^Input;
+								 .i_xClsLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 2^Input;
+								 .q_xOPN_DO	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 11^Output'}	
+	ST3K4_PPS_VGC_01 : FB_VGC;
+	
+(* Pirani & Cold Cathode*)
+
+	
+
+	{attribute 'pytmc' :=' pv: TV1K4:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S20_EB2  (EP3174-0002)]^AI Standard Channel 1^Value	'}
+	TV1K4_GPI_01 : FB_MKS275;
+	
+	
+	{attribute 'pytmc' :=' pv: TV1K4:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S20_EB2  (EP3174-0002)]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[B940_K4S20_EB3 (EP2624-0002)]^Channel 1^Output	'}	
+	TV1K4_GCC_01 : FB_MKS500;
+	
+	{attribute 'pytmc' :=' pv: ST1K4:TEST:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S24_EB1 (EP3174-0002)]^AI Standard Channel 1^Value		'}
+	ST1K4_TEST_GPI_01 : FB_MKS275;
+	
+			
+	{attribute 'pytmc' :=' pv: ST1K4:TEST:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S24_EB1 (EP3174-0002)]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[B940_K4S24_EB2 (EP2624-0002)]^Channel 1^Output	'}	
+	ST1K4_TEST_GCC_01 : FB_MKS500;
+	
+	
+	{attribute 'pytmc' :=' pv: ST2K4:BCS:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S28_EB1 (EP3174-0002)]^AI Standard Channel 1^Value	'}
+	ST2K4_BCS_GPI_01 : FB_MKS275;	
+	
+	{attribute 'pytmc' :=' pv: ST2K4:BCS:GCC:01 '}	
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S28_EB1 (EP3174-0002)]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[B940_K4S28_EB2 (EP2624-0002)]^Channel 1^Output	'}	
+	ST2K4_BCS_GCC_01 : FB_MKS500;		
+
+						 
+	{attribute 'pytmc' :=' pv: PC4K4:XTES:GPI:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S33_EB2 (EP3174-0002)]^AI Standard Channel 1^Value	'}
+	PC4K4_XTES_GPI_01 : FB_MKS275;
+
+	{attribute 'pytmc' :=' pv: PC4K4:XTES:GCC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S33_EB2 (EP3174-0002)]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[B940_K4S33_EB3 (EP2624-0002)]^Channel 1^Output	'}	
+	
+	PC4K4_XTES_GCC_01 : FB_MKS500;
+	
+	
+
+	
+(* Ion Pumps *)	
+	
+(*example
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[QPC_E1_EL3064]^AI Standard Channel 1^Value;
+								 .i_xSP_DI		:= 	TIIB[QPC_E2_EL1004]^Channel 1^Input;
+								 .q_xHVEna_DO	:= 	TIIB[QPC_E3_EL2794]^Channel 1^Output	'}
+	{attribute 'pytmc' := '
+		pv: RTDSL0:VAC:PIP:01
+		io: io
+	'}
+	RTDSL0_PIP_01 : FB_PIP_Gamma;
+	*)
+
+	{attribute 'pytmc' :=' 
+			pv: MR1K4:SOMS:PIP:01 '
+ 		}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 1^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 1^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 1^Output
+	'}
+	MR1K4_SOMS_PIP_01 : FB_PIP_Gamma;
+	
+	{attribute 'pytmc' :=' pv: ST1K4:TEST:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 2^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 2^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 2^Output
+	'}	
+	ST1K4_TEST_PIP_01 : FB_PIP_Gamma;	
+	
+	{attribute 'pytmc' :=' pv: ST2K4:BCS:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 3^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 3^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 3^Output
+	'}
+	ST2K4_BCS_PIP_01 : FB_PIP_Gamma;	
+
+	{attribute 'pytmc' :=' pv: ST3K4:PPS:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 4^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 4^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 4^Output
+	'}
+	ST3K4_PPS_PIP_01 : FB_PIP_Gamma;		
+	
+	{attribute 'pytmc' :=' pv: PC4K4:XTES:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 1^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 1^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 1^Output
+	'}
+	PC4K4_XTES_PIP_01 : FB_PIP_Gamma;		
+
+	
+	
+	
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

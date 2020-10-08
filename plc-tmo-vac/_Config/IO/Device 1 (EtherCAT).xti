@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CDevEtherCATDef" SubType="111">
+	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="172.21.132.22.2.1" RemoteName="Device 1 (EtherCAT)">
+		<Name>Device 1 (EtherCAT)</Name>
+		<AddressInfo>
+			<Ccat>
+				<Address>-41943040</Address>
+				<Offset>131072</Offset>
+				<Size>8192</Size>
+				<BaseAddr>0</BaseAddr>
+				<BusNo>1</BusNo>
+				<SlotNo>0</SlotNo>
+				<VendorId>5612</VendorId>
+				<DeviceId>20480</DeviceId>
+				<Dma>
+					<Address>0</Address>
+					<Offset>4096</Offset>
+					<Size>256</Size>
+					<BaseAddr>2</BaseAddr>
+					<RxChn>0</RxChn>
+					<TxChn>1</TxChn>
+				</Dma>
+				<Identification>
+					<Value>1022134156</Value>
+					<Version>1</Version>
+					<Size>256</Size>
+				</Identification>
+			</Ccat>
+		</AddressInfo>
+		<Image Id="1" AddrType="9" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Image Id="3" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
+		<Image Id="4" AddrType="10" ImageType="3">
+			<Name>Image-3</Name>
+		</Image>
+		<Box File="B940-R20-CX0 (EK1200).xti" Id="24">
+			<EtherCAT PortABoxInfo="#x00ffffff"/>
+		</Box>
+		<Box File="B940_R20_EK0 (EK1100).xti" Id="40">
+			<EtherCAT PortABoxInfo="#x01000027"/>
+		</Box>
+		<Box File="B940_K4S20_EK0  (EK1100).xti" Id="47">
+			<EtherCAT PortABoxInfo="#x0100002e"/>
+		</Box>
+		<Box File="B940_K4S20_EB1  (EP2338-0002).xti" Id="52">
+			<EtherCAT PortABoxInfo="#x01000033"/>
+		</Box>
+		<Box File="B940_K4S20_EB2  (EP3174-0002).xti" Id="53">
+			<EtherCAT PortABoxInfo="#x01000034"/>
+		</Box>
+		<Box File="B940_K4S20_EB3 (EP2624-0002).xti" Id="54">
+			<EtherCAT PortABoxInfo="#x01000035"/>
+		</Box>
+		<Box File="B940_K4S24_EB1 (EP3174-0002).xti" Id="55">
+			<EtherCAT PortABoxInfo="#x01000036"/>
+		</Box>
+		<Box File="B940_K4S24_EB2 (EP2624-0002).xti" Id="56">
+			<EtherCAT PortABoxInfo="#x01000037"/>
+		</Box>
+		<Box File="B940_K4S28_EB1 (EP3174-0002).xti" Id="57">
+			<EtherCAT PortABoxInfo="#x01000038"/>
+		</Box>
+		<Box File="B940_K4S28_EB2 (EP2624-0002).xti" Id="58">
+			<EtherCAT PortABoxInfo="#x01000039"/>
+		</Box>
+		<Box File="B940_K4S33_EB1 (EP2338-0002).xti" Id="59">
+			<EtherCAT PortABoxInfo="#x0100003a"/>
+		</Box>
+		<Box File="B940_K4S33_EB2 (EP3174-0002).xti" Id="60">
+			<EtherCAT PortABoxInfo="#x0100003b"/>
+		</Box>
+		<Box File="B940_K4S33_EB3 (EP2624-0002).xti" Id="1">
+			<EtherCAT PortABoxInfo="#x0100003c"/>
+		</Box>
+		<Box File="TMO_WALL_WEST_EP01 (EP4374-0002).xti" Id="3">
+			<EtherCAT PortABoxInfo="#x02000028"/>
+		</Box>
+		<Box File="TMO_K4S2_DRL_01 (EK1100).xti" Id="4">
+			<EtherCAT PortABoxInfo="#x01000003"/>
+		</Box>
+		<Box File="TMO_K4S2_DRL_02 (EK1100).xti" Id="10">
+			<EtherCAT PortABoxInfo="#x02000004"/>
+		</Box>
+		<Box File="TMO_K4S2_ EP1 (EP4374-0002).xti" Id="96">
+			<EtherCAT PortABoxInfo="#x0200000a"/>
+		</Box>
+		<Box File="TMO_K4S6_ EP1 (EP4374-0002).xti" Id="99">
+			<EtherCAT PortABoxInfo="#x01000060"/>
+		</Box>
+		<Box File="TMO_K4S6_DRL_01 (EK1100).xti" Id="63">
+			<EtherCAT PortABoxInfo="#x01000063"/>
+		</Box>
+		<Box File="TMO_K4S8_DRL_01 (EK1100).xti" Id="83">
+			<EtherCAT PortABoxInfo="#x0200003f"/>
+		</Box>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
+	</Device>
+</TcSmItem>

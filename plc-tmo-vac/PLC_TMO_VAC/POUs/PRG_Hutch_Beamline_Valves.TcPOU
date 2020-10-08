@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Hutch_Beamline_Valves" Id="{ad03d7af-b77d-4459-ab88-d78a941b69c0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Hutch_Beamline_Valves
+VAR
+	LAMP_C2_GCC_01: FB_MKS500; // wrong. only need temporary before integrate with LAMP 
+	xAll_Turbo_isRunning : BOOL := False;
+	xTurbos_are_Atspd : BOOL := False;
+	xValves_are_OPN_OK : BOOL := False;
+	
+	ton_PA1K4_IP1_PTM_01_notRunning : TON;
+	ton_PA1K4_IP1_PTM_02_notRunning : TON;
+	ton_PA1K4_IP1_PTM_03_notRunning : TON;
+	ton_IM4K4_PPM_PTM_01_notRunning : TON;
+	ton_LI1K4_IP1_PTM_01_notRunning : TON;
+	ton_LI3K4_IP1_OUT_PTM_01_notRunning : TON;
+	ton_TM1K4_PTM_01_notRunning : TON;
+	ton_IM5K4_PPM_PTM_01_notRunning : TON;
+	
+	tDelOK	:	TIME := T#30S;
+	xExtIlkOK : BOOL;
+
+	PA1K4_IP1_PTM_01_isRunning: BOOL;
+	PA1K4_IP1_PTM_02_isRunning: BOOL;
+	PA1K4_IP1_PTM_03_isRunning: BOOL;
+	IM4K4_PPM_PTM_01_isRunning: BOOL;
+	LI1K4_IP1_PTM_01_isRunning: BOOL;
+	LI3K4_IP1_OUT_PTM_01_isRunning: BOOL;
+	TM1K4_PTM_01_isRunning: BOOL;
+	IM5K4_PPM_PTM_01_isRunning: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+(* Beamline window valves use VGC function. Valves allow to open when both upstream and downstream gauges
+    reading pressure below than setpoints,  all turbo pumps are running and no faults, and all beamline valves
+    in hutch are OPN_OK*)
+
+(* check turbo pump status	*)
+PA1K4_IP1_PTM_01_isRunning := PA1K4_IP1_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_PA1K4_IP1_PTM_01_notRunning(IN:= NOT PA1K4_IP1_PTM_01_isRunning, PT:=tDelOK);
+
+PA1K4_IP1_PTM_02_isRunning := PA1K4_IP1_PTM_02.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_PA1K4_IP1_PTM_02_notRunning(IN:= NOT PA1K4_IP1_PTM_02_isRunning, PT:=tDelOK);
+
+PA1K4_IP1_PTM_03_isRunning := PA1K4_IP1_PTM_03.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_PA1K4_IP1_PTM_03_notRunning(IN:= NOT PA1K4_IP1_PTM_03_isRunning, PT:=tDelOK);
+
+IM4K4_PPM_PTM_01_isRunning := IM4K4_PPM_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_IM4K4_PPM_PTM_01_notRunning(IN:= NOT IM4K4_PPM_PTM_01_isRunning, PT:=tDelOK);
+
+LI1K4_IP1_PTM_01_isRunning := LI1K4_IP1_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_LI1K4_IP1_PTM_01_notRunning(IN:= NOT LI1K4_IP1_PTM_01_isRunning, PT:=tDelOK);
+
+LI3K4_IP1_OUT_PTM_01_isRunning := LI3K4_IP1_OUT_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_LI3K4_IP1_OUT_PTM_01_notRunning(IN:= NOT LI3K4_IP1_OUT_PTM_01_isRunning, PT:=tDelOK);
+
+TM1K4_PTM_01_isRunning := TM1K4_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_TM1K4_PTM_01_notRunning(IN:= NOT TM1K4_PTM_01_isRunning, PT:=tDelOK);
+
+IM5K4_PPM_PTM_01_isRunning := IM5K4_PPM_PTM_01.iq_stPTM.eState = E_PumpState.pumpRUNNING;
+ton_IM5K4_PPM_PTM_01_notRunning(IN:= NOT IM5K4_PPM_PTM_01_isRunning, PT:=tDelOK);
+
+xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunning.Q OR
+               ton_PA1K4_IP1_PTM_03_notRunning.Q OR ton_IM4K4_PPM_PTM_01_notRunning.Q OR
+			   ton_LI1K4_IP1_PTM_01_notRunning.Q OR ton_LI3K4_IP1_OUT_PTM_01_notRunning.Q OR
+				ton_TM1K4_PTM_01_notRunning.Q OR ton_IM5K4_PPM_PTM_01_notRunning.Q 
+				OR xLAMP_PTM_NOK;
+
+(* check beamline valve OPEN permit *)	
+xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
+                       LI3K4_IP1_VWC_01.iq_stValve.xOPN_OK AND PC5K4_VWC_01.iq_stValve.xOPN_OK ;  
+
+(*set xValveFault to True, if not all beamline valves are OPN_OK*)
+IF NOT xValves_are_OPN_OK Then
+	xValveFault := TRUE;
+ElSE
+   xValveFault := False;	
+END_IF
+					   
+   
+					 
+
+MR2K4_KBO_VWC_01(
+				i_stUSG := MR2K4_KBO_GCC_01.IG, 
+				i_stDSG:= MR2K4_KBO_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := NOT xTurboFault AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1,
+				
+);
+
+
+MR3K4_KBO_VWC_01(
+				i_stUSG := MR2K4_KBO_GCC_01.IG, 
+				i_stDSG:= PA1K4_IP1_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1);
+
+LI3K4_IP1_VWC_01(
+				i_stUSG := LAMP_C2_GCC_01.IG, 
+				i_stDSG:= IM5K4_PPM_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO,
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1);
+
+PC5K4_VWC_01(
+				i_stUSG := IM5K4_PPM_GCC_01.IG, 
+				i_stDSG:= PA2K4_IP1_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1);
+
+(* MR4K4_KBO_VWC_01(
+				i_stUSG := PA2K4_IP1_GCC_01.IG, 
+				i_stDSG:= MR4K4_KBO_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := xReset_PMPS_FFO2,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter1);
+	
+*)
+							   
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_Hutch_Beamline_Valves">
+      <LineId Id="3" Count="2" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="147" Count="0" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="176" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="181" Count="1" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="202" Count="1" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="205" Count="1" />
+      <LineId Id="204" Count="0" />
+      <LineId Id="208" Count="1" />
+      <LineId Id="207" Count="0" />
+      <LineId Id="211" Count="1" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="214" Count="1" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="172" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="216" Count="2" />
+      <LineId Id="248" Count="0" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="138" Count="0" />
+      <LineId Id="153" Count="5" />
+      <LineId Id="151" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="152" Count="0" />
+      <LineId Id="6" Count="12" />
+      <LineId Id="120" Count="0" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="19" Count="49" />
+      <LineId Id="88" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
