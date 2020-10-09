@@ -20,7 +20,7 @@ VAR
 	tDelOK	:	TIME := T#30S;
 	xExtIlkOK : BOOL;
 	
-	
+	tonDelSW : TON;
 	
 	
 	IM4K4_PPM_PTM_01_xExtIlkOK: BOOL := FALSE;
@@ -112,13 +112,24 @@ TMO_ROUGH2_VRC_01(
 (*  If endstation is in, For TMO_ROUGH1_VRC_01 & TMO_ROUGH2_VRC_01 if one closed, wait for 10s, close the other *)
 
 IF xIP1_Endstation_isIN Then
-	f_trig(CLK := TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS);
-	TMO_ROUGH1_VRC_01.M_Set_OPN_SW(f_trig.Q);
-	f_trig(CLK := TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS);	
-	TMO_ROUGH2_VRC_01.M_Set_OPN_SW(f_trig.Q);
+	f_trig(CLK := TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS or TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS);
+	IF f_trig.Q then 
+	TMO_ROUGH1_VRC_01.M_Set_OPN_SW(false);
+	TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
+	END_IF
 END_IF
+
+
+(*IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS OR TMO_ROUGH2_VRC_01.iq_stValve.i_xClsLS) Then
+	 tonDelSW(IN:= TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS OR TMO_ROUGH2_VRC_01.iq_stValve.i_xClsLS, PT:=T#10S);
+	 IF tonDelSW.Q THEN
+		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(false);
+		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
+	END_IF
+END_IF
+*)
 	
-IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW or TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW) Then
+IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW OR TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW) Then
 		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(True);
 		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(True);
 END_IF
@@ -301,10 +312,18 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="475" Count="0" />
       <LineId Id="496" Count="0" />
       <LineId Id="489" Count="0" />
-      <LineId Id="497" Count="0" />
+      <LineId Id="503" Count="0" />
       <LineId Id="491" Count="0" />
+      <LineId Id="504" Count="0" />
       <LineId Id="490" Count="0" />
       <LineId Id="495" Count="0" />
+      <LineId Id="507" Count="1" />
+      <LineId Id="512" Count="1" />
+      <LineId Id="509" Count="1" />
+      <LineId Id="514" Count="0" />
+      <LineId Id="506" Count="0" />
+      <LineId Id="505" Count="0" />
+      <LineId Id="516" Count="0" />
       <LineId Id="498" Count="1" />
       <LineId Id="501" Count="0" />
       <LineId Id="492" Count="0" />
