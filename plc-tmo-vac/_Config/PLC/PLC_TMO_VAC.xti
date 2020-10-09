@@ -1631,6 +1631,13 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1641,13 +1648,6 @@
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC</Name>
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2501,6 +2501,9 @@
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
+				<Link VarA="FSVTask Outputs^GVL_FSV_PMPS.g_FastFaultOutput3.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E2_EXILK (EL1008)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.USVacOk_HI" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.USVacOk_LO" VarB="Channel 3^Input" AutoLink="true"/>
@@ -2879,9 +2882,6 @@
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E22_IP1 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Variables.xLAMP_PTM_NOK" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E3 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>

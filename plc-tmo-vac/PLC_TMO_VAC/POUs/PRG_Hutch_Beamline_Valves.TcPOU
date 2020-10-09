@@ -5,8 +5,7 @@
 VAR
 	LAMP_C2_GCC_01: FB_MKS500; // wrong. only need temporary before integrate with LAMP 
 	xAll_Turbo_isRunning : BOOL := False;
-	xTurbos_are_Atspd : BOOL := False;
-	xValves_are_OPN_OK : BOOL := False;
+
 	
 	ton_PA1K4_IP1_PTM_01_notRunning : TON;
 	ton_PA1K4_IP1_PTM_02_notRunning : TON;
@@ -28,6 +27,8 @@ VAR
 	LI3K4_IP1_OUT_PTM_01_isRunning: BOOL;
 	TM1K4_PTM_01_isRunning: BOOL;
 	IM5K4_PPM_PTM_01_isRunning: BOOL;
+	
+	xValves_are_OPN_OK : BOOL;
 	
 END_VAR
 ]]></Declaration>
@@ -66,17 +67,21 @@ xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunn
                ton_PA1K4_IP1_PTM_03_notRunning.Q OR ton_IM4K4_PPM_PTM_01_notRunning.Q OR
 			   ton_LI1K4_IP1_PTM_01_notRunning.Q OR ton_LI3K4_IP1_OUT_PTM_01_notRunning.Q OR
 				ton_TM1K4_PTM_01_notRunning.Q OR ton_IM5K4_PPM_PTM_01_notRunning.Q 
-				OR xLAMP_PTM_NOK;
+				OR NOT lamp_turbo_running_reader.bBool;
 
 (* check beamline valve OPEN permit *)	
 xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
                        LI3K4_IP1_VWC_01.iq_stValve.xOPN_OK AND PC5K4_VWC_01.iq_stValve.xOPN_OK ;  
 
-(*set xValveFault to True, if not all beamline valves are OPN_OK*)
+(*if not all beamline valves are OPN_OK, close all beamline valves*)
 IF NOT xValves_are_OPN_OK Then
-	xValveFault := TRUE;
+	MR2K4_KBO_VWC_01.M_Set_OPN_SW(false);	
+	MR3K4_KBO_VWC_01.M_Set_OPN_SW(false);
+	LI3K4_IP1_VWC_01.M_Set_OPN_SW(false);
+	PC5K4_VWC_01.M_Set_OPN_SW(false);
+	xBeamlineValveFault := True;
 ElSE
-   xValveFault := False;	
+   xBeamlineValveFault := False;	
 END_IF
 					   
    
@@ -88,7 +93,7 @@ MR2K4_KBO_VWC_01(
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := NOT xTurboFault AND xValves_are_OPN_OK, 
+				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
 				io_fbFFHWO :=g_FastFaultOutput2,
@@ -103,7 +108,7 @@ MR3K4_KBO_VWC_01(
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
 				io_fbFFHWO :=g_FastFaultOutput2,
@@ -115,7 +120,7 @@ LI3K4_IP1_VWC_01(
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO,
 				i_xReset := xReset_PMPS_FFO2,
 				io_fbFFHWO :=g_FastFaultOutput2,
@@ -127,7 +132,7 @@ PC5K4_VWC_01(
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
 				io_fbFFHWO :=g_FastFaultOutput2,
@@ -179,7 +184,9 @@ PC5K4_VWC_01(
       <LineId Id="121" Count="0" />
       <LineId Id="135" Count="0" />
       <LineId Id="138" Count="0" />
-      <LineId Id="153" Count="5" />
+      <LineId Id="153" Count="3" />
+      <LineId Id="280" Count="3" />
+      <LineId Id="157" Count="1" />
       <LineId Id="151" Count="0" />
       <LineId Id="150" Count="0" />
       <LineId Id="152" Count="0" />

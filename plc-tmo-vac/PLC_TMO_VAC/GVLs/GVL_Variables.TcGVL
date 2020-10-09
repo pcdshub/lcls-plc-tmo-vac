@@ -15,15 +15,20 @@ VAR_GLOBAL
 	xTurboFault: BOOL := FALSE; (* True if any hutch turbo is not at speed or fault *)	
 	
 	{attribute 'pytmc' := 'pv: TMO:NEH:VALVE:FAULT'}
-	xValveFault: BOOL := FALSE; (* True if any hutch turbo is not at speed or fault *)	
+	xBeamlineValveFault: BOOL := FALSE; (* True if any beamline valve is not open OK *)	
 	
 		{attribute 'pytmc' := 'pv: TMO:NEH:ALL:GCC:ENABLE'}
 	xGCC_Enable_SW: BOOL := FALSE; (* True if any hutch turbo is not at speed or fault *)
 
 	{attribute 'pytmc' := 'pv: TMO:LAMP:PTM_NOK'}
-	{attribute 'TcLinkTo' := 	':=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E22_IP1 (EL1004)^Channel 1^Input'}
 	
-	xLAMP_PTM_NOK AT%I*: BOOL := FALSE; (* True if any hutch turbo is not at speed or fault *)	
+	xLAMP_PTM_NOK AT%I*: BOOL := FALSE; (* True if any hutch turbo is not at speed or fault *)
+
+	{attribute 'pytmc' := 'pv: TMO:VRC:DIFPRESS:BYPASS'}
+	xBypassDiffPress_vrc1_vrc2 : BOOL; 	
+	
+	{attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:IN'}
+	xIP1_Endstation_isIN : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
