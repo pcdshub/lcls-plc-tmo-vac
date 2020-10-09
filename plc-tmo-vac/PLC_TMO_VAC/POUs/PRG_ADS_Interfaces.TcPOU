@@ -25,6 +25,11 @@ lamp_turbo_running_reader(
 	iWatchdog := i_iWatchdog // UDINT required for watchdog functionality
 );
 
+LAMP_C2_GCC01_reader(	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
+	nPort := 851, // ADS port of the PLC reading from this PLC
+	sVarName := 'GVL_Devices.LAMP_C2_GCC_01', // Full name of the FB containing the gauge to be read
+	iWatchdog := i_iWatchdog // UDINT required for watchdog functionality
+);
 
 LAMP_ROUGH_GPI02_reader(
 	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
@@ -52,6 +57,7 @@ ads_watch_dog(
       <LineId Id="86" Count="0" />
       <LineId Id="102" Count="4" />
       <LineId Id="43" Count="0" />
+      <LineId Id="120" Count="4" />
       <LineId Id="101" Count="0" />
       <LineId Id="100" Count="0" />
       <LineId Id="26" Count="5" />

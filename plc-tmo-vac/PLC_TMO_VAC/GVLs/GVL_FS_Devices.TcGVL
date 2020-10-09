@@ -13,7 +13,7 @@
 								 .q_xVAC_FAULT_Reset:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset;
 								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode;
 								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen;
-								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger
+								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger;
 								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open;
 								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed;
 								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK;
@@ -45,7 +45,7 @@
 								 .q_xVAC_FAULT_Reset:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset;
 								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode;
 								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen;
-								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger
+								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger;
 								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open;
 								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed;
 								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK;
@@ -75,7 +75,7 @@
 								 .q_xVAC_FAULT_Reset:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset;
 								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode;
 								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen;
-								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger
+								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger;
 								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open;
 								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed;
 								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK;

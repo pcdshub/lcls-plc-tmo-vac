@@ -114,6 +114,8 @@ VAR_GLOBAL
 	
 	{attribute 'pytmc' :=' pv: LAMP:ROUGH:GPI04:reader '}
 	LAMP_ROUGH_GPI04_reader : FB_TGPI_ADS;
+	
+	LAMP_C2_GCC01_reader : FB_TGCC_ADS;
 		
 
 END_VAR]]></Declaration>

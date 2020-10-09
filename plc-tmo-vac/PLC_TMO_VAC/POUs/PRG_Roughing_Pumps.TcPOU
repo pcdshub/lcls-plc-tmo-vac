@@ -15,6 +15,7 @@ VAR
 	PA1K4_IP1_PTM_03_xExtIlkOK: BOOL := False;
 	
 	f_trig : F_TRIG;
+	R_trig_OPN_SW : R_TRIG;
 
 	tonDelOK : TON;
 	tDelOK	:	TIME := T#30S;
@@ -129,9 +130,13 @@ END_IF
 END_IF
 *)
 	
-IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW OR TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW) Then
+IF xIP1_Endstation_isIN  Then
+	R_trig_OPN_SW(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW or TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
+	IF R_trig_OPN_SW.Q then 
 		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(True);
 		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(True);
+	END_IF	
+	
 END_IF
 
 
@@ -324,8 +329,11 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="506" Count="0" />
       <LineId Id="505" Count="0" />
       <LineId Id="516" Count="0" />
-      <LineId Id="498" Count="1" />
-      <LineId Id="501" Count="0" />
+      <LineId Id="498" Count="0" />
+      <LineId Id="555" Count="2" />
+      <LineId Id="559" Count="0" />
+      <LineId Id="499" Count="0" />
+      <LineId Id="554" Count="0" />
       <LineId Id="492" Count="0" />
       <LineId Id="488" Count="0" />
       <LineId Id="486" Count="0" />
