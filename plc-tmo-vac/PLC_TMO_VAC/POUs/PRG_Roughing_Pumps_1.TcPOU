@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_Roughing_Pumps" Id="{87120f5c-8975-4cdd-a125-ee85e558c6d5}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM PRG_Roughing_Pumps
+  <POU Name="PRG_Roughing_Pumps_1" Id="{056db878-5c23-4af1-b39c-c458b2527cae}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Roughing_Pumps_1
 VAR
 	
 	xRough1Vrc01_OpenOK: BOOL := False;
@@ -14,10 +14,8 @@ VAR
 	PA1K4_IP1_PTM_02_xExtIlkOK: BOOL := FALSE;
 	PA1K4_IP1_PTM_03_xExtIlkOK: BOOL := False;
 	
-	f_trig_r1 : F_TRIG;
-	f_trig_r2 : F_TRIG;
-	r_trig_r1 : R_TRIG;
-	r_trig_r2 : R_TRIG;
+	f_trig : F_TRIG;
+	R_trig_OPN_SW : R_TRIG;
 
 	tonDelOK : TON;
 	tDelOK	:	TIME := T#30S;
@@ -114,13 +112,10 @@ TMO_ROUGH2_VRC_01(
 
 (*  If endstation is in, For TMO_ROUGH1_VRC_01 & TMO_ROUGH2_VRC_01 if one closed, wait for 10s, close the other *)
 
-f_trig_r1(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW);
-f_trig_r2(CLK:= TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
 IF xIP1_Endstation_isIN Then
-	IF f_trig_r1.Q then 
+	f_trig(CLK := TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS or TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS);
+	IF f_trig.Q then 
 	TMO_ROUGH1_VRC_01.M_Set_OPN_SW(false);
-	END_IF
-	IF f_trig_r2.Q then 
 	TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
 	END_IF
 END_IF
@@ -134,15 +129,11 @@ END_IF
 	END_IF
 END_IF
 *)
-
-r_trig_r1(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW);
-r_trig_r2(CLK:= TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
 	
 IF xIP1_Endstation_isIN  Then
-	IF r_trig_r1.Q then 
+	R_trig_OPN_SW(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW or TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
+	IF R_trig_OPN_SW.Q then 
 		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(True);
-	END_IF	
-	IF r_trig_r2.Q then 
 		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(True);
 	END_IF	
 	
@@ -297,7 +288,7 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
 		
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_Roughing_Pumps">
+    <LineIds Name="PRG_Roughing_Pumps_1">
       <LineId Id="308" Count="0" />
       <LineId Id="314" Count="8" />
       <LineId Id="469" Count="1" />
@@ -322,15 +313,13 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="110" Count="0" />
       <LineId Id="109" Count="0" />
       <LineId Id="473" Count="0" />
-      <LineId Id="611" Count="0" />
       <LineId Id="476" Count="0" />
-      <LineId Id="599" Count="0" />
       <LineId Id="475" Count="0" />
       <LineId Id="496" Count="0" />
-      <LineId Id="503" Count="1" />
-      <LineId Id="601" Count="0" />
-      <LineId Id="603" Count="0" />
-      <LineId Id="600" Count="0" />
+      <LineId Id="489" Count="0" />
+      <LineId Id="503" Count="0" />
+      <LineId Id="491" Count="0" />
+      <LineId Id="504" Count="0" />
       <LineId Id="490" Count="0" />
       <LineId Id="495" Count="0" />
       <LineId Id="507" Count="1" />
@@ -339,16 +328,11 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="514" Count="0" />
       <LineId Id="506" Count="0" />
       <LineId Id="505" Count="0" />
-      <LineId Id="610" Count="0" />
-      <LineId Id="604" Count="1" />
       <LineId Id="516" Count="0" />
       <LineId Id="498" Count="0" />
-      <LineId Id="555" Count="0" />
-      <LineId Id="557" Count="0" />
+      <LineId Id="555" Count="2" />
+      <LineId Id="559" Count="0" />
       <LineId Id="499" Count="0" />
-      <LineId Id="607" Count="0" />
-      <LineId Id="609" Count="0" />
-      <LineId Id="606" Count="0" />
       <LineId Id="554" Count="0" />
       <LineId Id="492" Count="0" />
       <LineId Id="488" Count="0" />

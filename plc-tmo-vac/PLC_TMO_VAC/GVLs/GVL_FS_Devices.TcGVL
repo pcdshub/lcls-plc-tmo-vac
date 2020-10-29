@@ -34,6 +34,8 @@
 		.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input '}
 	TV1K4_VFS_1 : FB_VFS;	
 	
+//	{attribute 'TcLinkTo' := 	'TV1K4_VFS_1_VAC_FAULT_OK	 := 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK; '}
+//	TV1K4_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
 	
     {attribute 'pytmc' := '
 		pv: MR3K4:KBO:VFS:01
@@ -64,6 +66,9 @@
 		.i_xOpnLS	:=	TIIB[K4S2_01_E1_VFS (EL1004)]^Channel 2^Input;
 		.i_xTrigger :=  TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input'}
 	MR3K4_KBO_VFS_1 : FB_VFS;
+	
+//	{attribute 'TcLinkTo' := 	'TV1K4_VFS_1_VAC_FAULT_OK	 := 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK; '}
+//	MR3K4_KBO_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
 	
 	{attribute 'pytmc' := '
 		pv: MR3K4:KBO:VFS_1

@@ -70,11 +70,11 @@ xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunn
 				OR NOT lamp_turbo_running_reader.bBool;
 
 (* check beamline valve OPEN permit *)	
-xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
-                       LI3K4_IP1_VWC_01.iq_stValve.xOPN_OK AND PC5K4_VWC_01.iq_stValve.xOPN_OK ;  
+(*xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
+                       LI3K4_IP1_VWC_01.iq_stValve.xOPN_OK AND PC5K4_VWC_01.iq_stValve.xOPN_OK ; *) 
 
 (*if not all beamline valves are OPN_OK, close all beamline valves*)
-IF NOT xValves_are_OPN_OK Then
+(*IF NOT xValves_are_OPN_OK Then
 	MR2K4_KBO_VWC_01.M_Set_OPN_SW(false);	
 	MR3K4_KBO_VWC_01.M_Set_OPN_SW(false);
 	LI3K4_IP1_VWC_01.M_Set_OPN_SW(false);
@@ -83,72 +83,86 @@ IF NOT xValves_are_OPN_OK Then
 ElSE
    xBeamlineValveFault := False;	
 END_IF
-					   
+*)					   
    
 					 
 
 MR2K4_KBO_VWC_01(
-				i_stUSG := MR2K4_KBO_GCC_01.IG, 
-				i_stDSG:= MR2K4_KBO_GCC_01.IG, 
+				i_stUSG := PC4K4_XTES_PIP_01.q_IG, 
+				i_stDSG:= MR2K4_KBO_PIP_01.q_IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE, 
+				i_xPMPS_OK := , 
 				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
+				i_nTransitionRootID := 43536
 				
 );
 
 
 MR3K4_KBO_VWC_01(
-				i_stUSG := MR2K4_KBO_GCC_01.IG, 
+				i_stUSG := MR2K4_KBO_PIP_01.q_IG, 
 				i_stDSG:= PA1K4_IP1_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := NOT xTurboFault, 
+				i_xPMPS_OK := , 
+				i_xExt_OK := NOT xTurboFault AND MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter1);
+                fbArbiter := g_fbArbiter1,
+				i_nTransitionRootID := 43552
+);
 
 LI3K4_IP1_VWC_01(
 				i_stUSG := LAMP_C2_GCC01_reader.IG, 
 				i_stDSG:= IM5K4_PPM_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE, 
+				i_xPMPS_OK := , 
 				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO,
 				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter1);
+                fbArbiter := g_fbArbiter1,
+				i_nTransitionRootID := 43568
+);
 
 PC5K4_VWC_01(
 				i_stUSG := IM5K4_PPM_GCC_01.IG, 
 				i_stDSG:= PA2K4_IP1_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE, 
+				i_xPMPS_OK := , 
 				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter1);
+                fbArbiter := g_fbArbiter1,
+				i_nTransitionRootID := 43584
+);
 
 (* MR4K4_KBO_VWC_01(
 				i_stUSG := PA2K4_IP1_GCC_01.IG, 
 				i_stDSG:= MR4K4_KBO_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE, 
+				i_xPMPS_OK := , 
 				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter1);
+                fbArbiter := g_fbArbiter1,
+				i_nTransitionRootID := 43600
+);
 	
 *)
 							   
@@ -190,10 +204,33 @@ PC5K4_VWC_01(
       <LineId Id="151" Count="0" />
       <LineId Id="150" Count="0" />
       <LineId Id="152" Count="0" />
-      <LineId Id="6" Count="12" />
+      <LineId Id="6" Count="10" />
+      <LineId Id="314" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="320" Count="0" />
       <LineId Id="120" Count="0" />
       <LineId Id="119" Count="0" />
-      <LineId Id="19" Count="49" />
+      <LineId Id="19" Count="10" />
+      <LineId Id="315" Count="0" />
+      <LineId Id="30" Count="1" />
+      <LineId Id="322" Count="0" />
+      <LineId Id="321" Count="0" />
+      <LineId Id="32" Count="9" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="42" Count="1" />
+      <LineId Id="324" Count="0" />
+      <LineId Id="323" Count="0" />
+      <LineId Id="44" Count="9" />
+      <LineId Id="317" Count="0" />
+      <LineId Id="54" Count="1" />
+      <LineId Id="319" Count="0" />
+      <LineId Id="326" Count="0" />
+      <LineId Id="56" Count="9" />
+      <LineId Id="318" Count="0" />
+      <LineId Id="66" Count="1" />
+      <LineId Id="327" Count="0" />
+      <LineId Id="325" Count="0" />
+      <LineId Id="68" Count="0" />
       <LineId Id="88" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>

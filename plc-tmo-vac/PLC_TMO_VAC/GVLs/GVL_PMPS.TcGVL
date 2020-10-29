@@ -17,14 +17,12 @@ VAR_GLOBAL
 	
 
 	
-	{attribute 'pytmc' := '    'pv: PLC:TMO:VAC:RESET:FF1    '}
+	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF1    '}
 	xReset_PMPS_FFO1	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Upstream Components
 	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF2  '}
 	xReset_PMPS_FFO2	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Downstream Components
 	
-	{attribute 'pytmc' := '
-        pv: @(PREFIX)Arbiter:01
-    '}
+	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:01    '}
     g_fbArbiter1    :   FB_Arbiter(1);
 	
 	xTMO_FEE_MPS_OK: BOOL := TRUE;
