@@ -66,6 +66,9 @@
     <Compile Include="POUs\PMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_ADS_Interfaces.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_Roughing_Pumps_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Section_2.TcPOU">
@@ -139,10 +145,10 @@
       <Resolution>LCLS General, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 0.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 1.3.3 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
-      <Resolution>LCLSVacuumSerialDriverLib, 0.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLSVacuumSerialDriverLib, 1.2.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, * (SLAC - LCLS)</Resolution>

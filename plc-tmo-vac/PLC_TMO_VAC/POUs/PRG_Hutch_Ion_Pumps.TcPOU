@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Hutch_Ion_Pumps" Id="{f0ddbdc8-838d-44b9-8b6f-54afc3e17411}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Hutch_Ion_Pumps
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+	MR2K4_KBO_PIP_01(i_stGauge := MR2K4_KBO_GPI_01.PG, stPump=>);
+	PA2K4_IP1_PIP_01(i_stGauge := PA2K4_IP1_GCC_01.IG, stPump=>);
+//	MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GCC_01.IG, stPump=>);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_Hutch_Ion_Pumps">
+      <LineId Id="12" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

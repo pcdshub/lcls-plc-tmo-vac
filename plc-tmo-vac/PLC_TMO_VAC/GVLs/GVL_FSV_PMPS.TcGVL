@@ -4,12 +4,12 @@
     <Declaration><![CDATA[VAR_GLOBAL
 
 	
-	{'attribute 'pytmc' := 'pv: TMO:VAC:FFO:03  '}
-   {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 2^Output'}
+	{attribute 'pytmc' := 'pv: TMO:VAC:FFO:03  '}
+   {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 1^Output'}
     g_FastFaultOutput3  :   FB_HardwareFFOutput;	//FFO for TV1K4-VFS-1
 	
     {attribute 'pytmc' := 'pv: TMO:VAC:FFO:04  '}
-   {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channe2 2^Output'}
+   {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 2^Output'}
     g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR5K4_KBO_VFS_01
 	
 	
