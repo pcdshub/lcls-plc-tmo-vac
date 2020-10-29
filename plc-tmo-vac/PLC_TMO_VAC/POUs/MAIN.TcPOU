@@ -18,6 +18,7 @@ PRG_ADS_Interfaces();
 (* FEE devices*)
 PRG_FEE();
 PMPS();
+PRG_FSV_Interfaces();
 
 (*Hutch*)
 PRG_Hutch_Gauges();
@@ -35,6 +36,7 @@ PRG_Roughing_Pumps();
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="3" Count="8" />
+      <LineId Id="37" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="25" Count="0" />
       <LineId Id="28" Count="2" />
