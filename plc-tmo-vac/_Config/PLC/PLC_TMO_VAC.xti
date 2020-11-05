@@ -469,6 +469,17 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK</Name>
 					<Comment>
 						<![CDATA[To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected]]>
@@ -520,6 +531,17 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK</Name>
 					<Comment>
 						<![CDATA[To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected]]>
@@ -568,6 +590,17 @@
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -818,6 +851,144 @@
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>PMPS.fbArbiterIO.i_stCurrentBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PMPS.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>PMPS.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
@@ -1493,13 +1664,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1510,6 +1674,13 @@
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC</Name>
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1678,8 +1849,11 @@
 					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS</Name>
 					<Type>BOOL</Type>
 				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>PMPS.fbArbiterIO.i_stCurrentBP</Name>
+					<Name>PMPS.fbArbiterIO.q_stRequestedBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
@@ -1808,17 +1982,6 @@
 						</Comment>
 					</SubVar>
 				</Var>
-				<Var>
-					<Name>PMPS.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PMPS.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="2">
-				<Name>PlcTask Outputs</Name>
 				<Var>
 					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
 					<Comment>
@@ -1949,6 +2112,17 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.iq_stValve.xCLS_SW</Name>
 					<Comment>
 						<![CDATA[external open signal e.g epics]]>
@@ -1992,6 +2166,17 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.iq_stValve.xCLS_SW</Name>
 					<Comment>
 						<![CDATA[external open signal e.g epics]]>
@@ -2032,6 +2217,17 @@
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2328,136 +2524,6 @@
 				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PMPS.fbArbiterIO.q_stRequestedBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -3012,6 +3078,8 @@
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
@@ -3066,6 +3134,8 @@
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

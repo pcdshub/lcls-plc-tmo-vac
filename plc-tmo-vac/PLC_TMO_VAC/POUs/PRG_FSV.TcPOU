@@ -11,6 +11,7 @@ END_VAR
 TV1K4_VFS_1(
 	i_xPMPS_OK:= TRUE, 
 	i_xExt_OK:= TRUE, 
+	i_xVeto:=TRUE,
 	i_sDevName:= 'TV1K4:VFS:01', 
 	io_fbFFHWO:= g_FastFaultOutput3 );
 	
@@ -42,7 +43,9 @@ g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K
     </Implementation>
     <LineIds Name="PRG_FSV">
       <LineId Id="23" Count="0" />
-      <LineId Id="26" Count="3" />
+      <LineId Id="26" Count="2" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="29" Count="0" />
       <LineId Id="24" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="25" Count="0" />
