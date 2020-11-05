@@ -8,7 +8,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 (*Vacuum Fast Shutter Valve*)
-TV1K4_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
+TV1K4_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG,Veto_Valve := ST3K4_PPS_VGC_01.iq_stValve);
 
 MR3K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
 
