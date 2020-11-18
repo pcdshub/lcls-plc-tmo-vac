@@ -1,12 +1,13 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.2/bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.2.4///bin/rhel7-x86_64/adsIoc
+###### AUTO-GENERATED DO NOT EDIT ##############
 
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("IOCNAME", "ioc-PLC-TMO-VAC" )
-epicsEnvSet("ENGINEER", "root" )
-epicsEnvSet("LOCATION", "PREFIX" )
+epicsEnvSet("ENGINEER", "jyin" )
+epicsEnvSet("LOCATION", "PLC_TMO_VAC" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
 # Run common startup commands for linux soft IOC's
@@ -54,8 +55,8 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PREFIX")
-dbLoadRecords("save_restoreStatus.db", "P=PREFIX:")
+dbLoadRecords("iocSoft.db", "IOC=PLC_TMO_VAC")
+dbLoadRecords("save_restoreStatus.db", "P=PLC_TMO_VAC:")
 
 cd "$(IOC_TOP)"
 
@@ -67,7 +68,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PREFIX:" )
+save_restoreSet_status_prefix( "PLC_TMO_VAC:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )
@@ -76,6 +77,9 @@ set_pass1_restoreFile( "info_settings.sav" )
 cd "$(IOC_TOP)/autosave"
 makeAutosaveFiles()
 cd "$(IOC_TOP)"
+
+# Create the archiver file
+makeArchiveFromDbInfo("$(IOC_DATA)/$(IOC)/archive/$(IOC).archive", "archive")
 
 # Initialize the IOC and start processing records
 iocInit()
