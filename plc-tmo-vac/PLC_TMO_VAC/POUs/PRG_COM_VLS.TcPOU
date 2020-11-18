@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_COM_1" Id="{7c20adc9-8454-4d3d-b760-2b63ca76f659}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM PRG_COM_1
+  <POU Name="PRG_COM_VLS" Id="{7c20adc9-8454-4d3d-b760-2b63ca76f659}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_COM_VLS
 VAR
 END_VAR
 ]]></Declaration>
@@ -16,7 +16,7 @@ END_VAR
 	Error=> ,
 	ErrorID=> );]]></ST>
     </Implementation>
-    <LineIds Name="PRG_COM_1">
+    <LineIds Name="PRG_COM_VLS">
       <LineId Id="6" Count="7" />
       <LineId Id="5" Count="0" />
     </LineIds>

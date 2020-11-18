@@ -431,6 +431,13 @@
 					</Comment>
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
+				<Var>
+					<Name>GVL_COM_VLS.stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>ComTask Outputs</Name>
@@ -448,6 +455,10 @@
 				</Var>
 				<Var>
 					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM_VLS.stComOut</Name>
 					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 			</Vars>
@@ -1024,6 +1035,13 @@
 						<![CDATA[ upstream vacuum <10E-4, for Ion pump interlock ]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM_VLS.E2_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
@@ -1678,13 +1696,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1850,18 +1861,11 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_COM_VLS.stComIn</Name>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
 					<Comment>
-						<![CDATA[SERIAL IO]]>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
 					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM_VLS.E2_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_VLS.PTM_01.i_xAtSpd</Name>
@@ -2113,6 +2117,10 @@
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM_VLS.E2_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
@@ -2645,14 +2653,6 @@
 				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM_VLS.stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM_VLS.E2_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_VLS.PTM_01.q_RunDO</Name>
@@ -3254,52 +3254,52 @@
 				<Link VarA="PlcTask Inputs^GVL_VLS.ROUGH_GPI.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^VLS_EP5 (EP6002-0002)">
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_COM_VLS.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_COM_VLS.stComOut^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[0]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[10]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[11]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[12]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[13]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[14]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[15]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[16]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[17]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[18]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[19]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[1]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[20]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[21]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[2]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[3]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[4]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[5]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[6]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[7]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[8]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^D[9]" VarB="COM TxPDO-Map Inputs Channel 1^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM_VLS.stComIn^Status" VarB="COM TxPDO-Map Inputs Channel 1^Status" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^Ctrl" VarB="COM RxPDO-Map Outputs Channel 1^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[0]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[10]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[11]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[12]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[13]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[14]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[15]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[16]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[17]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[18]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[19]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[1]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[20]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[21]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[2]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[3]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[4]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[5]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[6]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[7]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[8]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM_VLS.stComOut^D[9]" VarB="COM RxPDO-Map Outputs Channel 1^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
