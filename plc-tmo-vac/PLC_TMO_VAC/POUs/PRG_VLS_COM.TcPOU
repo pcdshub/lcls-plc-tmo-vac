@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_COM" Id="{7c20adc9-8454-4d3d-b760-2b63ca76f659}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_COM
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(stComIn),
+	pComOut:=ADR(stComOut),
+	SizeComIn:= SIZEOF(stComIn),
+	TxBuffer:= SerialTXBuffer,
+	RxBuffer:= SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_COM">
+      <LineId Id="6" Count="7" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

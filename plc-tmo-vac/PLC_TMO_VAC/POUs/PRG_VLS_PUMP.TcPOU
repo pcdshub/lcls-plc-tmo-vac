@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_PUMP" Id="{77bfa9ef-884a-40c8-8236-858350ca8c9b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PUMP
+VAR
+
+	PTM_01_xExtIlkOK : BOOL; 
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+//Pfeiffer Turbo
+
+(*Assign adresses to the pfeiffer controllers connected to this serial terminal*)
+st_Pfeiffer_CTRL[1].iSerialAddress :=1;
+st_Pfeiffer_CTRL[1].xEnableComm := TRUE;
+	
+(* Instanitate the Function block for serial communication with Pfeiffer*)	
+fb_PfeifferCom(astPfeifferControl := st_Pfeiffer_CTRL,
+			   astPfeifferStatus:= st_Pfeiffer_RBK,
+				SerialRXBuffer:= SerialRXBuffer,
+				SerialTXBuffer:= SerialTXBuffer);
+				
+
+(* Copy Status Pv's into the PTM structure*)
+PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK[1]);
+
+
+PTM_01_xExtIlkOK := ( ROUGH_GPI.PG.xPRESS_OK AND ROUGH_GPI.PG.rPRESS < PTM_01.iq_stPTM.rBackingPressureSP ) AND (DS_GPI.PG.xPRESS_OK AND DS_GPI.PG.rPRESS < PTM_01.iq_stPTM.rInletPressureSP) ;	
+PTM_01(i_xExtIlkOK := PTM_01_xExtIlkOK , iq_stPTM => );]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_PUMP">
+      <LineId Id="6" Count="1" />
+      <LineId Id="11" Count="3" />
+      <LineId Id="17" Count="9" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
