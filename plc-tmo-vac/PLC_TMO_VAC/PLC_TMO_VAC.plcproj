@@ -18,12 +18,18 @@
     <Compile Include="ComTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\E_STATES.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FSVTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_COM.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_COM_VLS.TcGVL">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_FEE_Device.TcGVL">
       <SubType>Code</SubType>
@@ -51,10 +57,16 @@
     <Compile Include="GVLs\GVL_Variables.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_VLS.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\DIAGNOSTICS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_VRC_NO_FFO_VLS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\F_Turbo_Protection_ILK.TcPOU">
@@ -64,6 +76,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_COM_VLS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
@@ -90,6 +105,9 @@
     <Compile Include="POUs\PRG_Hutch_Gauges.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_VLS_Turbo.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +115,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Section_2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_VLS_VACUUM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_VLS_WINDOW.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -145,10 +169,10 @@
       <Resolution>LCLS General, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 0.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 1.4.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
-      <Resolution>LCLSVacuumSerialDriverLib, 0.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, * (SLAC - LCLS)</Resolution>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_VLS_VACUUM" Id="{54bbc3ff-d626-4728-80d9-398bf4fa229d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_VLS_VACUUM
+VAR
+
+
+END_VAR
+VAR_INPUT
+	bVLS_Ext_Press : BOOL := FALSE; // external interlock bit for window control
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// VLS Vacuum Logic
+PRG_VLS_WINDOW(bExtPress := bVLS_Ext_Press); // run the vacuum program with interlock bit
+
+// VLS Pump
+PRG_VLS_Turbo();
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_VLS_VACUUM">
+      <LineId Id="28" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

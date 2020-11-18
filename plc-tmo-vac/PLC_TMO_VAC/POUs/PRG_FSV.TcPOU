@@ -11,14 +11,14 @@ END_VAR
 TV1K4_VFS_1(
 	i_xPMPS_OK:= TRUE, 
 	i_xExt_OK:= TRUE, 
-	i_xVeto:=TRUE,
+	i_xVeto_Enable:=TRUE,
 	i_sDevName:= 'TV1K4:VFS:01', 
 	io_fbFFHWO:= g_FastFaultOutput3 );
 	
-
 MR3K4_KBO_VFS_1(
 	i_xPMPS_OK:= TRUE, 
 	i_xExt_OK:= TRUE, 
+	i_xVeto_Enable:=TRUE,
 	i_sDevName:= 'MR3K4:KBO:VFS:1',
 	io_fbFFHWO:= g_FastFaultOutput4
 );
@@ -26,6 +26,7 @@ MR3K4_KBO_VFS_1(
 MR4K4_KBO_VFS_1(
 	i_xPMPS_OK:= TRUE, 
 	i_xExt_OK:= TRUE, 
+	i_xVeto_Enable:=TRUE,
 	i_sDevName:= 'MR4K4:KBO:VFS:1',
 	io_fbFFHWO:= g_FastFaultOutput4
 );
@@ -48,8 +49,11 @@ g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K
       <LineId Id="29" Count="0" />
       <LineId Id="24" Count="0" />
       <LineId Id="30" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="6" Count="13" />
+      <LineId Id="6" Count="2" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="9" Count="6" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="16" Count="3" />
       <LineId Id="46" Count="0" />
       <LineId Id="55" Count="0" />
       <LineId Id="54" Count="0" />

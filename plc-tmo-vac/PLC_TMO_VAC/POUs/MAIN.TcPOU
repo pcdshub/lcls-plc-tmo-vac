@@ -27,6 +27,8 @@ PRG_Hutch_Gauges();
 PRG_Hutch_Beamline_Valves();
 PRG_Roughing_Pumps();
 PRG_Hutch_Ion_Pumps();
+PRG_VLS_VACUUM();
+
 
 
 
@@ -46,6 +48,7 @@ PRG_Hutch_Ion_Pumps();
       <LineId Id="25" Count="0" />
       <LineId Id="28" Count="2" />
       <LineId Id="52" Count="0" />
+      <LineId Id="59" Count="1" />
       <LineId Id="27" Count="0" />
       <LineId Id="12" Count="6" />
       <LineId Id="2" Count="0" />

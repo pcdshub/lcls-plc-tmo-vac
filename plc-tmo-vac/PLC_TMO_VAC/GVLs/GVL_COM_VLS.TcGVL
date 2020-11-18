@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_COM_VLS" Id="{c0a92c37-aed3-4a86-b8d1-e8ee0bbb3fea}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	SerialRXBuffer : ComBuffer;
+	SerialTXBuffer : ComBuffer;
+
+	// Serial Terminal
+	fbSerialLineControl: SerialLineControl;
+	
+	//SERIAL IO
+		{attribute	'TcLinkTo'	:=	'.Status:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Status;
+								 .D[0]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 0;
+								 .D[1]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 1;
+								 .D[2]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 2;
+								 .D[3]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 3;
+								 .D[4]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 4;
+								 .D[5]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 5;
+								 .D[6]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 6;
+								 .D[7]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 7;
+								 .D[8]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 8;
+								 .D[9]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 9;
+								 .D[10]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 10;
+								 .D[11]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 11;
+								 .D[12]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 12;
+								 .D[13]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 13;
+								 .D[14]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 14;
+								 .D[15]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 15;
+								 .D[16]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 16;
+								 .D[17]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 17;
+								 .D[18]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 18;
+								 .D[19]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 19;
+								 .D[20]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 20;
+								 .D[21]:=TIIB[VLS_EP5 (EP6002-0002)]^COM TxPDO-Map Inputs Channel 1^Data In 21;
+	'}
+	stComIn			AT %I*	:	EL6inData22B;
+	
+	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Ctrl;
+								 .D[0]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 0;
+								 .D[1]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 1;
+								 .D[2]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 2;
+								 .D[3]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 3;
+								 .D[4]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 4;
+								 .D[5]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 5;
+								 .D[6]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 6;
+								 .D[7]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 7;
+								 .D[8]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 8;
+								 .D[9]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 9;
+								 .D[10]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 10;
+								 .D[11]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 11;
+								 .D[12]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 12;
+								 .D[13]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 13;
+								 .D[14]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 14;
+								 .D[15]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 15;
+								 .D[16]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 16;
+								 .D[17]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 17;
+								 .D[18]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 18;
+								 .D[19]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 19;
+								 .D[20]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 20;
+								 .D[21]:=TIIB[VLS_EP5 (EP6002-0002)]^COM RxPDO-Map Outputs Channel 1^Data Out 21;
+	'}
+	stComOut		AT %Q*	:	EL6outData22B;
+	
+	
+	// Define COM Ports/Buffers incl. library Tc2_SerialCom
+	E2_SerialRXBuffer : ComBuffer;
+	E2_SerialTXBuffer : ComBuffer;
+	
+	// Serial Terminal
+	E2_fbSerialLineControl: SerialLineControl;
+
+	//SERIAL IO
+	E2_stComIn		AT %I*	:	EL6inData22B;
+	E2_stComOut		AT %Q*	:	EL6outData22B;
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
