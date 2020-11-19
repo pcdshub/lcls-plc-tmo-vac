@@ -1030,18 +1030,18 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FEE_Device.USVacOk_LO</Name>
-					<Comment>
-						<![CDATA[ upstream vacuum <10E-4, for Ion pump interlock ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_COM_VLS.E2_stComIn</Name>
 					<Comment>
 						<![CDATA[SERIAL IO]]>
 					</Comment>
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.USVacOk_LO</Name>
+					<Comment>
+						<![CDATA[ upstream vacuum <10E-4, for Ion pump interlock ]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
@@ -1696,6 +1696,13 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1858,13 +1865,6 @@
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>

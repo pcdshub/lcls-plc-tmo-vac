@@ -12,6 +12,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// VLS Vacuum Logic
+
+bVLS_Ext_Press := PA2K4_IP1_GCC_01.IG.xAT_VAC;
 PRG_VLS_WINDOW(bExtPress := bVLS_Ext_Press); // run the vacuum program with interlock bit
 
 // VLS Pump
@@ -20,6 +22,8 @@ PRG_VLS_Turbo();
     </Implementation>
     <LineIds Name="PRG_VLS_VACUUM">
       <LineId Id="28" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="38" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="25" Count="0" />

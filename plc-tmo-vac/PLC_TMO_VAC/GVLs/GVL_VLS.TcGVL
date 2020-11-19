@@ -40,7 +40,7 @@ VAR_GLOBAL
 	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 9^Input;
 								 .i_xClsLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 10^Input;
 								.q_xCLS_DO	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 24^Output'}	
-	VGC_W : FB_VRC_NO_FFO_VLS; // Is the Window valve NO 
+	VGC_W : FB_VRC_NO_FFO; // Is the Window valve NO 
 	
 	(* Gauges *)
 	

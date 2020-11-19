@@ -111,9 +111,6 @@
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_Roughing_Pumps_1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_Section_2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -169,7 +166,7 @@
       <Resolution>LCLS General, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 1.4.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 0.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
       <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
