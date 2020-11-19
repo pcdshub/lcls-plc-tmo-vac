@@ -33,6 +33,33 @@ END_VAR]]></Declaration>
       <ST><![CDATA[(*IO Mapping*)
 ACT_IO();
 
+(* On first PLC pass, put valve into vented state, which implies a closed valve *)
+IF xFirstPass THEN
+	iq_stValve.eVGC_State := Vented;
+	iq_stValve.pv_xCLS_SW := FALSE;
+	FFO.i_DevName := i_sDevName;
+//	iq_stValve.sDevName := i_sDevName;
+END_IF
+
+
+///Check valve position
+IF iq_stValve.i_xClsLS AND  iq_stValve.i_xOpnLS THEN
+	iq_stValve.eState:=INVALID;
+ELSIF NOT iq_stValve.i_xOpnLS AND iq_stValve.i_xClsLS AND iq_stValve. THEN 
+	iq_stValve.eState:=CLOSED;
+ELSIF NOT iq_stValve.i_xClsLS AND iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN 
+	iq_stValve.eState:=OPEN_F;
+ELSIF iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN 
+	iq_stValve.eState:=CLOSED;
+ELSIF NOT iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS THEN 
+	iq_stValve.eState:=MOVING;
+ELSE
+	iq_stValve.eState:=INVALID;
+END_IF
+
+
+
+
 (*PMPS*)
 IF NOT(i_xPMPS_OK) THEN
 	ACT_PMPS();
@@ -136,7 +163,12 @@ END_VAR
     </Method>
     <LineIds Name="FB_VRC_NO_FFO_VLS">
       <LineId Id="95" Count="0" />
-      <LineId Id="93" Count="1" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="150" Count="21" />
+      <LineId Id="147" Count="2" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="94" Count="0" />
       <LineId Id="36" Count="29" />
       <LineId Id="9" Count="0" />
     </LineIds>

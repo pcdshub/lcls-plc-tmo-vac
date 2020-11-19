@@ -99,7 +99,7 @@ MR2K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
-				i_nTransitionRootID := 43536
+				i_nTransitionRootID := 47632
 				
 );
 
@@ -116,7 +116,7 @@ MR3K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
-				i_nTransitionRootID := 43552
+				i_nTransitionRootID := 47648
 );
 
 LI3K4_IP1_VWC_01(
@@ -131,7 +131,7 @@ LI3K4_IP1_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
-				i_nTransitionRootID := 43568
+				i_nTransitionRootID := 47664
 );
 
 PC5K4_VWC_01(
@@ -146,7 +146,7 @@ PC5K4_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
-				i_nTransitionRootID := 43584
+				i_nTransitionRootID := 47680
 );
 
 (* MR4K4_KBO_VWC_01(
@@ -161,7 +161,7 @@ PC5K4_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter1,
-				i_nTransitionRootID := 43600
+				i_nTransitionRootID := 47696
 );
 	
 *)

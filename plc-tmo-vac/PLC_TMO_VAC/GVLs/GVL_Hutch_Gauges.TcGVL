@@ -107,7 +107,17 @@ VAR_GLOBAL
 	TMO_ROUGH2_GPI_02 : FB_9XX;	
 	
 // 	Read LAMP devices using ADS interface
+	{attribute 'pytmc' :=' pv: LAMP:PUMPS:AtSpd:reader '}
 	lamp_turbo_running_reader : FB_TBOOL_ADS;
+
+	{attribute 'pytmc' :=' pv: LAMP:ROUGH:VRC01:atOpnLS:reader '}	
+	lamp_rough_vrc01_atOpnLS_reader : FB_TBOOL_ADS;
+
+	{attribute 'pytmc' :=' pv: LAMP:ROUGH:VRC02:atOpnLS:reader '}		
+	lamp_rough_vrc02_atOpnLS_reader : FB_TBOOL_ADS;
+
+	{attribute 'pytmc' :=' pv: LAMP:ROUGH:VRC03:atOpnLS:reader '}	
+	lamp_rough_vrc03_atOpnLS_reader : FB_TBOOL_ADS;
 	
 	{attribute 'pytmc' :=' pv: LAMP:ROUGH:GPI02:reader '}
 	LAMP_ROUGH_GPI02_reader : FB_TGPI_ADS;
