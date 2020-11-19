@@ -37,6 +37,7 @@ VAR
 	TMO_ROUGH1_VRC_02_xExt_OK : BOOL;
 	TMO_ROUGH2_VRC_01_xExt_OK : BOOL;
 	
+	xLAMP_VRC01_VRC02_atOpnLS: BOOL;
 END_VAR
 
 VAR RETAIN
@@ -67,16 +68,22 @@ rTolerance := 0.1;
 xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS ) <= rTolerance ) AND
 				  TMO_ROUGH1_GPI_02.PG.xPRESS_OK AND TMO_ROUGH1_GPI_03.PG.xPRESS_OK;
 				  
-(* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_02 is closed AND one of these two conditions is true: 
-     either both lamp-rough-vrc-01 and lamp-rough-vrc-02 are open or TMO_Rough1_VRC_01 is open*)	
+(* Set Rough1_vrc_01 external interlock OK TRUE, when:
+     xDifPressureOK or TMO_ROUGH1_VRC_02 is closed 
+     AND if LAMP is connected, LAMP_ROUGH_VRC01 and VRC02 are open OR TMO_ROUGH2_VRC01 is open. *)	
 
+xLAMP_VRC01_VRC02_atOpnLS := lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
+                              AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError;
 			  
-TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR xBypassDiffPress_vrc1_vrc2 or TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS ) and ( NOT xIP1_Endstation_isIN or
-                             (lamp_rough_vrc01_atOpnLS_reader.bBool AND lamp_rough_vrc02_atOpnLS_reader.bBool OR TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS));
+TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS )
+                            AND ( lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
+                                   and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS 
+                                 OR xLAMP_VRC01_VRC02_atOpnLS );
+
 
 (* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_01 is closed *)	
 							  
-TMO_ROUGH1_VRC_02_xExt_OK := (xDifPressureOK OR xBypassDiffPress_vrc1_vrc2) OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS; 
+TMO_ROUGH1_VRC_02_xExt_OK := xDifPressureOK  OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS; 
 
 
 TMO_ROUGH1_VRC_01(
@@ -108,11 +115,14 @@ TMO_ROUGH1_VRC_02(
                 fbArbiter := dummy_fbArbiter1);
 
 				
-(* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_02 is closed AND one of these two conditions is true: 
-     either both lamp-rough-vrc-01 and lamp-rough-vrc-02 are open or TMO_Rough1_VRC_01 is open*)	
+(* Set TMO_ROUGH2_VRC01 external interlock OK TRUE, LAMP is connected, and either LAMP_ROUGH_VRC01, VRC02 and VRC03 are open or TMO_ROUGH1_VRC_01 is open*)	
 
-TMO_ROUGH2_VRC_01_xExt_OK := NOT xIP1_Endstation_isIN OR ( lamp_rough_vrc01_atOpnLS_reader.bBool AND lamp_rough_vrc02_atOpnLS_reader.bBool AND lamp_rough_vrc03_atOpnLS_reader.bBool)
-                                                      OR TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS; 				
+TMO_ROUGH2_VRC_01_xExt_OK := xIP1_Endstation_isIN AND 
+                        (  (lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError  
+                                                        AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError
+                                                        AND lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError )                                      
+                          OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError)
+                          ) ; 				
 
 TMO_ROUGH2_VRC_01(
 				i_stUSG := TMO_ROUGH2_GPI_02.PG, 
@@ -323,11 +333,15 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="469" Count="1" />
       <LineId Id="323" Count="9" />
       <LineId Id="334" Count="2" />
-      <LineId Id="695" Count="0" />
+      <LineId Id="758" Count="1" />
       <LineId Id="472" Count="0" />
+      <LineId Id="763" Count="0" />
       <LineId Id="471" Count="0" />
-      <LineId Id="337" Count="0" />
-      <LineId Id="694" Count="0" />
+      <LineId Id="765" Count="0" />
+      <LineId Id="757" Count="0" />
+      <LineId Id="771" Count="1" />
+      <LineId Id="770" Count="0" />
+      <LineId Id="768" Count="0" />
       <LineId Id="696" Count="1" />
       <LineId Id="693" Count="0" />
       <LineId Id="338" Count="1" />
@@ -345,10 +359,11 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="700" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="702" Count="0" />
-      <LineId Id="701" Count="0" />
       <LineId Id="708" Count="0" />
       <LineId Id="707" Count="0" />
-      <LineId Id="711" Count="0" />
+      <LineId Id="775" Count="0" />
+      <LineId Id="760" Count="1" />
+      <LineId Id="773" Count="1" />
       <LineId Id="111" Count="8" />
       <LineId Id="127" Count="1" />
       <LineId Id="110" Count="0" />

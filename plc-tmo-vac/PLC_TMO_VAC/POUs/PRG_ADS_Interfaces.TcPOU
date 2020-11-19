@@ -29,21 +29,21 @@ lamp_turbo_running_reader(
 lamp_rough_vrc01_atOpnLS_reader(
 	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
 	nPort := 851, // ADS port of the PLC reading from this PLC
-	sVarName := 'Main.b_vrc01_atOpnLS', // Full name of the FB containing the gauge to be read
+	sVarName := 'GVL_Devices.LAMP_ROUGH_VRC_01.i_xOpnLS', // Full name of the FB containing the gauge to be read
 	iWatchdog := i_iWatchdog // UDINT required for watchdog functionality
 );
 
 lamp_rough_vrc02_atOpnLS_reader(
 	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
 	nPort := 851, // ADS port of the PLC reading from this PLC
-	sVarName := 'Main.b_vrc02_atOpnLS', // Full name of the FB containing the gauge to be read
+	sVarName := 'GVL_Devices.LAMP_ROUGH_VRC_02.i_xOpnLS', // Full name of the FB containing the gauge to be read
 	iWatchdog := i_iWatchdog // UDINT required for watchdog functionality
 );
 
 lamp_rough_vrc03_atOpnLS_reader(
 	sNetId := '172.21.132.34.1.1', // AMS NET ID of PLC being read from
 	nPort := 851, // ADS port of the PLC reading from this PLC
-	sVarName := 'Main.b_vrc03_atOpnLS', // Full name of the FB containing the gauge to be read
+	sVarName := 'GVL_Devices.LAMP_ROUGH_VRC_03.i_xOpnLS', // Full name of the FB containing the gauge to be read
 	iWatchdog := i_iWatchdog // UDINT required for watchdog functionality
 );
 

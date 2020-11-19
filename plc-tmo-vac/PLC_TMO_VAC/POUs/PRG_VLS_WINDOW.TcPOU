@@ -110,7 +110,7 @@ VGC_1(
 	i_xReset:= , 
 	i_xIsAperture:= FALSE, 
 	i_sDevName:= , 
-	i_nTransitionRootID:=  1000,
+	i_nTransitionRootID:= 47744,
 	iq_stValve=> , 
 	xMPS_OK=> , 
 	io_fbFFHWO:=g_FastFaultOutput2 , 
@@ -126,7 +126,7 @@ VGC_W(
 	i_xPMPS_OK:= , 
 	i_xIsAperture:= TRUE , 
 	i_sDevName:= , 
-	i_nTransitionRootID:= 2000);
+	i_nTransitionRootID:= 47760);
 	
 	
 //VGC_W(i_xExtILK_OK:= , 
