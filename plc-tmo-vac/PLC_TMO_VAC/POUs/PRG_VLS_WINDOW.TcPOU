@@ -108,7 +108,7 @@ VGC_1(
 	i_xExt_OK:= , 
 	i_xOverrideMode:= , 
 	i_xReset:= , 
-	i_xIsAperture:= FALSE, 
+	i_xIsAperture:= TRUE, 
 	i_sDevName:= , 
 	i_nTransitionRootID:= 47744,
 	iq_stValve=> , 
