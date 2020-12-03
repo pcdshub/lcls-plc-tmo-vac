@@ -8,13 +8,17 @@ VAR
 	
 	state			: E_STATES;
 
-	bOverride		: BOOL;
-	bSetup			: BOOL;
-	
+
 
 END_VAR
 VAR_INPUT
 	bExtPress		: BOOL := FALSE; // Input for external interlock with hutch vacuum system
+
+	bOverride		: BOOL;
+
+	bSetup			: BOOL;
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -25,6 +29,7 @@ IF xFirstPass THEN
 	bOverride := FALSE;
 	bSetup := FALSE;
 END_IF
+
 
 
 //STATE ACTIONS
@@ -61,7 +66,7 @@ E_STATES.NOT_SAFE: // System is not allowed to actuate, i.e all interlocks are i
 	ELSIF (VGC_W.M_IsOpen()) THEN VGC_1.M_Set_OPN_SW(FALSE);
 	END_IF
 	
- 
+// bOverride := TRUE;
  E_STATES.OVERRIDE: 
 	// Override Mode is enabled for all valves
  	VGC_1.i_xOverrideMode :=VGC_W.i_xOverrideMode := TRUE;
@@ -136,31 +141,5 @@ VGC_W(
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_VLS_WINDOW">
-      <LineId Id="3" Count="21" />
-      <LineId Id="187" Count="0" />
-      <LineId Id="25" Count="5" />
-      <LineId Id="127" Count="0" />
-      <LineId Id="126" Count="0" />
-      <LineId Id="31" Count="6" />
-      <LineId Id="39" Count="20" />
-      <LineId Id="63" Count="8" />
-      <LineId Id="130" Count="0" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="76" Count="5" />
-      <LineId Id="287" Count="0" />
-      <LineId Id="285" Count="1" />
-      <LineId Id="284" Count="0" />
-      <LineId Id="170" Count="0" />
-      <LineId Id="172" Count="14" />
-      <LineId Id="171" Count="0" />
-      <LineId Id="83" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="219" Count="8" />
-      <LineId Id="95" Count="0" />
-      <LineId Id="229" Count="1" />
-      <LineId Id="96" Count="4" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
