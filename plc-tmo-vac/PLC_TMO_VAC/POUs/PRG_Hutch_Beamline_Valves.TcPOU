@@ -168,5 +168,9 @@ PC5K4_VWC_01(
 							   
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_Hutch_Beamline_Valves">
+      <LineId Id="3" Count="132" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

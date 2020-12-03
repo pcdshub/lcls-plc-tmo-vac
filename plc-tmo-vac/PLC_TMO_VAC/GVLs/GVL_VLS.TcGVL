@@ -5,9 +5,13 @@
 VAR_GLOBAL
 
 	(* OverrideMode *)
-	{attribute 'pytmc' := 'pv: VLS:VAC:OVRDON'}
+	{attribute 'pytmc' := 'pv: VLS:VAC:OVRD_MODE'}
 	xSystemOverrideMode_VLS	: BOOL := FALSE; 	
-
+	
+		
+	{attribute 'pytmc' := ' pv: VLS:VAC:SETUP_MODE'}
+	SetupMode_VLS	: BOOL := FALSE; 
+	
 	(* Pfeiffer Turbo Pumps TM700 *)
 	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[VLS_EP2 (EP2338-0001)]^Channel 1^Input;
 								 .i_xFaultNC		:=	TIIB[VLS_EP2 (EP2338-0001)]^Channel 2^Input;
