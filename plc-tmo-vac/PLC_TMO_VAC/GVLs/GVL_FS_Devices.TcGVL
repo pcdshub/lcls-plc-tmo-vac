@@ -54,7 +54,9 @@
 								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed;
 								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK;
 								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK;
-								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State
+								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State;
+								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO;
+								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed
 	'}
 	
 	MR3K4_KBO_VFS_Interface : FB_VFS_Interface;	
@@ -73,7 +75,7 @@
 //	MR3K4_KBO_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
 	
 	{attribute 'pytmc' := '
-		pv: MR3K4:KBO:VFS_1
+		pv: MR4K4:KBO:VFS_1
 	'}
 	
 	{attribute 'TcLinkTo' := 	'.q_xPress_OK		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK;
