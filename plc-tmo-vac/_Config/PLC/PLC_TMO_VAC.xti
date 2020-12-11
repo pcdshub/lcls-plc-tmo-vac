@@ -1023,6 +1023,78 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
 					<Comment>
 						<![CDATA[ upstream vacuum <10E-6, for mirror VGC interlock ]]>
@@ -1242,114 +1314,6 @@
 						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.MR2K4_KBO_GPI_01.i_iPRESS_R</Name>
@@ -1974,6 +1938,42 @@
 					</Comment>
 					<Type>INT</Type>
 				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2119,85 +2119,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_COM_VLS.E2_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.iq_stValve.xCLS_SW</Name>
 					<Comment>
 						<![CDATA[external open signal e.g epics]]>
@@ -2306,57 +2227,82 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.iq_stValve.xCLS_SW</Name>
+					<Name>GVL_COM_VLS.E2_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[external open signal e.g epics]]>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK</Name>
+					<Name>GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[outputs]]>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW</Name>
+					<Name>GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[external open signal e.g epics]]>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset</Name>
+					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode</Name>
+					<Name>GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO</Name>
 					<Comment>
-						<![CDATA[To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces]]>
+						<![CDATA[ Enable High Voltage when TRUE]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO</Name>
+					<Name>GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO</Name>
 					<Comment>
-						<![CDATA[VETO Devices]]>
+						<![CDATA[ Enable High Voltage when TRUE]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed</Name>
+					<Name>GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2696,6 +2642,60 @@
 					<Comment>
 						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.iq_stValve.xCLS_SW</Name>
+					<Comment>
+						<![CDATA[external open signal e.g epics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK</Name>
+					<Comment>
+						<![CDATA[outputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW</Name>
+					<Comment>
+						<![CDATA[external open signal e.g epics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode</Name>
+					<Comment>
+						<![CDATA[To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -3308,6 +3308,8 @@
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
@@ -3364,6 +3366,8 @@
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>

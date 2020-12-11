@@ -188,7 +188,7 @@ END_IF
 (* check if PA1K4_IP1_PTM_03 is Atspd, if it is starting, set up a timer for 30s to *)
 
 xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 					
@@ -206,7 +206,7 @@ END_IF
 
 
 xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_02.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
@@ -222,7 +222,7 @@ ELSE
 END_IF
 
 PA1K4_IP1_PTM_03_xExtIlkOK  := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_03.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
@@ -253,11 +253,13 @@ PA1K4_IP1_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_01_02_03[3],
 (* Leybold turbo pumps on Granite 1 *)
 
 IM4K4_PPM_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := IM4K4_PPM_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
 IM4K4_PPM_PTM_01(i_xExtIlkOK := IM4K4_PPM_PTM_01_xExtIlkOK, iq_stPTM => );
+
+
 
 (* Instanitate the Function block for serial communication with TD20 *)
 IM4K4_PPM_PTM_01_COM(SerialRXBuffer := K4S2_02_E17_SerialRXBuffer, 
@@ -269,7 +271,7 @@ IM4K4_PPM_PTM_01.M_Serial_IO(IM4K4_PPM_PTM_01_COM.astTD20Status);
 
 
 LI1K4_IP1_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := LI1K4_IP1_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 			
@@ -446,6 +448,8 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="237" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="39" Count="0" />
+      <LineId Id="818" Count="0" />
+      <LineId Id="817" Count="0" />
       <LineId Id="401" Count="5" />
       <LineId Id="246" Count="0" />
       <LineId Id="399" Count="1" />

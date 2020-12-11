@@ -141,5 +141,9 @@ VGC_W(
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_VLS_WINDOW">
+      <LineId Id="3" Count="116" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
