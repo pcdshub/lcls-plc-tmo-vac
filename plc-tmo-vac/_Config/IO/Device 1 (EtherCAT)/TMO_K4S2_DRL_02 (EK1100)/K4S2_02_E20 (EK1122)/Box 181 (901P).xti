@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+	<Box Id="181" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>114</ImageId>
+		<EtherCAT SlaveType="2" PdiType="#x0e05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x0000050b" ProductCode="#x00001838" RevisionNo="#x00000002" InfoDataAddr="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="901P" Desc="901P">
+			<SyncMan>001080002600010001000000000000008000001026010000</SyncMan>
+			<SyncMan>001480002200010002000000000000008000001422010000</SyncMan>
+			<SyncMan>001600006400000003000000000000000000001664010000</SyncMan>
+			<SyncMan>001a15002000010004000000000000000000001a20010000</SyncMan>
+			<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000001a00010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<BootStrapData>00100c0400180c04</BootStrapData>
+			<Pdo Name="TXPDO Combined" Index="#x1a00" Flags="#x0010" SyncMan="3">
+				<Entry Name="Combination Gauge Reading Valid" Index="#xf640" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Combination Gauge Overrange Exceeded" Index="#xf640" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Combination Gauge Underrange Exceeded" Index="#xf640" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="---">
+					<Type>BIT5</Type>
+				</Entry>
+				<Entry Name="Combination Gauge Active Sensor Number" Index="#xf640" Sub="#x05">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Combination Gauge Active Value" Index="#xf640" Sub="#x06">
+					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="Trip Point Output All Instance" Index="#xf641" Sub="#x07">
+					<Type>UDINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="TXPDO User Combined" Index="#x1a01" Flags="#x0000"/>
+			<Pdo Name="TXPDO Piezo" Index="#x1a02" Flags="#x0010" SyncMan="3">
+				<Entry Name="Reading Valid" Index="#x6010" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Overrange Exceeded" Index="#x6010" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Underrange Exceeded" Index="#x6010" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="---">
+					<Type>BIT5</Type>
+				</Entry>
+				<Entry Name="Sensor Value" Index="#x6010" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="TXPDO User Piezo" Index="#x1a03" Flags="#x0000"/>
+			<Pdo Name="TXPDO Heat" Index="#x1a04" Flags="#x0010" SyncMan="3">
+				<Entry Name="Reading Valid" Index="#x6020" Sub="#x01">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Overrange Exceeded" Index="#x6020" Sub="#x02">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Underrange Exceeded" Index="#x6020" Sub="#x03">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="---">
+					<Type>BIT5</Type>
+				</Entry>
+				<Entry Name="Sensor Value" Index="#x6020" Sub="#x05">
+					<Type>REAL</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="TXPDO User Heat" Index="#x1a05" Flags="#x0000"/>
+			<Pdo Name="RxPDO  Combined" Index="#x1600" InOut="1" Flags="#x0000"/>
+			<Pdo Name="RXPDO User Combined" Index="#x1601" InOut="1" Flags="#x0000"/>
+			<Pdo Name="RxPDO  Piezo" Index="#x1602" InOut="1" Flags="#x0000"/>
+			<Pdo Name="RXPDO User Piezo" Index="#x1603" InOut="1" Flags="#x0000"/>
+			<Pdo Name="RxPDO  Heat" Index="#x1604" InOut="1" Flags="#x0000"/>
+			<Pdo Name="RXPDO User Heat" Index="#x1605" InOut="1" Flags="#x0000"/>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

@@ -67,8 +67,11 @@
 		<Box File="K4S2_02_E20 (EL2004).xti" Id="68">
 			<EtherCAT PortABoxInfo="#x0100005d"/>
 		</Box>
-		<Box File="Term 94 (EL9011).xti" Id="94">
+		<Box File="K4S2_02_E20 (EK1122).xti" Id="178">
 			<EtherCAT PortABoxInfo="#x01000044"/>
+		</Box>
+		<Box File="Term 94 (EL9011).xti" Id="94">
+			<EtherCAT PortABoxInfo="#x020000b2"/>
 		</Box>
 	</Box>
 </TcSmItem>
