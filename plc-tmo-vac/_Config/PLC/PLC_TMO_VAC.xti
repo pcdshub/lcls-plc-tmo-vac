@@ -2619,34 +2619,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2697,6 +2669,34 @@
 						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
