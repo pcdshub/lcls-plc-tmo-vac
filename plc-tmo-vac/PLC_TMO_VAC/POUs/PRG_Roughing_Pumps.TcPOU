@@ -35,7 +35,9 @@ VAR
 	xDifPressureOK : BOOL := FALSE;
 	TMO_ROUGH1_VRC_01_xExt_OK : BOOL;
 	TMO_ROUGH1_VRC_02_xExt_OK : BOOL;
+	TMO_ROUGH2_VRC_01_xExt_OK : BOOL;
 	
+	xLAMP_VRC01_VRC02_atOpnLS: BOOL;
 END_VAR
 
 VAR RETAIN
@@ -66,11 +68,22 @@ rTolerance := 0.1;
 xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS ) <= rTolerance ) AND
 				  TMO_ROUGH1_GPI_02.PG.xPRESS_OK AND TMO_ROUGH1_GPI_03.PG.xPRESS_OK;
 				  
-(* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_02 is closed *)	
+(* Set Rough1_vrc_01 external interlock OK TRUE, when:
+     xDifPressureOK or TMO_ROUGH1_VRC_02 is closed 
+     AND if LAMP is connected, LAMP_ROUGH_VRC01 and VRC02 are open OR TMO_ROUGH2_VRC01 is open. *)	
 
+xLAMP_VRC01_VRC02_atOpnLS := lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
+                              AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError;
 			  
-TMO_ROUGH1_VRC_01_xExt_OK := (xDifPressureOK OR xBypassDiffPress_vrc1_vrc2) OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS; 
-TMO_ROUGH1_VRC_02_xExt_OK := (xDifPressureOK OR xBypassDiffPress_vrc1_vrc2) OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS; 
+TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS )
+                            AND ( lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
+                                   and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS 
+                                 OR xLAMP_VRC01_VRC02_atOpnLS );
+
+
+(* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_01 is closed *)	
+							  
+TMO_ROUGH1_VRC_02_xExt_OK := xDifPressureOK  OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS; 
 
 
 TMO_ROUGH1_VRC_01(
@@ -87,6 +100,8 @@ TMO_ROUGH1_VRC_01(
 );
 
 
+
+
 TMO_ROUGH1_VRC_02(
 				i_stUSG := TMO_ROUGH1_GPI_03.PG, 
 				i_stDSG:= TMO_ROUGH1_GPI_01.PG, 
@@ -99,6 +114,15 @@ TMO_ROUGH1_VRC_02(
 				io_fbFFHWO :=dummy_FFFO,
                 fbArbiter := dummy_fbArbiter1);
 
+				
+(* Set TMO_ROUGH2_VRC01 external interlock OK TRUE, LAMP is connected, and either LAMP_ROUGH_VRC01, VRC02 and VRC03 are open or TMO_ROUGH1_VRC_01 is open*)	
+
+TMO_ROUGH2_VRC_01_xExt_OK := xIP1_Endstation_isIN AND 
+                        (  (lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError  
+                                                        AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError
+                                                        AND lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError )                                      
+                          OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError)
+                          ) ; 				
 
 TMO_ROUGH2_VRC_01(
 				i_stUSG := TMO_ROUGH2_GPI_02.PG, 
@@ -106,11 +130,14 @@ TMO_ROUGH2_VRC_01(
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE, 
-				i_xExt_OK := TRUE, 
+				i_xExt_OK := TMO_ROUGH2_VRC_01_xExt_OK, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := false,
 				io_fbFFHWO :=dummy_FFFO,
                 fbArbiter := dummy_fbArbiter1);
+
+
+(*  logic below is removed since TMO wants to start pumping down Granite 1 and LAMP using roughing line 1 only 
 
 (*  If endstation is in, For TMO_ROUGH1_VRC_01 & TMO_ROUGH2_VRC_01 if one closed, wait for 10s, close the other *)
 
@@ -124,6 +151,8 @@ IF xIP1_Endstation_isIN Then
 	TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
 	END_IF
 END_IF
+*)
+
 
 
 (*IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS OR TMO_ROUGH2_VRC_01.iq_stValve.i_xClsLS) Then
@@ -135,6 +164,7 @@ END_IF
 END_IF
 *)
 
+(*
 r_trig_r1(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW);
 r_trig_r2(CLK:= TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
 	
@@ -148,7 +178,7 @@ IF xIP1_Endstation_isIN  Then
 	
 END_IF
 
-
+*)
 
 				
 				
@@ -158,7 +188,7 @@ END_IF
 (* check if PA1K4_IP1_PTM_03 is Atspd, if it is starting, set up a timer for 30s to *)
 
 xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 					
@@ -176,7 +206,7 @@ END_IF
 
 
 xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_02.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
@@ -192,7 +222,7 @@ ELSE
 END_IF
 
 PA1K4_IP1_PTM_03_xExtIlkOK  := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_03.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
@@ -223,11 +253,13 @@ PA1K4_IP1_PTM_03.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_01_02_03[3],
 (* Leybold turbo pumps on Granite 1 *)
 
 IM4K4_PPM_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := IM4K4_PPM_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 
 IM4K4_PPM_PTM_01(i_xExtIlkOK := IM4K4_PPM_PTM_01_xExtIlkOK, iq_stPTM => );
+
+
 
 (* Instanitate the Function block for serial communication with TD20 *)
 IM4K4_PPM_PTM_01_COM(SerialRXBuffer := K4S2_02_E17_SerialRXBuffer, 
@@ -239,7 +271,7 @@ IM4K4_PPM_PTM_01.M_Serial_IO(IM4K4_PPM_PTM_01_COM.astTD20Status);
 
 
 LI1K4_IP1_PTM_01_xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := LI1K4_IP1_PTM_01.iq_stPTM, 
-			i_stISG := PA1K4_IP1_GPI_01.PG, 
+			i_stISG := TMO_ROUGH1_GPI_02.PG, 
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 			
@@ -303,24 +335,43 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="469" Count="1" />
       <LineId Id="323" Count="9" />
       <LineId Id="334" Count="2" />
+      <LineId Id="758" Count="1" />
       <LineId Id="472" Count="0" />
+      <LineId Id="763" Count="0" />
       <LineId Id="471" Count="0" />
-      <LineId Id="337" Count="2" />
+      <LineId Id="765" Count="0" />
+      <LineId Id="757" Count="0" />
+      <LineId Id="771" Count="1" />
+      <LineId Id="770" Count="0" />
+      <LineId Id="768" Count="0" />
+      <LineId Id="696" Count="1" />
+      <LineId Id="693" Count="0" />
+      <LineId Id="338" Count="1" />
       <LineId Id="341" Count="0" />
       <LineId Id="82" Count="7" />
       <LineId Id="129" Count="1" />
       <LineId Id="98" Count="0" />
       <LineId Id="80" Count="0" />
       <LineId Id="79" Count="0" />
+      <LineId Id="703" Count="1" />
       <LineId Id="93" Count="0" />
       <LineId Id="99" Count="7" />
       <LineId Id="125" Count="1" />
       <LineId Id="92" Count="0" />
+      <LineId Id="700" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="702" Count="0" />
+      <LineId Id="708" Count="0" />
+      <LineId Id="707" Count="0" />
+      <LineId Id="775" Count="0" />
+      <LineId Id="760" Count="1" />
+      <LineId Id="773" Count="1" />
       <LineId Id="111" Count="8" />
       <LineId Id="127" Count="1" />
       <LineId Id="110" Count="0" />
+      <LineId Id="713" Count="1" />
       <LineId Id="109" Count="0" />
+      <LineId Id="715" Count="0" />
       <LineId Id="473" Count="0" />
       <LineId Id="611" Count="0" />
       <LineId Id="476" Count="0" />
@@ -333,6 +384,8 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="600" Count="0" />
       <LineId Id="490" Count="0" />
       <LineId Id="495" Count="0" />
+      <LineId Id="652" Count="0" />
+      <LineId Id="651" Count="0" />
       <LineId Id="507" Count="1" />
       <LineId Id="512" Count="1" />
       <LineId Id="509" Count="1" />
@@ -340,7 +393,9 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="506" Count="0" />
       <LineId Id="505" Count="0" />
       <LineId Id="610" Count="0" />
-      <LineId Id="604" Count="1" />
+      <LineId Id="604" Count="0" />
+      <LineId Id="712" Count="0" />
+      <LineId Id="605" Count="0" />
       <LineId Id="516" Count="0" />
       <LineId Id="498" Count="0" />
       <LineId Id="555" Count="0" />
@@ -393,6 +448,8 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="237" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="39" Count="0" />
+      <LineId Id="818" Count="0" />
+      <LineId Id="817" Count="0" />
       <LineId Id="401" Count="5" />
       <LineId Id="246" Count="0" />
       <LineId Id="399" Count="1" />

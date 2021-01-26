@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_VLS" Id="{ca28b02e-58d0-4fe8-b997-47c7a95893c6}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+
+	(* OverrideMode *)
+	{attribute 'pytmc' := 'pv: VLS:VAC:OVRD_MODE'}
+	xSystemOverrideMode_VLS	: BOOL := FALSE; 	
+	
+		
+	{attribute 'pytmc' := ' pv: VLS:VAC:SETUP_MODE'}
+	SetupMode_VLS	: BOOL := FALSE; 
+	
+	(* Pfeiffer Turbo Pumps TM700 *)
+	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[VLS_EP2 (EP2338-0001)]^Channel 1^Input;
+								 .i_xFaultNC		:=	TIIB[VLS_EP2 (EP2338-0001)]^Channel 2^Input;
+								 .q_RunDO			:=	TIIB[VLS_EP1 (EP2624-0002)]^Channel 3^Output;
+			 
+	'}
+	{attribute 'pytmc' := '
+		pv: VLS:PTM:01
+		io: io
+	'}
+    PTM_01 : FB_PTM_Pfeiffer;
+	PTM_01_xExtIlkOK : Bool;
+
+	// They share the same serial port
+	st_Pfeiffer_CTRL 	: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK 	: ARRAY[1..20] OF ST_PfeifferStatus;
+	
+	fb_PfeifferCom : FB_PFEIFFER_COM;
+	
+	
+	(* Valves *)
+	
+	{attribute 'pytmc' :=' pv: VLS:VGC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 6^Input;
+								 .i_xClsLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 7^Input;
+								.q_xOPN_DO	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 21^Output'}
+	VGC_1 : FB_VGC;
+	
+	{attribute 'pytmc' :=' pv: VLS:VWC:01 '}
+	{attribute 'TcLinkTo' := 	'.i_xOpnLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 9^Input;
+								 .i_xClsLS	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 10^Input;
+								.q_xCLS_DO	:=	TIIB[VLS_EP3 (EP2339-0021)]^Channel 24^Output'}	
+	VGC_W : FB_VRC_NO_FFO; // Is the Window valve NO 
+	
+	(* Gauges *)
+	
+	{attribute 'pytmc' :=' pv: VLS:US:GPI '}
+	US_GPI	: FB_MKS275;
+
+	{attribute 'pytmc' :=' pv: VLS:US:GCC '}
+	US_GCC	: FB_MKS500;
+
+	{attribute 'pytmc' :=' pv: VLS:DS:GPI '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[VLS_EP4 (EP3174-0002)]^AI Standard Channel 1^Value		'}
+	DS_GPI	: FB_MKS275;
+
+	{attribute 'pytmc' :=' pv: VLS:DS:GCC '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[VLS_EP4 (EP3174-0002)]^AI Standard Channel 2^Value;
+								 .q_xHV_DIS		:= 	TIIB[VLS_EP1 (EP2624-0002)]^Channel 1^Output	'}		
+	DS_GCC	: FB_MKS500;
+	
+	{attribute 'pytmc' :=' pv: VLS:ROUGH:GPI '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[VLS_EP4 (EP3174-0002)]^AI Standard Channel 3^Value	'}	
+	ROUGH_GPI : FB_9XX;
+	
+	
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
