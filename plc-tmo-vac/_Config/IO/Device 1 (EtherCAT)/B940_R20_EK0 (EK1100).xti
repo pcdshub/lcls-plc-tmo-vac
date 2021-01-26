@@ -22,8 +22,11 @@
 		<Box File="R20_EK0_E5_MKS937B (EL1124).xti" Id="45">
 			<EtherCAT PortABoxInfo="#x0100002c"/>
 		</Box>
-		<Box File="R20_EK0_E6_MKS937B (EK1110).xti" Id="46">
+		<Box File="R20_EK0_E5 (EL6695).xti" Id="135">
 			<EtherCAT PortABoxInfo="#x0100002d"/>
+		</Box>
+		<Box File="R20_EK0_E6_MKS937B (EK1110).xti" Id="46">
+			<EtherCAT PortABoxInfo="#x01000087"/>
 		</Box>
 	</Box>
 </TcSmItem>

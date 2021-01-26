@@ -25,8 +25,11 @@
 		<Box File="K4S8_01_E6 (EL2004).xti" Id="88">
 			<EtherCAT PortABoxInfo="#x01000057"/>
 		</Box>
-		<Box File="Term 92 (EL9011).xti" Id="92">
+		<Box File="K4S8_01_E6 (EK1122).xti" Id="214">
 			<EtherCAT PortABoxInfo="#x01000058"/>
+		</Box>
+		<Box File="Term 92 (EL9011).xti" Id="92">
+			<EtherCAT PortABoxInfo="#x020000d6"/>
 		</Box>
 	</Box>
 </TcSmItem>
