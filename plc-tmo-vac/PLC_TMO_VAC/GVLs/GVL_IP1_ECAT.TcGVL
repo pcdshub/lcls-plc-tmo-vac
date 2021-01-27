@@ -27,7 +27,7 @@ VAR_GLOBAL
    ROUGH2_VRC_01_AtOpnLS AT %Q* : BOOL := FALSE;
    
    	//EL6692 Input 
-   {attribute 'pytmc' :=' pv: IP1_PLC_NAME '}
+   {attribute 'pytmc' :=' pv: IP1:PLC:NAME '}
    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^ENDSTATION_PLC_NAME			 
 	'}
    IP1_PLC_NAME AT %I*  : STRING(8);
