@@ -1023,13 +1023,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_COM_VLS.E2_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
 					<Comment>
 						<![CDATA[ upstream vacuum <10E-6, for mirror VGC interlock ]]>
@@ -1042,6 +1035,13 @@
 						<![CDATA[ upstream vacuum <10E-4, for Ion pump interlock ]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM_VLS.E2_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
@@ -1682,13 +1682,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1699,6 +1692,13 @@
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC</Name>
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1868,36 +1868,24 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.IP1_PLC_NAME</Name>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR</Name>
+					<Comment>
+						<![CDATA[ These variables are for IP1 EtherCat bridge 
+EL6692 TxPDO state]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.IP1_TURBO_FAULT</Name>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.IP1_Main_xAT_VAC</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.IP1_Main_xPRESS_OK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.IP1_Main_rPRESS</Name>
-					<Type>REAL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_VLS.PTM_01.i_xAtSpd</Name>
@@ -2005,6 +1993,29 @@
 						<![CDATA[ input Pressure // Link to analog Input]]>
 					</Comment>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Input ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -2549,14 +2560,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO</Name>
 					<Comment>
 						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
@@ -2695,12 +2698,12 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.My_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[ These variables are for IP1 PLC 
-PLC Name ]]>
-					</Comment>
-					<Type>STRING(8)</Type>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_VLS.PTM_01.q_RunDO</Name>
@@ -2746,6 +2749,13 @@ PLC Name ]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Output ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -2767,6 +2777,43 @@ PLC Name ]]>
 				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^Term 129 (EK1122)^Box 130 (EL6692)">
 						<Link VarA="GVL_Variables.PLC_NAME" TypeA="STRING(8)" InOutA="1" GuidA="{18071995-0000-0000-0000-000100000008}" VarB="IO Outputs^HUTCH_PLC_NAME" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-01-27T10:55:08">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+						<Link VarA="GVL_Variables.My_PLC_NAME" TypeA="STRING(8)" InOutA="1" GuidA="{18071995-0000-0000-0000-000100000008}" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.ROUGH1_VRC_01_AtOpnLS" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.ROUGH2_VRC_01_AtOpnLS" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+						<Link VarA="GVL_Variables.IP1_Main_rPRESS" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="IO Inputs^IP1_MAIN_rPRESS" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_Main_xAT_VAC" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_MAIN_xAT_VAC" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_Main_xPRESS_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_PLC_NAME" TypeA="STRING(8)" InOutA="0" GuidA="{18071995-0000-0000-0000-000100000008}" VarB="IO Inputs^ENDSTATION_PLC_NAME" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_ROUGH_VRC_01_AtOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_ROUGH_VRC_02_AtOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_ROUGH_VRC_03_AtOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Variables.IP1_TURBO_FAULT" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_TURBO_FAULT" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-01-27T11:29:23">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+						<Link VarA="GVL_IP1_ECAT.IP1_TURBO_FAULT" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-01-27T12:11:29">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+						<Link VarA="GVL_IP1_ECAT.IP1_Main_rPRESS" TypeA="REAL" InOutA="0" GuidA="{18071995-0000-0000-0000-00000000000D}" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_IP1_ECAT.IP1_Main_xAT_VAC" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_IP1_ECAT.IP1_Main_xPRESS_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -2794,6 +2841,20 @@ PLC Name ]]>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd" VarB="IO Inputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
 				<Link VarA="FSVTask Outputs^GVL_FSV_PMPS.g_FastFaultOutput3.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
@@ -2832,19 +2893,6 @@ PLC Name ]]>
 				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^Term 129 (EK1122)^Box 130 (EL6692)">
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS"/>
-				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_TURBO_FAULT" VarB="IO Inputs^IP1_TURBO_FAULT"/>
-				<Link VarA="PlcTask Outputs^GVL_Variables.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Variables.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Variables.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>

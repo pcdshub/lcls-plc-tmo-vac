@@ -49,7 +49,7 @@
 		<Box File="CX0_E12 (EL6001).xti" Id="36">
 			<EtherCAT PortABoxInfo="#x01000023"/>
 		</Box>
-		<Box File="Term 129 (EK1122).xti" Id="129">
+		<Box File="CX0_E13 (EK1122).xti" Id="129">
 			<EtherCAT PortABoxInfo="#x01000024"/>
 		</Box>
 		<Box File="PMPS_PRE.xti" Id="38">

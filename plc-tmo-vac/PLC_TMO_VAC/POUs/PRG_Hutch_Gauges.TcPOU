@@ -62,6 +62,12 @@ END_VAR
 	MR4K4_KBO_GCC_01.M_SetBits(30518);	
 	MR4K4_KBO_GCC_01(PG:=MR4K4_KBO_GPI_01.PG , IG=> );
 	
+	
+//Read IP1 main chamber pressure
+
+  IP1_MAIN_GAUGE( VG=> );
+ 
+	
 
 (* Auto switch on cold cathode gauges if interlock permits *)
 
@@ -122,7 +128,13 @@ END_IF
       <LineId Id="58" Count="0" />
       <LineId Id="28" Count="0" />
       <LineId Id="56" Count="1" />
-      <LineId Id="29" Count="1" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="107" Count="1" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="30" Count="0" />
       <LineId Id="75" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="85" Count="0" />

@@ -67,7 +67,7 @@ xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunn
                ton_PA1K4_IP1_PTM_03_notRunning.Q OR ton_IM4K4_PPM_PTM_01_notRunning.Q OR
 			   ton_LI1K4_IP1_PTM_01_notRunning.Q OR ton_LI3K4_IP1_OUT_PTM_01_notRunning.Q OR
 				ton_TM1K4_PTM_01_notRunning.Q OR ton_IM5K4_PPM_PTM_01_notRunning.Q 
-				OR NOT lamp_turbo_running_reader.bBool;
+				OR NOT IP1_TURBOS_ALL_AtSpd;
 
 (* check beamline valve OPEN permit *)	
 (*xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
@@ -120,7 +120,7 @@ MR3K4_KBO_VWC_01(
 );
 
 LI3K4_IP1_VWC_01(
-				i_stUSG := LAMP_C2_GCC01_reader.IG, 
+				i_stUSG := IP1_MAIN_GAUGE.VG, 
 				i_stDSG:= IM5K4_PPM_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,

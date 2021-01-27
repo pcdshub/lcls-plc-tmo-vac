@@ -28,58 +28,7 @@ VAR_GLOBAL
 	{attribute 'pytmc' := 'pv: TMO:VRC:DIFPRESS:BYPASS'}
 	xBypassDiffPress_vrc1_vrc2 : BOOL; 	
 	
-	{attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:IN'}
-	xIP1_Endstation_isIN : BOOL;
-	
-	(* These variables are for IP1 PLC *)
-	//PLC Name 
-		
 
-
-  {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Outputs^HUTCH_PLC_NAME			 
-	'}
-   My_PLC_NAME	AT %Q*	: STRING(8) := 'TMO';
-   
-    {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS			 
-	'}  
-   ROUGH1_VRC_01_AtOpnLS AT %Q* : BOOL := FALSE;
-   
-    {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS			 
-	'} 
-   ROUGH2_VRC_01_AtOpnLS AT %Q* : BOOL := FALSE;
-   
-   {attribute 'pytmc' :=' pv: IP1_PLC_NAME '}
-   {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^ENDSTATION_PLC_NAME			 
-	'}
-   IP1_PLC_NAME AT %I*  : STRING(8);
-   
-   {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS			 
-	'} 
-   IP1_ROUGH_VRC_01_AtOpnLS AT %I* : BOOL;
-   
-     {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS			 
-	'} 
-   IP1_ROUGH_VRC_02_AtOpnLS AT %I* : BOOL;
-   
-     {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS			 
-	'} 
-   IP1_ROUGH_VRC_03_AtOpnLS AT %I* : BOOL;
-   
-     {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_TURBO_FAULT			 
-	'} 
-   IP1_TURBO_FAULT AT %I* : BOOL;
-   
-     {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_MAIN_xAT_VAC			 
-	'} 
-   IP1_Main_xAT_VAC AT %I* : BOOL;
-   
-        {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_MAIN_xPRESS_OK			 
-	'} 
-   IP1_Main_xPRESS_OK AT %I* : BOOL;
-   
-        {attribute 'TcLinkTo' := 	'TIIB[Term 129 (EK1122)]^Box 130 (EL6692)^IO Inputs^IP1_MAIN_rPRESS			 
-	'} 
-   IP1_Main_rPRESS AT %I* : REAL;
 	
 END_VAR]]></Declaration>
   </GVL>

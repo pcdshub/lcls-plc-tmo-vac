@@ -111,6 +111,8 @@
 		<Box File="VLS_EP5 (EP6002-0002).xti" Id="108">
 			<EtherCAT PortABoxInfo="#x0100006b"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160"/>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
+			<SyncUnit Name="IP1_ECAT (EL6692)" NoDeleteIfUnused="true"/>
+		</EtherCAT>
 	</Device>
 </TcSmItem>
