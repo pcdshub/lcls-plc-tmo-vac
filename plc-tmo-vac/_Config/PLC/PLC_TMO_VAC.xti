@@ -1868,6 +1868,38 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.IP1_PLC_NAME</Name>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_TURBO_FAULT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_Main_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_Main_xPRESS_OK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.IP1_Main_rPRESS</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_VLS.PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -2517,6 +2549,14 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.ROUGH2_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO</Name>
 					<Comment>
 						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
@@ -2619,12 +2659,48 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.My_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[ These variables are for IP1 PLC 
+PLC Name ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
 				</Var>
 				<Var>
 					<Name>GVL_VLS.PTM_01.q_RunDO</Name>
@@ -2670,34 +2746,6 @@
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -2715,6 +2763,13 @@
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
+			<UnrestoredVarLinks ImportTime="2021-01-26T17:47:10">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^Term 129 (EK1122)^Box 130 (EL6692)">
+						<Link VarA="GVL_Variables.PLC_NAME" TypeA="STRING(8)" InOutA="1" GuidA="{18071995-0000-0000-0000-000100000008}" VarB="IO Outputs^HUTCH_PLC_NAME" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -2777,6 +2832,19 @@
 				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^Term 129 (EK1122)^Box 130 (EL6692)">
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_Main_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS"/>
+				<Link VarA="PlcTask Inputs^GVL_Variables.IP1_TURBO_FAULT" VarB="IO Inputs^IP1_TURBO_FAULT"/>
+				<Link VarA="PlcTask Outputs^GVL_Variables.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Variables.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Variables.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
