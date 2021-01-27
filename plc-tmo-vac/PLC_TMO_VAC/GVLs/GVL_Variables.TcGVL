@@ -4,6 +4,7 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	
+
 //	r_Accelerator_Setpoint	: REAL := 1E-12; (*unrealistic setpoint currently*)
 	{attribute 'pytmc' := 'pv: TMO:FEE:VAC:OVRDON'}
 	xSystemOverrideMode_FEE	: BOOL := FALSE; (* Global system override for the TMO FEE Vacuum System *)
@@ -27,8 +28,8 @@ VAR_GLOBAL
 	{attribute 'pytmc' := 'pv: TMO:VRC:DIFPRESS:BYPASS'}
 	xBypassDiffPress_vrc1_vrc2 : BOOL; 	
 	
-	{attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:IN'}
-	xIP1_Endstation_isIN : BOOL;
+
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

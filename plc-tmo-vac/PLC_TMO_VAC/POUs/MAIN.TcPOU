@@ -12,9 +12,6 @@ END_VAR
       <ST><![CDATA[
 fbLogHandler();
 
-// ADS interface PRG
-PRG_ADS_Interfaces();
-
 (* FEE devices*)
 PRG_FEE();
 PMPS();
@@ -40,7 +37,8 @@ PRG_VLS_VACUUM();
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="8" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="9" Count="2" />
       <LineId Id="37" Count="0" />
       <LineId Id="45" Count="0" />
       <LineId Id="44" Count="0" />
