@@ -25,7 +25,7 @@ PRG_Hutch_Beamline_Valves();
 PRG_Roughing_Pumps();
 PRG_Hutch_Ion_Pumps();
 PRG_VLS_VACUUM();
-
+PRG_IP1_ECAT_Interfaces();
 
 
 
