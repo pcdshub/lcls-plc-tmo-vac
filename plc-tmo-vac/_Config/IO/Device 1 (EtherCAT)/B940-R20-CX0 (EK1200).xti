@@ -13,8 +13,11 @@
 		<Box File="CX0_E1A (EL2202).xti" Id="104">
 			<EtherCAT PortABoxInfo="#x01000019"/>
 		</Box>
-		<Box File="CX0_E2_EXILK (EL1008).xti" Id="26">
+		<Box File="Term 113 (EL2202).xti" Id="113">
 			<EtherCAT PortABoxInfo="#x01000068"/>
+		</Box>
+		<Box File="CX0_E2_EXILK (EL1008).xti" Id="26">
+			<EtherCAT PortABoxInfo="#x01000071"/>
 		</Box>
 		<Box File="CX0_E3 (EL2008).xti" Id="27">
 			<EtherCAT PortABoxInfo="#x0100001a"/>
@@ -46,11 +49,11 @@
 		<Box File="CX0_E12 (EL6001).xti" Id="36">
 			<EtherCAT PortABoxInfo="#x01000023"/>
 		</Box>
-		<Box File="EK1122-0080.xti" Id="37">
+		<Box File="CX0_E13 (EK1122).xti" Id="129">
 			<EtherCAT PortABoxInfo="#x01000024"/>
 		</Box>
 		<Box File="PMPS_PRE.xti" Id="38">
-			<EtherCAT PortABoxInfo="#x02000025"/>
+			<EtherCAT PortABoxInfo="#x02000081"/>
 		</Box>
 		<Box File="CX0_EK1110.xti" Id="39">
 			<EtherCAT PortABoxInfo="#x01000026"/>

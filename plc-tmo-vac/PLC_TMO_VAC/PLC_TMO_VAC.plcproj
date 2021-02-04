@@ -51,6 +51,10 @@
     <Compile Include="GVLs\GVL_Hutch_Valves.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_IP1_ECAT.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_PMPS.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -84,9 +88,6 @@
     <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_ADS_Interfaces.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_COM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +104,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Hutch_Gauges.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_IP1_ECAT_Interfaces.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_VLS_Turbo.TcPOU">

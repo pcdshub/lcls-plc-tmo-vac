@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_IP1_ECAT_Interfaces" Id="{e21a7b5a-d65b-44a4-910d-0603adcdae6b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_IP1_ECAT_Interfaces
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[ROUGH1_VRC_01_AtOpnLS := TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS;
+ROUGH2_VRC_01_AtOpnLS := TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS;
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_IP1_ECAT_Interfaces">
+      <LineId Id="6" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

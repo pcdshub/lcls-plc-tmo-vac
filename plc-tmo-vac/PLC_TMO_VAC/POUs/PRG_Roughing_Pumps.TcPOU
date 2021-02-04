@@ -72,11 +72,11 @@ xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS
      xDifPressureOK or TMO_ROUGH1_VRC_02 is closed 
      AND if LAMP is connected, LAMP_ROUGH_VRC01 and VRC02 are open OR TMO_ROUGH2_VRC01 is open. *)	
 
-xLAMP_VRC01_VRC02_atOpnLS := lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
-                              AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError;
+xLAMP_VRC01_VRC02_atOpnLS := IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR 
+                              AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR;
 			  
 TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS )
-                            AND ( lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError 
+                            AND ( IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR 
                                    and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS 
                                  OR xLAMP_VRC01_VRC02_atOpnLS );
 
@@ -115,13 +115,14 @@ TMO_ROUGH1_VRC_02(
                 fbArbiter := dummy_fbArbiter1);
 
 				
-(* Set TMO_ROUGH2_VRC01 external interlock OK TRUE, LAMP is connected, and either LAMP_ROUGH_VRC01, VRC02 and VRC03 are open or TMO_ROUGH1_VRC_01 is open*)	
+(* Set TMO_ROUGH2_VRC01 external interlock OK TRUE, if LAMP is connected, and either LAMP_ROUGH_VRC01, VRC02 and VRC03 are open 
+                    or both TMO_ROUGH1_VRC_01 and lamp_rough_vrc03 are open*)	
 
-TMO_ROUGH2_VRC_01_xExt_OK := xIP1_Endstation_isIN AND 
-                        (  (lamp_rough_vrc01_atOpnLS_reader.bBool AND NOT lamp_rough_vrc01_atOpnLS_reader.bError  
-                                                        AND lamp_rough_vrc02_atOpnLS_reader.bBool AND NOT lamp_rough_vrc02_atOpnLS_reader.bError
-                                                        AND lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError )                                      
-                          OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and lamp_rough_vrc03_atOpnLS_reader.bBool AND NOT lamp_rough_vrc03_atOpnLS_reader.bError)
+TMO_ROUGH2_VRC_01_xExt_OK := NOT IP1_ECAT_TxPDO_ERROR AND 
+                        (  (IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR  
+                                                        AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR
+                                                        AND IP1_ROUGH_VRC_03_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR )                                      
+                          OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and IP1_ROUGH_VRC_03_AtOpnLS AND NOT IP1_ECAT_TxPDO_ERROR)
                           ) ; 				
 
 TMO_ROUGH2_VRC_01(
@@ -137,50 +138,7 @@ TMO_ROUGH2_VRC_01(
                 fbArbiter := dummy_fbArbiter1);
 
 
-(*  logic below is removed since TMO wants to start pumping down Granite 1 and LAMP using roughing line 1 only 
-
-(*  If endstation is in, For TMO_ROUGH1_VRC_01 & TMO_ROUGH2_VRC_01 if one closed, wait for 10s, close the other *)
-
-f_trig_r1(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW);
-f_trig_r2(CLK:= TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
-IF xIP1_Endstation_isIN Then
-	IF f_trig_r1.Q then 
-	TMO_ROUGH1_VRC_01.M_Set_OPN_SW(false);
-	END_IF
-	IF f_trig_r2.Q then 
-	TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
-	END_IF
-END_IF
-*)
-
-
-
-(*IF xIP1_Endstation_isIN and (TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS OR TMO_ROUGH2_VRC_01.iq_stValve.i_xClsLS) Then
-	 tonDelSW(IN:= TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS OR TMO_ROUGH2_VRC_01.iq_stValve.i_xClsLS, PT:=T#10S);
-	 IF tonDelSW.Q THEN
-		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(false);
-		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(false);
-	END_IF
-END_IF
-*)
-
-(*
-r_trig_r1(CLK := TMO_ROUGH2_VRC_01.iq_stValve.pv_xOPN_SW);
-r_trig_r2(CLK:= TMO_ROUGH1_VRC_01.iq_stValve.pv_xOPN_SW);
-	
-IF xIP1_Endstation_isIN  Then
-	IF r_trig_r1.Q then 
-		TMO_ROUGH1_VRC_01.M_Set_OPN_SW(True);
-	END_IF	
-	IF r_trig_r2.Q then 
-		TMO_ROUGH2_VRC_01.M_Set_OPN_SW(True);
-	END_IF	
-	
-END_IF
-
-*)
-
-				
+			
 				
 (* Granite 1 K4S2 Differential Turbo pumps *)
 
@@ -361,6 +319,7 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="700" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="702" Count="0" />
+      <LineId Id="898" Count="0" />
       <LineId Id="708" Count="0" />
       <LineId Id="707" Count="0" />
       <LineId Id="775" Count="0" />
@@ -370,45 +329,6 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
       <LineId Id="127" Count="1" />
       <LineId Id="110" Count="0" />
       <LineId Id="713" Count="1" />
-      <LineId Id="109" Count="0" />
-      <LineId Id="715" Count="0" />
-      <LineId Id="473" Count="0" />
-      <LineId Id="611" Count="0" />
-      <LineId Id="476" Count="0" />
-      <LineId Id="599" Count="0" />
-      <LineId Id="475" Count="0" />
-      <LineId Id="496" Count="0" />
-      <LineId Id="503" Count="1" />
-      <LineId Id="601" Count="0" />
-      <LineId Id="603" Count="0" />
-      <LineId Id="600" Count="0" />
-      <LineId Id="490" Count="0" />
-      <LineId Id="495" Count="0" />
-      <LineId Id="652" Count="0" />
-      <LineId Id="651" Count="0" />
-      <LineId Id="507" Count="1" />
-      <LineId Id="512" Count="1" />
-      <LineId Id="509" Count="1" />
-      <LineId Id="514" Count="0" />
-      <LineId Id="506" Count="0" />
-      <LineId Id="505" Count="0" />
-      <LineId Id="610" Count="0" />
-      <LineId Id="604" Count="0" />
-      <LineId Id="712" Count="0" />
-      <LineId Id="605" Count="0" />
-      <LineId Id="516" Count="0" />
-      <LineId Id="498" Count="0" />
-      <LineId Id="555" Count="0" />
-      <LineId Id="557" Count="0" />
-      <LineId Id="499" Count="0" />
-      <LineId Id="607" Count="0" />
-      <LineId Id="609" Count="0" />
-      <LineId Id="606" Count="0" />
-      <LineId Id="554" Count="0" />
-      <LineId Id="492" Count="0" />
-      <LineId Id="488" Count="0" />
-      <LineId Id="486" Count="0" />
-      <LineId Id="483" Count="0" />
       <LineId Id="46" Count="0" />
       <LineId Id="474" Count="0" />
       <LineId Id="27" Count="0" />
