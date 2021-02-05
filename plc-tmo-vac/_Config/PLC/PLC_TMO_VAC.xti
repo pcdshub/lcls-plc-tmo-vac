@@ -588,68 +588,6 @@
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen</Name>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOpnLS</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO</Name>
-					<Comment>
-						<![CDATA[VETO Devices]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK</Name>
-					<Comment>
-						<![CDATA[To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW</Name>
-					<Comment>
-						<![CDATA[external open signal e.g epics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode</Name>
-					<Comment>
-						<![CDATA[To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>FSVTask Outputs</Name>
@@ -777,64 +715,6 @@
 					</Comment>
 					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
 				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_A</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_B</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_C</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>FSVTask Retains</Name>
@@ -864,7 +744,7 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>PMPS.fbArbiterIO.i_stCurrentBP</Name>
+					<Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
@@ -994,11 +874,11 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS.fbArbiterIO.xTxPDO_toggle</Name>
+					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
 					<Type>BIT</Type>
 				</Var>
 				<Var>
-					<Name>PMPS.fbArbiterIO.xTxPDO_state</Name>
+					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
 					<Type>BIT</Type>
 				</Var>
 				<Var>
@@ -1023,6 +903,13 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_COM_VLS.E2_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
 					<Comment>
 						<![CDATA[ upstream vacuum <10E-6, for mirror VGC interlock ]]>
@@ -1037,22 +924,11 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_COM_VLS.E2_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR</Name>
 					<Comment>
 						<![CDATA[ These variables are for IP1 EtherCat bridge 
 EL6692 TxPDO state]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1362,6 +1238,68 @@ EL6692 TxPDO state]]>
 						<![CDATA[Interface]]>
 					</Comment>
 					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO</Name>
+					<Comment>
+						<![CDATA[VETO Devices]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK</Name>
+					<Comment>
+						<![CDATA[To be linked to the Fast sensor structure signal IG.xPRESS_OK, to make sure that the device is connected]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW</Name>
+					<Comment>
+						<![CDATA[external open signal e.g epics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode</Name>
+					<Comment>
+						<![CDATA[To be linked to global override bit. This Overrides Vacuum logic only, EPS, MPS and PMPS are still enforces]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.MR2K4_KBO_GPI_01.i_iPRESS_R</Name>
@@ -1694,15 +1632,15 @@ EL6692 TxPDO state]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1717,6 +1655,10 @@ EL6692 TxPDO state]]>
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2021,7 +1963,7 @@ EL6692 TxPDO state]]>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>PMPS.fbArbiterIO.q_stRequestedBP</Name>
+					<Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
@@ -2167,10 +2109,6 @@ EL6692 TxPDO state]]>
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2411,6 +2349,64 @@ EL6692 TxPDO state]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_A</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_B</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_C</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
@@ -2558,6 +2554,10 @@ EL6692 TxPDO state]]>
 					<Comment>
 						<![CDATA[ Start/Stop]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2817,6 +2817,20 @@ EL6692 TxPDO state]]>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-02-05T10:11:40">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
+						<Link VarA="PMPS.fbArbiterIO.q_stRequestedBP" TypeA="ST_BeamParams_IO" InOutA="1" GuidA="{5FC92061-002A-45B0-B954-CD8F28B5CE49}" VarB="IO Outputs^RequestedBP" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
+						<Link VarA="PMPS.fbArbiterIO.i_stCurrentBP" TypeA="ST_BeamParams_IO" InOutA="0" GuidA="{5FC92061-002A-45B0-B954-CD8F28B5CE49}" VarB="IO Inputs^CurrentBP" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS.fbArbiterIO.xTxPDO_state" TypeA="BIT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000010}" VarB="SYNC Inputs^TxPDO state" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS.fbArbiterIO.xTxPDO_toggle" TypeA="BIT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000010}" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -2889,10 +2903,10 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
-				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PRG_PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
@@ -2955,8 +2969,8 @@ EL6692 TxPDO state]]>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_ EP1 (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
@@ -3322,16 +3336,16 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_xRemote" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E1 (EL1004)">
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E3 (EL2202)">
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_A" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_B" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_A" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_B" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E4 (EL2202)">
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_C" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_C" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E5 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
@@ -3426,12 +3440,6 @@ EL6692 TxPDO state]]>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
@@ -3446,12 +3454,6 @@ EL6692 TxPDO state]]>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" AutoLink="true"/>
@@ -3464,12 +3466,6 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" AutoLink="true"/>
@@ -3484,12 +3480,6 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" AutoLink="true"/>
