@@ -14,7 +14,7 @@ fbLogHandler();
 
 (* FEE devices*)
 PRG_FEE();
-PMPS();
+PRG_PMPS();
 PRG_FSV_Interfaces();
 
 (*  *)

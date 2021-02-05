@@ -10,6 +10,7 @@ ADS_connection_counter : UDINT;
     USG_PIP : ST_VG;
 	
 	USG_VGC : ST_VG;
+	
 
 
 END_VAR
@@ -29,18 +30,22 @@ END_VAR
 		USG_VGC.xAT_VAC := TRUE;
 		USG_VGC.rPRESS := 5E-7;
 		USG_VGC.xPRESS_OK := TRUE;
+		USG_VGC.sPath:=  'MR1K4_SOMS_GCC_1';
 	ELSE
 		USG_VGC.xPRESS_OK := FALSE;
 		USG_VGC.xAT_VAC := FALSE;
+		USG_VGC.sPath:=  'MR1K4_SOMS_GCC_1';
 	END_IF
 
     IF USVacOk_LO THEN 
 		USG_PIP.rPRESS := 5E-5;
 		USG_PIP.xPRESS_OK := TRUE;
 		USG_PIP.xAT_VAC := TRUE;
+		USG_PIP.sPath:=  'MR1K4_SOMS_GCC_1';
 	ELSE
 		USG_PIP.xPRESS_OK := FALSE;
 		USG_PIP.xAT_VAC := FALSE;
+		USG_PIP.sPath:=  'MR1K4_SOMS_GCC_1';
 	END_IF 
 
 	(* check other gauges*)
@@ -65,7 +70,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 				i_stDSG:= TV1k4_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := , 
+				i_xPMPS_OK := TRUE , 
 				i_xExt_OK := TV1K4_VFS_Interface.i_xVAC_FAULT_OK, 
 				i_xOverrideMode := xSystemOverrideMode_FEE, 
 				i_xReset := xReset_PMPS_FFO1,
@@ -80,7 +85,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := , 
+				i_xPMPS_OK := TRUE , 
 				i_xExt_OK := TRUE, 
 				i_xOverrideMode := xSystemOverrideMode_FEE, 
 				i_xReset := xReset_PMPS_FFO1,
@@ -93,10 +98,10 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 	
 	ST3K4_PPS_VGC_01(
 				i_stUSG := ST2K4_BCS_GCC_01.IG, 
-				i_stDSG:= PC4K4_XTES_GCC_01.IG, 
+				i_stDSG:= PC4K4_XTES_PIP_01.q_IG, 
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
-				i_xPMPS_OK := TRUE , 
+				i_xPMPS_OK := TRUE, 
 				i_xExt_OK := TRUE, 
 				i_xOverrideMode := xSystemOverrideMode_FEE, 
 				i_xReset := xReset_PMPS_FFO2,
@@ -118,7 +123,15 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 			]]></ST>
     </Implementation>
     <LineIds Name="PRG_FEE">
-      <LineId Id="3" Count="44" />
+      <LineId Id="3" Count="13" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="17" Count="2" />
+      <LineId Id="166" Count="0" />
+      <LineId Id="20" Count="5" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="26" Count="2" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="29" Count="18" />
       <LineId Id="150" Count="0" />
       <LineId Id="48" Count="8" />
       <LineId Id="137" Count="0" />
