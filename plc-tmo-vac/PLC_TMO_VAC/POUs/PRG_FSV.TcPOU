@@ -23,6 +23,8 @@ MR3K4_KBO_VFS_1(
 	io_fbFFHWO:= g_FastFaultOutput4
 );
 
+(* not installed yet
+
 MR4K4_KBO_VFS_1(
 	i_xPMPS_OK:= TRUE, 
 	i_xExt_OK:= TRUE, 
@@ -30,6 +32,9 @@ MR4K4_KBO_VFS_1(
 	i_sDevName:= 'MR4K4:KBO:VFS:1',
 	io_fbFFHWO:= g_FastFaultOutput4
 );
+
+*)
+
 (*FastFaultOuput*)	
 g_FastFaultOutput3.Execute(bAutoReset:= TRUE);
 
@@ -51,9 +56,16 @@ g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K
       <LineId Id="30" Count="0" />
       <LineId Id="6" Count="2" />
       <LineId Id="65" Count="0" />
-      <LineId Id="9" Count="6" />
+      <LineId Id="9" Count="4" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="14" Count="1" />
       <LineId Id="66" Count="0" />
-      <LineId Id="16" Count="3" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="19" Count="0" />
       <LineId Id="46" Count="0" />
       <LineId Id="55" Count="0" />
       <LineId Id="54" Count="0" />

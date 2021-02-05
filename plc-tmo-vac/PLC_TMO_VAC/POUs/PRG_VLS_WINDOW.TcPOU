@@ -108,7 +108,7 @@ VGC_1(
 	i_stUSG:= PA2K4_IP1_GCC_01.IG , 
 	i_stDSG:= DS_GCC.IG , 
 	i_xDis_DPIlk:= FALSE , 
-	i_xPMPS_OK:= , 
+	i_xPMPS_OK:= TRUE , 
 	i_xEPS_OK:= , 
 	i_xExt_OK:= , 
 	i_xOverrideMode:= , 
@@ -119,7 +119,7 @@ VGC_1(
 	iq_stValve=> , 
 	xMPS_OK=> , 
 	io_fbFFHWO:=g_FastFaultOutput2 , 
-	fbArbiter:=g_fbArbiter1);
+	fbArbiter:=g_fbArbiter2);
 
 
 VGC_W(
@@ -127,8 +127,8 @@ VGC_W(
 	i_xOverrideMode:= , 
 	iq_stValve=> , 
 	io_fbFFHWO:= g_FastFaultOutput2 , 
-	fbArbiter:= g_fbArbiter1, 
-	i_xPMPS_OK:= , 
+	fbArbiter:= g_fbArbiter2, 
+	i_xPMPS_OK:= TRUE, 
 	i_xIsAperture:= TRUE , 
 	i_sDevName:= , 
 	i_nTransitionRootID:= 47760);

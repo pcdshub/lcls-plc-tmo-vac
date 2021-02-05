@@ -10,7 +10,7 @@
 	
     {attribute 'pytmc' := 'pv: TMO:VAC:FFO:04  '}
    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 2^Output'}
-    g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR5K4_KBO_VFS_01
+    g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR4K4_KBO_VFS_01
 	
 	
 END_VAR]]></Declaration>
