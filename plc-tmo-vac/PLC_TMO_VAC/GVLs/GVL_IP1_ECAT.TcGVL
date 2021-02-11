@@ -7,7 +7,7 @@ VAR_GLOBAL
 	(* These variables are for IP1 EtherCat bridge *)
 	
 	//EL6692 TxPDO state
- {attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:CONNECTED'}
+ {attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:ETHERCAT_ERROR'}
  {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^TxPDO state			 
 	'}	
   IP1_ECAT_TxPDO_ERROR AT %I* : BOOL;
@@ -44,9 +44,15 @@ VAR_GLOBAL
 	'} 
    IP1_ROUGH_VRC_03_AtOpnLS AT %I* : BOOL;
    
-     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_TURBOS_ALL_AtSpd			 
+    {attribute 'pytmc' :=' pv: IP1:TURBOS:ALL_AT_SPD'}
+	{attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_TURBOS_ALL_AtSpd			 
 	'} 
    IP1_TURBOS_ALL_AtSpd AT %I* : BOOL;
+   
+   {attribute 'pytmc' :=' pv: IP1:HV_SAFETY_ENABLE'}
+	{attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_HV_SAFETY_ENABLE			 
+	'} 
+   IP1_HV_SAFETY_ENABLE AT %I* : BOOL;
    
  (*    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_MAIN_xAT_VAC			 
 	'} 

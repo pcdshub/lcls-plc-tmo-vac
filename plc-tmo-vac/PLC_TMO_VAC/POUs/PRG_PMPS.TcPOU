@@ -25,7 +25,7 @@ fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
 fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST3K4],
 		HigherAuthority:=g_fbArbiter1 , 
 		LowerAuthority:= g_fbArbiter2 , FFO:= g_FastFaultOutput2);
-g_fbArbiter1.ElevateRequest(g_fbArbiter2);
+//g_fbArbiter1.ElevateRequest(g_fbArbiter2);
 
 bExist:= g_fbArbiter1.CheckRequestInPool(ID);
 bExist2:= g_fbArbiter2.CheckRequestInPool(ID);
