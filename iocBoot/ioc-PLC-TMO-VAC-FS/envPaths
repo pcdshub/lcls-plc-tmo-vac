@@ -1,2 +1,0 @@
-epicsEnvSet("IOC_TOP", "/c/Users/jyin/Documents/Github/workingDir/lcls-plc-tmo-vac/iocBoot/ioc-PLC-TMO-VAC-FS")
-epicsEnvSet("IOC_DATA", "C:\Users\jyin/iocData")

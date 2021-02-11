@@ -28,7 +28,7 @@ END_VAR
 	(* if upstream vacuum ok, set upstream press at good levels *)  
     IF USVacOk_HI THEN 
 		USG_VGC.xAT_VAC := TRUE;
-		USG_VGC.rPRESS := 5E-7;
+		USG_VGC.rPRESS := 1E-7;
 		USG_VGC.xPRESS_OK := TRUE;
 		USG_VGC.sPath:=  'MR1K4_SOMS_GCC_1';
 	ELSE

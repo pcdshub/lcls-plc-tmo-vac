@@ -1,14 +1,14 @@
-#!c:/Repos/ads-ioc/R0.2.4///bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.4.1/bin/rhel7-x86_64/adsIoc
 ###### AUTO-GENERATED DO NOT EDIT ##############
 
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("IOCNAME", "ioc-PLC-TMO-VAC" )
-epicsEnvSet("ENGINEER", "jyin" )
-epicsEnvSet("LOCATION", "PLC_TMO_VAC" )
-epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
+epicsEnvSet("ENGINEER", "adpai" )
+epicsEnvSet("LOCATION", "PLC:TMO:VAC" )
+epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
+epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
 # Run common startup commands for linux soft IOC's
 < /reg/d/iocCommon/All/pre_linux.cmd
@@ -55,8 +55,13 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC_TMO_VAC")
-dbLoadRecords("save_restoreStatus.db", "P=PLC_TMO_VAC:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:TMO:VAC")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:TMO:VAC:")
+dbLoadRecords("caPutLog.db", "IOC=${IOC}")
+
+## TwinCat System Databse files ##
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:TMO:VAC")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:TMO:VAC")
 
 cd "$(IOC_TOP)"
 
@@ -68,7 +73,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PLC_TMO_VAC:" )
+save_restoreSet_status_prefix( "PLC:TMO:VAC:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )
@@ -81,8 +86,25 @@ cd "$(IOC_TOP)"
 # Create the archiver file
 makeArchiveFromDbInfo("$(IOC_DATA)/$(IOC)/archive/$(IOC).archive", "archive")
 
+# Configure access security: this is required for caPutLog.
+asSetFilename("$(ACF_FILE)")
+
 # Initialize the IOC and start processing records
 iocInit()
+
+# Enable logging
+iocLogInit()
+
+# Configure and start the caPutLogger after iocInit
+epicsEnvSet(EPICS_AS_PUT_LOG_PV, "${IOC}:caPutLog:Last")
+
+# caPutLogInit("HOST:PORT", config)
+# config options:
+#       caPutLogNone       -1: no logging (disable)
+#       caPutLogOnChange    0: log only on value change
+#       caPutLogAll         1: log all puts
+#       caPutLogAllNoFilter 2: log all puts no filtering on same PV
+caPutLogInit("${EPICS_CAPUTLOG_HOST}:${EPICS_CAPUTLOG_PORT}", 0)
 
 # Start autosave backups
 create_monitor_set( "info_positions.req", 10, "" )
