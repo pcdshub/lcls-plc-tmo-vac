@@ -24,6 +24,7 @@ VAR_GLOBAL
 	
 	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:01    '}
     g_fbArbiter1    :   FB_Arbiter(1);
+	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:02    '}
 	g_fbArbiter2     :  FB_Arbiter(2);
 	
 	xTMO_FEE_MPS_OK: BOOL := TRUE;
