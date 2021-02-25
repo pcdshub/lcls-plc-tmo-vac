@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="DIAGNOSTICS" Id="{9d02200e-0632-459f-bfed-43026626c314}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM DIAGNOSTICS
+VAR
+	//Change the PLC String Name to the actual PLC NAME
+	sPLCName :STRING := 'PLC-TMO-VAC';
+	//Link the sAMSNetID to the Etherat Master netID
+	i_sAMSNetID AT %I*: AMSNETID;
+	// DO NOT CHANGE
+	sAMSNetID : STRING; //used for EPICS PV
+	sLibVersion_LCLS_General : STRING;(* := stLibVersion_LCLS_General.sVersion*) ;
+	
+	fbEcatDiag:FB_EcatDiag;
+	{attribute 'pytmc' := ' pv:PLC:TMO:VAC:AllSlaveStateGood '}
+	bAllSlaveStateGood : BOOL;
+	{attribute 'pytmc' := ' pv:PLC:TMO:VAC:MasterStateGood '}	
+	bMasterStateGood :BOOL;
+	iMasterState: WORD;
+	sMasterState:STRING;
+	nSlaveNumber : UINT;
+	aiSlaveStates: ARRAY[1..256] OF BYTE;
+	aEcSlaveInfo :  ARRAY[1..256] OF ST_EcDevice;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Instaniating a call to the fbEcatDiag
+fbEcatDiag(
+	I_AMSNetId:=i_sAMSNetID , 
+	i_xFirstPass:= _TaskInfo[1].FirstCycle, 
+	q_xAllSlaveStatesGood=> bAllSlaveStateGood , 
+	q_anTermStates=> aiSlaveStates, 
+	q_xMasterStateGood=>bMasterStateGood , 
+	q_nMasterState=> iMasterState, 
+	q_sMasterState=> sMasterState , 
+	q_astEcConfSlaveInfo=> aEcSlaveInfo , 
+	q_nSlaves=> nSlaveNumber);
+	
+	]]></ST>
+    </Implementation>
+    <LineIds Name="DIAGNOSTICS">
+      <LineId Id="6" Count="9" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="31" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

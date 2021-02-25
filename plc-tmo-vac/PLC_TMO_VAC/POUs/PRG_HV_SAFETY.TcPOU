@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_HV_SAFETY" Id="{feb92551-c00a-4a32-9bed-96e217c32cfd}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_HV_SAFETY
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iHV_LOOP_FIM_ON:= (MR2K4_KBO_GCC_01.IG.rPRESS <= iHV_LOOP_FIM_PRESSURE) AND (MR2K4_KBO_GCC_01.IG.xPRESS_OK = TRUE);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_HV_SAFETY">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

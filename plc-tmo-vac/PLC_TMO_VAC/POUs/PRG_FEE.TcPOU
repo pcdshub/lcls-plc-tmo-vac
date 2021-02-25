@@ -107,7 +107,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 				i_xReset := xReset_PMPS_FFO2,
 				io_fbFFHWO :=g_FastFaultOutput2,
 				iq_stValve =>,
-                fbArbiter := g_fbArbiter1,
+                fbArbiter := g_fbArbiter2,
 				i_nTransitionRootID := 44848
 );
 			
