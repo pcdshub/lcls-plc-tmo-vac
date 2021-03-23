@@ -10,23 +10,32 @@ VAR
 	bExist2: BOOL;
 	ID: UDINT;
 	fb_VetoArbiter: FB_VetoArbiter;
+    
+    bM1K1Veto : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*FastFaultOuput*)
-// g_FastFaultOutput1.Execute(bAutoReset:= TRUE);
-g_FastFaultOutput1.Execute(i_xVeto:=NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] and PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN], bAutoReset:= TRUE);
+      <ST><![CDATA[
+bM1K1Veto := NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] 
+                AND PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
 
+(*FastFaultOuput*)
+// Everything upstream ST3K4
+g_FastFaultOutput1.Execute(i_xVeto:=bM1K1Veto, bAutoReset:= TRUE);
+
+// Everything downstream of ST3K4
 g_FastFaultOutput2.Execute(i_xVeto:=(PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST3K4]
-								OR (NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] and PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN])), bAutoReset:= TRUE);
+								OR bM1K1Veto), bAutoReset:= TRUE);
 
+// Preemptive system
 fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
-	i_bVeto :=NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] and PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN]);
+	i_bVeto := bM1K1Veto);
+    
 fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST3K4],
 		HigherAuthority:=g_fbArbiter1 , 
 		LowerAuthority:= g_fbArbiter2 , FFO:= g_FastFaultOutput2);
-//g_fbArbiter1.ElevateRequest(g_fbArbiter2);
 
+//Test and diagnostic stuff
 bExist:= g_fbArbiter1.CheckRequestInPool(ID);
 bExist2:= g_fbArbiter2.CheckRequestInPool(ID);
 if (bRemove) THEN
@@ -36,23 +45,5 @@ if (bRemove2) THEN
 	g_fbArbiter2.RemoveRequest(ID);
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="PRG_PMPS">
-      <LineId Id="3" Count="1" />
-      <LineId Id="25" Count="1" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="6" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="35" Count="0" />
-      <LineId Id="38" Count="2" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="17" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="13" Count="1" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="33" Count="1" />
-      <LineId Id="31" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
