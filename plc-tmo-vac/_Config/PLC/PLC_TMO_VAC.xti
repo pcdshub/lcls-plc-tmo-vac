@@ -924,10 +924,26 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR</Name>
+					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
 					<Comment>
 						<![CDATA[ These variables are for IP1 EtherCat bridge 
-EL6692 TxPDO state]]>
+ETHERCAT BRIDGE COM STATUS
+EL6692 TxPDO state
+0: Other side is in OP state, >0: Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Comment>
+						<![CDATA[0: External device connected, 1: External device not connected]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1632,19 +1648,11 @@ EL6692 TxPDO state]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1659,6 +1667,18 @@ EL6692 TxPDO state]]>
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2112,14 +2132,6 @@ EL6692 TxPDO state]]>
 					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2565,6 +2577,14 @@ EL6692 TxPDO state]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO</Name>
 					<Comment>
 						<![CDATA[ Start/Stop]]>
@@ -2717,6 +2737,10 @@ EL6692 TxPDO state]]>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_VLS.PTM_01.q_RunDO</Name>
 					<Comment>
 						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
@@ -2835,6 +2859,13 @@ EL6692 TxPDO state]]>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2021-03-24T12:12:23">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
+						<Link VarA="GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="SYNC Inputs^TxPDO state" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -2861,7 +2892,6 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ECAT_TxPDO_ERROR" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
@@ -2871,6 +2901,9 @@ EL6692 TxPDO state]]>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd" VarB="IO Inputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
@@ -3197,6 +3230,7 @@ EL6692 TxPDO state]]>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20 (EL2004)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Variables.iHV_LOOP_FIM_ON" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>

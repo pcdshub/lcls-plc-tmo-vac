@@ -6,11 +6,26 @@ VAR_GLOBAL
 	
 	(* These variables are for IP1 EtherCat bridge *)
 	
+	(*ETHERCAT BRIDGE COM STATUS*)
 	//EL6692 TxPDO state
- {attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:ETHERCAT_ERROR'}
- {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^TxPDO state			 
-	'}	
-  IP1_ECAT_TxPDO_ERROR AT %I* : BOOL;
+	//0: Other side is in OP state, >0: Error
+	{attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^TxPDO state			 
+	'}
+	xEcatBridge_TxPDO_state AT %I* : BOOL;
+	
+	//0: External device connected, 1: External device not connected
+	{attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^External device not connected			 
+	'}
+	xEcatBridge_External_device_not_connected AT %I* : BOOL;
+	
+	//0 = Data valid, 1 = Data invalid
+	{attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^WcState^WcState			 
+	'}
+	xEcatBridge_WcState AT %I* : BOOL;
+	
+	
+ {attribute 'pytmc' := 'pv: TMO:IP1:ENDSTATION:ETHERCAT_ERROR'}	
+  IP1_ECAT_COM_ERROR AT %I* : BOOL;
 	
 	//EL6692 Output 
 		

@@ -38,8 +38,8 @@
 		<EtherCAT SlaveType="3" AdsServerAddress="000000000283f803" PdiType="#x0c05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x1a243052" RevisionNo="#x00140002" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" PortPhys="17" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6692 EtherCAT Bridge terminal (Secondary)" Desc="EL6692">
 			<SyncMan>001000012600010001000000800000040001001026010000</SyncMan>
 			<SyncMan>001400012200010002000000800000040001001422010000</SyncMan>
-			<SyncMan>00180c002400010003000000000000000000001824000000</SyncMan>
-			<SyncMan>001e18002000010004000000000000000200001e20010000</SyncMan>
+			<SyncMan>00180c002400010003000000000000000000001824010000</SyncMan>
+			<SyncMan>001e14002000010004000000000000000200001e20010000</SyncMan>
 			<Fmmu>0000000000000000001800020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001e00010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -237,11 +237,8 @@
 				<Entry Name="IP1_MAIN_xPRESS_OK" BitLen="8" Index="#x6000" Sub="#x07">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry BitLen="8">
-					<Type GUID="{18071995-0000-0000-0000-002000000008}">ARRAY [0..0] OF BYTE</Type>
-				</Entry>
-				<Entry Name="IP1_MAIN_rPRESS" BitLen="32" Index="#x6000" Sub="#x08">
-					<Type>REAL</Type>
+				<Entry Name="IP1_MAIN_rPRESS" BitLen="8" Index="#x6000" Sub="#x08">
+					<Type>BOOL</Type>
 				</Entry>
 				<Entry Name="IP1_HV_SAFETY_ENABLE" BitLen="8" Index="#x6000" Sub="#x09">
 					<Type>BOOL</Type>

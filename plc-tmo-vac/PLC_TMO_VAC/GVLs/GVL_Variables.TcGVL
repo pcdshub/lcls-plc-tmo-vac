@@ -33,7 +33,7 @@ VAR_GLOBAL
 	
 	{attribute 'pytmc' := 'pv: TMO:FIM:HV_LOOP_ON'}
 	{attribute 'TcLinkTo' := 'TIIB[K4S2_02_E20 (EL2004)]^Channel 4^Output'}
-	iHV_LOOP_FIM_ON: BOOL:= FALSE;	
+	iHV_LOOP_FIM_ON	AT %Q*: BOOL:= FALSE;	
 	
 
 	
