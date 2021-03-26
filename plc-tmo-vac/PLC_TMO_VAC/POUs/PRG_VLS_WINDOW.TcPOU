@@ -114,7 +114,7 @@ VGC_1(
 	i_xOverrideMode:= , 
 	i_xReset:= , 
 	i_xIsAperture:= TRUE, 
-	i_sDevName:= , 
+	i_sDevName:= 'VLS:VGC:01', 
 	i_nTransitionRootID:= 47744,
 	iq_stValve=> , 
 	xMPS_OK=> , 
@@ -130,7 +130,7 @@ VGC_W(
 	fbArbiter:= g_fbArbiter2, 
 	i_xPMPS_OK:= TRUE, 
 	i_xIsAperture:= TRUE , 
-	i_sDevName:= , 
+	i_sDevName:= 'VLS:VWC:01', 
 	i_nTransitionRootID:= 47760);
 	
 	
@@ -141,9 +141,5 @@ VGC_W(
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_VLS_WINDOW">
-      <LineId Id="3" Count="116" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

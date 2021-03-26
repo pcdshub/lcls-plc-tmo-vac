@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM PRG_FSV
 VAR
 	fastFaultSaveMyLife : FB_FastFault;
+    bM1K1Veto : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -35,10 +36,15 @@ MR4K4_KBO_VFS_1(
 
 *)
 
-(*FastFaultOuput*)	
-g_FastFaultOutput3.Execute(bAutoReset:= TRUE);
+// M1K1 Veto
+bM1K1Veto := NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] 
+                AND PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
 
-g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K_Stopper.ST3K4], bAutoReset:= TRUE);
+(*FastFaultOuput*)	
+g_FastFaultOutput3.Execute(bAutoReset:= TRUE, i_xVeto:=bM1K1Veto);
+
+g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K_Stopper.ST3K4]
+                                    OR bM1K1Veto, bAutoReset:= TRUE);
 
 //g_FastFaultOutput4.q_xFastFaultOut R= NOT g_FastFaultOutput3.q_xFastFaultOut;
 //fastFaultSaveMyLife(i_xOK := g_FastFaultOutput3.q_xFastFaultOut, i_xAutoReset := TRUE, io_fbFFHWO:=g_FastFaultOutput4);
@@ -47,33 +53,5 @@ g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_FSV">
-      <LineId Id="23" Count="0" />
-      <LineId Id="26" Count="2" />
-      <LineId Id="60" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="6" Count="2" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="9" Count="4" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="14" Count="1" />
-      <LineId Id="66" Count="0" />
-      <LineId Id="16" Count="2" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="55" Count="0" />
-      <LineId Id="54" Count="0" />
-      <LineId Id="47" Count="2" />
-      <LineId Id="35" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="36" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
