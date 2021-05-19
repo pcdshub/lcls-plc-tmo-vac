@@ -13,6 +13,11 @@
     <Implicit_KindOfTask>{759eb66a-0f1a-4ffe-b127-1a2a941aa5bf}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{2fc8bd43-2ffe-4e2c-a3d0-c9c1b57d9944}</Implicit_Jitter_Distribution>
     <LibraryReferences>{305ce49b-f61a-4652-a946-d955e26fe5fe}</LibraryReferences>
+    <CombineIds>false</CombineIds>
+    <Company>SLAC</Company>
+    <Released>true</Released>
+    <Title>lcls-plc-tmo-vac</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ComTask.TcTTO">
@@ -173,13 +178,67 @@
       <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 1.4.2 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 1.6.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
       <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 0.17.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 2.0.0 (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="SysDir">
+      <Resolution>SysDir, 3.5.8.0 (System)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="SysFile">
+      <Resolution>SysFile, 3.5.9.0 (System)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_DataExchange">
+      <Resolution>Tc2_DataExchange, 3.3.5.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_EtherCAT">
+      <Resolution>Tc2_EtherCAT, 3.3.15.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_IoFunctions">
+      <Resolution>Tc2_IoFunctions, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Math">
+      <Resolution>Tc2_Math, 3.3.1.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_MC2">
+      <Resolution>Tc2_MC2, 3.3.42.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_ModbusSrv">
+      <Resolution>Tc2_ModbusSrv, 3.3.2.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_SerialCom">
+      <Resolution>Tc2_SerialCom, 3.3.7.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Standard">
+      <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_System">
+      <Resolution>Tc2_System, 3.4.24.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_TcpIp">
+      <Resolution>Tc2_TcpIp, 3.3.6.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Utilities">
+      <Resolution>Tc2_Utilities, 3.3.41.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_EventLogger">
+      <Resolution>Tc3_EventLogger, 3.1.24.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_Interfaces">
+      <Resolution>Tc3_Interfaces, 3.4.3.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_JsonXml">
+      <Resolution>Tc3_JsonXml, 3.3.14.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc3_Module">
+      <Resolution>Tc3_Module, 3.3.21.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcUnit">
+      <Resolution>TcUnit, 1.1.0.0 (www.tcunit.org)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
