@@ -37,13 +37,13 @@ MR4K4_KBO_VFS_1(
 *)
 
 // M1K1 Veto
-bM1K1Veto := NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] 
-                AND PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
+bM1K1Veto := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+                AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 
 (*FastFaultOuput*)	
 g_FastFaultOutput3.Execute(bAutoReset:= TRUE, i_xVeto:=bM1K1Veto);
 
-g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[K_Stopper.ST3K4]
+g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aVetoDevices[K_Stopper.ST3K4]
                                     OR bM1K1Veto, bAutoReset:= TRUE);
 
 //g_FastFaultOutput4.q_xFastFaultOut R= NOT g_FastFaultOutput3.q_xFastFaultOut;
