@@ -1545,17 +1545,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xSP_DI</Name>
-					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_iPRESS</Name>
 					<Type>INT</Type>
 				</Var>
@@ -1977,6 +1966,17 @@ EL6692 TxPDO state
 						<![CDATA[ input Pressure // Link to analog Input]]>
 					</Comment>
 					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI</Name>
+					<Comment>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -2483,13 +2483,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when TRUE]]>
@@ -2773,6 +2766,13 @@ EL6692 TxPDO state
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -2870,15 +2870,15 @@ EL6692 TxPDO state
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E10_QPC2 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E11_QPC2 (EL2794)">
 				<Link VarA="PlcTask Outputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
@@ -2925,9 +2925,9 @@ EL6692 TxPDO state
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E9_QPC2 (EL3064)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
 				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
