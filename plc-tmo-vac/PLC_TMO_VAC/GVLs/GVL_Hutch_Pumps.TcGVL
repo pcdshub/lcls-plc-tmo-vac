@@ -16,14 +16,14 @@ VAR_GLOBAL
 	MR2K4_KBO_PIP_01 : FB_PIP_Gamma;
 	
 	
-	
+	(*
 	{attribute 'pytmc' :=' pv: PA2K4:IP1:PIP:01 '}
 	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 3^Value;
 								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 3^Input;
 								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 3^Output
 	'}
 	PA2K4_IP1_PIP_01 : FB_PIP_Gamma;
-
+*)
 	{attribute 'pytmc' :=' pv: MR4K4:KBO:PIP:01 '}
 	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 4^Value;
 								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 4^Input;

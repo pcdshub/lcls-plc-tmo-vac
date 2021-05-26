@@ -130,7 +130,14 @@ VAR_GLOBAL
 								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 1^Input;
 								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 1^Output
 	'}
-	PC4K4_XTES_PIP_01 : FB_PIP_Gamma;		
+	PC4K4_XTES_PIP_01 : FB_PIP_Gamma;	
+
+	{attribute 'pytmc' :=' pv: TV1K4:PIP:01 '}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E9_QPC2 (EL3064)]^AI Standard Channel 3^Value;
+								 .i_xSP_DI		:= 	TIIB[CX0_E10_QPC2 (EL1004)]^Channel 3^Input;
+								 .q_xHVEna_DO	:= 	TIIB[CX0_E11_QPC2 (EL2794)]^Channel 3^Output
+	'}
+	TV1K4_PIP_01 : FB_PIP_Gamma;
 
 	
 	

@@ -116,6 +116,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 	SP1L0_KMONO_PIP_01(i_stGauge:=SP1L0_KMONO_GCC_01.IG, stPump=>);*)		
 
 	MR1K4_SOMS_PIP_01(i_stGauge := USG_PIP, stPump=>);
+	TV1K4_PIP_01(i_stGauge := TV1K4_GCC_01.IG, stPump=>);
 	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
 	ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
 	ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
@@ -149,7 +150,9 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
       <LineId Id="81" Count="0" />
       <LineId Id="117" Count="0" />
       <LineId Id="133" Count="0" />
-      <LineId Id="82" Count="9" />
+      <LineId Id="82" Count="5" />
+      <LineId Id="181" Count="0" />
+      <LineId Id="88" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
