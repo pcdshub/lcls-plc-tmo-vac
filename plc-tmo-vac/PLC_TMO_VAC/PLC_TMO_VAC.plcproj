@@ -15,7 +15,7 @@
     <LibraryReferences>{305ce49b-f61a-4652-a946-d955e26fe5fe}</LibraryReferences>
     <CombineIds>false</CombineIds>
     <Company>SLAC</Company>
-    <Released>true</Released>
+    <Released>false</Released>
     <Title>lcls-plc-tmo-vac</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
