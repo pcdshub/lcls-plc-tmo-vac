@@ -113,6 +113,7 @@
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
 			<SyncUnit Name="IP1_ECAT (EL6692)" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="vls" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
