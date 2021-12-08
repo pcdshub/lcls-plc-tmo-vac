@@ -103,6 +103,9 @@
 		.i_xOpnLS	:=	TIIB[K4S8_01_E1 (EL1004)]^Channel 2^Input;
 		.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input '}
 	MR4K4_KBO_VFS_1 : FB_VFS;
+    
+    
+   
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
