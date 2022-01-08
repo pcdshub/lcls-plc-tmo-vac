@@ -96,21 +96,6 @@
 		<Box File="TMO_K4S8_DRL_01 (EK1100).xti" Id="83">
 			<EtherCAT PortABoxInfo="#x0200003f"/>
 		</Box>
-		<Box File="VLS_EP1 (EP2624-0002).xti" Id="102">
-			<EtherCAT PortABoxInfo="#x02000053"/>
-		</Box>
-		<Box File="VLS_EP2 (EP2338-0001).xti" Id="103">
-			<EtherCAT PortABoxInfo="#x01000066"/>
-		</Box>
-		<Box File="VLS_EP3 (EP2339-0021).xti" Id="105">
-			<EtherCAT PortABoxInfo="#x01000067"/>
-		</Box>
-		<Box File="VLS_EP4 (EP3174-0002).xti" Id="107">
-			<EtherCAT PortABoxInfo="#x01000069"/>
-		</Box>
-		<Box File="VLS_EP5 (EP6002-0002).xti" Id="108">
-			<EtherCAT PortABoxInfo="#x0100006b"/>
-		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
 			<SyncUnit Name="IP1_ECAT (EL6692)" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="vls" NoDeleteIfUnused="true"/>

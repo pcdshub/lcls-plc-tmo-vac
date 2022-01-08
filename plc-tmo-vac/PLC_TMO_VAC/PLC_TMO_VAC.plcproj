@@ -33,9 +33,6 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_COM_VLS.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_FEE_Device.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -66,16 +63,10 @@
     <Compile Include="GVLs\GVL_Variables.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL_VLS.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\DIAGNOSTICS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_VRC_NO_FFO_VLS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\F_Turbo_Protection_ILK.TcPOU">
@@ -88,9 +79,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_PMPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_COM_VLS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">

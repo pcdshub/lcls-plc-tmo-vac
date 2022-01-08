@@ -7,9 +7,6 @@
     <PouCall>
       <Name>PRG_COM</Name>
     </PouCall>
-    <PouCall>
-      <Name>PRG_COM_VLS</Name>
-    </PouCall>
     <TaskFBGuid>{9c0d7e22-d088-43b4-bbce-8e2825387618}</TaskFBGuid>
     <Fb_init>{3545edad-94ba-452e-8a86-11b7c4bd1fe3}</Fb_init>
     <Fb_exit>{8fdd0f99-5b54-4dc1-9db7-f00132b14dca}</Fb_exit>
