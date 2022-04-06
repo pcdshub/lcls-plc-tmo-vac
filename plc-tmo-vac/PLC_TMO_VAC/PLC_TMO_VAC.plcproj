@@ -33,9 +33,6 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_COM_VLS.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_FEE_Device.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -66,9 +63,6 @@
     <Compile Include="GVLs\GVL_Variables.TcGVL">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\GVL_VLS.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -88,9 +82,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_PMPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_COM_VLS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
@@ -117,19 +108,10 @@
     <Compile Include="POUs\PRG_IP1_ECAT_Interfaces.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_VLS_Turbo.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Section_2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_VLS_VACUUM.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_VLS_WINDOW.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
