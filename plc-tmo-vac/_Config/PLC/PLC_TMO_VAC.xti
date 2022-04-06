@@ -1147,6 +1147,17 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI</Name>
+					<Comment>
+						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
 					<Comment>
 						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
@@ -1967,17 +1978,6 @@ EL6692 TxPDO state
 					</Comment>
 					<Type>INT</Type>
 				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI</Name>
-					<Comment>
-						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2194,6 +2194,13 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when TRUE]]>
 					</Comment>
@@ -2711,6 +2718,14 @@ EL6692 TxPDO state
 					<Type>STRING(8)</Type>
 				</Var>
 				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2755,21 +2770,6 @@ EL6692 TxPDO state
 					<Name>GVL_VLS.DS_GCC.q_xHV_DIS</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>

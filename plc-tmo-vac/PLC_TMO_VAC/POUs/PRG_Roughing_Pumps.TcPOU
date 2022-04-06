@@ -79,9 +79,12 @@ xLAMP_VRC01_VRC02_atOpnLS := IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR
                               AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_COM_ERROR;
 			  
 TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS )
-                            AND ( IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR 
-                                   and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS 
-                                 OR xLAMP_VRC01_VRC02_atOpnLS );
+                            AND ( 
+                                  IP1_ROUGH_VRC_01_AtOpnLS 
+                                  AND NOT IP1_ECAT_COM_ERROR 
+                                  and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS 
+                                  OR xLAMP_VRC01_VRC02_atOpnLS 
+                                 );
 
 
 (* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_01 is closed *)	
@@ -290,120 +293,5 @@ IM5K4_PPM_PTM_01.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM_Granite2[3],
 		
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_Roughing_Pumps">
-      <LineId Id="308" Count="0" />
-      <LineId Id="314" Count="8" />
-      <LineId Id="469" Count="1" />
-      <LineId Id="323" Count="9" />
-      <LineId Id="334" Count="2" />
-      <LineId Id="758" Count="1" />
-      <LineId Id="940" Count="0" />
-      <LineId Id="943" Count="0" />
-      <LineId Id="942" Count="0" />
-      <LineId Id="472" Count="0" />
-      <LineId Id="763" Count="0" />
-      <LineId Id="471" Count="0" />
-      <LineId Id="765" Count="0" />
-      <LineId Id="757" Count="0" />
-      <LineId Id="771" Count="1" />
-      <LineId Id="770" Count="0" />
-      <LineId Id="768" Count="0" />
-      <LineId Id="696" Count="1" />
-      <LineId Id="693" Count="0" />
-      <LineId Id="338" Count="1" />
-      <LineId Id="341" Count="0" />
-      <LineId Id="82" Count="7" />
-      <LineId Id="129" Count="1" />
-      <LineId Id="98" Count="0" />
-      <LineId Id="80" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="703" Count="1" />
-      <LineId Id="93" Count="0" />
-      <LineId Id="99" Count="7" />
-      <LineId Id="125" Count="1" />
-      <LineId Id="92" Count="0" />
-      <LineId Id="700" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="702" Count="0" />
-      <LineId Id="898" Count="0" />
-      <LineId Id="708" Count="0" />
-      <LineId Id="707" Count="0" />
-      <LineId Id="775" Count="0" />
-      <LineId Id="760" Count="1" />
-      <LineId Id="773" Count="1" />
-      <LineId Id="111" Count="8" />
-      <LineId Id="127" Count="1" />
-      <LineId Id="110" Count="0" />
-      <LineId Id="713" Count="1" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="474" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="141" Count="0" />
-      <LineId Id="182" Count="0" />
-      <LineId Id="143" Count="0" />
-      <LineId Id="183" Count="0" />
-      <LineId Id="186" Count="0" />
-      <LineId Id="201" Count="3" />
-      <LineId Id="188" Count="10" />
-      <LineId Id="161" Count="0" />
-      <LineId Id="213" Count="0" />
-      <LineId Id="219" Count="2" />
-      <LineId Id="214" Count="1" />
-      <LineId Id="222" Count="8" />
-      <LineId Id="216" Count="1" />
-      <LineId Id="231" Count="2" />
-      <LineId Id="218" Count="0" />
-      <LineId Id="206" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="35" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="36" Count="0" />
-      <LineId Id="381" Count="1" />
-      <LineId Id="384" Count="4" />
-      <LineId Id="407" Count="0" />
-      <LineId Id="389" Count="4" />
-      <LineId Id="383" Count="0" />
-      <LineId Id="415" Count="0" />
-      <LineId Id="397" Count="1" />
-      <LineId Id="238" Count="0" />
-      <LineId Id="396" Count="0" />
-      <LineId Id="239" Count="0" />
-      <LineId Id="244" Count="0" />
-      <LineId Id="241" Count="2" />
-      <LineId Id="237" Count="0" />
-      <LineId Id="40" Count="0" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="818" Count="0" />
-      <LineId Id="817" Count="0" />
-      <LineId Id="401" Count="5" />
-      <LineId Id="246" Count="0" />
-      <LineId Id="399" Count="1" />
-      <LineId Id="251" Count="0" />
-      <LineId Id="247" Count="2" />
-      <LineId Id="245" Count="0" />
-      <LineId Id="250" Count="0" />
-      <LineId Id="41" Count="0" />
-      <LineId Id="408" Count="6" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="254" Count="3" />
-      <LineId Id="253" Count="0" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="260" Count="0" />
-      <LineId Id="262" Count="3" />
-      <LineId Id="259" Count="0" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="270" Count="3" />
-      <LineId Id="269" Count="0" />
-      <LineId Id="274" Count="0" />
-      <LineId Id="48" Count="1" />
-      <LineId Id="416" Count="16" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="26" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
