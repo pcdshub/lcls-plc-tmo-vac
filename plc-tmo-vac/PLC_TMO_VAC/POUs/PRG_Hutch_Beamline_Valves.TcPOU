@@ -165,12 +165,22 @@ PC5K4_VWC_01(
 );
 	
 *)
-							   
+(* TM2K4_VWC_01(
+				i_stUSG := PA2K4_IP1_GCC_01.IG, 
+				i_stDSG:= MR4K4_KBO_GCC_01.IG, 
+				i_xDis_DPIlk := FALSE, 
+				i_xEPS_OK := TRUE,
+				i_xPMPS_OK := TRUE, 
+				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
+				i_xOverrideMode := xSystemOverrideMode_TMO, 
+				i_xReset := xReset_PMPS_FFO2,
+				iq_stValve =>,
+				io_fbFFHWO :=g_FastFaultOutput2,
+                fbArbiter := g_fbArbiter2,
+				i_nTransitionRootID := 47696
+);
+	*)						   
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_Hutch_Beamline_Valves">
-      <LineId Id="3" Count="132" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
