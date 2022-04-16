@@ -5,7 +5,7 @@
 VAR
 	LAMP_C2_GCC_01: FB_MKS500; // wrong. only need temporary before integrate with LAMP 
 	xAll_Turbo_isRunning : BOOL := False;
-
+    
 	
 	ton_PA1K4_IP1_PTM_01_notRunning : TON;
 	ton_PA1K4_IP1_PTM_02_notRunning : TON;
@@ -142,9 +142,9 @@ PC5K4_VWC_01(
 				i_xPMPS_OK := TRUE, 
 				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
-				i_xReset := xReset_PMPS_FFO2,
+				i_xReset := xReset_PMPS_FFO5,
 				iq_stValve =>,
-				io_fbFFHWO :=g_FastFaultOutput2,
+				io_fbFFHWO :=g_FastFaultOutput5,
                 fbArbiter := g_fbArbiter2,
 				i_nTransitionRootID := 47680
 );
