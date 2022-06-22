@@ -142,10 +142,10 @@ PC5K4_VWC_01(
 				i_xPMPS_OK := TRUE, 
 				i_xExt_OK := NOT xTurboFault, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
-				i_xReset := xReset_PMPS_FFO2,
+				i_xReset := xReset_PMPS_FFO5,
 				iq_stValve =>,
-				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter2,
+				io_fbFFHWO :=g_FastFaultOutput5,
+                fbArbiter := g_fbArbiter3,
 				i_nTransitionRootID := 47680
 );
 
@@ -159,8 +159,8 @@ PC5K4_VWC_01(
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
 				i_xReset := xReset_PMPS_FFO2,
 				iq_stValve =>,
-				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter2,
+				io_fbFFHWO :=g_FastFaultOutput5,
+                fbArbiter := g_fbArbiter3,
 				i_nTransitionRootID := 47696
 );
 	
@@ -173,10 +173,10 @@ PC5K4_VWC_01(
 				i_xPMPS_OK := TRUE, 
 				i_xExt_OK := xTurbos_are_Atspd AND xValves_are_OPN_OK, 
 				i_xOverrideMode := xSystemOverrideMode_TMO, 
-				i_xReset := xReset_PMPS_FFO2,
+				i_xReset := xReset_PMPS_FFO5,
 				iq_stValve =>,
-				io_fbFFHWO :=g_FastFaultOutput2,
-                fbArbiter := g_fbArbiter2,
+				io_fbFFHWO :=g_FastFaultOutput5,
+                fbArbiter := g_fbArbiter3,
 				i_nTransitionRootID := 47696
 );
 	*)						   

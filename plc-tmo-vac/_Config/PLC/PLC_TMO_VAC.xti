@@ -582,14 +582,6 @@
 			<Vars VarGrpType="2">
 				<Name>FSVTask Outputs</Name>
 				<Var>
-					<Name>GVL_FSV_PMPS.g_FastFaultOutput3.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FSV_PMPS.g_FastFaultOutput4.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_1.q_xClose_A</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -704,6 +696,14 @@
 						<![CDATA[Interface]]>
 					</Comment>
 					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput3.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput4.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -922,10 +922,6 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[0 = Data valid, 1 = Data invalid]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1678,15 +1674,11 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1701,6 +1693,14 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2060,10 +2060,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2526,6 +2522,10 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2690,6 +2690,10 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2788,6 +2792,14 @@ EL6692 TxPDO state
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2022-06-22T10:19:36">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
+						<Link VarA="GVL_FSV_PMPS.g_FastFaultOutput3.q_xFastFaultOut" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_FSV_PMPS.g_FastFaultOutput4.q_xFastFaultOut" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -2831,8 +2843,8 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
-				<Link VarA="FSVTask Outputs^GVL_FSV_PMPS.g_FastFaultOutput3.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FSV_PMPS.g_FastFaultOutput4.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_PMPS.g_FastFaultOutput3.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_PMPS.g_FastFaultOutput4.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E2_EXILK (EL1008)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.USVacOk_HI" VarB="Channel 1^Input" AutoLink="true"/>
