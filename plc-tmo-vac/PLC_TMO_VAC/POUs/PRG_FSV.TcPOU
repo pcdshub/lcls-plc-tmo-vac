@@ -24,7 +24,7 @@ MR3K4_KBO_VFS_1(
 	io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput4
 );
 
-(* not installed yet
+
 
 MR4K4_KBO_VFS_1(
 	i_xPMPS_OK:= TRUE, 
@@ -34,7 +34,7 @@ MR4K4_KBO_VFS_1(
 	io_fbFFHWO:= g_FastFaultOutput4
 );
 
-*)
+
 
 // M1K1 Veto
 bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 

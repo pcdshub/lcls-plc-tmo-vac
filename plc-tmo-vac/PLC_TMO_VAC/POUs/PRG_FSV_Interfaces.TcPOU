@@ -12,7 +12,7 @@ TV1K4_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG,Veto_Valve := ST3K4_PPS_VGC_01.iq_st
 
 MR3K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG,Veto_Valve:=MR3K4_KBO_VWC_01.iq_stValve);
 
-//MR4K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG);
+MR4K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG, Veto_valve:= MR4K4_KBO_VWC_01.iq_stValve);
 ]]></ST>
     </Implementation>
   </POU>

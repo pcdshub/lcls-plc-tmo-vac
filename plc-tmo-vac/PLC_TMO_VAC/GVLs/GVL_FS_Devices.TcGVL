@@ -84,13 +84,17 @@
 								 .q_xVAC_FAULT_Reset:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset;
 								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode;
 								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen;
-								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger;
+								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger;								                       
 								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open;
 								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed;
 								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK;
 								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK;
-								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State
-	'}
+								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State;
+                                 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO;
+								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed	
+'}
+	
+	
 	
 	MR4K4_KBO_VFS_Interface : FB_VFS_Interface;	
 	
@@ -101,7 +105,7 @@
 		.q_xOPN_DO	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E4 (EL2202)^Channel 2^Output;
 		.i_xClsLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 1^Input;
 		.i_xOpnLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 2^Input;
-	//	.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input 
+		.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input 
 '} 
 	
 	MR4K4_KBO_VFS_1 : FB_VFS;
