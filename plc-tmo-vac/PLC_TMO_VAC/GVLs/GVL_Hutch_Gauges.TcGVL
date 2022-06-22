@@ -91,7 +91,7 @@ VAR_GLOBAL
 								 .q_xHV_DIS		:= 	TIIB[TMO_K4S8_DRL_02 (EK1100)]^K4S8_02_E3 (EL2624)^Channel 1^Output'}			
 	TM2K4_KBO_GCC_01 : FB_MKS500;
 	
-	{attribute 'pytmc' :=' pv: TM6K4:KBO:GPI:01 '}
+	{attribute 'pytmc' :=' pv: TM2K4:KBO:GPI:01 '}
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S8_DRL_02 (EK1100)]^K4S8_02_E4 (EL3174)^AI Standard Channel 3^Value '}		
 	TM2K4_KBO_GPI_01 : FB_MKS275;
    
