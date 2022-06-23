@@ -1567,13 +1567,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R</Name>
-					<Comment>
-						<![CDATA[ input Pressure // Link to analog Input]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R</Name>
 					<Comment>
 						<![CDATA[ input Pressure // Link to analog Input]]>
@@ -1870,17 +1863,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xOpnLS</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xOpnLS</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -1889,6 +1871,17 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1949,6 +1942,13 @@ EL6692 TxPDO state
 						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R</Name>
+					<Comment>
+						<![CDATA[ input Pressure // Link to analog Input]]>
+					</Comment>
+					<Type>INT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -2584,11 +2584,11 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_02.q_xOPN_DO</Name>
+					<Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO</Name>
+					<Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2736,19 +2736,6 @@ EL6692 TxPDO state
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
-			<UnrestoredVarLinks ImportTime="2022-04-06T14:21:03">
-				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
-					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E6 (EL2004)">
-						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
-					</OwnerB>
-				</OwnerA>
-				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
-					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E5 (EL1004)">
-						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
-						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
-					</OwnerB>
-				</OwnerA>
-			</UnrestoredVarLinks>
 			<UnrestoredVarLinks ImportTime="2022-06-22T10:19:36">
 				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
@@ -2771,6 +2758,19 @@ EL6692 TxPDO state
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124)">
 						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xDisc_Active" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2022-06-23T12:10:13">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E6 (EL2004)">
+						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_02.q_xOPN_DO" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E5 (EL1004)">
+						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xClsLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -3297,12 +3297,12 @@ EL6692 TxPDO state
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E5 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_02.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E6 (EL2004)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_02.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E1 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
