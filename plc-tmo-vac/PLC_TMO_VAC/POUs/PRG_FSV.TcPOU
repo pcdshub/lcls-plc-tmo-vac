@@ -52,10 +52,6 @@ g_FastFaultOutput3.Execute(bAutoReset:= TRUE, i_xVeto:=bM1K1Veto_IN);
 g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aVetoDevices[K_Stopper.ST3K4]
                                     OR bM1K1Veto_IN, bAutoReset:= TRUE);
 
-//g_FastFaultOutput4.q_xFastFaultOut R= NOT g_FastFaultOutput3.q_xFastFaultOut;
-//fastFaultSaveMyLife(i_xOK := g_FastFaultOutput3.q_xFastFaultOut, i_xAutoReset := TRUE, io_fbFFHWO:=g_FastFaultOutput4);
-
-//g_FastFaultOutput4.Execute(bAutoReset:= TRUE);
 
 // Everything downstream of ST4K4
 g_FastFaultOutput6.Execute(i_xVeto:= bST4K4Veto_IN, bAutoReset:= TRUE);
