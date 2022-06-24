@@ -26,7 +26,7 @@ END_VAR
 	IG=> , 
 	bError=> ); *)
 	(* if upstream vacuum ok, set upstream press at good levels *)  
-    IF USVacOk_HI THEN 
+    IF USVacOk_LO THEN 
 		USG_VGC.xAT_VAC := TRUE;
 		USG_VGC.rPRESS := 1E-7;
 		USG_VGC.xPRESS_OK := TRUE;
@@ -37,7 +37,7 @@ END_VAR
 		USG_VGC.sPath:=  'MR1K4_SOMS_GCC_1';
 	END_IF
 
-    IF USVacOk_LO THEN 
+    IF USVacOk_HI THEN 
 		USG_PIP.rPRESS := 5E-5;
 		USG_PIP.xPRESS_OK := TRUE;
 		USG_PIP.xAT_VAC := TRUE;
@@ -123,37 +123,5 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 	PC4K4_XTES_PIP_01(i_stGauge := PC4K4_XTES_GPI_01.PG, stPump=>);	
 			]]></ST>
     </Implementation>
-    <LineIds Name="PRG_FEE">
-      <LineId Id="3" Count="13" />
-      <LineId Id="163" Count="0" />
-      <LineId Id="17" Count="2" />
-      <LineId Id="166" Count="0" />
-      <LineId Id="20" Count="5" />
-      <LineId Id="164" Count="0" />
-      <LineId Id="26" Count="2" />
-      <LineId Id="167" Count="0" />
-      <LineId Id="29" Count="18" />
-      <LineId Id="150" Count="0" />
-      <LineId Id="48" Count="8" />
-      <LineId Id="137" Count="0" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="130" Count="0" />
-      <LineId Id="104" Count="0" />
-      <LineId Id="58" Count="10" />
-      <LineId Id="136" Count="0" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="132" Count="0" />
-      <LineId Id="135" Count="0" />
-      <LineId Id="131" Count="0" />
-      <LineId Id="70" Count="10" />
-      <LineId Id="134" Count="0" />
-      <LineId Id="81" Count="0" />
-      <LineId Id="117" Count="0" />
-      <LineId Id="133" Count="0" />
-      <LineId Id="82" Count="5" />
-      <LineId Id="181" Count="0" />
-      <LineId Id="88" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
