@@ -5,6 +5,10 @@
 VAR
 	fastFaultSaveMyLife : FB_FastFault;
     bM1K1Veto_IN : BOOL;
+	bST3K4Veto_IN: BOOL;
+	bST4K4Veto_IN: BOOL;
+	ff6_ff4_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF6 to FF4 Link', i_Desc := 'This is virtual FF5 fault, Please check ST4K4 downstream MR4K4_FSV ', i_TypeCode := 16#9999);
+	fb_VetoArbiter2: FB_VetoArbiter;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -31,7 +35,7 @@ MR4K4_KBO_VFS_1(
 	i_xExt_OK:= TRUE, 
 	i_xVeto_Enable:=TRUE,
 	i_sDevName:= 'MR4K4:KBO:VFS:1',
-	io_fbFFHWO:= g_FastFaultOutput4
+	io_fbFFHWO:= g_FastFaultOutput6
 );
 
 
@@ -39,6 +43,8 @@ MR4K4_KBO_VFS_1(
 // M1K1 Veto
 bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
+bST3K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] OR bM1K1Veto_IN;
+bST4K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4] OR bST3K4Veto_IN;
 
 (*FastFaultOuput*)	
 g_FastFaultOutput3.Execute(bAutoReset:= TRUE, i_xVeto:=bM1K1Veto_IN);
@@ -51,7 +57,12 @@ g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aVetoDevice
 
 //g_FastFaultOutput4.Execute(bAutoReset:= TRUE);
 
-]]></ST>
+// Everything downstream of ST4K4
+g_FastFaultOutput6.Execute(i_xVeto:= bST4K4Veto_IN, bAutoReset:= TRUE);
+
+ff6_ff4_link_vac(
+    io_fbFFHWO := GVL_PMPS.g_FastFaultOutput4,
+    i_xOK := GVL_PMPS.g_FastFaultOutput6.q_xFastFaultOut);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
