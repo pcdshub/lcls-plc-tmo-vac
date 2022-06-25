@@ -7,7 +7,7 @@ VAR
     bM1K1Veto_IN : BOOL;
 	bST3K4Veto_IN: BOOL;
 	bST4K4Veto_IN: BOOL;
-	ff6_ff4_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF6 to FF4 Link', i_Desc := 'This is virtual FF5 fault, Please check ST4K4 downstream MR4K4_FSV ', i_TypeCode := 16#9999);
+	ff6_ff4_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF6 to FF4 Link', i_Desc := 'Do not bypass! This is virtual FF6 fault, Please check ST4K4 downstream MR4K4_FSV ', i_TypeCode := 16#9999);
 	fb_VetoArbiter2: FB_VetoArbiter;
 END_VAR
 ]]></Declaration>
