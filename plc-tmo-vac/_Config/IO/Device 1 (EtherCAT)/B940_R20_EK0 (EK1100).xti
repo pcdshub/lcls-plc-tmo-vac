@@ -16,8 +16,11 @@
 		<Box File="R20_EK0_E3_MKS937B (EL2794).xti" Id="43">
 			<EtherCAT PortABoxInfo="#x0100002a"/>
 		</Box>
-		<Box File="R20_EK0_E4_MKS937B (EL9505).xti" Id="44">
+		<Box File="R20_EK0_SIP (EL3174-0002).xti" Id="134">
 			<EtherCAT PortABoxInfo="#x0100002b"/>
+		</Box>
+		<Box File="R20_EK0_E4_MKS937B (EL9505).xti" Id="44">
+			<EtherCAT PortABoxInfo="#x01000086"/>
 		</Box>
 		<Box File="R20_EK0_E5_MKS937B (EL1124).xti" Id="45">
 			<EtherCAT PortABoxInfo="#x0100002c"/>
