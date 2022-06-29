@@ -75,7 +75,7 @@
 //	MR3K4_KBO_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
 	
 	{attribute 'pytmc' := '
-		pv: MR4K4:KBO:VFS_1
+		pv: MR4K4:KBO:VFS:01
 	'}
 	
 	{attribute 'TcLinkTo' := 	'.q_xPress_OK		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK;
