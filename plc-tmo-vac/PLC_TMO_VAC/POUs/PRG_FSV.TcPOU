@@ -35,7 +35,7 @@ MR4K4_KBO_VFS_1(
 	i_xExt_OK:= TRUE, 
 	i_xVeto_Enable:=TRUE,
 	i_sDevName:= 'MR4K4:KBO:VFS:1',
-	io_fbFFHWO:= g_FastFaultOutput6
+	io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput6
 );
 
 

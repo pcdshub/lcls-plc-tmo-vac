@@ -99,7 +99,8 @@ MR2K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter2,
-				i_nTransitionRootID := 47632
+				i_nTransitionRootID := 47632,
+				i_sDevName := 'MR2K4-KBO-VWC-01'
 				
 );
 
@@ -116,7 +117,9 @@ MR3K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter2,
-				i_nTransitionRootID := 47648
+				i_nTransitionRootID := 47648,
+				i_sDevName := 'MR3K4-KBO-VWC-01'
+				
 );
 
 LI3K4_IP1_VWC_01(
@@ -131,7 +134,8 @@ LI3K4_IP1_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput2,
                 fbArbiter := g_fbArbiter2,
-				i_nTransitionRootID := 47664
+				i_nTransitionRootID := 47664,
+				i_sDevName := 'LI3K4-IP1-VWC-01'
 );
 
 PC5K4_VWC_01(
@@ -146,7 +150,8 @@ PC5K4_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput5,
                 fbArbiter := g_fbArbiter3,
-				i_nTransitionRootID := 47680
+				i_nTransitionRootID := 47680,
+				i_sDevName := 'PC5K4-VWC-01'
 );
 
 MR4K4_KBO_VWC_01(
@@ -161,7 +166,8 @@ MR4K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput5,
                 fbArbiter := g_fbArbiter3,
-				i_nTransitionRootID := 47696
+				i_nTransitionRootID := 47696,
+				i_sDevName := 'MR4K4-KBO-VWC-01'
 );
 // when dream arrives, this needs to be changes to dream gauge(downstream)	
 MR5K4_KBO_VWC_01(
@@ -176,7 +182,8 @@ MR5K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput5,
                 fbArbiter := g_fbArbiter3,
-				i_nTransitionRootID := 47696
+				i_nTransitionRootID := 47697,
+				i_sDevName := 'MR5K4-KBO-VWC-01'
 );
 //Currently there is no dream, so TM2K4 valve is always open during this configuration
 TM2K4_KBO_VWC_01(
@@ -191,7 +198,8 @@ TM2K4_KBO_VWC_01(
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput5,
                 fbArbiter := g_fbArbiter3,
-				i_nTransitionRootID := 47696
+				i_nTransitionRootID := 47698,
+				i_sDevName := 'TM2K4-KBO-VWC-01'
 );
 						   
 ]]></ST>
