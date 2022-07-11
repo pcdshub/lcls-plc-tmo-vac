@@ -54,7 +54,9 @@ if (bRemove) THEN
 END_IF
 if (bRemove2) THEN
 	g_fbArbiter2.RemoveRequest(ID);
-END_IF]]></ST>
+END_IF
+
+g_fbArbiter1.AddRequest(nReqID := 131313, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-tmo-vac');]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
