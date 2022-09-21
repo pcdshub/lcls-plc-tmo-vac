@@ -25,8 +25,36 @@
 		<Box File="K4S8_02_E6 (EL9070).xti" Id="102">
 			<EtherCAT PortABoxInfo="#x010000dc"/>
 		</Box>
+		<Box BoxType="9099" Id="228">
+			<Name>K4S8_02_E6A (EL1084)</Name>
+			<ImageId>7</ImageId>
+			<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x043c3052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1084 4Ch. Dig. Input 24V, 3ms, negative" Desc="EL1084" PortABoxInfo="#x010000dc">
+				<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+				<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+				<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+					<Entry Name="Input" Index="#x6000" Sub="#x01">
+						<Type>BIT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+					<Entry Name="Input" Index="#x6010" Sub="#x01">
+						<Type>BIT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+					<Entry Name="Input" Index="#x6020" Sub="#x01">
+						<Type>BIT</Type>
+					</Entry>
+				</Pdo>
+				<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+					<Entry Name="Input" Index="#x6030" Sub="#x01">
+						<Type>BIT</Type>
+					</Entry>
+				</Pdo>
+			</EtherCAT>
+		</Box>
 		<Box File="K4S8_02_E7 (EL9505).xti" Id="221">
-			<EtherCAT PortABoxInfo="#x010000dc"/>
+			<EtherCAT PortABoxInfo="#x010000e4"/>
 		</Box>
 		<Box File="K4S8_02_E8 (EL1124).xti" Id="222">
 			<EtherCAT PortABoxInfo="#x010000dd"/>
