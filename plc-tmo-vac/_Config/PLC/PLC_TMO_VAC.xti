@@ -990,6 +990,27 @@
 					<Type>BIT</Type>
 				</Var>
 				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
+					<Comment>
+						<![CDATA[ Controls and I/Os]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xHV_ON</Name>
+					<Comment>
+						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xDisc_Active</Name>
+					<Comment>
+						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
 					<Comment>
 						<![CDATA[ upstream vacuum <10E-6, for mirror VGC interlock ]]>
@@ -1014,86 +1035,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error Active when no Error is present]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
 					<Comment>
 						<![CDATA[0: External device connected, 1: External device not connected]]>
@@ -1109,141 +1050,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error Active when no Error is present]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xAtSpd</Name>
-					<Comment>
-						<![CDATA[ Normaml operation when true]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xFaultNC</Name>
-					<Comment>
-						<![CDATA[ Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xWarn</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[EL6692 Input ]]>
-					</Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
-					<Comment>
-						<![CDATA[ Controls and I/Os]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xHV_ON</Name>
-					<Comment>
-						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xDisc_Active</Name>
-					<Comment>
-						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1636,13 +1442,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xDisc_Active</Name>
-					<Comment>
-						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R</Name>
 					<Comment>
 						<![CDATA[ Controls and I/Os]]>
@@ -1776,6 +1575,20 @@ EL6692 TxPDO state
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R</Name>
+					<Comment>
+						<![CDATA[ Controls and I/Os]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON</Name>
+					<Comment>
+						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R</Name>
 					<Comment>
 						<![CDATA[ input Pressure // Link to analog Input]]>
@@ -1842,6 +1655,186 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error Active when no Error is present]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error Active when no Error is present]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.i_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xAtSpd</Name>
+					<Comment>
+						<![CDATA[ Normaml operation when true]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xFaultNC</Name>
+					<Comment>
+						<![CDATA[ Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xWarn</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xRemote</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1955,6 +1948,13 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Input ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
 					<Type>REAL</Type>
 				</Var>
@@ -1964,6 +1964,13 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2094,219 +2101,18 @@ EL6692 TxPDO state
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_RunDO</Name>
-					<Comment>
-						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_PumpingStation</Name>
-					<Comment>
-						<![CDATA[ Start/Stop interlock]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xRemote</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xReset</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[EL6692 Output ]]>
-					</Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2617,6 +2423,13 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.q_xHVEna_DO</Name>
 					<Comment>
 						<![CDATA[ Enable High Voltage when TRUE]]>
@@ -2635,6 +2448,156 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ Enable High Voltage when TRUE]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xReset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xReset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xReset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xReset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.TM1K4_PTM_01.q_xReset</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_RunDO</Name>
+					<Comment>
+						<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_PumpingStation</Name>
+					<Comment>
+						<![CDATA[ Start/Stop interlock]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xRemote</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xReset</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2675,6 +2638,57 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Output ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2768,19 +2782,12 @@ EL6692 TxPDO state
 				</OwnerA>
 			</UnrestoredVarLinks>
 			<UnrestoredVarLinks ImportTime="2022-06-22T13:41:36">
-				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
-					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E3 (EL2624)">
-						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
-					</OwnerB>
-				</OwnerA>
 				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E4 (EL3174)">
 						<Link VarA="GVL_Hutch_Gauges.IM6K4_PPM_GPI_01.i_iPRESS_R" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="AI Standard Channel 3^Value" AutoLink="true" RestoreInfo="ANotFound"/>
-						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="AI Standard Channel 2^Value" AutoLink="true" RestoreInfo="ANotFound"/>
 					</OwnerB>
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124)">
 						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xDisc_Active" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
-						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -2801,6 +2808,13 @@ EL6692 TxPDO state
 				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E10_QPC2 (EL1004)">
 						<Link VarA="GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xSP_DI" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2022-09-21T13:47:42">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E8 (EL1124)">
+						<Link VarA="GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xDisc_Active" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -2942,7 +2956,7 @@ EL6692 TxPDO state
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E3_MKS937B (EL2794)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
@@ -3176,6 +3190,9 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Variables.iHV_LOOP_FIM_ON" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20A (EL1088)">
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
@@ -3186,8 +3203,6 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E8 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
@@ -3348,11 +3363,16 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E3 (EL2624)">
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E4 (EL3174)">
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E6A (EL1084)">
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>

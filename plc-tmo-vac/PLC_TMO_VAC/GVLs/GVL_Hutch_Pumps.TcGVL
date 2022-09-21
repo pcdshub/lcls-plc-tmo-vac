@@ -22,7 +22,7 @@ VAR_GLOBAL
 	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[R20_EK0_SIP (EL3174-0002)]^AI Standard Channel 1^Value;
 								 .i_xIP_ON		:= 	TIIB[R20_EK0_E5_MKS937B (EL1124)]^Channel 3^Input;
 								 .i_xError      :=  TIIB[R20_EK0_E5_MKS937B (EL1124)]^Channel 4^Input;
-								 .q_xHVEna_DO	:= 	TIIB[R20_EK0_E3_MKS937B (EL2794)]^Channel 3^Output
+								 .q_xHVEna_DO	:= 	TIIB[R20_EK0_E3_MKS937B (EL2794)]^Channel 4^Output
 	'}
 	PA2K4_IP1_PIP_01 : FB_PIP_SIP;
 
