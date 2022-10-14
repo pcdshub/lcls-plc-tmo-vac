@@ -3,7 +3,7 @@
   <Task Name="ComTask" Id="{96891bea-61b9-4f30-82f7-9e46d77f4885}">
     <!--CycleTime in micro seconds.-->
     <CycleTime>11000</CycleTime>
-    <Priority>1</Priority>
+    <Priority>30</Priority>
     <PouCall>
       <Name>PRG_COM</Name>
     </PouCall>

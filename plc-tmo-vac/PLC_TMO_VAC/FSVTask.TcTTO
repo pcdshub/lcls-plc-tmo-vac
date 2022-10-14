@@ -3,7 +3,7 @@
   <Task Name="FSVTask" Id="{3784e15f-cbe8-4a1b-8322-bc6675b2ee88}">
     <!--CycleTime in micro seconds.-->
     <CycleTime>2000</CycleTime>
-    <Priority>2</Priority>
+    <Priority>15</Priority>
     <PouCall>
       <Name>PRG_FSV</Name>
     </PouCall>
