@@ -2,62 +2,6 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
-			<Comment>
-				<![CDATA[ This data type is corresponding to the
-   KL-6xxx data structure used in the
-   TwinCAT SystemManager
-   (KL-6xxx version using 5 data bytes / 
-    non-alternative (standard) output ) 
-]]>
-			</Comment>
-			<BitSize>192</BitSize>
-			<SubItem>
-				<Name>Status</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>D</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
-				<ArrayInfo>
-					<LBound>0</LBound>
-					<Elements>22</Elements>
-				</ArrayInfo>
-				<BitSize>176</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
-			<Comment>
-				<![CDATA[ This data type is corresponding to the
-   KL-6xxx data structure used in the
-   TwinCAT SystemManager
-   (KL-6xxx version using 5 data bytes / 
-    non-alternative (standard) output ) 
-]]>
-			</Comment>
-			<BitSize>192</BitSize>
-			<SubItem>
-				<Name>Ctrl</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>D</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
-				<ArrayInfo>
-					<LBound>0</LBound>
-					<Elements>22</Elements>
-				</ArrayInfo>
-				<BitSize>176</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
 			<Name GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_VGC</Name>
 			<BitSize>16</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
@@ -121,24 +65,6 @@
 				</Text>
 				<Enum>9</Enum>
 			</EnumInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-			<Format>
-				<Printf>%d.%d.%d.%d.%d.%d</Printf>
-				<Parameter>[0]</Parameter>
-				<Parameter>[1]</Parameter>
-				<Parameter>[2]</Parameter>
-				<Parameter>[3]</Parameter>
-				<Parameter>[4]</Parameter>
-				<Parameter>[5]</Parameter>
-			</Format>
 		</DataType>
 		<DataType>
 			<Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
@@ -397,61 +323,85 @@
 				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
 			</Hides>
 		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Ctrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-			<Vars VarGrpType="1">
-				<Name>ComTask Inputs</Name>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E10_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO //K4S2_02_E10 (EL6021)]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S6_01_E5_stComIn</Name>
-					<Comment>
-						<![CDATA[Serial IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E17_stComIn</Name>
-					<Comment>
-						<![CDATA[Serial IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E18_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="2">
-				<Name>ComTask Outputs</Name>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E10_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S6_01_E5_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E17_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-			</Vars>
 			<Vars VarGrpType="1">
 				<Name>FSVTask Inputs</Name>
 				<Var>
@@ -844,20 +794,6 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
 					<Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
 					<SubVar>
@@ -988,27 +924,6 @@
 				<Var>
 					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
 					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
-					<Comment>
-						<![CDATA[ Controls and I/Os]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xHV_ON</Name>
-					<Comment>
-						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xDisc_Active</Name>
-					<Comment>
-						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
@@ -1768,10 +1683,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd</Name>
 					<Comment>
 						<![CDATA[ Normaml operation when true]]>
@@ -1948,13 +1859,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[EL6692 Input ]]>
-					</Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
 					<Type>REAL</Type>
 				</Var>
@@ -1964,13 +1868,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2099,13 +1996,6 @@ EL6692 TxPDO state
 							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
@@ -2641,6 +2531,140 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="8">
+				<Name>PlcTask Retains</Name>
+				<Var>
+					<Name>PRG_Roughing_Pumps.TM1K4_PTM_01_xExtIlkOK</Name>
+					<Type>BOOL</Type>
+					<InOut>7</InOut>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="1">
+				<Name>ComTask Inputs</Name>
+				<Var>
+					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
+					<Comment>
+						<![CDATA[ Controls and I/Os]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xHV_ON</Name>
+					<Comment>
+						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xDisc_Active</Name>
+					<Comment>
+						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E10_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO //K4S2_02_E10 (EL6021)]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S6_01_E5_stComIn</Name>
+					<Comment>
+						<![CDATA[Serial IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E17_stComIn</Name>
+					<Comment>
+						<![CDATA[Serial IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E18_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Input ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>ComTask Outputs</Name>
+				<Var>
+					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E10_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S6_01_E5_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E17_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -2675,36 +2699,15 @@ EL6692 TxPDO state
 					</Comment>
 					<Type>STRING(8)</Type>
 				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
-				<Name>PlcTask Retains</Name>
+				<Name>ComTask Retains</Name>
 				<Var>
 					<Name>PMPS_GVL.SuccessfulPreemption</Name>
 					<Comment>
 						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
 					</Comment>
 					<Type>UDINT</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>PRG_Roughing_Pumps.TM1K4_PTM_01_xExtIlkOK</Name>
-					<Type>BOOL</Type>
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
@@ -2819,8 +2822,8 @@ EL6692 TxPDO state
 				</OwnerA>
 			</UnrestoredVarLinks>
 			<TaskPouOids>
-				<TaskPouOid Prio="2" OTCID="#x08502002"/>
-				<TaskPouOid Prio="1" OTCID="#x08502001"/>
+				<TaskPouOid Prio="30" OTCID="#x08502001"/>
+				<TaskPouOid Prio="15" OTCID="#x08502002"/>
 				<TaskPouOid Prio="20" OTCID="#x08502003"/>
 			</TaskPouOids>
 		</Instance>
@@ -2844,11 +2847,12 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_IP1_ECAT.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
@@ -2856,7 +2860,6 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
@@ -2969,10 +2972,10 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_ EP1 (EP4374-0002)">
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E1_VFS (EL1004)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -3207,8 +3210,8 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_ EP1 (EP4374-0002)">
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_03.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E1 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
@@ -3379,9 +3382,9 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_WALL_WEST_EP01 (EP4374-0002)">
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>

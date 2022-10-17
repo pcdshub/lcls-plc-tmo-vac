@@ -19,10 +19,10 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" DisableFpExceptions="true" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="4" Priority="1" CycleTime="110000" AmsPort="351" DisableFpExceptions="true" AdtTasks="true">
+				<Task Id="4" Priority="30" CycleTime="110000" AmsPort="351" DisableFpExceptions="true" AdtTasks="true">
 					<Name>ComTask</Name>
 				</Task>
-				<Task Id="5" Priority="2" CycleTime="20000" AmsPort="352" DisableFpExceptions="true" AdtTasks="true">
+				<Task Id="5" Priority="15" CycleTime="20000" AmsPort="352" DisableFpExceptions="true" AdtTasks="true">
 					<Name>FSVTask</Name>
 				</Task>
 			</Tasks>
@@ -36,8 +36,9 @@
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{08502002-2003-0850-0120-500802205008}" Id="#x02030050" Watchdog="14000000040000000400000004000000"/>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2003-0850-0220-500842000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{08502003-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2003-0850-0220-500831000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500842000403}" Id="#x02030040"/>
 	</Mappings>
 </TcSmProject>
