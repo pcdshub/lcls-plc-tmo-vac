@@ -2,6 +2,13 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_FS_Devices" Id="{d4db42a1-6646-451c-9e07-c80bb4e9d558}">
     <Declaration><![CDATA[VAR_GLOBAL
+	(*Global VFS mode selector for all 3 fast shutter valves (TV1K4,MR3K4,MR4K4)*)
+    {attribute 'pytmc' := '
+    	pv:  TMO:VFS_2OO3_MODE
+		io: io
+	'}
+	eVFS2OO3Mode_TMO : E_2OO3_MODE;
+
 	(*
 	{attribute 'pytmc' := '
 		pv: TV1K4:VFS:01
@@ -20,8 +27,7 @@
 								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK;
 								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State;
 								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO;
-								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed
-	'}
+								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed '}
 	
 	TV1K4_VFS_Interface : FB_VFS_Interface;
 
@@ -69,7 +75,7 @@
 								 .i_xTriggerIG1	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input;
 								 .i_xTriggerIG2	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 2^Input;
 								 .i_xTriggerIG3	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5A_MKS937B (EL1124)^Channel 1^Input '}
-	TV1K4_VFS_1 : FB_VFS_2OO3;	
+	TV1K4_VFS_1 : FB_VFS_2OO3;
 	
 //	{attribute 'TcLinkTo' := 	'TV1K4_VFS_1_VAC_FAULT_OK	 := 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK; '}
 //	TV1K4_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
@@ -128,7 +134,7 @@
 								 .i_nFltCount_IG1	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG1;
 								 .i_nFltCount_IG2	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG2;
 								 .i_nFltCount_IG3	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG3 '}
-	MR3K4_KBO_VFS_Interface : FB_VFS_2OO3Interface;	
+	MR3K4_KBO_VFS_Interface : FB_VFS_2OO3Interface;
 
 	{attribute 'TcLinkTo' := 	'.q_xClose_A	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 1^Output;
 								 .q_xClose_B	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 2^Output;
