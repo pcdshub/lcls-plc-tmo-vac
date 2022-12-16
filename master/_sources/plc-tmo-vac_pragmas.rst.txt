@@ -1,0 +1,36 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`PLC_TMO_VAC <PLC_TMO_VAC_overview_pragmas>`, 217, 1
+
+
+.. _PLC_TMO_VAC_overview_pragmas:
+
+
+PLC_TMO_VAC
+^^^^^^^^^^^
+
+Total pragmas found: 217
+Total linter errors: 1
+
+GVLs/GVL_FEE_Device.TcGVL
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Line 95 (LinterError)
+
+::
+
+    
+
+    Full pragma:
+
+    {attribute 'pytmc' :=' 
+			pv: MR1K4:SOMS:PIP:01 '
+ 		}
+
+
