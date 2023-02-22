@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`PLC_TMO_VAC <PLC_TMO_VAC_overview_pragmas>`, 217, 1
+    :ref:`PLC_TMO_VAC <PLC_TMO_VAC_overview_pragmas>`, 231, 1
 
 
 .. _PLC_TMO_VAC_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 PLC_TMO_VAC
 ^^^^^^^^^^^
 
-Total pragmas found: 217
+Total pragmas found: 231
 Total linter errors: 1
 
 GVLs/GVL_FEE_Device.TcGVL

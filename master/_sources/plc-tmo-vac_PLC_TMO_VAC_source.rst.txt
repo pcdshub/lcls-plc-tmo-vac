@@ -446,8 +446,15 @@ GVL_FS_Devices
 ::
 
     VAR_GLOBAL
-
+    	(*Global VFS mode selector for all 3 fast shutter valves (TV1K4,MR3K4,MR4K4)*)
         {attribute 'pytmc' := '
+        	pv:  TMO:VFS_2OO3_MODE
+    		io: io
+    	'}
+    	eVFS2OO3Mode_TMO : E_2OO3_MODE;
+
+    	(*
+    	{attribute 'pytmc' := '
     		pv: TV1K4:VFS:01
     	'}
 
@@ -464,8 +471,7 @@ GVL_FS_Devices
     								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK;
     								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State;
     								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO;
-    								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed
-    	'}
+    								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed '}
     	
     	TV1K4_VFS_Interface : FB_VFS_Interface;
 
@@ -478,12 +484,47 @@ GVL_FS_Devices
     		.i_xClsLS	:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E1-FSV (EL1004)^Channel 1^Input;
     		.i_xOpnLS	:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E1-FSV (EL1004)^Channel 2^Input;
     		.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input '}
-    	TV1K4_VFS_1 : FB_VFS;	
+    	TV1K4_VFS_1 : FB_VFS;
+    	*)
+
+    	{attribute 'pytmc' :=' pv: TV1K4:VFS:01 '}
+    	{attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_e2OO3_MODE;
+    								 .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1;
+    								 .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG2;
+    								 .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG3;
+    								 .q_xOPN_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW;
+    								 .q_xCLS_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW;
+    								 .q_xVAC_FAULT_Reset := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset;
+    								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode;
+    								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen;
+    								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger;
+    								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open;
+    								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed;
+    								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK;
+    								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK;
+    								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State;
+    								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO;
+    								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed;
+    								 .i_nFltCount_IG1	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG1;
+    								 .i_nFltCount_IG2	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG2;
+    								 .i_nFltCount_IG3	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG3 '}
+    	TV1K4_VFS_Interface : FB_VFS_2OO3Interface;
+
+    	{attribute 'TcLinkTo' := 	'.q_xClose_A	:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E2-FSV (EL2202)^Channel 1^Output;
+    								 .q_xClose_B	:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E2-FSV (EL2202)^Channel 2^Output;
+    								 .q_xClose_C	:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E3-FSV (EL2202)^Channel 1^Output;
+    								 .q_xOPN_DO		:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E3-FSV (EL2202)^Channel 2^Output;
+    								 .i_xClsLS		:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E1-FSV (EL1004)^Channel 1^Input;
+    								 .i_xOpnLS		:=	TIIB[B940_K4S20_EK0  (EK1100)]^K4S20-E1-FSV (EL1004)^Channel 2^Input;
+    								 .i_xTriggerIG1	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input;
+    								 .i_xTriggerIG2	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 2^Input;
+    								 .i_xTriggerIG3	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5A_MKS937B (EL1124)^Channel 1^Input '}
+    	TV1K4_VFS_1 : FB_VFS_2OO3;
     	
     //	{attribute 'TcLinkTo' := 	'TV1K4_VFS_1_VAC_FAULT_OK	 := 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK; '}
     //	TV1K4_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
-    	
-        {attribute 'pytmc' := '
+    	(*
+    	{attribute 'pytmc' := '
     		pv: MR3K4:KBO:VFS:01
     	'}
     	
@@ -502,9 +543,9 @@ GVL_FS_Devices
     								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO;
     								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed
     	'}
-    	
+
     	MR3K4_KBO_VFS_Interface : FB_VFS_Interface;	
-    	
+
     	{attribute 'TcLinkTo' := 	'
     		.q_xClose_A	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 1^Output;
     		.q_xClose_B	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 2^Output;
@@ -514,14 +555,49 @@ GVL_FS_Devices
     		.i_xOpnLS	:=	TIIB[K4S2_01_E1_VFS (EL1004)]^Channel 2^Input;
     		.i_xTrigger :=  TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input'}
     	MR3K4_KBO_VFS_1 : FB_VFS;
+    	*)
+
+    	{attribute 'pytmc' :=' pv: MR3K4:KBO:VFS:01 '}
+    	{attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE;
+    								 .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1;
+    								 .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG2;
+    								 .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG3;
+    								 .q_xOPN_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW;
+    								 .q_xCLS_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW;
+    								 .q_xVAC_FAULT_Reset := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset;
+    								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode;
+    								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen;
+    								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger;
+    								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open;
+    								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed;
+    								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK;
+    								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK;
+    								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State;
+    								 .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO;
+    								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed;
+    								 .i_nFltCount_IG1	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG1;
+    								 .i_nFltCount_IG2	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG2;
+    								 .i_nFltCount_IG3	:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG3 '}
+    	MR3K4_KBO_VFS_Interface : FB_VFS_2OO3Interface;
+
+    	{attribute 'TcLinkTo' := 	'.q_xClose_A	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 1^Output;
+    								 .q_xClose_B	:=	TIIB[K4S2_01_E3_VFS (EL2202)]^Channel 2^Output;
+    								 .q_xClose_C	:=	TIIB[K4S2_01_E4_VFS (EL2202)]^Channel 1^Output;
+    								 .q_xOPN_DO		:=	TIIB[K4S2_01_E4_VFS (EL2202)]^Channel 2^Output;
+    								 .i_xClsLS		:=	TIIB[K4S2_01_E1_VFS (EL1004)]^Channel 1^Input;
+    								 .i_xOpnLS		:=	TIIB[K4S2_01_E1_VFS (EL1004)]^Channel 2^Input;
+    								 .i_xTriggerIG1	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input;
+    								 .i_xTriggerIG2	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 2^Input;
+    								 .i_xTriggerIG3	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5A_MKS937B (EL1124)^Channel 1^Input '}
+    	MR3K4_KBO_VFS_1 : FB_VFS_2OO3;
     	
     //	{attribute 'TcLinkTo' := 	'TV1K4_VFS_1_VAC_FAULT_OK	 := 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK; '}
     //	MR3K4_KBO_VFS_1_VAC_FAULT_OK  AT %I* : BOOL;
-    	
+    	(*
     	{attribute 'pytmc' := '
     		pv: MR4K4:KBO:VFS:01
     	'}
-    	
+
     	{attribute 'TcLinkTo' := 	'.q_xPress_OK		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK;
     								 .q_xOPN_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW;
     								 .q_xCLS_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW;
@@ -536,7 +612,7 @@ GVL_FS_Devices
     								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State;
                                      .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO;
     								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed	
-    '}
+    	'}
     	
     	
     	
@@ -550,12 +626,45 @@ GVL_FS_Devices
     		.i_xClsLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 1^Input;
     		.i_xOpnLS	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 2^Input;
     		.i_xTrigger := 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input 
-    '} 
+        '} 
     	
     	MR4K4_KBO_VFS_1 : FB_VFS;
+    	*)
         
-        
-       
+    	{attribute 'pytmc' :=' pv: MR4K4:KBO:VFS:01 '}
+    	{attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_e2OO3_MODE;
+    								 .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1;
+    								 .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG2;
+    								 .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG3;
+    								 .q_xOPN_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW;
+    								 .q_xCLS_SW			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW;
+    								 .q_xVAC_FAULT_Reset := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset;
+    								 .q_xOverrideMode	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode;
+    								 .q_xOverrideOpen	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen;
+    								 .i_xTrigger		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger;								                       
+    								 .i_xVFS_Open		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open;
+    								 .i_xVFS_Closed		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed;
+    								 .i_xVAC_FAULT_OK	:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK;
+    								 .i_xMPS_OK			:=  TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK;
+    								 .i_eVFS_State		:=	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State;
+                                     .q_xVetoValveOpenDO := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO;
+    								 .q_xVetoValveClosed := TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed;
+    								 .i_nFltCount_IG1	:= TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG1;
+    								 .i_nFltCount_IG2	:= TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG2;
+    								 .i_nFltCount_IG3	:= TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG3 '}
+    	MR4K4_KBO_VFS_Interface : FB_VFS_2OO3Interface;
+
+    	{attribute 'TcLinkTo' := 	'.q_xClose_A	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E3 (EL2202)^Channel 1^Output;
+    								 .q_xClose_B	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E3 (EL2202)^Channel 2^Output;
+    								 .q_xClose_C	:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E4 (EL2202)^Channel 1^Output;
+    								 .q_xOPN_DO		:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E4 (EL2202)^Channel 2^Output;
+    								 .i_xClsLS		:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 1^Input;
+    								 .i_xOpnLS		:=	TIIB[TMO_K4S8_DRL_01 (EK1100)]^K4S8_01_E1 (EL1004)^Channel 2^Input;
+    								 .i_xTriggerIG1	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 1^Input;
+    								 .i_xTriggerIG2	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5_MKS937B (EL1124)^Channel 2^Input;
+    								 .i_xTriggerIG3	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E5A_MKS937B (EL1124)^Channel 1^Input '} 	
+    	MR4K4_KBO_VFS_1 : FB_VFS_2OO3;
+
     END_VAR
 
 
@@ -630,13 +739,20 @@ GVL_Hutch_Gauges
     								 .q_xHV_DIS			:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E5 (EL2624)^Channel 4^Output '}
         IM4K4_PPM_GCC_01 : FB_CCM501;
 
-    	{attribute 'pytmc' := '	pv: LI2K4:IP1:GFS:01
-    		io: io
-    	'}
+    	{attribute 'pytmc' :=' pv: LI2K4:IP1:GFS:01 '}
     	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E1_MKS937B (EL3064)^AI Standard Channel 1^Value;
-    								 .q_xHV_DIS		:= 	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E3_MKS937B (EL2794)^Channel 1^Output
-    	'}
-        LI2K4_IP1_GFS_01 : FB_MKS422;
+    								 .q_xHV_DIS		:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E3_MKS937B (EL2794)^Channel 1^Output '}
+    	LI2K4_IP1_GFS_01 : FB_MKS422;
+    	
+    	{attribute 'pytmc' :=' pv: LI2K4:IP1:GFS:02 '}
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E1_MKS937B (EL3064)^AI Standard Channel 2^Value;
+    								 .q_xHV_DIS		:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E3_MKS937B (EL2794)^Channel 2^Output '}
+    	LI2K4_IP1_GFS_02 : FB_MKS422;
+
+    	{attribute 'pytmc' :=' pv: LI2K4:IP1:GFS:03 '}
+    	{attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E2_MKS937B (EL3064)^AI Standard Channel 1^Value;
+    								 .q_xHV_DIS		:=	TIIB[B940_R20_EK0 (EK1100)]^R20_EK0_E3_MKS937B (EL2794)^Channel 3^Output '}
+    	LI2K4_IP1_GFS_03 : FB_MKS422;
     	
     	
     	{attribute 'pytmc' :=' pv: TM1K4:GCC:01 '}
@@ -1762,11 +1878,11 @@ PRG_FSV_Interfaces
     VAR
     END_VAR
     (*Vacuum Fast Shutter Valve*)
-    TV1K4_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG,Veto_Valve := ST3K4_PPS_VGC_01.iq_stValve);
+    TV1K4_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_Valve:=ST3K4_PPS_VGC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
 
-    MR3K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG,Veto_Valve:=MR3K4_KBO_VWC_01.iq_stValve);
+    MR3K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_Valve:=MR3K4_KBO_VWC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
 
-    MR4K4_KBO_VFS_Interface(IG:=LI2K4_IP1_GFS_01.IG, Veto_valve:= MR4K4_KBO_VWC_01.iq_stValve);
+    MR4K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_valve:=MR4K4_KBO_VWC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
 
     END_PROGRAM
 
@@ -2025,6 +2141,8 @@ PRG_Hutch_Gauges
     	IM4K4_PPM_GCC_01(PG:=PA1K4_IP1_GPI_01.PG , IG=> );
 
     	LI2K4_IP1_GFS_01(PG:=PA1K4_IP1_GPI_01.PG , IG=> );
+    	LI2K4_IP1_GFS_02(PG:=PA1K4_IP1_GPI_01.PG , IG=> );
+    	LI2K4_IP1_GFS_03(PG:=PA1K4_IP1_GPI_01.PG , IG=> );
     	
     	TM1K4_GCC_01.M_SetBits(30518);
     	TM1K4_GCC_01(PG:=TMO_ROUGH1_GPI_03.PG , IG=> );

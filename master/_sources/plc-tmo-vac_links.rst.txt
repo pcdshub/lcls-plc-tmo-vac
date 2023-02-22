@@ -6,6 +6,12 @@ Links
     :header: Owner A, Item A, Owner B, Item B
     :align: center
 
+        InputDst, GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK
+        InputDst, GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        InputDst, GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK
+        InputDst, GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        InputDst, GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK
+        InputDst, GVL_FS_Devices.TV1K4_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
         InputDst, GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xDisc_Active, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E8 (EL1124), Channel 4^Input
         InputDst, GVL_Hutch_Gauges.IM6K4_PPM_GPI_01.i_iPRESS_R, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E4 (EL3174), AI Standard Channel 3^Value
         InputDst, GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xDisc_Active, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124), Channel 4^Input
@@ -227,40 +233,58 @@ Links
         PLC_TMO_VAC Instance, ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition, TIID^Device 1 (EtherCAT)^TMO_K4S6_ EP1 (EP4374-0002), AO Outputs Channel 3^Analog output
         PLC_TMO_VAC Instance, ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition, TIID^Device 1 (EtherCAT)^TMO_K4S2_ EP1 (EP4374-0002), AO Outputs Channel 4^Analog output
         PLC_TMO_VAC Instance, ComTask Outputs^GVL_IP1_ECAT.My_PLC_NAME, TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692), IO Outputs^HUTCH_PLC_NAME
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_e2OO3_MODE
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xClsLS, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E1_VFS (EL1004), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOpnLS, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E1_VFS (EL1004), Channel 2^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG1
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG2
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG3
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG1, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG2, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 2^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG3, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5A_MKS937B (EL1124), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_e2OO3_MODE
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E1 (EL1004), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOpnLS, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E1 (EL1004), Channel 2^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG1
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG2
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG3
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG1, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG2, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 2^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG3, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5A_MKS937B (EL1124), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_e2OO3_MODE
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xClsLS, TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E1-FSV (EL1004), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOpnLS, TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E1-FSV (EL1004), Channel 2^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK
-        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTrigger, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG1
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG2
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG3
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG1, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 1^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG2, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124), Channel 2^Input
+        PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG3, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5A_MKS937B (EL1124), Channel 1^Input
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed
         PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xClose_A, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E3_VFS (EL2202), Channel 1^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xClose_B, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E3_VFS (EL2202), Channel 2^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xClose_C, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E4_VFS (EL2202), Channel 1^Output
@@ -271,6 +295,9 @@ Links
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_A, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E3 (EL2202), Channel 1^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_B, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E3 (EL2202), Channel 2^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xClose_C, TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E4 (EL2202), Channel 1^Output
@@ -281,6 +308,9 @@ Links
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2
+        PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xClose_A, TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E2-FSV (EL2202), Channel 1^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xClose_B, TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E2-FSV (EL2202), Channel 2^Output
         PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xClose_C, TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E3-FSV (EL2202), Channel 1^Output
@@ -321,18 +351,27 @@ Links
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FEE_Device.USVacOk_HI, TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E2_EXILK (EL1008), Channel 1^Input
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FEE_Device.USVacOk_LO, TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E2_EXILK (EL1008), Channel 3^Input
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG1
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG2
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG3
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG1
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG2
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG3
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG1
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG2
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG3
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK
@@ -344,6 +383,8 @@ Links
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xDisc_Active, TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E20 (EL1124), Channel 4^Input
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xHV_ON, TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E20 (EL1124), Channel 3^Input
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E1_MKS937B (EL3064), AI Standard Channel 1^Value
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.i_iPRESS_R, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E1_MKS937B (EL3064), AI Standard Channel 2^Value
+        PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.i_iPRESS_R, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E2_MKS937B (EL3064), AI Standard Channel 1^Value
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_iPRESS_R, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E1 (EL3174), AI Standard Channel 3^Value
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xDisc_Active, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E7 (EL1124), Channel 4^Input
         PLC_TMO_VAC Instance, PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xHV_ON, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E7 (EL1124), Channel 3^Input
@@ -446,33 +487,44 @@ Links
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO, TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E11_QPC2 (EL2794), Channel 3^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO, TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002), Channel 11^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO, TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002), Channel 15^Output
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen
-        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG2
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG3
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_e2OO3_MODE
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen
-        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG2
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG3
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_e2OO3_MODE, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_e2OO3_MODE
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen
-        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG1, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG2, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG2
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG3, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG3
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO, TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance, FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624), Channel 4^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E14 (EL2624), Channel 2^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E3_MKS937B (EL2794), Channel 1^Output
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.q_xHV_DIS, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E3_MKS937B (EL2794), Channel 2^Output
+        PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.q_xHV_DIS, TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E3_MKS937B (EL2794), Channel 3^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624), Channel 2^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E14 (EL2624), Channel 4^Output
         PLC_TMO_VAC Instance, PlcTask Outputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.q_xHV_DIS, TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624), Channel 3^Output
