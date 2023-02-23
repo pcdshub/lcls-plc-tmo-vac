@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
@@ -7,17 +6,18 @@
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>PLC_TMO_VAC</Name>
     <ProgramVersion>3.1.4022.7</ProgramVersion>
-    <Application>{c3969453-00bb-4f7c-a727-6e4984ccdb85}</Application>
-    <TypeSystem>{21f65422-6914-4701-9974-4e261a2f7798}</TypeSystem>
-    <Implicit_Task_Info>{324a49db-2b81-4574-8bda-27e88de55979}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{759eb66a-0f1a-4ffe-b127-1a2a941aa5bf}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{2fc8bd43-2ffe-4e2c-a3d0-c9c1b57d9944}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{305ce49b-f61a-4652-a946-d955e26fe5fe}</LibraryReferences>
+    <Application>{2df62948-88f3-450f-8da8-47d6dc14b6cf}</Application>
+    <TypeSystem>{e2ea7035-dc44-47ae-b062-23bc072062ba}</TypeSystem>
+    <Implicit_Task_Info>{ffb8fda1-db66-4891-a482-78b34a8233e0}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{a8edb853-b6f3-43e5-b8b4-14e6363ae3c2}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{625369be-549d-47a1-83c9-8a8c8524f0d7}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{4134168f-eba6-41c1-b90f-e83b21bdaf70}</LibraryReferences>
     <CombineIds>false</CombineIds>
-    <Company>SLAC</Company>
+    <Company>SLAC - LCLS</Company>
     <Released>false</Released>
-    <Title>lcls-plc-tmo-vac</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
+    <Title>PLC_TMO_VAC</Title>
+    <CompilerDefines>K</CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ComTask.TcTTO">
@@ -78,15 +78,6 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_HV_SAFETY.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_PMPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_COM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -105,7 +96,16 @@
     <Compile Include="POUs\PRG_Hutch_Gauges.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_Hutch_Ion_Pumps.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_HV_SAFETY.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_IP1_ECAT_Interfaces.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
@@ -156,20 +156,25 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="PLC_TMO_VAC.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLS Vacuum">
-      <Resolution>LCLS Vacuum, 0.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>LCLS Vacuum, 2.3.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="LCLSVacuumSerialDriverLib">
       <Resolution>LCLSVacuumSerialDriverLib, 1.2.2 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 2.2.3 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.0.13 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="SysDir">
-      <Resolution>SysDir, 3.5.8.0 (System)</Resolution>
+      <Resolution>SysDir, 3.5.12.0 (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="SysFile">
       <Resolution>SysFile, 3.5.9.0 (System)</Resolution>
@@ -178,7 +183,7 @@
       <Resolution>Tc2_DataExchange, 3.3.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_EtherCAT">
-      <Resolution>Tc2_EtherCAT, 3.3.15.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_EtherCAT, 3.3.21.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_IoFunctions">
       <Resolution>Tc2_IoFunctions, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
@@ -187,46 +192,41 @@
       <Resolution>Tc2_Math, 3.3.1.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_MC2">
-      <Resolution>Tc2_MC2, 3.3.42.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_MC2, 3.3.48.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ModbusSrv">
       <Resolution>Tc2_ModbusSrv, 3.3.2.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_SerialCom">
-      <Resolution>Tc2_SerialCom, 3.3.7.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_SerialCom, 3.3.10.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_System">
-      <Resolution>Tc2_System, 3.4.24.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_System, 3.4.26.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_TcpIp">
       <Resolution>Tc2_TcpIp, 3.3.6.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Utilities">
-      <Resolution>Tc2_Utilities, 3.3.41.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_Utilities, 3.3.54.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_EventLogger">
-      <Resolution>Tc3_EventLogger, 3.1.24.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_EventLogger, 3.1.33.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Interfaces">
       <Resolution>Tc3_Interfaces, 3.4.3.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_JsonXml">
-      <Resolution>Tc3_JsonXml, 3.3.14.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc3_JsonXml, 3.3.18.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, 3.3.21.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcUnit">
-      <Resolution>TcUnit, 1.1.0.0 (www.tcunit.org)</Resolution>
+      <Resolution>TcUnit, 1.2.0.0 (www.tcunit.org)</Resolution>
     </PlaceholderResolution>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PLC_TMO_VAC.tmc">
-      <SubType>Content</SubType>
-    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

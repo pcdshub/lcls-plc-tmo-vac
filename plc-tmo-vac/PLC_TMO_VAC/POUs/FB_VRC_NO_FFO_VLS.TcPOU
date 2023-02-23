@@ -161,33 +161,5 @@ END_VAR
         <ST><![CDATA[This^.iq_stValve.pv_xCLS_SW := value;]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_VRC_NO_FFO_VLS">
-      <LineId Id="95" Count="0" />
-      <LineId Id="93" Count="0" />
-      <LineId Id="124" Count="0" />
-      <LineId Id="150" Count="21" />
-      <LineId Id="147" Count="2" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="36" Count="29" />
-      <LineId Id="9" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_VRC_NO_FFO_VLS.ACT_IO">
-      <LineId Id="14" Count="6" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_VRC_NO_FFO_VLS.ACT_PMPS">
-      <LineId Id="2" Count="22" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_VRC_NO_FFO_VLS.M_IsClosed">
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_VRC_NO_FFO_VLS.M_IsOpen">
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_VRC_NO_FFO_VLS.M_Set_CLS_SW">
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
