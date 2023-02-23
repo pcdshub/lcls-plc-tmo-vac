@@ -3252,8 +3252,8 @@ LCLS_Vacuum.FB_PTM_TurboDrive
 
 
     
-LCLS_Vacuum.FB_VFS_Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+LCLS_Vacuum.FB_VFS_2OO3Interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :header-rows: 1
@@ -3341,6 +3341,24 @@ LCLS_Vacuum.FB_VFS_Interface
       - | field: ONAM OK
         | field: ZNAM NOT OK
         | io: input
+
+
+    * - $(PREFIX):FLT_COUNT_IG1_RBV
+      - longin
+      - $(SYMBOL).i_nFltCount_IG1
+      - | io: input
+
+
+    * - $(PREFIX):FLT_COUNT_IG2_RBV
+      - longin
+      - $(SYMBOL).i_nFltCount_IG2
+      - | io: input
+
+
+    * - $(PREFIX):FLT_COUNT_IG3_RBV
+      - longin
+      - $(SYMBOL).i_nFltCount_IG3
+      - | io: input
 
 
     * - $(PREFIX):FORCE_OPN
@@ -3493,6 +3511,18 @@ LCLS_Vacuum.FB_VFS_Interface
       - waveform
       - $(SYMBOL).iq_stValve.sVetoDeviceName
       - | io: input
+
+
+    * - $(PREFIX):VFS_2OO3_MODE
+      - mbbo
+      - $(SYMBOL).i_e2OO3_MODE
+      - | io: output
+
+
+    * - $(PREFIX):VFS_2OO3_MODE_RBV
+      - mbbi
+      - $(SYMBOL).i_e2OO3_MODE
+      - | io: output
 
 
  
@@ -25376,6 +25406,36 @@ Database Records
       - | io: output
 
 
+    * - MR3K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
+      - mbbi
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - MR3K4:KBO:VFS:01:VFS_2OO3_MODE
+      - mbbo
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - MR3K4:KBO:VFS:01:FLT_COUNT_IG1_RBV
+      - longin
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1
+      - | io: input
+
+
+    * - MR3K4:KBO:VFS:01:FLT_COUNT_IG2_RBV
+      - longin
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2
+      - | io: input
+
+
+    * - MR3K4:KBO:VFS:01:FLT_COUNT_IG3_RBV
+      - longin
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3
+      - | io: input
+
+
     * - MR3K4:KBO:VFS:01:MPS_FAULT_OK_RBV
       - bi
       - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK
@@ -25606,6 +25666,36 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
+      - mbbi
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_2OO3_MODE
+      - mbbo
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - MR4K4:KBO:VFS:01:FLT_COUNT_IG1_RBV
+      - longin
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1
+      - | io: input
+
+
+    * - MR4K4:KBO:VFS:01:FLT_COUNT_IG2_RBV
+      - longin
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2
+      - | io: input
+
+
+    * - MR4K4:KBO:VFS:01:FLT_COUNT_IG3_RBV
+      - longin
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3
+      - | io: input
 
 
     * - MR4K4:KBO:VFS:01:MPS_FAULT_OK_RBV
@@ -25840,6 +25930,36 @@ Database Records
         | io: output
 
 
+    * - TV1K4:VFS:01:VFS_2OO3_MODE_RBV
+      - mbbi
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - TV1K4:VFS:01:VFS_2OO3_MODE
+      - mbbo
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_e2OO3_MODE
+      - | io: output
+
+
+    * - TV1K4:VFS:01:FLT_COUNT_IG1_RBV
+      - longin
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1
+      - | io: input
+
+
+    * - TV1K4:VFS:01:FLT_COUNT_IG2_RBV
+      - longin
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2
+      - | io: input
+
+
+    * - TV1K4:VFS:01:FLT_COUNT_IG3_RBV
+      - longin
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3
+      - | io: input
+
+
     * - TV1K4:VFS:01:MPS_FAULT_OK_RBV
       - bi
       - GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK
@@ -26070,6 +26190,18 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - TMO:VFS_2OO3_MODE_RBV
+      - mbbi
+      - GVL_FS_Devices.eVFS2OO3Mode_TMO
+      - | io: output
+
+
+    * - TMO:VFS_2OO3_MODE
+      - mbbo
+      - GVL_FS_Devices.eVFS2OO3Mode_TMO
+      - | io: output
 
 
     * - IM4K4:PPM:GCC:01:STATE_RBV
@@ -26655,6 +26787,398 @@ Database Records
     * - LI2K4:IP1:GFS:01:PRESS_OK_RBV
       - bi
       - GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:STATE_RBV
+      - mbbi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:AutoOn_timer_RBV
+      - longin
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:02:PRESS_AI_RBV
+      - longin
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:02:DISC_ACTIVE_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:HV_ON_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.i_xHV_ON
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:02:HV_DIS_DO_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:SP_HYS_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:SP_HYS
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:PRESS_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:PRO_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:PRO_SP
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:VAC_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:VAC_SP
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:AT_VAC_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:Auto_On_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:Auto_On
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:HV_SW_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:HV_SW
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:ILK_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:02:LOGGER_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:LOGGER
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:02:PRESS_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_02.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:STATE_RBV
+      - mbbi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:AutoOn_timer_RBV
+      - longin
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:03:PRESS_AI_RBV
+      - longin
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:03:DISC_ACTIVE_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:HV_ON_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.i_xHV_ON
+      - | io: input
+
+
+    * - LI2K4:IP1:GFS:03:HV_DIS_DO_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:SP_HYS_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:SP_HYS
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:PRESS_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:PRO_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:PRO_SP
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:VAC_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:VAC_SP
+      - ao
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:AT_VAC_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:Auto_On_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:Auto_On
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:HV_SW_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:HV_SW
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:ILK_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LI2K4:IP1:GFS:03:LOGGER_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:LOGGER
+      - bo
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LI2K4:IP1:GFS:03:PRESS_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.LI2K4_IP1_GFS_03.IG.xPRESS_OK
       - | field: ONAM ON
         | field: ZNAM OFF
         | io: input
