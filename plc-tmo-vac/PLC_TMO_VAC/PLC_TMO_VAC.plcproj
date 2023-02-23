@@ -12,6 +12,12 @@
     <Implicit_KindOfTask>{a8edb853-b6f3-43e5-b8b4-14e6363ae3c2}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{625369be-549d-47a1-83c9-8a8c8524f0d7}</Implicit_Jitter_Distribution>
     <LibraryReferences>{4134168f-eba6-41c1-b90f-e83b21bdaf70}</LibraryReferences>
+    <CombineIds>false</CombineIds>
+    <Company>SLAC - LCLS</Company>
+    <Released>false</Released>
+    <ProjectVersion>0.0.0</ProjectVersion>
+    <Title>PLC_TMO_VAC</Title>
+    <CompilerDefines>K</CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ComTask.TcTTO">
