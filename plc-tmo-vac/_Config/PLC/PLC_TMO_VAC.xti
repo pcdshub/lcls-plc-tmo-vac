@@ -2,7 +2,7 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_2OO3_MODE</Name>
+			<Name GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum" AutoDeleteType="true">E_2OO3_MODE</Name>
 			<BitSize>16</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
 			<EnumInfo>
@@ -531,7 +531,7 @@
 					<Comment>
 						<![CDATA[Link to VFS Interface, 2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1</Name>
@@ -643,7 +643,7 @@
 					<Comment>
 						<![CDATA[Link to VFS Interface, 2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1</Name>
@@ -755,7 +755,7 @@
 					<Comment>
 						<![CDATA[Link to VFS Interface, 2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1</Name>
@@ -2514,7 +2514,7 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -2580,7 +2580,7 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -2646,7 +2646,7 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[2oo3 mode selector]]>
 					</Comment>
-					<Type GUID="{8B727B1C-F537-43C5-A7C0-937E0C4FF66E}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -3298,6 +3298,50 @@ EL6692 TxPDO state
 						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
 						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
 						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2023-02-23T09:47:25">
+				<OwnerA Name="OutputSrc" Type="2">
+					<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG1" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG2" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_nFltCount_IG3" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG1" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG2" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_nFltCount_IG3" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG1" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG2" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_nFltCount_IG3" GrpA="FSVTask Outputs" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5A_MKS937B (EL1124)">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG3" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG3" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG3" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124)">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG1" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTriggerIG2" GrpA="FSVTask Inputs" VarB="Channel 2^Input"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG1" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTriggerIG2" GrpA="FSVTask Inputs" VarB="Channel 2^Input"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG1" GrpA="FSVTask Inputs" VarB="Channel 1^Input"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xTriggerIG2" GrpA="FSVTask Inputs" VarB="Channel 2^Input"/>
+					</OwnerB>
+					<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_e2OO3_MODE"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG1"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG2" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG2"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG3" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG3"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_e2OO3_MODE" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_e2OO3_MODE"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG1"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG2" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG2"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG3" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG3"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_e2OO3_MODE" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_e2OO3_MODE"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG1"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG2" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG2"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG3" GrpA="FSVTask Inputs" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG3"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
