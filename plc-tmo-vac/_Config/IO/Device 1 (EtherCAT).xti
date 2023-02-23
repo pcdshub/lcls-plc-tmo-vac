@@ -38,6 +38,12 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
+		<Image Id="2" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
+		<Image Id="3" AddrType="10" ImageType="3">
+			<Name>Image-3</Name>
+		</Image>
 		<Box File="B940-R20-CX0 (EK1200).xti" Id="24">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
@@ -45,7 +51,7 @@
 			<EtherCAT PortABoxInfo="#x01000027"/>
 		</Box>
 		<Box File="B940_K4S20_EK0  (EK1100).xti" Id="47">
-			<EtherCAT PortABoxInfo="#x02000028"/>
+			<EtherCAT PortABoxInfo="#x0100002e"/>
 		</Box>
 		<Box File="B940_K4S20_EB1  (EP2338-0002).xti" Id="52">
 			<EtherCAT PortABoxInfo="#x01000033"/>
@@ -78,7 +84,7 @@
 			<EtherCAT PortABoxInfo="#x0100003c"/>
 		</Box>
 		<Box File="TMO_WALL_WEST_EP01 (EP4374-0002).xti" Id="3">
-			<EtherCAT PortABoxInfo="#x01000001"/>
+			<EtherCAT PortABoxInfo="#x02000028"/>
 		</Box>
 		<Box File="TMO_K4S2_DRL_01 (EK1100).xti" Id="4">
 			<EtherCAT PortABoxInfo="#x01000003"/>
