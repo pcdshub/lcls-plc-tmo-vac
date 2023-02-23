@@ -27,15 +27,5 @@ F_Turbo_Protection_ILK := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInl
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="F_Turbo_Protection_ILK">
-      <LineId Id="23" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="39" Count="1" />
-      <LineId Id="29" Count="1" />
-      <LineId Id="52" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="31" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

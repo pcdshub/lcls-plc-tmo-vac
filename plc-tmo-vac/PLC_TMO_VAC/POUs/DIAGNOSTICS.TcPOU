@@ -38,10 +38,5 @@ fbEcatDiag(
 	
 	]]></ST>
     </Implementation>
-    <LineIds Name="DIAGNOSTICS">
-      <LineId Id="6" Count="9" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="31" Count="1" />
-    </LineIds>
   </POU>
 </TcPlcObject>

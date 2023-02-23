@@ -101,8 +101,8 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Name>
-			<BitSize>1696</BitSize>
+			<Name GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Name>
+			<BitSize>1760</BitSize>
 			<SubItem>
 				<Name>nTran</Name>
 				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
@@ -167,6 +167,42 @@
 				</Properties>
 			</SubItem>
 			<SubItem>
+				<Name>neV</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment TxtId="">
+					<![CDATA[Current Photon energy as calculated by the arbiter]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nBCRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>128</BitOffs>
+				<Default>
+					<Min>0</Min>
+					<Max>65535</Max>
+					<Value>0</Value>
+				</Default>
+			</SubItem>
+			<SubItem>
+				<Name>nBeamClass</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>144</BitOffs>
+				<Default>
+					<Min>0</Min>
+					<Value>0</Value>
+				</Default>
+			</SubItem>
+			<SubItem>
+				<Name>nMachineMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
 				<Name>astAttenuators</Name>
 				<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
 				<ArrayInfo>
@@ -177,7 +213,7 @@
 					<![CDATA[ Beamline attenuators ]]>
 				</Comment>
 				<BitSize>1024</BitSize>
-				<BitOffs>96</BitOffs>
+				<BitOffs>160</BitOffs>
 				<Properties>
 					<Property>
 						<Name>plcAttribute_pytmc</Name>
@@ -194,7 +230,7 @@
 					<Elements>4</Elements>
 				</ArrayInfo>
 				<BitSize>384</BitSize>
-				<BitOffs>1120</BitOffs>
+				<BitOffs>1184</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>aVetoDevices</Name>
@@ -207,7 +243,7 @@
 					<![CDATA[ Stopper statuses ]]>
 				</Comment>
 				<BitSize>128</BitSize>
-				<BitOffs>1504</BitOffs>
+				<BitOffs>1568</BitOffs>
 				<Properties>
 					<Property>
 						<Name>plcAttribute_pytmc</Name>
@@ -223,7 +259,7 @@
 					<![CDATA[ Toggle for watchdog]]>
 				</Comment>
 				<BitSize>8</BitSize>
-				<BitOffs>1632</BitOffs>
+				<BitOffs>1696</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>xValid</Name>
@@ -232,7 +268,7 @@
 					<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
 				</Comment>
 				<BitSize>8</BitSize>
-				<BitOffs>1640</BitOffs>
+				<BitOffs>1704</BitOffs>
 				<Properties>
 					<Property>
 						<Name>plcAttribute_pytmc</Name>
@@ -248,7 +284,7 @@
 					<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 				</Comment>
 				<BitSize>32</BitSize>
-				<BitOffs>1664</BitOffs>
+				<BitOffs>1728</BitOffs>
 				<Properties>
 					<Property>
 						<Name>plcAttribute_pytmc</Name>
@@ -274,6 +310,14 @@
 				<Hide GUID="{F4D82764-2299-4BB7-86C4-99ED0EBA5A76}"/>
 				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
 				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
+				<Hide GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}"/>
+				<Hide GUID="{7BACB0F9-4BD8-4ADE-B8B1-2D069E1D0190}"/>
+				<Hide GUID="{C338245C-50EC-4E6D-B363-9DA04BB5DFA5}"/>
+				<Hide GUID="{0E623A01-D6F4-41DD-A8F2-FBC77EE11035}"/>
+				<Hide GUID="{B8136069-15B2-4545-8E40-00504F2F580D}"/>
+				<Hide GUID="{4A38F9D3-765E-4C94-9AAB-7EB5DFA13820}"/>
+				<Hide GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}"/>
+				<Hide GUID="{43851ABC-CF8A-4AF9-A768-E27D209879D8}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
@@ -286,8 +330,8 @@
 		<EtherCAT SlaveType="3" AdsServerAddress="ac1584160227f903" PdiType="#x0c05" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x1a243052" RevisionNo="#x00120000" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6692 EtherCAT Bridge terminal (Primary)" Desc="EL6692">
 			<SyncMan>001000012600010001000000800000040001001026010000</SyncMan>
 			<SyncMan>001400012200010002000000800000040001001422010000</SyncMan>
-			<SyncMan>0018d4002400010003000000000000000000001824010000</SyncMan>
-			<SyncMan>001ed6002000010004000000000000000200001e20010000</SyncMan>
+			<SyncMan>0018dc002400010003000000000000000000001824010000</SyncMan>
+			<SyncMan>001ede002000010004000000000000000200001e20010000</SyncMan>
 			<Fmmu>0000000000000000001800020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001e00010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -468,13 +512,13 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Inputs" Index="#x1a00" Flags="#x0021" SyncMan="3">
-				<Entry Name="CurrentBP" BitLen="240" Index="#x6000" Sub="#x01">
-					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
+				<Entry Name="CurrentBP" Index="#x6000" Sub="#x01">
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1600" InOut="1" Flags="#x0021" SyncMan="2">
-				<Entry Name="RequestedBP" BitLen="240" Index="#x7000" Sub="#x01">
-					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
+				<Entry Name="RequestedBP" Index="#x7000" Sub="#x01">
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
 				</Entry>
 			</Pdo>
 			<CoeProfile ProfileNo="5001"/>

@@ -12,11 +12,5 @@ ROUGH2_VRC_01_AtOpnLS := TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS;
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_IP1_ECAT_Interfaces">
-      <LineId Id="6" Count="0" />
-      <LineId Id="18" Count="1" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
