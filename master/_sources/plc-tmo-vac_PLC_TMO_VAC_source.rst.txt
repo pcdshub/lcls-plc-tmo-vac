@@ -2304,7 +2304,7 @@ PRG_PMPS
     	g_fbArbiter2.RemoveRequest(ID);
     END_IF
 
-    g_fbArbiter1.AddRequest(nReqID := 131313, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-tmo-vac');
+    g_fbArbiter1.AddRequest(nReqID := 16#FAFD, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-tmo-vac');
 
     END_PROGRAM
 
