@@ -11,10 +11,9 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/docs-versions-menu.js"></script>
@@ -47,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_ethercat.html">Box Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_links.html">Links</a></li>
 </ul>
@@ -486,20 +486,8 @@
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Ion</span> <span class="n">Pumps</span> <span class="o">*</span><span class="p">)</span>
 
-<span class="p">(</span><span class="o">*</span><span class="n">example</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS              :=      TIIB[QPC_E1_EL3064]^AI Standard Channel 1^Value;</span>
-                                                             <span class="o">.</span><span class="n">i_xSP_DI</span>              <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">QPC_E2_EL1004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                                             <span class="o">.</span><span class="n">q_xHVEna_DO</span>   <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">QPC_E3_EL2794</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span>    <span class="s1">&#39;}</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-            <span class="n">pv</span><span class="p">:</span> <span class="n">RTDSL0</span><span class="p">:</span><span class="n">VAC</span><span class="p">:</span><span class="n">PIP</span><span class="p">:</span><span class="mi">01</span>
-            <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">RTDSL0_PIP_01</span> <span class="p">:</span> <span class="n">FB_PIP_Gamma</span><span class="p">;</span>
-    <span class="o">*</span><span class="p">)</span>
-
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span><span class="s1">&#39;</span>
-                    <span class="n">pv</span><span class="p">:</span> <span class="n">MR1K4</span><span class="p">:</span><span class="n">SOMS</span><span class="p">:</span><span class="n">PIP</span><span class="p">:</span><span class="mi">01</span> <span class="s1">&#39;</span>
-            <span class="p">}</span>
+                    <span class="n">pv</span><span class="p">:</span> <span class="n">MR1K4</span><span class="p">:</span><span class="n">SOMS</span><span class="p">:</span><span class="n">PIP</span><span class="p">:</span><span class="mi">01</span> <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS              :=      TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 1^Value;</span>
                                                              <span class="o">.</span><span class="n">i_xSP_DI</span>              <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">CX0_E7_QPC1</span> <span class="p">(</span><span class="n">EL1004</span><span class="p">)]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
                                                              <span class="o">.</span><span class="n">q_xHVEna_DO</span>   <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">CX0_E8_QPC1</span> <span class="p">(</span><span class="n">EL2794</span><span class="p">)]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span>
@@ -1817,7 +1805,8 @@
 
     <span class="n">TV1K4_VGC_02</span><span class="p">(</span>
                             <span class="n">i_stUSG</span> <span class="o">:=</span> <span class="n">TV1k4_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span>
-                            <span class="n">i_stDSG</span><span class="o">:=</span> <span class="n">ST1K4_TEST_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span>
+<span class="o">//</span>                          <span class="n">i_stDSG</span><span class="o">:=</span> <span class="n">ST1K4_TEST_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span>
+                <span class="n">i_stDSG</span><span class="o">:=</span> <span class="n">ST1K4_TEST_PIP_01</span><span class="o">.</span><span class="n">q_IG</span><span class="p">,</span> <span class="o">//</span><span class="n">change</span> <span class="n">the</span> <span class="n">logic</span> <span class="kn">from</span> <span class="nn">ST1K4_GCC</span> <span class="n">to</span> <span class="n">ST1K4_PIP</span> <span class="n">on4</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">23</span>
                             <span class="n">i_xDis_DPIlk</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
                             <span class="n">i_xEPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
                             <span class="n">i_xPMPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
@@ -1852,7 +1841,9 @@
 
     <span class="n">MR1K4_SOMS_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">USG_PIP</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
     <span class="n">TV1K4_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">TV1K4_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
-    <span class="n">ST1K4_TEST_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">ST1K4_TEST_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="o">//</span>  <span class="n">ST1K4_TEST_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">ST1K4_TEST_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="o">//</span><span class="n">change</span> <span class="n">St1K4</span> <span class="n">PIP</span> <span class="n">interlock</span> <span class="kn">from</span> <span class="nn">ST1K4_TEST_GCC_01</span> <span class="n">to</span> <span class="n">ST1K4</span><span class="p">:</span><span class="n">TEST_GPI_01</span> <span class="n">due</span> <span class="n">to</span> <span class="n">ST1K4_GCC</span> <span class="n">broken</span>
+    <span class="n">ST1K4_TEST_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">ST1K4_TEST_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
     <span class="n">ST2K4_BCS_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">ST2K4_BCS_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
     <span class="n">ST3K4_PPS_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">ST2K4_BCS_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
     <span class="n">PC4K4_XTES_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">PC4K4_XTES_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
@@ -2254,7 +2245,8 @@
 <span class="n">END_VAR</span>
 <span class="n">MR2K4_KBO_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">MR2K4_KBO_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
     <span class="n">PA2K4_IP1_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">PA2K4_IP1_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
-    <span class="n">MR4K4_KBO_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">MR4K4_KBO_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="o">//</span>  <span class="n">MR4K4_KBO_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">MR4K4_KBO_GCC_01</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+    <span class="n">MR4K4_KBO_PIP_01</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">MR4K4_KBO_GPI_01</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span> <span class="o">//</span> <span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">23</span> <span class="n">Change</span> <span class="n">MR4K4_PIP</span> <span class="n">interlock</span> <span class="kn">from</span> <span class="nn">GCC</span> <span class="n">to</span> <span class="n">GPI</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>

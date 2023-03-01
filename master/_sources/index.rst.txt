@@ -7,6 +7,7 @@ lcls-plc-tmo-vac
 
     plc-tmo-vac_pragmas
     plc-tmo-vac_nc
+    plc-tmo-vac_ethercat
     plc-tmo-vac_boxes
     plc-tmo-vac_links
 

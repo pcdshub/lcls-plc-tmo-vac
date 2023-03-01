@@ -375,21 +375,9 @@ GVL_FEE_Device
 
     	
     (* Ion Pumps *)	
-    	
-    (*example
-    	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[QPC_E1_EL3064]^AI Standard Channel 1^Value;
-    								 .i_xSP_DI		:= 	TIIB[QPC_E2_EL1004]^Channel 1^Input;
-    								 .q_xHVEna_DO	:= 	TIIB[QPC_E3_EL2794]^Channel 1^Output	'}
-    	{attribute 'pytmc' := '
-    		pv: RTDSL0:VAC:PIP:01
-    		io: io
-    	'}
-    	RTDSL0_PIP_01 : FB_PIP_Gamma;
-    	*)
 
     	{attribute 'pytmc' :=' 
-    			pv: MR1K4:SOMS:PIP:01 '
-     		}
+    			pv: MR1K4:SOMS:PIP:01 '}
     	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 1^Value;
     								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 1^Input;
     								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 1^Output
@@ -1756,7 +1744,8 @@ PRG_FEE
     	
      	TV1K4_VGC_02(
     				i_stUSG := TV1k4_GCC_01.IG, 
-    				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
+    //				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
+                    i_stDSG:= ST1K4_TEST_PIP_01.q_IG, //change the logic from ST1K4_GCC to ST1K4_PIP on4/3/23
     				i_xDis_DPIlk := FALSE, 
     				i_xEPS_OK := TRUE,
     				i_xPMPS_OK := TRUE , 
@@ -1791,7 +1780,9 @@ PRG_FEE
 
     	MR1K4_SOMS_PIP_01(i_stGauge := USG_PIP, stPump=>);
     	TV1K4_PIP_01(i_stGauge := TV1K4_GCC_01.IG, stPump=>);
-    	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
+    //	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
+    //change St1K4 PIP interlock from ST1K4_TEST_GCC_01 to ST1K4:TEST_GPI_01 due to ST1K4_GCC broken
+    	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GPI_01.PG, stPump=>);  
     	ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
     	ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
     	PC4K4_XTES_PIP_01(i_stGauge := PC4K4_XTES_GPI_01.PG, stPump=>);
@@ -2209,7 +2200,8 @@ PRG_Hutch_Ion_Pumps
     END_VAR
     MR2K4_KBO_PIP_01(i_stGauge := MR2K4_KBO_GPI_01.PG, stPump=>);
     	PA2K4_IP1_PIP_01(i_stGauge := PA2K4_IP1_GCC_01.IG, stPump=>);
-    	MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GCC_01.IG, stPump=>);
+    //	MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GCC_01.IG, stPump=>);
+        MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GPI_01.PG, stPump=>); // 4/10/23 Change MR4K4_PIP interlock from GCC to GPI
 
     END_PROGRAM
 
