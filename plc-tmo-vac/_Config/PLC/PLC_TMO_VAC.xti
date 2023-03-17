@@ -1278,6 +1278,20 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Comment>
+						<![CDATA[0: External device connected, 1: External device not connected]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -1486,28 +1500,6 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
-					<Comment>
-						<![CDATA[0: External device connected, 1: External device not connected]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
-					<Comment>
-						<![CDATA[0 = Data valid, 1 = Data invalid]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2062,15 +2054,11 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2085,6 +2073,18 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2495,14 +2495,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.iq_stValve.xCLS_SW</Name>
 					<Comment>
 						<![CDATA[external open signal e.g epics]]>
@@ -2876,6 +2868,14 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ Start/Stop]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
