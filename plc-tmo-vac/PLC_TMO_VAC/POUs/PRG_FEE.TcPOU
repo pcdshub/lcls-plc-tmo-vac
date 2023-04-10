@@ -82,7 +82,8 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 	
  	TV1K4_VGC_02(
 				i_stUSG := TV1k4_GCC_01.IG, 
-				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
+//				i_stDSG:= ST1K4_TEST_GCC_01.IG, 
+                i_stDSG:= ST1K4_TEST_PIP_01.q_IG, //change the logic from ST1K4_GCC to ST1K4_PIP on4/3/23
 				i_xDis_DPIlk := FALSE, 
 				i_xEPS_OK := TRUE,
 				i_xPMPS_OK := TRUE , 
@@ -117,7 +118,9 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 
 	MR1K4_SOMS_PIP_01(i_stGauge := USG_PIP, stPump=>);
 	TV1K4_PIP_01(i_stGauge := TV1K4_GCC_01.IG, stPump=>);
-	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
+//	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
+//change St1K4 PIP interlock from ST1K4_TEST_GCC_01 to ST1K4:TEST_GPI_01 due to ST1K4_GCC broken
+	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GPI_01.PG, stPump=>);  
 	ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
 	ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
 	PC4K4_XTES_PIP_01(i_stGauge := PC4K4_XTES_GPI_01.PG, stPump=>);	

@@ -10,6 +10,7 @@ END_VAR
 	MR2K4_KBO_PIP_01(i_stGauge := MR2K4_KBO_GPI_01.PG, stPump=>);
 	PA2K4_IP1_PIP_01(i_stGauge := PA2K4_IP1_GCC_01.IG, stPump=>);
 	MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GCC_01.IG, stPump=>);
+//  MR4K4_KBO_PIP_01(i_stGauge := MR4K4_KBO_GPI_01.PG, stPump=>); // 4/10/23 Change MR4K4_PIP interlock from GCC to GPI
 	]]></ST>
     </Implementation>
   </POU>
