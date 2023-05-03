@@ -19,14 +19,8 @@
 		<Box File="CX0_E2_EXILK (EL1008).xti" Id="26">
 			<EtherCAT PortABoxInfo="#x01000071"/>
 		</Box>
-		<Box File="CX0_E3 (EL2008).xti" Id="27">
-			<EtherCAT PortABoxInfo="#x0100001a"/>
-		</Box>
-		<Box File="CX0_E4 (EL2794).xti" Id="28">
-			<EtherCAT PortABoxInfo="#x0100001b"/>
-		</Box>
 		<Box File="CX0_E5 (EL6070).xti" Id="29">
-			<EtherCAT PortABoxInfo="#x0100001c"/>
+			<EtherCAT PortABoxInfo="#x0100001a"/>
 		</Box>
 		<Box File="CX0_E6_QPC1 (EL3064).xti" Id="30">
 			<EtherCAT PortABoxInfo="#x0100001d"/>

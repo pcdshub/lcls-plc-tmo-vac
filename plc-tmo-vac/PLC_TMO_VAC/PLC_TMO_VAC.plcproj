@@ -156,11 +156,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PLC_TMO_VAC.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
@@ -227,6 +222,11 @@
     <PlaceholderResolution Include="TcUnit">
       <Resolution>TcUnit, 1.2.0.0 (www.tcunit.org)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PLC_TMO_VAC.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
