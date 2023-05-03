@@ -83,21 +83,9 @@ VAR_GLOBAL
 
 	
 (* Ion Pumps *)	
-	
-(*example
-	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[QPC_E1_EL3064]^AI Standard Channel 1^Value;
-								 .i_xSP_DI		:= 	TIIB[QPC_E2_EL1004]^Channel 1^Input;
-								 .q_xHVEna_DO	:= 	TIIB[QPC_E3_EL2794]^Channel 1^Output	'}
-	{attribute 'pytmc' := '
-		pv: RTDSL0:VAC:PIP:01
-		io: io
-	'}
-	RTDSL0_PIP_01 : FB_PIP_Gamma;
-	*)
 
 	{attribute 'pytmc' :=' 
-			pv: MR1K4:SOMS:PIP:01 '
- 		}
+			pv: MR1K4:SOMS:PIP:01 '}
 	{attribute 'TcLinkTo' := 	'.i_iPRESS		:=	TIIB[CX0_E6_QPC1 (EL3064)]^AI Standard Channel 1^Value;
 								 .i_xSP_DI		:= 	TIIB[CX0_E7_QPC1 (EL1004)]^Channel 1^Input;
 								 .q_xHVEna_DO	:= 	TIIB[CX0_E8_QPC1 (EL2794)]^Channel 1^Output
