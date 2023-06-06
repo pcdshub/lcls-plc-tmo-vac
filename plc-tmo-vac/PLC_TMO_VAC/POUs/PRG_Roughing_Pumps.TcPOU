@@ -156,14 +156,14 @@ xExtIlkOK := F_Turbo_Protection_ILK(i_stTurbo := PA1K4_IP1_PTM_01.iq_stPTM,
 			i_stBSG := TMO_ROUGH1_GPI_02.PG, 
 			iq_stValve := TMO_ROUGH1_VRC_01.iq_stValve)	;
 					
-(* delay 30s to start if PTM03 is not at speed*)
+(* start when PTM03 is on*)
 IF (PA1K4_IP1_PTM_03.iq_stPTM.i_xAtSpd) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault) THEN
 		PA1K4_IP1_PTM_01_xExtIlkOK := xExtIlkOK;
 
 ELSIF (PA1K4_IP1_PTM_03.iq_stPTM.q_RunDO ) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault ) THEN
 	//delay timer
-  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
-	PA1K4_IP1_PTM_01_xExtIlkOK := xExtIlkOK AND tonDelOK.Q;	
+//  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
+	PA1K4_IP1_PTM_01_xExtIlkOK := xExtIlkOK ;	
 ELSE
 		PA1K4_IP1_PTM_01_xExtIlkOK := FALSE;			
 END_IF
@@ -179,8 +179,8 @@ IF (PA1K4_IP1_PTM_03.iq_stPTM.i_xAtSpd) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFa
 
 ELSIF (PA1K4_IP1_PTM_03.iq_stPTM.q_RunDO ) AND (NOT PA1K4_IP1_PTM_03.iq_stPTM.i_xFault ) THEN
 	//delay timer
-  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
-	PA1K4_IP1_PTM_02_xExtIlkOK := xExtIlkOK AND tonDelOK.Q;	
+//  	  tonDelOK(IN:= xExtIlkOK, PT:=tDelOK);
+	PA1K4_IP1_PTM_02_xExtIlkOK := xExtIlkOK;	
 ELSE
 		PA1K4_IP1_PTM_02_xExtIlkOK := FALSE;			
 END_IF
