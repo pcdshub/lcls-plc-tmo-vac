@@ -1126,214 +1126,6 @@ LCLS_Vacuum.FB_9XX
 
 
  
-LCLS_Vacuum.FB_CCM501
-^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):AT_VAC_RBV
-      - bi
-      - $(SYMBOL).IG.xAT_VAC
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):Auto_On
-      - bo
-      - $(SYMBOL).IG.xAutoOn
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: output
-
-
-    * - $(PREFIX):Auto_On_RBV
-      - bi
-      - $(SYMBOL).IG.xAutoOn
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: output
-
-
-    * - $(PREFIX):AutoOn_timer_RBV
-      - longin
-      - $(SYMBOL).IG.iAutoOnTimer
-      - | io: input
-
-
-    * - $(PREFIX):DISC_ACTIVE_RBV
-      - bi
-      - $(SYMBOL).IG.i_xDisc_Active
-      - | field: ONAM DISC ACTIVE
-        | field: ZNAM NO DISC
-        | io: input
-
-
-    * - $(PREFIX):HV_DIS_DO_RBV
-      - bi
-      - $(SYMBOL).IG.q_xHV_DIS
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):HV_ON_RBV
-      - bi
-      - $(SYMBOL).IG.i_xHV_ON
-      - | io: input
-
-
-    * - $(PREFIX):HV_SW
-      - bo
-      - $(SYMBOL).IG.xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):HV_SW_RBV
-      - bi
-      - $(SYMBOL).IG.xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):ILK_OK_RBV
-      - bi
-      - $(SYMBOL).IG.xILKOk
-      - | field: ONAM OK
-        | field: ZNAM NOT OK
-        | io: input
-
-
-    * - $(PREFIX):LOGGER
-      - bo
-      - $(SYMBOL).IG.xLog
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):LOGGER_RBV
-      - bi
-      - $(SYMBOL).IG.xLog
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):PRESS_AI_RBV
-      - longin
-      - $(SYMBOL).IG.i_iPRESS_R
-      - | io: input
-
-
-    * - $(PREFIX):PRESS_OK_RBV
-      - bi
-      - $(SYMBOL).IG.xPRESS_OK
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: input
-
-
-    * - $(PREFIX):PRESS_RBV
-      - ai
-      - $(SYMBOL).IG.rPRESS
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):PRO_SP
-      - ao
-      - $(SYMBOL).IG.rPRO_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):PRO_SP_RBV
-      - ai
-      - $(SYMBOL).IG.rPRO_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS
-      - ao
-      - $(SYMBOL).IG.rHYS_PR
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS_RBV
-      - ai
-      - $(SYMBOL).IG.rHYS_PR
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):STATE_RBV
-      - mbbi
-      - $(SYMBOL).IG.eState
-      - | field: FRST Starting
-        | field: FVST Valid
-        | field: ONST GaugeDisconnected
-        | field: SVST ValidLo
-        | field: SXST ValidHi
-        | field: THST PressInvalid
-        | field: TWST OoR
-        | field: ZRST Off
-        | io: input
-
-
-    * - $(PREFIX):VAC_SP
-      - ao
-      - $(SYMBOL).IG.rVAC_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):VAC_SP_RBV
-      - ai
-      - $(SYMBOL).IG.rVAC_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
- 
 LCLS_Vacuum.FB_Gauge_Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2076,6 +1868,214 @@ LCLS_Vacuum.FB_MKS422
  
 LCLS_Vacuum.FB_MKS500
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):AT_VAC_RBV
+      - bi
+      - $(SYMBOL).IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).IG.iAutoOnTimer
+      - | io: input
+
+
+    * - $(PREFIX):DISC_ACTIVE_RBV
+      - bi
+      - $(SYMBOL).IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - $(PREFIX):HV_DIS_DO_RBV
+      - bi
+      - $(SYMBOL).IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):HV_ON_RBV
+      - bi
+      - $(SYMBOL).IG.i_xHV_ON
+      - | io: input
+
+
+    * - $(PREFIX):HV_SW
+      - bo
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):HV_SW_RBV
+      - bi
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):ILK_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):PRESS_AI_RBV
+      - longin
+      - $(SYMBOL).IG.i_iPRESS_R
+      - | io: input
+
+
+    * - $(PREFIX):PRESS_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - $(PREFIX):PRESS_RBV
+      - ai
+      - $(SYMBOL).IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):PRO_SP
+      - ao
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):PRO_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS
+      - ao
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS_RBV
+      - ai
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - $(PREFIX):VAC_SP
+      - ao
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):VAC_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+ 
+LCLS_Vacuum.FB_MX7M
+^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :header-rows: 1
@@ -3522,6 +3522,18 @@ LCLS_Vacuum.FB_VFS_2OO3Interface
     * - $(PREFIX):VFS_2OO3_MODE_RBV
       - mbbi
       - $(SYMBOL).i_e2OO3_MODE
+      - | io: output
+
+
+    * - $(PREFIX):VFS_RESET_FAULT_COUNTER
+      - bo
+      - $(SYMBOL).i_ResetFaultCounter
+      - | io: output
+
+
+    * - $(PREFIX):VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - $(SYMBOL).i_ResetFaultCounter
       - | io: output
 
 
@@ -21318,7 +21330,7 @@ ST_BeamParams_IO
       - | io: input
 
 
-  
+   
 ST_LoggingEventInfo
 ^^^^^^^^^^^^^^^^^^^
 
@@ -21426,7 +21438,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                                       
+                                            
 Database Records
 ----------------
 
@@ -25406,6 +25418,18 @@ Database Records
       - | io: output
 
 
+    * - MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
     * - MR3K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
       - mbbi
       - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_e2OO3_MODE
@@ -25666,6 +25690,18 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
 
 
     * - MR4K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
@@ -25930,6 +25966,18 @@ Database Records
         | io: output
 
 
+    * - TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
     * - TV1K4:VFS:01:VFS_2OO3_MODE_RBV
       - mbbi
       - GVL_FS_Devices.TV1K4_VFS_Interface.i_e2OO3_MODE
@@ -26190,6 +26238,18 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - TMO:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.bResetFaultCounters
+      - | io: output
+
+
+    * - TMO:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.bResetFaultCounters
+      - | io: output
 
 
     * - TMO:VFS_2OO3_MODE_RBV
