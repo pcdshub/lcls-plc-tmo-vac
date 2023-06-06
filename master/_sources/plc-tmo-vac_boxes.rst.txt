@@ -1877,6 +1877,263 @@ PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)
    </details>
 
 
+IP1_ECAT
+^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (7 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, IP1_ECAT
+    ID, 27
+        BootStrapData, 0010140200141402
+        SyncMan, 0010000426000100010000008000da050004001026010000
+        SyncMan, 0016000422000100020000008000da050004001622010000
+        SyncMan, 001c0b006400010003000000000000000000001c64010000
+        SyncMan, 008e16002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
+        Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
+        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
+        CoeProfile, 5001
+
+
+
+PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "None", "", 12, "", "ARRAY [0..11] OF BIT"
+        "TxPDO-Toggle", "", 1, "#x1801", "BIT"
+        "TxPDO-State", "", 1, "#x1801", "BIT"
+        "None", "", 1, "", "ARRAY [0..0] OF BIT"
+        "External device not connected", "", 1, "#x10f4", "BIT"
+
+
+
+PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Sync Mode", "", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO-Toggle", "", 1, "#x1802", "BIT"
+        "TxPDO-State", "", 1, "#x1802", "BIT"
+        "Time stamp update toggle", "", 1, "#x10f4", "BIT"
+        "External device not connected", "", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 64, "#x10f4", "ULINT"
+        "External time stamp", "", 64, "#x10f4", "ULINT"
+        "Reserved", "", 32, "#x10f4", "UDINT"
+
+
+
+PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Sync Mode", "", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO-Toggle", "", 1, "#x1803", "BIT"
+        "TxPDO-State", "", 1, "#x1803", "BIT"
+        "Time stamp update toggle", "", 1, "#x10f4", "BIT"
+        "External device not connected", "", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 32, "#x10f4", "UDINT"
+        "External time stamp", "", 32, "#x10f4", "UDINT"
+        "Reserved", "", 32, "#x10f4", "UDINT"
+
+
+
+PDO Active TxPDOs-Map (Index #x1a04, Flags #x0000, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "u16Count", "", 16, "#xf640", "UINT"
+        "PDO 1-8", "", 16, "#xf630", "UINT"
+        "PDO 9-16", "", 16, "#xf630", "UINT"
+        "PDO 17-24", "", 16, "#xf630", "UINT"
+        "PDO 25-32", "", 16, "#xf630", "UINT"
+
+
+
+PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Bytes to Read", "", 16, "#xf650", "UINT"
+
+
+
+PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "ENDSTATION_PLC_NAME", "", 72, "#x6000", "ARRAY [0..8] OF USINT"
+        "IP1_ROUGH_VRC_01_OPEN_LS", "", 8, "#x6000", "BOOL"
+        "IP1_ROUGH_VRC_02_OPEN_LS", "", 8, "#x6000", "BOOL"
+        "IP1_ROUGH_VRC_03_OPEN_LS", "", 8, "#x6000", "BOOL"
+        "IP1_TURBOS_ALL_AtSpd", "", 8, "#x6000", "BOOL"
+        "IP1_MAIN_xAT_VAC", "", 8, "#x6000", "BOOL"
+        "IP1_MAIN_xPRESS_OK", "", 8, "#x6000", "BOOL"
+        "IP1_MAIN_rPRESS", "", 32, "#x6000", "REAL"
+        "IP1_HV_SAFETY_ENABLE", "", 8, "#x6000", "BOOL"
+
+
+
+PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "HUTCH_PLC_NAME", "", 72, "#x7000", "ARRAY [0..8] OF USINT"
+        "TMO_ROUGH1_VRC_01_OPEN_LS", "", 8, "#x7000", "BOOL"
+        "TMO_ROUGH2_VRC_01_OPEN_LS", "", 8, "#x7000", "BOOL"
+
+
+.. raw:: html
+
+   </details>
+
+
+DREAM_ECAT
+^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (6 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, DREAM_ECAT
+    ID, 28
+        BootStrapData, 0010140200141402
+        SyncMan, 0010000426000100010000008000da050004001026010000
+        SyncMan, 0016000422000100020000008000da050004001622010000
+        SyncMan, 001c0d006400010003000000000000000000001c64010000
+        SyncMan, 008e15002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
+        Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
+        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
+        CoeProfile, 5001
+
+
+
+PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "None", "", 12, "", "ARRAY [0..11] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1801", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1801", "BIT"
+        "None", "", 1, "", "ARRAY [0..0] OF BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
+
+
+
+PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1802", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1802", "BIT"
+        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 64, "#x10f4", "ULINT"
+        "External time stamp", "", 64, "#x10f4", "ULINT"
+        "None", "", 32, "", "ARRAY [0..3] OF BYTE"
+
+
+
+PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1803", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1803", "BIT"
+        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 32, "#x10f4", "UDINT"
+        "External time stamp", "", 32, "#x10f4", "UDINT"
+        "None", "", 32, "", "ARRAY [0..3] OF BYTE"
+
+
+
+PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Data Bytes Pending", "", 16, "#xf650", "UINT"
+
+
+
+PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "ENDSTATION_PLC_NAME", "", , "#x6000", "ARRAY [0..8] OF USINT"
+        "DREAM_HV_SAFETY_ENABLE", "", , "#x6000", "BOOL"
+        "DREAM_TURBOS_ALL_AtSpd", "", , "#x6000", "BOOL"
+        "DREAM_MAIN_xAT_VAC", "", , "#x6000", "BOOL"
+        "DREAM_MAIN_xPRESS_OK", "", , "#x6000", "BOOL"
+        "DREAM_MAIN_rPRESS", "", , "#x6000", "REAL"
+        "CLOSE_TMO_MR5K4_VWC", "", , "#x6000", "BOOL"
+        "CLOSE_TMO_TM2K4_VWC", "", , "#x6000", "BOOL"
+
+
+
+PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "HUTCH_PLC_NAME", "", , "#x7000", "ARRAY [0..8] OF USINT"
+        "TMO_MR5K4_VWC_CLOSED_LS", "", , "#x7000", "BOOL"
+        "TMO_TM2K4_VWC_CLOSED_LS", "", , "#x7000", "BOOL"
+        "TMO_MR5K4_VWC_OPEN_LS", "", , "#x7000", "BOOL"
+        "TMO_TM2K4_VWC_OPEN_LS", "", , "#x7000", "BOOL"
+
+
+.. raw:: html
+
+   </details>
+
+
 CX0_E5 (EL6070)
 ^^^^^^^^^^^^^^^
 
@@ -8939,126 +9196,6 @@ CX0_E13 (EK1122)
 
     Name, CX0_E13 (EK1122)
     ID, 129
-
-
-.. raw:: html
-
-   </details>
-
-
-IP1_ECAT (EL6692)
-^^^^^^^^^^^^^^^^^
-
-
-.. raw:: html
-
-   <details>
-        <summary>EtherCAT (5 PDOs)</summary>
-
-.. csv-table:: Basic Settings
-    :header: Name, Data
-    :align: center
-
-    Name, IP1_ECAT (EL6692)
-    ID, 130
-        SyncMan, 001000012600010001000000800000040001001026010000
-        SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 00180c002400010003000000000000000000001824000000
-        SyncMan, 001e18002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
-        Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
-        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
-        CoeProfile, 5001
-
-
-
-PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
-        "None", "", 6, "", "ARRAY [0..5] OF BIT"
-        "None", "", 3, "", "ARRAY [0..2] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1800", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1800", "BIT"
-        "Control value update toggle", "Bit toggles when new DC control data available", 1, "#x10f4", "BIT"
-        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
-
-
-
-PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
-        "None", "", 6, "", "ARRAY [0..5] OF BIT"
-        "None", "", 3, "", "ARRAY [0..2] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1800", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1800", "BIT"
-        "Control value update toggle", "Bit toggles when new DC control data available", 1, "#x10f4", "BIT"
-        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
-        "Internal time stamp", "", 64, "#x10f4", "ULINT"
-        "External time stamp", "", 64, "#x10f4", "ULINT"
-        "Control Value for DC Master Clock", "", 32, "#x10f4", "UDINT"
-
-
-
-PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
-        "None", "", 6, "", "ARRAY [0..5] OF BIT"
-        "None", "", 3, "", "ARRAY [0..2] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1800", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1800", "BIT"
-        "Control value update toggle", "Bit toggles when new DC control data available", 1, "#x10f4", "BIT"
-        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
-        "Internal time stamp", "", 32, "#x10f4", "UDINT"
-        "External time stamp", "", 32, "#x10f4", "UDINT"
-        "Control Value for DC Master Clock", "", 32, "#x10f4", "UDINT"
-
-
-
-PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "ENDSTATION_PLC_NAME", "", 72, "#x6000", "STRING(8)"
-        "IP1_ROUGH_VRC_01_OPEN_LS", "", 8, "#x6000", "BOOL"
-        "IP1_ROUGH_VRC_02_OPEN_LS", "", 8, "#x6000", "BOOL"
-        "IP1_ROUGH_VRC_03_OPEN_LS", "", 8, "#x6000", "BOOL"
-        "IP1_TURBOS_ALL_AtSpd", "", 8, "#x6000", "BOOL"
-        "IP1_MAIN_xAT_VAC", "", 8, "#x6000", "BOOL"
-        "IP1_MAIN_xPRESS_OK", "", 8, "#x6000", "BOOL"
-        "None", "", 8, "", "ARRAY [0..0] OF BYTE"
-        "IP1_MAIN_rPRESS", "", 32, "#x6000", "REAL"
-        "IP1_HV_SAFETY_ENABLE", "", 8, "#x6000", "BOOL"
-        "None", "", 8, "", "ARRAY [0..0] OF BYTE"
-
-
-
-PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
-
-.. csv-table::
-    :header: Name, Comment, BitLen, Index, Type
-    :align: center
-
-        "HUTCH_PLC_NAME", "", 72, "#x7000", "STRING(8)"
-        "TMO_ROUGH1_VRC_01_OPEN_LS", "", 8, "#x7000", "BOOL"
-        "TMO_ROUGH2_VRC_01_OPEN_LS", "", 8, "#x7000", "BOOL"
-        "None", "", 8, "", "ARRAY [0..0] OF BYTE"
 
 
 .. raw:: html
