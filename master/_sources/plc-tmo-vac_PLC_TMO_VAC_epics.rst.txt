@@ -1126,214 +1126,6 @@ LCLS_Vacuum.FB_9XX
 
 
  
-LCLS_Vacuum.FB_CCM501
-^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):AT_VAC_RBV
-      - bi
-      - $(SYMBOL).IG.xAT_VAC
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):Auto_On
-      - bo
-      - $(SYMBOL).IG.xAutoOn
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: output
-
-
-    * - $(PREFIX):Auto_On_RBV
-      - bi
-      - $(SYMBOL).IG.xAutoOn
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: output
-
-
-    * - $(PREFIX):AutoOn_timer_RBV
-      - longin
-      - $(SYMBOL).IG.iAutoOnTimer
-      - | io: input
-
-
-    * - $(PREFIX):DISC_ACTIVE_RBV
-      - bi
-      - $(SYMBOL).IG.i_xDisc_Active
-      - | field: ONAM DISC ACTIVE
-        | field: ZNAM NO DISC
-        | io: input
-
-
-    * - $(PREFIX):HV_DIS_DO_RBV
-      - bi
-      - $(SYMBOL).IG.q_xHV_DIS
-      - | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):HV_ON_RBV
-      - bi
-      - $(SYMBOL).IG.i_xHV_ON
-      - | io: input
-
-
-    * - $(PREFIX):HV_SW
-      - bo
-      - $(SYMBOL).IG.xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):HV_SW_RBV
-      - bi
-      - $(SYMBOL).IG.xHV_SW
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):ILK_OK_RBV
-      - bi
-      - $(SYMBOL).IG.xILKOk
-      - | field: ONAM OK
-        | field: ZNAM NOT OK
-        | io: input
-
-
-    * - $(PREFIX):LOGGER
-      - bo
-      - $(SYMBOL).IG.xLog
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):LOGGER_RBV
-      - bi
-      - $(SYMBOL).IG.xLog
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: output
-
-
-    * - $(PREFIX):PRESS_AI_RBV
-      - longin
-      - $(SYMBOL).IG.i_iPRESS_R
-      - | io: input
-
-
-    * - $(PREFIX):PRESS_OK_RBV
-      - bi
-      - $(SYMBOL).IG.xPRESS_OK
-      - | field: ONAM ON
-        | field: ZNAM OFF
-        | io: input
-
-
-    * - $(PREFIX):PRESS_RBV
-      - ai
-      - $(SYMBOL).IG.rPRESS
-      - | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):PRO_SP
-      - ao
-      - $(SYMBOL).IG.rPRO_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):PRO_SP_RBV
-      - ai
-      - $(SYMBOL).IG.rPRO_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS
-      - ao
-      - $(SYMBOL).IG.rHYS_PR
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):SP_HYS_RBV
-      - ai
-      - $(SYMBOL).IG.rHYS_PR
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):STATE_RBV
-      - mbbi
-      - $(SYMBOL).IG.eState
-      - | field: FRST Starting
-        | field: FVST Valid
-        | field: ONST GaugeDisconnected
-        | field: SVST ValidLo
-        | field: SXST ValidHi
-        | field: THST PressInvalid
-        | field: TWST OoR
-        | field: ZRST Off
-        | io: input
-
-
-    * - $(PREFIX):VAC_SP
-      - ao
-      - $(SYMBOL).IG.rVAC_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
-    * - $(PREFIX):VAC_SP_RBV
-      - ai
-      - $(SYMBOL).IG.rVAC_SP
-      - | autosave_pass1: VAL DESC
-        | field: EGU "TORR"
-        | field: HOPR 1000
-        | field: LOPR 0
-        | field: PREC 2
-        | io: output
-
-
- 
 LCLS_Vacuum.FB_Gauge_Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2076,6 +1868,214 @@ LCLS_Vacuum.FB_MKS422
  
 LCLS_Vacuum.FB_MKS500
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):AT_VAC_RBV
+      - bi
+      - $(SYMBOL).IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).IG.iAutoOnTimer
+      - | io: input
+
+
+    * - $(PREFIX):DISC_ACTIVE_RBV
+      - bi
+      - $(SYMBOL).IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - $(PREFIX):HV_DIS_DO_RBV
+      - bi
+      - $(SYMBOL).IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):HV_ON_RBV
+      - bi
+      - $(SYMBOL).IG.i_xHV_ON
+      - | io: input
+
+
+    * - $(PREFIX):HV_SW
+      - bo
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):HV_SW_RBV
+      - bi
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):ILK_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):PRESS_AI_RBV
+      - longin
+      - $(SYMBOL).IG.i_iPRESS_R
+      - | io: input
+
+
+    * - $(PREFIX):PRESS_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - $(PREFIX):PRESS_RBV
+      - ai
+      - $(SYMBOL).IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):PRO_SP
+      - ao
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):PRO_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS
+      - ao
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS_RBV
+      - ai
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - $(PREFIX):VAC_SP
+      - ao
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):VAC_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+ 
+LCLS_Vacuum.FB_MX7M
+^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :header-rows: 1
@@ -3522,6 +3522,18 @@ LCLS_Vacuum.FB_VFS_2OO3Interface
     * - $(PREFIX):VFS_2OO3_MODE_RBV
       - mbbi
       - $(SYMBOL).i_e2OO3_MODE
+      - | io: output
+
+
+    * - $(PREFIX):VFS_RESET_FAULT_COUNTER
+      - bo
+      - $(SYMBOL).i_ResetFaultCounter
+      - | io: output
+
+
+    * - $(PREFIX):VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - $(SYMBOL).i_ResetFaultCounter
       - | io: output
 
 
@@ -21318,7 +21330,7 @@ ST_BeamParams_IO
       - | io: input
 
 
-  
+   
 ST_LoggingEventInfo
 ^^^^^^^^^^^^^^^^^^^
 
@@ -21426,7 +21438,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                                       
+                                            
 Database Records
 ----------------
 
@@ -21438,6 +21450,250 @@ Database Records
       - Type
       - Description
       - Pragma
+    * - TMO:DREAM:HV_SAFETY_ENABLE_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_HV_SAFETY_ENABLE
+      - | io: output
+
+
+    * - TMO:DREAM:HV_SAFETY_ENABLE
+      - bo
+      - GVL_DREAM_ECAT.DREAM_HV_SAFETY_ENABLE
+      - | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:STATE_RBV
+      - mbbi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:AutoOn_timer_RBV
+      - longin
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.iAutoOnTimer
+      - | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:PRESS_AI_RBV
+      - longin
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_iPRESS_R
+      - | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:DISC_ACTIVE_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:HV_ON_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_xHV_ON
+      - | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:HV_DIS_DO_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:SP_HYS_RBV
+      - ai
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:SP_HYS
+      - ao
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:PRESS_RBV
+      - ai
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:PRO_SP_RBV
+      - ai
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:PRO_SP
+      - ao
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:VAC_SP_RBV
+      - ai
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:VAC_SP
+      - ao
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:AT_VAC_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:Auto_On_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:Auto_On
+      - bo
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:HV_SW_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:HV_SW
+      - bo
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:ILK_OK_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - TMO:DREAM:MAIN:GAUGE:LOGGER_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:LOGGER
+      - bo
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - TMO:DREAM:MAIN:GAUGE:PRESS_OK_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - TMO:IP2:PLC:NAME_RBV
+      - waveform
+      - GVL_DREAM_ECAT.DREAM_PLC_NAME
+      - | io: output
+
+
+    * - TMO:IP2:PLC:NAME
+      - waveform
+      - GVL_DREAM_ECAT.DREAM_PLC_NAME
+      - | io: output
+
+
+    * - TMO:DREAM:TURBOS:ALL_AT_SPD_RBV
+      - bi
+      - GVL_DREAM_ECAT.DREAM_TURBOS_ALL_AtSpd
+      - | io: output
+
+
+    * - TMO:DREAM:TURBOS:ALL_AT_SPD
+      - bo
+      - GVL_DREAM_ECAT.DREAM_TURBOS_ALL_AtSpd
+      - | io: output
+
+
+    * - TMO:DREAM:ENDSTATION:ETHERCAT_ERROR_RBV
+      - bi
+      - GVL_DREAM_ECAT.bDREAM_ECAT_COM_ERROR
+      - | io: output
+
+
+    * - TMO:DREAM:ENDSTATION:ETHERCAT_ERROR
+      - bo
+      - GVL_DREAM_ECAT.bDREAM_ECAT_COM_ERROR
+      - | io: output
+
+
     * - MR1K4:SOMS:PIP:01:Inverted_RBV
       - bi
       - GVL_FEE_Device.MR1K4_SOMS_PIP_01.stPump.bOutputInverted
@@ -21852,6 +22108,202 @@ Database Records
     * - PC4K4:XTES:GCC:01:PRESS_OK_RBV
       - bi
       - GVL_FEE_Device.PC4K4_XTES_GCC_01.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:STATE_RBV
+      - mbbi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:AutoOn_timer_RBV
+      - longin
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - PC4K4:XTES:GCC:02:PRESS_AI_RBV
+      - longin
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - PC4K4:XTES:GCC:02:DISC_ACTIVE_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:HV_ON_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_xHV_ON
+      - | io: input
+
+
+    * - PC4K4:XTES:GCC:02:HV_DIS_DO_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:SP_HYS_RBV
+      - ai
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:SP_HYS
+      - ao
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:PRESS_RBV
+      - ai
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:PRO_SP_RBV
+      - ai
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:PRO_SP
+      - ao
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:VAC_SP_RBV
+      - ai
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:VAC_SP
+      - ao
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:AT_VAC_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:Auto_On_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:Auto_On
+      - bo
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:HV_SW_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:HV_SW
+      - bo
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:ILK_OK_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - PC4K4:XTES:GCC:02:LOGGER_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:LOGGER
+      - bo
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - PC4K4:XTES:GCC:02:PRESS_OK_RBV
+      - bi
+      - GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xPRESS_OK
       - | field: ONAM ON
         | field: ZNAM OFF
         | io: input
@@ -25406,6 +25858,18 @@ Database Records
       - | io: output
 
 
+    * - MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
     * - MR3K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
       - mbbi
       - GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_e2OO3_MODE
@@ -25666,6 +26130,18 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter
+      - | io: output
 
 
     * - MR4K4:KBO:VFS:01:VFS_2OO3_MODE_RBV
@@ -25930,6 +26406,18 @@ Database Records
         | io: output
 
 
+    * - TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
+    * - TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter
+      - | io: output
+
+
     * - TV1K4:VFS:01:VFS_2OO3_MODE_RBV
       - mbbi
       - GVL_FS_Devices.TV1K4_VFS_Interface.i_e2OO3_MODE
@@ -26190,6 +26678,18 @@ Database Records
       - | field: ONAM Override ON
         | field: ZNAM Override OFF
         | io: output
+
+
+    * - TMO:VFS_RESET_FAULT_COUNTER_RBV
+      - bi
+      - GVL_FS_Devices.bResetFaultCounters
+      - | io: output
+
+
+    * - TMO:VFS_RESET_FAULT_COUNTER
+      - bo
+      - GVL_FS_Devices.bResetFaultCounters
+      - | io: output
 
 
     * - TMO:VFS_2OO3_MODE_RBV
@@ -26591,6 +27091,202 @@ Database Records
     * - IM5K4:PPM:GCC:01:PRESS_OK_RBV
       - bi
       - GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:STATE_RBV
+      - mbbi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.iAutoOnTimer
+      - | io: input
+
+
+    * - IM5K4:PPM:GPI:01:PRESS_AI_RBV
+      - longin
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_iPRESS_R
+      - | io: input
+
+
+    * - IM5K4:PPM:GPI:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:HV_ON_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_xHV_ON
+      - | io: input
+
+
+    * - IM5K4:PPM:GPI:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:SP_HYS_RBV
+      - ai
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:SP_HYS
+      - ao
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:PRESS_RBV
+      - ai
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:PRO_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:PRO_SP
+      - ao
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:VAC_SP_RBV
+      - ai
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:VAC_SP
+      - ao
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:AT_VAC_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:Auto_On
+      - bo
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:HV_SW_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:HV_SW
+      - bo
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:ILK_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - IM5K4:PPM:GPI:01:LOGGER_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:LOGGER
+      - bo
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM5K4:PPM:GPI:01:PRESS_OK_RBV
+      - bi
+      - GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xPRESS_OK
       - | field: ONAM ON
         | field: ZNAM OFF
         | io: input

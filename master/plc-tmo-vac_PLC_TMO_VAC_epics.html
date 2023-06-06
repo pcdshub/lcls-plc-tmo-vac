@@ -1,22 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Types &mdash; pcdshub/lcls-plc-tmo-vac  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -47,7 +49,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_links.html">Links</a></li>
 </ul>
@@ -63,12 +65,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-logmessage">LCLS_General.FB_LogMessage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-general-st-pendingevent">LCLS_General.ST_PendingEvent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-9xx">LCLS_Vacuum.FB_9XX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-ccm501">LCLS_Vacuum.FB_CCM501</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-gauge-interface">LCLS_Vacuum.FB_Gauge_Interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-mks248">LCLS_Vacuum.FB_MKS248</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-mks275">LCLS_Vacuum.FB_MKS275</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-mks422">LCLS_Vacuum.FB_MKS422</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-mks500">LCLS_Vacuum.FB_MKS500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-mx7m">LCLS_Vacuum.FB_MX7M</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-pip-gamma">LCLS_Vacuum.FB_PIP_Gamma</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-pip-sip">LCLS_Vacuum.FB_PIP_SIP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-vacuum-fb-ptm-pfeiffer">LCLS_Vacuum.FB_PTM_Pfeiffer</a></li>
@@ -136,9 +138,9 @@
            <div itemprop="articleBody">
              
   <section id="data-types">
-<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading"></a></h1>
+<h1>Data Types<a class="headerlink" href="#data-types" title="Link to this heading"></a></h1>
 <section id="lcls-general-fb-listener">
-<h2>LCLS_General.FB_Listener<a class="headerlink" href="#lcls-general-fb-listener" title="Permalink to this heading"></a></h2>
+<h2>LCLS_General.FB_Listener<a class="headerlink" href="#lcls-general-fb-listener" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -300,7 +302,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-loghandler">
-<h2>LCLS_General.FB_LogHandler<a class="headerlink" href="#lcls-general-fb-loghandler" title="Permalink to this heading"></a></h2>
+<h2>LCLS_General.FB_LogHandler<a class="headerlink" href="#lcls-general-fb-loghandler" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -1202,7 +1204,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-logmessage">
-<h2>LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-general-fb-logmessage" title="Permalink to this heading"></a></h2>
+<h2>LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-general-fb-logmessage" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -1240,7 +1242,7 @@
 </table>
 </section>
 <section id="lcls-general-st-pendingevent">
-<h2>LCLS_General.ST_PendingEvent<a class="headerlink" href="#lcls-general-st-pendingevent" title="Permalink to this heading"></a></h2>
+<h2>LCLS_General.ST_PendingEvent<a class="headerlink" href="#lcls-general-st-pendingevent" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -1338,7 +1340,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-9xx">
-<h2>LCLS_Vacuum.FB_9XX<a class="headerlink" href="#lcls-vacuum-fb-9xx" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_9XX<a class="headerlink" href="#lcls-vacuum-fb-9xx" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -1591,262 +1593,8 @@
 </tbody>
 </table>
 </section>
-<section id="lcls-vacuum-fb-ccm501">
-<h2>LCLS_Vacuum.FB_CCM501<a class="headerlink" href="#lcls-vacuum-fb-ccm501" title="Permalink to this heading"></a></h2>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Record</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Pragma</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>$(PREFIX):AT_VAC_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xAT_VAC</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):Auto_On</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).IG.xAutoOn</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):Auto_On_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xAutoOn</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):AutoOn_timer_RBV</p></td>
-<td><p>longin</p></td>
-<td><p>$(SYMBOL).IG.iAutoOnTimer</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):DISC_ACTIVE_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.i_xDisc_Active</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM DISC ACTIVE</div>
-<div class="line">field: ZNAM NO DISC</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):HV_DIS_DO_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.q_xHV_DIS</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):HV_ON_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.i_xHV_ON</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):HV_SW</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).IG.xHV_SW</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM ON</div>
-<div class="line">field: ZNAM OFF</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):HV_SW_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xHV_SW</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM ON</div>
-<div class="line">field: ZNAM OFF</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):ILK_OK_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xILKOk</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM OK</div>
-<div class="line">field: ZNAM NOT OK</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):LOGGER</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).IG.xLog</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM ON</div>
-<div class="line">field: ZNAM OFF</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):LOGGER_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xLog</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM ON</div>
-<div class="line">field: ZNAM OFF</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):PRESS_AI_RBV</p></td>
-<td><p>longin</p></td>
-<td><p>$(SYMBOL).IG.i_iPRESS_R</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):PRESS_OK_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).IG.xPRESS_OK</p></td>
-<td><div class="line-block">
-<div class="line">field: ONAM ON</div>
-<div class="line">field: ZNAM OFF</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):PRESS_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).IG.rPRESS</p></td>
-<td><div class="line-block">
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):PRO_SP</p></td>
-<td><p>ao</p></td>
-<td><p>$(SYMBOL).IG.rPRO_SP</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):PRO_SP_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).IG.rPRO_SP</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):SP_HYS</p></td>
-<td><p>ao</p></td>
-<td><p>$(SYMBOL).IG.rHYS_PR</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):SP_HYS_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).IG.rHYS_PR</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATE_RBV</p></td>
-<td><p>mbbi</p></td>
-<td><p>$(SYMBOL).IG.eState</p></td>
-<td><div class="line-block">
-<div class="line">field: FRST Starting</div>
-<div class="line">field: FVST Valid</div>
-<div class="line">field: ONST GaugeDisconnected</div>
-<div class="line">field: SVST ValidLo</div>
-<div class="line">field: SXST ValidHi</div>
-<div class="line">field: THST PressInvalid</div>
-<div class="line">field: TWST OoR</div>
-<div class="line">field: ZRST Off</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):VAC_SP</p></td>
-<td><p>ao</p></td>
-<td><p>$(SYMBOL).IG.rVAC_SP</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):VAC_SP_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).IG.rVAC_SP</p></td>
-<td><div class="line-block">
-<div class="line">autosave_pass1: VAL DESC</div>
-<div class="line">field: EGU “TORR”</div>
-<div class="line">field: HOPR 1000</div>
-<div class="line">field: LOPR 0</div>
-<div class="line">field: PREC 2</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="lcls-vacuum-fb-gauge-interface">
-<h2>LCLS_Vacuum.FB_Gauge_Interface<a class="headerlink" href="#lcls-vacuum-fb-gauge-interface" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_Gauge_Interface<a class="headerlink" href="#lcls-vacuum-fb-gauge-interface" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -2100,7 +1848,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-mks248">
-<h2>LCLS_Vacuum.FB_MKS248<a class="headerlink" href="#lcls-vacuum-fb-mks248" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_MKS248<a class="headerlink" href="#lcls-vacuum-fb-mks248" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -2244,7 +1992,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-mks275">
-<h2>LCLS_Vacuum.FB_MKS275<a class="headerlink" href="#lcls-vacuum-fb-mks275" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_MKS275<a class="headerlink" href="#lcls-vacuum-fb-mks275" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -2498,7 +2246,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-mks422">
-<h2>LCLS_Vacuum.FB_MKS422<a class="headerlink" href="#lcls-vacuum-fb-mks422" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_MKS422<a class="headerlink" href="#lcls-vacuum-fb-mks422" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -2752,7 +2500,261 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-mks500">
-<h2>LCLS_Vacuum.FB_MKS500<a class="headerlink" href="#lcls-vacuum-fb-mks500" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_MKS500<a class="headerlink" href="#lcls-vacuum-fb-mks500" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):AT_VAC_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xAT_VAC</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Auto_On</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).IG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Auto_On_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):AutoOn_timer_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).IG.iAutoOnTimer</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):DISC_ACTIVE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.i_xDisc_Active</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM DISC ACTIVE</div>
+<div class="line">field: ZNAM NO DISC</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):HV_DIS_DO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.q_xHV_DIS</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):HV_ON_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.i_xHV_ON</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):HV_SW</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).IG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):HV_SW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ILK_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xILKOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM NOT OK</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):LOGGER</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).IG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):LOGGER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PRESS_AI_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).IG.i_iPRESS_R</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PRESS_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).IG.xPRESS_OK</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PRESS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).IG.rPRESS</p></td>
+<td><div class="line-block">
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PRO_SP</p></td>
+<td><p>ao</p></td>
+<td><p>$(SYMBOL).IG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PRO_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).IG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SP_HYS</p></td>
+<td><p>ao</p></td>
+<td><p>$(SYMBOL).IG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SP_HYS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).IG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATE_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).IG.eState</p></td>
+<td><div class="line-block">
+<div class="line">field: FRST Starting</div>
+<div class="line">field: FVST Valid</div>
+<div class="line">field: ONST GaugeDisconnected</div>
+<div class="line">field: SVST ValidLo</div>
+<div class="line">field: SXST ValidHi</div>
+<div class="line">field: THST PressInvalid</div>
+<div class="line">field: TWST OoR</div>
+<div class="line">field: ZRST Off</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):VAC_SP</p></td>
+<td><p>ao</p></td>
+<td><p>$(SYMBOL).IG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):VAC_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).IG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lcls-vacuum-fb-mx7m">
+<h2>LCLS_Vacuum.FB_MX7M<a class="headerlink" href="#lcls-vacuum-fb-mx7m" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -3006,7 +3008,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-pip-gamma">
-<h2>LCLS_Vacuum.FB_PIP_Gamma<a class="headerlink" href="#lcls-vacuum-fb-pip-gamma" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_PIP_Gamma<a class="headerlink" href="#lcls-vacuum-fb-pip-gamma" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -3297,7 +3299,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-pip-sip">
-<h2>LCLS_Vacuum.FB_PIP_SIP<a class="headerlink" href="#lcls-vacuum-fb-pip-sip" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_PIP_SIP<a class="headerlink" href="#lcls-vacuum-fb-pip-sip" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -3588,7 +3590,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-ptm-pfeiffer">
-<h2>LCLS_Vacuum.FB_PTM_Pfeiffer<a class="headerlink" href="#lcls-vacuum-fb-ptm-pfeiffer" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_PTM_Pfeiffer<a class="headerlink" href="#lcls-vacuum-fb-ptm-pfeiffer" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -3936,7 +3938,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-ptm-turbodrive">
-<h2>LCLS_Vacuum.FB_PTM_TurboDrive<a class="headerlink" href="#lcls-vacuum-fb-ptm-turbodrive" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_PTM_TurboDrive<a class="headerlink" href="#lcls-vacuum-fb-ptm-turbodrive" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -4210,7 +4212,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-vfs-2oo3interface">
-<h2>LCLS_Vacuum.FB_VFS_2OO3Interface<a class="headerlink" href="#lcls-vacuum-fb-vfs-2oo3interface" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_VFS_2OO3Interface<a class="headerlink" href="#lcls-vacuum-fb-vfs-2oo3interface" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -4550,11 +4552,27 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>$(PREFIX):VFS_RESET_FAULT_COUNTER</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):VFS_RESET_FAULT_COUNTER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </section>
 <section id="lcls-vacuum-fb-vgc">
-<h2>LCLS_Vacuum.FB_VGC<a class="headerlink" href="#lcls-vacuum-fb-vgc" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_VGC<a class="headerlink" href="#lcls-vacuum-fb-vgc" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -5002,7 +5020,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-fb-vgc-2s">
-<h2>LCLS_Vacuum.FB_VGC_2S<a class="headerlink" href="#lcls-vacuum-fb-vgc-2s" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.FB_VGC_2S<a class="headerlink" href="#lcls-vacuum-fb-vgc-2s" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -5502,7 +5520,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-leyboldptm">
-<h2>LCLS_Vacuum.ST_LeyboldPTM<a class="headerlink" href="#lcls-vacuum-st-leyboldptm" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_LeyboldPTM<a class="headerlink" href="#lcls-vacuum-st-leyboldptm" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -5776,7 +5794,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-pfeifferptm">
-<h2>LCLS_Vacuum.ST_PfeifferPTM<a class="headerlink" href="#lcls-vacuum-st-pfeifferptm" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_PfeifferPTM<a class="headerlink" href="#lcls-vacuum-st-pfeifferptm" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -6124,7 +6142,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-pip">
-<h2>LCLS_Vacuum.ST_PIP<a class="headerlink" href="#lcls-vacuum-st-pip" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_PIP<a class="headerlink" href="#lcls-vacuum-st-pip" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -6415,7 +6433,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-ptm">
-<h2>LCLS_Vacuum.ST_PTM<a class="headerlink" href="#lcls-vacuum-st-ptm" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_PTM<a class="headerlink" href="#lcls-vacuum-st-ptm" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -6641,7 +6659,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-valvebase">
-<h2>LCLS_Vacuum.ST_ValveBase<a class="headerlink" href="#lcls-vacuum-st-valvebase" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_ValveBase<a class="headerlink" href="#lcls-vacuum-st-valvebase" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -6869,7 +6887,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-vcn">
-<h2>LCLS_Vacuum.ST_VCN<a class="headerlink" href="#lcls-vacuum-st-vcn" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_VCN<a class="headerlink" href="#lcls-vacuum-st-vcn" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -7013,7 +7031,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-vfs">
-<h2>LCLS_Vacuum.ST_VFS<a class="headerlink" href="#lcls-vacuum-st-vfs" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_VFS<a class="headerlink" href="#lcls-vacuum-st-vfs" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -7307,7 +7325,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-vg">
-<h2>LCLS_Vacuum.ST_VG<a class="headerlink" href="#lcls-vacuum-st-vg" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_VG<a class="headerlink" href="#lcls-vacuum-st-vg" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -7561,7 +7579,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-vgc">
-<h2>LCLS_Vacuum.ST_VGC<a class="headerlink" href="#lcls-vacuum-st-vgc" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_VGC<a class="headerlink" href="#lcls-vacuum-st-vgc" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -7925,7 +7943,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-st-vgc-2s">
-<h2>LCLS_Vacuum.ST_VGC_2S<a class="headerlink" href="#lcls-vacuum-st-vgc-2s" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum.ST_VGC_2S<a class="headerlink" href="#lcls-vacuum-st-vgc-2s" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -8341,7 +8359,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-serial-st-pfeiffercontrol">
-<h2>LCLS_Vacuum_Serial.ST_PfeifferControl<a class="headerlink" href="#lcls-vacuum-serial-st-pfeiffercontrol" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum_Serial.ST_PfeifferControl<a class="headerlink" href="#lcls-vacuum-serial-st-pfeiffercontrol" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -8455,7 +8473,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-serial-st-pfeifferstatus">
-<h2>LCLS_Vacuum_Serial.ST_PfeifferStatus<a class="headerlink" href="#lcls-vacuum-serial-st-pfeifferstatus" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum_Serial.ST_PfeifferStatus<a class="headerlink" href="#lcls-vacuum-serial-st-pfeifferstatus" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -8625,7 +8643,7 @@
 </table>
 </section>
 <section id="lcls-vacuum-serial-st-td20status">
-<h2>LCLS_Vacuum_Serial.ST_TD20Status<a class="headerlink" href="#lcls-vacuum-serial-st-td20status" title="Permalink to this heading"></a></h2>
+<h2>LCLS_Vacuum_Serial.ST_TD20Status<a class="headerlink" href="#lcls-vacuum-serial-st-td20status" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -8719,7 +8737,7 @@
 </table>
 </section>
 <section id="pmps-fb-arbiter">
-<h2>PMPS.FB_Arbiter<a class="headerlink" href="#pmps-fb-arbiter" title="Permalink to this heading"></a></h2>
+<h2>PMPS.FB_Arbiter<a class="headerlink" href="#pmps-fb-arbiter" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -13219,7 +13237,7 @@
 </table>
 </section>
 <section id="pmps-fb-beamparamassertionpool">
-<h2>PMPS.FB_BeamParamAssertionPool<a class="headerlink" href="#pmps-fb-beamparamassertionpool" title="Permalink to this heading"></a></h2>
+<h2>PMPS.FB_BeamParamAssertionPool<a class="headerlink" href="#pmps-fb-beamparamassertionpool" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -17513,7 +17531,7 @@
 </table>
 </section>
 <section id="pmps-fb-hardwareffoutput">
-<h2>PMPS.FB_HardwareFFOutput<a class="headerlink" href="#pmps-fb-hardwareffoutput" title="Permalink to this heading"></a></h2>
+<h2>PMPS.FB_HardwareFFOutput<a class="headerlink" href="#pmps-fb-hardwareffoutput" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -26791,7 +26809,7 @@
 </table>
 </section>
 <section id="pmps-fb-subsystoarbiter-io">
-<h2>PMPS.FB_SubSysToArbiter_IO<a class="headerlink" href="#pmps-fb-subsystoarbiter-io" title="Permalink to this heading"></a></h2>
+<h2>PMPS.FB_SubSysToArbiter_IO<a class="headerlink" href="#pmps-fb-subsystoarbiter-io" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -26821,7 +26839,7 @@
 </table>
 </section>
 <section id="pmps-st-beamparams">
-<h2>PMPS.ST_BeamParams<a class="headerlink" href="#pmps-st-beamparams" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_BeamParams<a class="headerlink" href="#pmps-st-beamparams" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27025,7 +27043,7 @@
 </table>
 </section>
 <section id="pmps-st-bp-arbinternal">
-<h2>PMPS.ST_BP_ArbInternal<a class="headerlink" href="#pmps-st-bp-arbinternal" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_BP_ArbInternal<a class="headerlink" href="#pmps-st-bp-arbinternal" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27253,7 +27271,7 @@
 </table>
 </section>
 <section id="pmps-st-ff">
-<h2>PMPS.ST_FF<a class="headerlink" href="#pmps-st-ff" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_FF<a class="headerlink" href="#pmps-st-ff" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27451,7 +27469,7 @@
 </table>
 </section>
 <section id="pmps-st-ffinfo">
-<h2>PMPS.ST_FFInfo<a class="headerlink" href="#pmps-st-ffinfo" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_FFInfo<a class="headerlink" href="#pmps-st-ffinfo" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27513,7 +27531,7 @@
 </table>
 </section>
 <section id="pmps-st-ffoverride">
-<h2>PMPS.ST_FFOverride<a class="headerlink" href="#pmps-st-ffoverride" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_FFOverride<a class="headerlink" href="#pmps-st-ffoverride" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27631,7 +27649,7 @@
 </table>
 </section>
 <section id="pmps-st-pmps-aperture">
-<h2>PMPS.ST_PMPS_Aperture<a class="headerlink" href="#pmps-st-pmps-aperture" title="Permalink to this heading"></a></h2>
+<h2>PMPS.ST_PMPS_Aperture<a class="headerlink" href="#pmps-st-pmps-aperture" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27671,7 +27689,7 @@
 </table>
 </section>
 <section id="pmps-t-hashtableentry">
-<h2>PMPS.T_HashTableEntry<a class="headerlink" href="#pmps-t-hashtableentry" title="Permalink to this heading"></a></h2>
+<h2>PMPS.T_HashTableEntry<a class="headerlink" href="#pmps-t-hashtableentry" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27693,7 +27711,7 @@
 </table>
 </section>
 <section id="st-beamparams-io">
-<h2>ST_BeamParams_IO<a class="headerlink" href="#st-beamparams-io" title="Permalink to this heading"></a></h2>
+<h2>ST_BeamParams_IO<a class="headerlink" href="#st-beamparams-io" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27755,7 +27773,7 @@
 </table>
 </section>
 <section id="st-loggingeventinfo">
-<h2>ST_LoggingEventInfo<a class="headerlink" href="#st-loggingeventinfo" title="Permalink to this heading"></a></h2>
+<h2>ST_LoggingEventInfo<a class="headerlink" href="#st-loggingeventinfo" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27853,7 +27871,7 @@
 </table>
 </section>
 <section id="st-pmps-aperture-io">
-<h2>ST_PMPS_Aperture_IO<a class="headerlink" href="#st-pmps-aperture-io" title="Permalink to this heading"></a></h2>
+<h2>ST_PMPS_Aperture_IO<a class="headerlink" href="#st-pmps-aperture-io" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27894,7 +27912,7 @@
 </section>
 </section>
 <section id="database-records">
-<h1>Database Records<a class="headerlink" href="#database-records" title="Permalink to this heading"></a></h1>
+<h1>Database Records<a class="headerlink" href="#database-records" title="Link to this heading"></a></h1>
 <table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Record</p></th>
@@ -27904,6 +27922,310 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>TMO:DREAM:HV_SAFETY_ENABLE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_HV_SAFETY_ENABLE</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:HV_SAFETY_ENABLE</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_HV_SAFETY_ENABLE</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:STATE_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.eState</p></td>
+<td><div class="line-block">
+<div class="line">field: FRST Starting</div>
+<div class="line">field: FVST Valid</div>
+<div class="line">field: ONST GaugeDisconnected</div>
+<div class="line">field: SVST ValidLo</div>
+<div class="line">field: SXST ValidHi</div>
+<div class="line">field: THST PressInvalid</div>
+<div class="line">field: TWST OoR</div>
+<div class="line">field: ZRST Off</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:AutoOn_timer_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.iAutoOnTimer</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:PRESS_AI_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_iPRESS_R</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:DISC_ACTIVE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_xDisc_Active</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM DISC ACTIVE</div>
+<div class="line">field: ZNAM NO DISC</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:HV_ON_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.i_xHV_ON</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:HV_DIS_DO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.q_xHV_DIS</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:SP_HYS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:SP_HYS</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:PRESS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRESS</p></td>
+<td><div class="line-block">
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:PRO_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:PRO_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:VAC_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:VAC_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:AT_VAC_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAT_VAC</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:Auto_On_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:Auto_On</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:HV_SW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:HV_SW</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:ILK_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xILKOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM NOT OK</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:LOGGER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:MAIN:GAUGE:LOGGER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:MAIN:GAUGE:PRESS_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.VG.xPRESS_OK</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:IP2:PLC:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_PLC_NAME</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:IP2:PLC:NAME</p></td>
+<td><p>waveform</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_PLC_NAME</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:TURBOS:ALL_AT_SPD_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_TURBOS_ALL_AtSpd</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:TURBOS:ALL_AT_SPD</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.DREAM_TURBOS_ALL_AtSpd</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:DREAM:ENDSTATION:ETHERCAT_ERROR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_DREAM_ECAT.bDREAM_ECAT_COM_ERROR</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:DREAM:ENDSTATION:ETHERCAT_ERROR</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_DREAM_ECAT.bDREAM_ECAT_COM_ERROR</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>MR1K4:SOMS:PIP:01:Inverted_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>GVL_FEE_Device.MR1K4_SOMS_PIP_01.stPump.bOutputInverted</p></td>
@@ -28414,6 +28736,246 @@
 <tr class="row-even"><td><p>PC4K4:XTES:GCC:01:PRESS_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>GVL_FEE_Device.PC4K4_XTES_GCC_01.IG.xPRESS_OK</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:STATE_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.eState</p></td>
+<td><div class="line-block">
+<div class="line">field: FRST Starting</div>
+<div class="line">field: FVST Valid</div>
+<div class="line">field: ONST GaugeDisconnected</div>
+<div class="line">field: SVST ValidLo</div>
+<div class="line">field: SXST ValidHi</div>
+<div class="line">field: THST PressInvalid</div>
+<div class="line">field: TWST OoR</div>
+<div class="line">field: ZRST Off</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:AutoOn_timer_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.iAutoOnTimer</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:PRESS_AI_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_iPRESS_R</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:DISC_ACTIVE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_xDisc_Active</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM DISC ACTIVE</div>
+<div class="line">field: ZNAM NO DISC</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:HV_ON_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.i_xHV_ON</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:HV_DIS_DO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.q_xHV_DIS</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:SP_HYS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:SP_HYS</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:PRESS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRESS</p></td>
+<td><div class="line-block">
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:PRO_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:PRO_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:VAC_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:VAC_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:AT_VAC_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAT_VAC</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:Auto_On_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:Auto_On</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:HV_SW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:HV_SW</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:ILK_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xILKOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM NOT OK</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:LOGGER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>PC4K4:XTES:GCC:02:LOGGER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>PC4K4:XTES:GCC:02:PRESS_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FEE_Device.PC4K4_XTES_GCC_02.IG.xPRESS_OK</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM ON</div>
 <div class="line">field: ZNAM OFF</div>
@@ -32820,6 +33382,22 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR3K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>MR3K4:KBO:VFS:01:VFS_2OO3_MODE_RBV</p></td>
 <td><p>mbbi</p></td>
 <td><p>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_e2OO3_MODE</p></td>
@@ -33146,6 +33724,22 @@
 <td><div class="line-block">
 <div class="line">field: ONAM Override ON</div>
 <div class="line">field: ZNAM Override OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR4K4:KBO:VFS:01:VFS_RESET_FAULT_COUNTER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
 <div class="line">io: output</div>
 </div>
 </td>
@@ -33480,6 +34074,22 @@
 </div>
 </td>
 </tr>
+<tr class="row-even"><td><p>TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TV1K4:VFS:01:VFS_RESET_FAULT_COUNTER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FS_Devices.TV1K4_VFS_Interface.i_ResetFaultCounter</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
 <tr class="row-even"><td><p>TV1K4:VFS:01:VFS_2OO3_MODE_RBV</p></td>
 <td><p>mbbi</p></td>
 <td><p>GVL_FS_Devices.TV1K4_VFS_Interface.i_e2OO3_MODE</p></td>
@@ -33806,6 +34416,22 @@
 <td><div class="line-block">
 <div class="line">field: ONAM Override ON</div>
 <div class="line">field: ZNAM Override OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>TMO:VFS_RESET_FAULT_COUNTER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_FS_Devices.bResetFaultCounters</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>TMO:VFS_RESET_FAULT_COUNTER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_FS_Devices.bResetFaultCounters</p></td>
+<td><div class="line-block">
 <div class="line">io: output</div>
 </div>
 </td>
@@ -34299,6 +34925,246 @@
 <tr class="row-odd"><td><p>IM5K4:PPM:GCC:01:PRESS_OK_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.IG.xPRESS_OK</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:STATE_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.eState</p></td>
+<td><div class="line-block">
+<div class="line">field: FRST Starting</div>
+<div class="line">field: FVST Valid</div>
+<div class="line">field: ONST GaugeDisconnected</div>
+<div class="line">field: SVST ValidLo</div>
+<div class="line">field: SXST ValidHi</div>
+<div class="line">field: THST PressInvalid</div>
+<div class="line">field: TWST OoR</div>
+<div class="line">field: ZRST Off</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:AutoOn_timer_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.iAutoOnTimer</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:PRESS_AI_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_iPRESS_R</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:DISC_ACTIVE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_xDisc_Active</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM DISC ACTIVE</div>
+<div class="line">field: ZNAM NO DISC</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:HV_ON_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.i_xHV_ON</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:HV_DIS_DO_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.q_xHV_DIS</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:SP_HYS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:SP_HYS</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rHYS_PR</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:PRESS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRESS</p></td>
+<td><div class="line-block">
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:PRO_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:PRO_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rPRO_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:VAC_SP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:VAC_SP</p></td>
+<td><p>ao</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.rVAC_SP</p></td>
+<td><div class="line-block">
+<div class="line">autosave_pass1: VAL DESC</div>
+<div class="line">field: EGU “TORR”</div>
+<div class="line">field: HOPR 1000</div>
+<div class="line">field: LOPR 0</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:AT_VAC_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAT_VAC</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:Auto_On_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:Auto_On</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xAutoOn</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:HV_SW_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:HV_SW</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xHV_SW</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:ILK_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xILKOk</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM OK</div>
+<div class="line">field: ZNAM NOT OK</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:LOGGER_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>IM5K4:PPM:GPI:01:LOGGER</p></td>
+<td><p>bo</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xLog</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM ON</div>
+<div class="line">field: ZNAM OFF</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>IM5K4:PPM:GPI:01:PRESS_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.PG.xPRESS_OK</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM ON</div>
 <div class="line">field: ZNAM OFF</div>
@@ -118346,7 +119212,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

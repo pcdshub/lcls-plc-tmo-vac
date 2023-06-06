@@ -1,22 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Box Hierarchy &mdash; pcdshub/lcls-plc-tmo-vac  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>EtherCAT Terminals &mdash; pcdshub/lcls-plc-tmo-vac  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -47,7 +49,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_nc.html">NC Settings</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Box Hierarchy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-tmo-vac_links.html">Links</a></li>
 </ul>
@@ -78,7 +80,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Box Hierarchy</li>
+      <li class="breadcrumb-item active">EtherCAT Terminals</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/plc-tmo-vac_ethercat.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,592 +90,2388 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="box-hierarchy">
-<h1>Box Hierarchy<a class="headerlink" href="#box-hierarchy" title="Permalink to this heading"></a></h1>
-<ol class="arabic">
-<li><dl>
-<dt><strong>TMO_K4S2_DRL_01 (EK1100) [ID: 4]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S2_01_E1_VFS (EL1004) [ID: 5]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_01_E2 (EL9190) [ID: 2]</dt><dd><p>EL9190 Power Supplier</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_01_E3_VFS (EL2202) [ID: 6]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_01_E4_VFS (EL2202) [ID: 7]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_01_E5 (EL1004) [ID: 8]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_01_E6 (EL2004) [ID: 9]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 62 (EL9011) [ID: 62]</dt><dd><p>EL9011 End Terminal</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>TMO_K4S2_DRL_02 (EK1100) [ID: 10]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S2_02_E1 (EL3174) [ID: 11]</dt><dd><p>EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E2 (EL3174) [ID: 12]</dt><dd><p>EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E3 (EL9184) [ID: 14]</dt><dd><p>EL9184 Potential Connection, 8 x 24V, 8 x Ground</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E4 (EL9070) [ID: 15]</dt><dd><p>EL9070 Shield terminal</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E5 (EL2624) [ID: 13]</dt><dd><p>EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E6 (EL9505) [ID: 17]</dt><dd><p>EL9505 Power supply terminal 5V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E7 (EL1124) [ID: 18]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E8 (EL1124) [ID: 16]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E9 (EL9410) [ID: 20]</dt><dd><p>EL9410 E-Bus Power Supplier  (Diagnostics)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E10 (EL6021) [ID: 21]</dt><dd><p>EL6021 Interface (RS422/485)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E11 (EL1004) [ID: 19]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E12 (EL2794) [ID: 23]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E13 (EL1004) [ID: 61]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E14 (EL2794) [ID: 22]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E15 (EL1004) [ID: 89]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E16 (EL2794) [ID: 73]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E17 (EL6001) [ID: 90]</dt><dd><p>EL6001 Interface (RS232)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E18 (EL6001) [ID: 100]</dt><dd><p>EL6001 Interface (RS232)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E19 (EL1004) [ID: 93]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E20 (EL2004) [ID: 68]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E20A (EL1088) [ID: 180]</dt><dd><p>EL1088 8Ch. Dig. Input 24V, 3ms, negative</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S2_02_E20 (EK1122) [ID: 178]</dt><dd><p>EK1122 2 port EtherCAT junction</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 94 (EL9011) [ID: 94]</dt><dd><p>EL9011 End Terminal</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>B940-R20-CX0 (EK1200) [ID: 24]</strong></dt><dd><blockquote>
-<div><p>EK1200-5000 EtherCAT Power supply (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic">
-<li><dl class="simple">
-<dt>CX0_E1 (EL2202) [ID: 25]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E1A (EL2202) [ID: 104]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 113 (EL2202) [ID: 113]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E2_EXILK (EL1008) [ID: 26]</dt><dd><p>EL1008 8Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E5 (EL6070) [ID: 29]</dt><dd><p>EL6070 1Ch. Licensing-Terminal</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E6_QPC1 (EL3064) [ID: 30]</dt><dd><p>EL3064 4Ch. Ana. Input 0-10V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E7_QPC1 (EL1004) [ID: 31]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E8_QPC1 (EL2794) [ID: 32]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E9_QPC2 (EL3064) [ID: 33]</dt><dd><p>EL3064 4Ch. Ana. Input 0-10V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E10_QPC2 (EL1004) [ID: 34]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E11_QPC2 (EL2794) [ID: 35]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_E12 (EL6001) [ID: 36]</dt><dd><p>EL6001 Interface (RS232)</p>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>CX0_E13 (EK1122) [ID: 129]</dt><dd><blockquote>
-<div><p>EK1122 2 port EtherCAT junction</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>IP1_ECAT (EL6692) [ID: 130]</strong></dt><dd><p>( <strong>SyncUnit=IP1_ECAT (EL6692)</strong> )    EL6692 EtherCAT Bridge terminal (Secondary)</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>PMPS_PRE [ID: 38]</dt><dd><p>EL6692 EtherCAT Bridge terminal (Primary)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CX0_EK1110 [ID: 39]</dt><dd><p>EK1110 EtherCAT extension</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>B940_R20_EK0 (EK1100) [ID: 40]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>R20_EK0_E1_MKS937B (EL3064) [ID: 41]</dt><dd><p>EL3064 4Ch. Ana. Input 0-10V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E2_MKS937B (EL3064) [ID: 42]</dt><dd><p>EL3064 4Ch. Ana. Input 0-10V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E3_MKS937B (EL2794) [ID: 43]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_SIP (EL3174-0002) [ID: 134]</dt><dd><p>EL3174-0002 4Ch. Ana. Input +/-10V, +/-20mA 16 Bit, Isolated Channels</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E4_MKS937B (EL9505) [ID: 44]</dt><dd><p>EL9505 Power supply terminal 5V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E5_MKS937B (EL1124) [ID: 45]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E5A_MKS937B (EL1124) [ID: 138]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>R20_EK0_E6_MKS937B (EK1110) [ID: 46]</dt><dd><p>EK1110 EtherCAT extension</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>B940_K4S20_EK0  (EK1100) [ID: 47]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S20-E1-FSV (EL1004) [ID: 48]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S20-E2-FSV (EL2202) [ID: 49]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S20-E3-FSV (EL2202) [ID: 50]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S20-E4-FSV (EK1110) [ID: 51]</dt><dd><p>EK1110 EtherCAT extension</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>TMO_K4S6_DRL_01 (EK1100) [ID: 63]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S6_01_E1 (EL1004) [ID: 64]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E2 (EL2004) [ID: 65]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E3 (EL1004) [ID: 66]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E4 (EL2004) [ID: 67]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E5 (EL6021) [ID: 101]</dt><dd><p>EL6021 Interface (RS422/485)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E6 (EL1004) [ID: 69]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E7 (EL2004) [ID: 70]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E8 (EL1004) [ID: 71]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E9 (EL2004) [ID: 72]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E10 (EL6021) [ID: 106]</dt><dd><p>EL6021 Interface (RS422/485)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E11 (EL1004) [ID: 74]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E12 (EL2004) [ID: 75]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E13 (EL9410) [ID: 76]</dt><dd><p>EL9410 E-Bus Power Supplier  (Diagnostics)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E14 (EL2624) [ID: 77]</dt><dd><p>EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E15 (EL3174) [ID: 78]</dt><dd><p>EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E16 (EL9184) [ID: 97]</dt><dd><p>EL9184 Potential Connection, 8 x 24V, 8 x Ground</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E17 (EL9070) [ID: 98]</dt><dd><p>EL9070 Shield terminal</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E18 (EL3174) [ID: 79]</dt><dd><p>EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E19 (EL9505) [ID: 80]</dt><dd><p>EL9505 Power supply terminal 5V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E20 (EL1124) [ID: 81]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E21 (EL1124) [ID: 82]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 119 (EL9410) [ID: 119]</dt><dd><p>EL9410 E-Bus Power Supplier  (Diagnostics)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E22_IP1 (EL1004) [ID: 116]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S6_01_E23_IP1 (EL2794) [ID: 117]</dt><dd><p>EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 91 (EL9011) [ID: 91]</dt><dd><p>EL9011 End Terminal</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>TMO_K4S8_DRL_01 (EK1100) [ID: 83]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S8_01_E1 (EL1004) [ID: 84]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E2 (EL9190) [ID: 95]</dt><dd><p>EL9190 Power Supplier</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E3 (EL2202) [ID: 85]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E4 (EL2202) [ID: 86]</dt><dd><p>EL2202 2Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E5 (EL1004) [ID: 87]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E6 (EL2004) [ID: 88]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_01_E7 (EK1122) [ID: 214]</dt><dd><p>EK1122 2 port EtherCAT junction</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Term 92 (EL9011) [ID: 92]</dt><dd><p>EL9011 End Terminal</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt><strong>TMO_K4S8_DRL_02 (EK1100) [ID: 216]</strong></dt><dd><blockquote>
-<div><p>EK1100 EtherCAT Coupler (2A E-Bus)</p>
-</div></blockquote>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>K4S8_02_E1 (EL1004) [ID: 217]</dt><dd><p>EL1004 4Ch. Dig. Input 24V, 3ms</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E2 (EL2004) [ID: 218]</dt><dd><p>EL2004 4Ch. Dig. Output 24V, 0.5A</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E3 (EL2624) [ID: 219]</dt><dd><p>EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E4 (EL3174) [ID: 220]</dt><dd><p>EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E5 (EL9184) [ID: 37]</dt><dd><p>EL9184 Potential Connection, 8 x 24V, 8 x Ground</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E6 (EL9070) [ID: 102]</dt><dd><p>EL9070 Shield terminal</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E6A (EL1084) [ID: 228]</dt><dd><p>EL1084 4Ch. Dig. Input 24V, 3ms, negative</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E7 (EL9505) [ID: 221]</dt><dd><p>EL9505 Power supply terminal 5V</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>K4S8_02_E8 (EL1124) [ID: 222]</dt><dd><p>EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>END (EL9011) [ID: 227]</dt><dd><p>EL9011 End Terminal</p>
-</dd>
-</dl>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-</section>
+  <section id="ethercat-terminals">
+<h1>EtherCAT Terminals<a class="headerlink" href="#ethercat-terminals" title="Link to this heading"></a></h1>
+  <ul class="tree">
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=4:
+      </td>
+      <td width="75%">TMO_K4S2_DRL_01 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=5:
+                </td>
+                <td width="75%">K4S2_01_E1_VFS (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=2:
+                </td>
+                <td width="75%">K4S2_01_E2 (EL9190)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9190 Power Supplier
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=6:
+                </td>
+                <td width="75%">K4S2_01_E3_VFS (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=7:
+                </td>
+                <td width="75%">K4S2_01_E4_VFS (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=8:
+                </td>
+                <td width="75%">K4S2_01_E5 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=9:
+                </td>
+                <td width="75%">K4S2_01_E6 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=62:
+                </td>
+                <td width="75%">Term 62 (EL9011)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9011 End Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=10:
+      </td>
+      <td width="75%">TMO_K4S2_DRL_02 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=11:
+                </td>
+                <td width="75%">K4S2_02_E1 (EL3174)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=12:
+                </td>
+                <td width="75%">K4S2_02_E2 (EL3174)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=14:
+                </td>
+                <td width="75%">K4S2_02_E3 (EL9184)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9184 Potential Connection, 8 x 24V, 8 x Ground
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=15:
+                </td>
+                <td width="75%">K4S2_02_E4 (EL9070)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9070 Shield terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=13:
+                </td>
+                <td width="75%">K4S2_02_E5 (EL2624)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=17:
+                </td>
+                <td width="75%">K4S2_02_E6 (EL9505)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9505 Power supply terminal 5V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=18:
+                </td>
+                <td width="75%">K4S2_02_E7 (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=16:
+                </td>
+                <td width="75%">K4S2_02_E8 (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=20:
+                </td>
+                <td width="75%">K4S2_02_E9 (EL9410)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9410 E-Bus Power Supplier  (Diagnostics)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=21:
+                </td>
+                <td width="75%">K4S2_02_E10 (EL6021)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6021 Interface (RS422/485)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=19:
+                </td>
+                <td width="75%">K4S2_02_E11 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=23:
+                </td>
+                <td width="75%">K4S2_02_E12 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=61:
+                </td>
+                <td width="75%">K4S2_02_E13 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=22:
+                </td>
+                <td width="75%">K4S2_02_E14 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=89:
+                </td>
+                <td width="75%">K4S2_02_E15 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=73:
+                </td>
+                <td width="75%">K4S2_02_E16 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=90:
+                </td>
+                <td width="75%">K4S2_02_E17 (EL6001)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6001 Interface (RS232)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=100:
+                </td>
+                <td width="75%">K4S2_02_E18 (EL6001)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6001 Interface (RS232)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=93:
+                </td>
+                <td width="75%">K4S2_02_E19 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=68:
+                </td>
+                <td width="75%">K4S2_02_E20 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=180:
+                </td>
+                <td width="75%">K4S2_02_E20A (EL1088)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1088 8Ch. Dig. Input 24V, 3ms, negative
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=178:
+                </td>
+                <td width="75%">K4S2_02_E20 (EK1122)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1122 2 port EtherCAT junction
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=94:
+                </td>
+                <td width="75%">Term 94 (EL9011)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9011 End Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=24:
+      </td>
+      <td width="75%">B940-R20-CX0 (EK1200)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1200-5000 EtherCAT Power supply (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=25:
+                </td>
+                <td width="75%">CX0_E1 (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=104:
+                </td>
+                <td width="75%">CX0_E1A (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=113:
+                </td>
+                <td width="75%">Term 113 (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=26:
+                </td>
+                <td width="75%">CX0_E2_EXILK (EL1008)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1008 8Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=29:
+                </td>
+                <td width="75%">CX0_E5 (EL6070)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6070 1Ch. Licensing-Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=30:
+                </td>
+                <td width="75%">CX0_E6_QPC1 (EL3064)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3064 4Ch. Ana. Input 0-10V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=31:
+                </td>
+                <td width="75%">CX0_E7_QPC1 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=32:
+                </td>
+                <td width="75%">CX0_E8_QPC1 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=33:
+                </td>
+                <td width="75%">CX0_E9_QPC2 (EL3064)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3064 4Ch. Ana. Input 0-10V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=34:
+                </td>
+                <td width="75%">CX0_E10_QPC2 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=35:
+                </td>
+                <td width="75%">CX0_E11_QPC2 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=36:
+                </td>
+                <td width="75%">CX0_E12 (EL6001)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6001 Interface (RS232)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+            <details open>
+              <summary>
+                    <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=129:
+                </td>
+                <td width="75%">CX0_E13 (EK1122)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1122 2 port EtherCAT junction
+                </td>
+              </tr>
+            </table>
+              </summary>
+              <ul>
+
+                    <li>
+                          <table width="100%">
+                        <tr>
+                          <td width="10%">
+                            ID=27:
+                          </td>
+                          <td width="75%">IP1_ECAT
+                          </td>
+                          <td>            <b>
+                                SyncUnit IP1ECAT
+                              </b>        </td>
+                        </tr>
+                        <tr>
+                          <td>
+                                    </td>
+                          <td colspan="2">
+                            EL6695 EtherCAT Bridge terminal (Secondary)
+                          </td>
+                        </tr>
+                      </table>
+                    </li>
+
+
+                    <li>
+                          <table width="100%">
+                        <tr>
+                          <td width="10%">
+                            ID=28:
+                          </td>
+                          <td width="75%">DREAM_ECAT
+                          </td>
+                          <td>            <b>
+                                SyncUnit DreamECAT
+                              </b>        </td>
+                        </tr>
+                        <tr>
+                          <td>
+                                    </td>
+                          <td colspan="2">
+                            EL6695 EtherCAT Bridge terminal (Secondary)
+                          </td>
+                        </tr>
+                      </table>
+                    </li>
+
+              </ul>
+            </details>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=38:
+                </td>
+                <td width="75%">PMPS_PRE
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6692 EtherCAT Bridge terminal (Primary)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=39:
+                </td>
+                <td width="75%">CX0_EK1110
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1110 EtherCAT extension
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=40:
+      </td>
+      <td width="75%">B940_R20_EK0 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=41:
+                </td>
+                <td width="75%">R20_EK0_E1_MKS937B (EL3064)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3064 4Ch. Ana. Input 0-10V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=42:
+                </td>
+                <td width="75%">R20_EK0_E2_MKS937B (EL3064)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3064 4Ch. Ana. Input 0-10V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=43:
+                </td>
+                <td width="75%">R20_EK0_E3_MKS937B (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=134:
+                </td>
+                <td width="75%">R20_EK0_SIP (EL3174-0002)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174-0002 4Ch. Ana. Input +/-10V, +/-20mA 16 Bit, Isolated Channels
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=44:
+                </td>
+                <td width="75%">R20_EK0_E4_MKS937B (EL9505)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9505 Power supply terminal 5V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=45:
+                </td>
+                <td width="75%">R20_EK0_E5_MKS937B (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=138:
+                </td>
+                <td width="75%">R20_EK0_E5A_MKS937B (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=46:
+                </td>
+                <td width="75%">R20_EK0_E6_MKS937B (EK1110)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1110 EtherCAT extension
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=47:
+      </td>
+      <td width="75%">B940_K4S20_EK0  (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=48:
+                </td>
+                <td width="75%">K4S20-E1-FSV (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=49:
+                </td>
+                <td width="75%">K4S20-E2-FSV (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=50:
+                </td>
+                <td width="75%">K4S20-E3-FSV (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=51:
+                </td>
+                <td width="75%">K4S20-E4-FSV (EK1110)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1110 EtherCAT extension
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=63:
+      </td>
+      <td width="75%">TMO_K4S6_DRL_01 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=64:
+                </td>
+                <td width="75%">K4S6_01_E1 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=65:
+                </td>
+                <td width="75%">K4S6_01_E2 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=66:
+                </td>
+                <td width="75%">K4S6_01_E3 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=67:
+                </td>
+                <td width="75%">K4S6_01_E4 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=101:
+                </td>
+                <td width="75%">K4S6_01_E5 (EL6021)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6021 Interface (RS422/485)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=69:
+                </td>
+                <td width="75%">K4S6_01_E6 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=70:
+                </td>
+                <td width="75%">K4S6_01_E7 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=71:
+                </td>
+                <td width="75%">K4S6_01_E8 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=72:
+                </td>
+                <td width="75%">K4S6_01_E9 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=106:
+                </td>
+                <td width="75%">K4S6_01_E10 (EL6021)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL6021 Interface (RS422/485)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=74:
+                </td>
+                <td width="75%">K4S6_01_E11 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=75:
+                </td>
+                <td width="75%">K4S6_01_E12 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=76:
+                </td>
+                <td width="75%">K4S6_01_E13 (EL9410)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9410 E-Bus Power Supplier  (Diagnostics)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=77:
+                </td>
+                <td width="75%">K4S6_01_E14 (EL2624)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=78:
+                </td>
+                <td width="75%">K4S6_01_E15 (EL3174)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=97:
+                </td>
+                <td width="75%">K4S6_01_E16 (EL9184)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9184 Potential Connection, 8 x 24V, 8 x Ground
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=98:
+                </td>
+                <td width="75%">K4S6_01_E17 (EL9070)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9070 Shield terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=79:
+                </td>
+                <td width="75%">K4S6_01_E18 (EL3174)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=80:
+                </td>
+                <td width="75%">K4S6_01_E19 (EL9505)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9505 Power supply terminal 5V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=81:
+                </td>
+                <td width="75%">K4S6_01_E20 (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=82:
+                </td>
+                <td width="75%">K4S6_01_E21 (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=119:
+                </td>
+                <td width="75%">Term 119 (EL9410)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9410 E-Bus Power Supplier  (Diagnostics)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=116:
+                </td>
+                <td width="75%">K4S6_01_E22_IP1 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=117:
+                </td>
+                <td width="75%">K4S6_01_E23_IP1 (EL2794)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2794 4Ch. Dig. Output 24V AC/DC, 2A, short-circuit-proof
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=91:
+                </td>
+                <td width="75%">Term 91 (EL9011)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9011 End Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=83:
+      </td>
+      <td width="75%">TMO_K4S8_DRL_01 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=84:
+                </td>
+                <td width="75%">K4S8_01_E1 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=95:
+                </td>
+                <td width="75%">K4S8_01_E2 (EL9190)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9190 Power Supplier
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=85:
+                </td>
+                <td width="75%">K4S8_01_E3 (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=86:
+                </td>
+                <td width="75%">K4S8_01_E4 (EL2202)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2202 2Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=87:
+                </td>
+                <td width="75%">K4S8_01_E5 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=88:
+                </td>
+                <td width="75%">K4S8_01_E6 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=214:
+                </td>
+                <td width="75%">K4S8_01_E7 (EK1122)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EK1122 2 port EtherCAT junction
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=92:
+                </td>
+                <td width="75%">Term 92 (EL9011)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9011 End Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+
+    <li>
+  <details open>
+    <summary>
+          <table width="100%">
+    <tr>
+      <td width="10%">
+        ID=216:
+      </td>
+      <td width="75%">TMO_K4S8_DRL_02 (EK1100)
+      </td>
+      <td>        </td>
+    </tr>
+    <tr>
+      <td>
+                </td>
+      <td colspan="2">
+        EK1100 EtherCAT Coupler (2A E-Bus)
+      </td>
+    </tr>
+  </table>
+    </summary>
+    <ul>
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=217:
+                </td>
+                <td width="75%">K4S8_02_E1 (EL1004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1004 4Ch. Dig. Input 24V, 3ms
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=218:
+                </td>
+                <td width="75%">K4S8_02_E2 (EL2004)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2004 4Ch. Dig. Output 24V, 0.5A
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=219:
+                </td>
+                <td width="75%">K4S8_02_E3 (EL2624)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL2624 4Ch. Relay Output, NO (125V AC / 30V DC)
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=220:
+                </td>
+                <td width="75%">K4S8_02_E4 (EL3174)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL3174 4Ch. Ana. Input +/-10V Diff., +/-20mA SingleEnded, 16 Bit
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=37:
+                </td>
+                <td width="75%">K4S8_02_E5 (EL9184)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9184 Potential Connection, 8 x 24V, 8 x Ground
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=102:
+                </td>
+                <td width="75%">K4S8_02_E6 (EL9070)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9070 Shield terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=228:
+                </td>
+                <td width="75%">K4S8_02_E6A (EL1084)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1084 4Ch. Dig. Input 24V, 3ms, negative
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=221:
+                </td>
+                <td width="75%">K4S8_02_E7 (EL9505)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9505 Power supply terminal 5V
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=222:
+                </td>
+                <td width="75%">K4S8_02_E8 (EL1124)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL1124 4Ch. Dig. Input 5V, 10µs, Sensor Power
+                </td>
+              </tr>
+            </table>
+          </li>
+
+
+          <li>
+                <table width="100%">
+              <tr>
+                <td width="10%">
+                  ID=227:
+                </td>
+                <td width="75%">END (EL9011)
+                </td>
+                <td>        </td>
+              </tr>
+              <tr>
+                <td>
+                          </td>
+                <td colspan="2">
+                  EL9011 End Terminal
+                </td>
+              </tr>
+            </table>
+          </li>
+
+    </ul>
+  </details>
+</li>
+
+
+  </ul></section>
 
 
            </div>
@@ -686,7 +2484,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
