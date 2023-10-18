@@ -3,30 +3,30 @@
   <POU Name="FB_VRC_NO_FFO_VLS" Id="{6c7b96aa-1e17-4f9d-82a3-e115363dfca4}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_VRC_NO_FFO_VLS EXTENDS FB_VRC_NO
 VAR_IN_OUT
-	io_fbFFHWO    :    FB_HardwareFFOutput;
-	fbArbiter: FB_Arbiter();
+    io_fbFFHWO    :    FB_HardwareFFOutput;
+    fbArbiter: FB_Arbiter();
 END_VAR
 VAR_INPUT
-	i_xPMPS_OK:	BOOL	; (*Set to True To switch off the bptm and PMPS Arbiter*)
-	i_xIsAperture:BOOL :=FALSE; // Set tp True if this is an Aperture Valve, the MPS Fault will trip only when moving.
-	i_sDevName : T_MaxString :=  'VGC'; // Device name for diagnostic
-	i_nTransitionRootID: UDINT; //A unique transition Root ID that is equal to or greater than 1000i_xIsAperture:BOOL :=FALSE; // Set tp True if this is an Aperture Valve, the MPS Fault will trip only when moving.
+    i_xPMPS_OK:	BOOL	; (*Set to True To switch off the bptm and PMPS Arbiter*)
+    i_xIsAperture:BOOL :=FALSE; // Set tp True if this is an Aperture Valve, the MPS Fault will trip only when moving.
+    i_sDevName : T_MaxString :=  'VGC'; // Device name for diagnostic
+    i_nTransitionRootID: UDINT; //A unique transition Root ID that is equal to or greater than 1000i_xIsAperture:BOOL :=FALSE; // Set tp True if this is an Aperture Valve, the MPS Fault will trip only when moving.
 END_VAR
 VAR_OUTPUT
-	
+
 END_VAR
 VAR
 
-	xPMPS_OK:	BOOL	; (*PMPS interlock*)
-	bMoving : BOOL;
-	bDone :BOOL;
-	tBPTMtimeout:TON;
-	bptm: BeamParameterTransitionManager;  
-	FFO    :    FB_FastFault :=(
+    xPMPS_OK:	BOOL	; (*PMPS interlock*)
+    bMoving : BOOL;
+    bDone :BOOL;
+    tBPTMtimeout:TON;
+    bptm: BeamParameterTransitionManager;
+    FFO    :    FB_FastFault :=(
         i_DevName := 'VGC',
         i_Desc := 'Fault occurs when the valve is not in safe state',
         i_TypeCode := 16#1010);
-	xMPS_OK:	BOOL; (*MPS Fast OK, is set when the Valve is Open*)
+    xMPS_OK:	BOOL; (*MPS Fast OK, is set when the Valve is Open*)
 
 END_VAR]]></Declaration>
     <Implementation>
@@ -35,26 +35,26 @@ ACT_IO();
 
 (* On first PLC pass, put valve into vented state, which implies a closed valve *)
 IF xFirstPass THEN
-	iq_stValve.eVGC_State := Vented;
-	iq_stValve.pv_xCLS_SW := FALSE;
-	FFO.i_DevName := i_sDevName;
+    iq_stValve.eVGC_State := Vented;
+    iq_stValve.pv_xCLS_SW := FALSE;
+    FFO.i_DevName := i_sDevName;
 //	iq_stValve.sDevName := i_sDevName;
 END_IF
 
 
 ///Check valve position
 IF iq_stValve.i_xClsLS AND  iq_stValve.i_xOpnLS THEN
-	iq_stValve.eState:=INVALID;
-ELSIF NOT iq_stValve.i_xOpnLS AND iq_stValve.i_xClsLS AND iq_stValve. THEN 
-	iq_stValve.eState:=CLOSED;
-ELSIF NOT iq_stValve.i_xClsLS AND iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN 
-	iq_stValve.eState:=OPEN_F;
-ELSIF iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN 
-	iq_stValve.eState:=CLOSED;
-ELSIF NOT iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS THEN 
-	iq_stValve.eState:=MOVING;
+    iq_stValve.eState:=INVALID;
+ELSIF NOT iq_stValve.i_xOpnLS AND iq_stValve.i_xClsLS AND iq_stValve. THEN
+    iq_stValve.eState:=CLOSED;
+ELSIF NOT iq_stValve.i_xClsLS AND iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN
+    iq_stValve.eState:=OPEN_F;
+ELSIF iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS AND NOT iq_stValve.q_xOPN_DO THEN
+    iq_stValve.eState:=CLOSED;
+ELSIF NOT iq_stValve.i_xClsLS AND NOT iq_stValve.i_xOpnLS THEN
+    iq_stValve.eState:=MOVING;
 ELSE
-	iq_stValve.eState:=INVALID;
+    iq_stValve.eState:=INVALID;
 END_IF
 
 
@@ -62,33 +62,33 @@ END_IF
 
 (*PMPS*)
 IF NOT(i_xPMPS_OK) THEN
-	ACT_PMPS();
+    ACT_PMPS();
 END_IF
 (*when interlock is lost the Valve closes regardless of the status of the PMPS and EPS*)
 xPMPS_OK := i_xPMPS_OK OR (bptm.q_xTransitionAuthorized OR tBPTMtimeout.Q);
 IF NOT (iq_stValve.xOPN_OK) THEN
-	iq_stValve.pv_xOPN_SW:= FALSE; // Reset switch after inlk is lost
-	iq_stValve.q_xOPN_DO := (iq_stValve.pv_xOPN_SW  AND iq_stValve.xOPN_OK) OR (tonOvrd.Q AND i_xOverrideMode);
-ELSIF xPMPS_OK THEN 
-	iq_stValve.q_xOPN_DO := (iq_stValve.pv_xOPN_SW  AND iq_stValve.xOPN_OK) OR (tonOvrd.Q AND i_xOverrideMode);
+    iq_stValve.pv_xOPN_SW:= FALSE; // Reset switch after inlk is lost
+    iq_stValve.q_xOPN_DO := (iq_stValve.pv_xOPN_SW  AND iq_stValve.xOPN_OK) OR (tonOvrd.Q AND i_xOverrideMode);
+ELSIF xPMPS_OK THEN
+    iq_stValve.q_xOPN_DO := (iq_stValve.pv_xOPN_SW  AND iq_stValve.xOPN_OK) OR (tonOvrd.Q AND i_xOverrideMode);
 //ELSIF NOT (i_xPMPS_OK) THEN
-	// Only override mode
-	//iq_stValve.q_xOPN_DO := (tonOvrd.Q AND i_xOverrideMode);
+    // Only override mode
+    //iq_stValve.q_xOPN_DO := (tonOvrd.Q AND i_xOverrideMode);
 END_IF
 
 (*MPS Fault setting*)
-If (i_xIsAperture ) THEN 
-	(* When the valve  is open or in Closed position MPS is OK, Fault while moving*)
-	xMPS_OK := (i_xOpnLS  AND NOT q_xCLS_DO) XOR (i_xClsLS  AND q_xCLS_DO); 
+If (i_xIsAperture ) THEN
+    (* When the valve  is open or in Closed position MPS is OK, Fault while moving*)
+    xMPS_OK := (i_xOpnLS  AND NOT q_xCLS_DO) XOR (i_xClsLS  AND q_xCLS_DO);
 ELSE
-	(* When the valve  is open MPS is OK*)
-	xMPS_OK := i_xOpnLS AND NOT i_xClsLS AND q_xCLS_DO; 
+    (* When the valve  is open MPS is OK*)
+    xMPS_OK := i_xOpnLS AND NOT i_xClsLS AND q_xCLS_DO;
 END_IF
 
 (*FAST FAULT*)
 FFO(i_xOK := xMPS_OK,
     i_xReset := ,
-	i_xAutoReset :=TRUE,
+    i_xAutoReset :=TRUE,
     io_fbFFHWO := io_fbFFHWO);
 ]]></ST>
     </Implementation>
@@ -109,7 +109,7 @@ iq_stValve.xOverrideMode := i_xOverrideMode;
         <ST><![CDATA[bMoving := (iq_stValve.pv_xOPN_SW AND iq_stValve.i_xClsLS) XOR (NOT iq_stValve.pv_xOPN_SW AND i_xOpnLS);
 bDone := (iq_stValve.pv_xOPN_SW AND iq_stValve.i_xOpnLS) XOR (NOT iq_stValve.pv_xOPN_SW AND i_xClsLS);
 If (i_xIsAperture ) OR (iq_stValve.pv_xOPN_SW )THEN
-	bptm.i_stRequestedAssertion := PMPS_GVL.cstFullBeam;
+    bptm.i_stRequestedAssertion := PMPS_GVL.cstFullBeam;
 ELSE  bptm.i_stRequestedAssertion := PMPS_GVL.cst0RateBeam;
 END_IF
 bptm(fbArbiter:=fbArbiter,
@@ -127,8 +127,8 @@ tBPTMtimeout(IN:= bMoving AND NOT bptm.q_xTransitionAuthorized , PT:=T#1S);
 
 //Timeout and clear request
 IF (tBPTMtimeout.Q) THEN
-	fbArbiter.RemoveRequest(bptm.i_TransitionAssertionID);
-	fbArbiter.RemoveRequest(bptm.i_nRequestedAssertionID);
+    fbArbiter.RemoveRequest(bptm.i_TransitionAssertionID);
+    fbArbiter.RemoveRequest(bptm.i_nRequestedAssertionID);
 END_IF]]></ST>
       </Implementation>
     </Action>
@@ -154,7 +154,7 @@ END_VAR
       <Declaration><![CDATA[// Use this Methode to Open or close the valve by setting the OPN_SW to the input value.
 METHOD PUBLIC M_Set_CLS_SW : BOOL
 VAR_INPUT
-		value:BOOL;
+        value:BOOL;
 END_VAR
 ]]></Declaration>
       <Implementation>

@@ -7,18 +7,14 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbSerialLineControl(
-	Mode:= SERIALLINEMODE_EL6_22B,
-	pComIn:= ADR(stComIn),
-	pComOut:=ADR(stComOut),
-	SizeComIn:= SIZEOF(stComIn),
-	TxBuffer:= SerialTXBuffer,
-	RxBuffer:= SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );]]></ST>
+    Mode:= SERIALLINEMODE_EL6_22B,
+    pComIn:= ADR(stComIn),
+    pComOut:=ADR(stComOut),
+    SizeComIn:= SIZEOF(stComIn),
+    TxBuffer:= SerialTXBuffer,
+    RxBuffer:= SerialRXBuffer,
+    Error=> ,
+    ErrorID=> );]]></ST>
     </Implementation>
-    <LineIds Name="PRG_COM">
-      <LineId Id="6" Count="7" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

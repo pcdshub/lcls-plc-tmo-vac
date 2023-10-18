@@ -534,6 +534,13 @@
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Link to VFS Interface, FaultCounter Reset]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1</Name>
 					<Comment>
 						<![CDATA[Link to VFS Interface, IG.xPRESS_OK, to make sure that the device is connected]]>
@@ -646,6 +653,13 @@
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Link to VFS Interface, FaultCounter Reset]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1</Name>
 					<Comment>
 						<![CDATA[Link to VFS Interface, IG.xPRESS_OK, to make sure that the device is connected]]>
@@ -756,6 +770,13 @@
 						<![CDATA[Link to VFS Interface, 2oo3 mode selector]]>
 					</Comment>
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Link to VFS Interface, FaultCounter Reset]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1</Name>
@@ -1285,13 +1306,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
-					<Comment>
-						<![CDATA[0 = Data valid, 1 = Data invalid]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -1732,16 +1746,9 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_iPRESS_R</Name>
 					<Comment>
-						<![CDATA[ Controls and I/Os]]>
+						<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
 					</Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON</Name>
-					<Comment>
-						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R</Name>
@@ -1893,16 +1900,9 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R</Name>
 					<Comment>
-						<![CDATA[ Controls and I/Os]]>
+						<![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]>
 					</Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON</Name>
-					<Comment>
-						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R</Name>
@@ -2054,11 +2054,14 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2073,6 +2076,10 @@ EL6692 TxPDO state
 					<Comment>
 						<![CDATA[ Error Active when no Error is present]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2504,9 +2511,16 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_e2OO3_MODE</Name>
 					<Comment>
-						<![CDATA[2oo3 mode selector]]>
+						<![CDATA[2oo3 mode selector, connect to FB_VFS_2OO3 mode selector input]]>
 					</Comment>
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Reset Fault counter, connect to FB_VFS_2OO3 reset fault counter input]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -2570,9 +2584,16 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_e2OO3_MODE</Name>
 					<Comment>
-						<![CDATA[2oo3 mode selector]]>
+						<![CDATA[2oo3 mode selector, connect to FB_VFS_2OO3 mode selector input]]>
 					</Comment>
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Reset Fault counter, connect to FB_VFS_2OO3 reset fault counter input]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -2636,9 +2657,16 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_e2OO3_MODE</Name>
 					<Comment>
-						<![CDATA[2oo3 mode selector]]>
+						<![CDATA[2oo3 mode selector, connect to FB_VFS_2OO3 mode selector input]]>
 					</Comment>
 					<Type GUID="{B390343E-5B07-4B75-806F-B37DDC51A897}" Namespace="LCLS_Vacuum">E_2OO3_MODE</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_ResetFaultCounter</Name>
+					<Comment>
+						<![CDATA[Reset Fault counter, connect to FB_VFS_2OO3 reset fault counter input]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK_IG1</Name>
@@ -2709,7 +2737,7 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+						<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2772,7 +2800,7 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS</Name>
 					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+						<![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -3082,15 +3110,15 @@ EL6692 TxPDO state
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
 					<Comment>
 						<![CDATA[EL6692 Input ]]>
 					</Comment>
 					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
@@ -3298,6 +3326,16 @@ EL6692 TxPDO state
 						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
 						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
 						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2023-10-17T15:12:39">
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20A (EL1088)">
+						<Link VarA="GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E6A (EL1084)">
+						<Link VarA="GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
@@ -3687,9 +3725,6 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Variables.iHV_LOOP_FIM_ON" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20A (EL1088)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624)">
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
@@ -3867,9 +3902,6 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E6A (EL1084)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
