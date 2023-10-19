@@ -3,23 +3,23 @@
   <POU Name="PRG_PMPS" Id="{354279ff-d518-454c-b9bb-5f6640e67b86}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PMPS
 VAR
-	fbArbiterIO : FB_SubSysToArbiter_IO;
-	bRemove: BOOL;
-	bRemove2: BOOL;
-	bExist: BOOL;
-	bExist2: BOOL;
-	ID: UDINT;
-	fb_VetoArbiter: FB_VetoArbiter;
+    fbArbiterIO : FB_SubSysToArbiter_IO;
+    bRemove: BOOL;
+    bRemove2: BOOL;
+    bExist: BOOL;
+    bExist2: BOOL;
+    ID: UDINT;
+    fb_VetoArbiter: FB_VetoArbiter;
     ff5_ff2_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF5 to FF2 Link', i_Desc := 'This is virtual FF5 fault, Please check ST4K4 downstream faulting device ', i_TypeCode := 16#9999);
-	fb_VetoArbiter2: FB_VetoArbiter;
+    fb_VetoArbiter2: FB_VetoArbiter;
     bM1K1Veto_IN : BOOL;
-	bST3K4Veto_IN: BOOL;
-	bST4K4Veto_IN: BOOL;
+    bST3K4Veto_IN: BOOL;
+    bST4K4Veto_IN: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 bST3K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] OR bM1K1Veto_IN;
 bST4K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4] OR bST3K4Veto_IN;
@@ -40,20 +40,20 @@ ff5_ff2_link_vac(
 
 // Preemptive system
 fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
-	i_bVeto := bM1K1Veto_IN);
-    
+    i_bVeto := bM1K1Veto_IN);
+
 //fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4],
-//		HigherAuthority:=g_fbArbiter1 , 
+//		HigherAuthority:=g_fbArbiter1 ,
 //		LowerAuthority:= g_fbArbiter2 , FFO:= g_FastFaultOutput2);
 
 //Test and diagnostic stuff
 bExist:= g_fbArbiter1.CheckRequestInPool(ID);
 bExist2:= g_fbArbiter2.CheckRequestInPool(ID);
 if (bRemove) THEN
-	g_fbArbiter1.RemoveRequest(ID);
+    g_fbArbiter1.RemoveRequest(ID);
 END_IF
 if (bRemove2) THEN
-	g_fbArbiter2.RemoveRequest(ID);
+    g_fbArbiter2.RemoveRequest(ID);
 END_IF
 
 g_fbArbiter1.AddRequest(nReqID := 16#FAFD, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-tmo-vac');]]></ST>

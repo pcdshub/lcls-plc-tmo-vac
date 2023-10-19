@@ -5,11 +5,11 @@
 {attribute 'strict'}
 TYPE E_STATES :
 (
-	INIT := 0,
-	SETUP,
-	OVERRIDE,
-	READY,
-	NOT_SAFE
+    INIT := 0,
+    SETUP,
+    OVERRIDE,
+    READY,
+    NOT_SAFE
 );
 END_TYPE
 ]]></Declaration>

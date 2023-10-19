@@ -3,26 +3,26 @@
   <POU Name="F_Turbo_Protection_ILK" Id="{f4039f3c-91d7-4470-b7a1-7d5bc9857c4c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_Turbo_Protection_ILK : BOOL
 VAR_INPUT
-	i_stTurbo : ST_PTM; // Turbo Pump
-	i_stISG : ST_VG; //Gauge measuring inlet Pressure e.g Pirani
-	i_stBSG : ST_VG; //Gauge measureing backing pressure
-	iq_stValve : ST_VGC_2S; //
-	
-	
+    i_stTurbo : ST_PTM; // Turbo Pump
+    i_stISG : ST_VG; //Gauge measuring inlet Pressure e.g Pirani
+    i_stBSG : ST_VG; //Gauge measureing backing pressure
+    iq_stValve : ST_VGC_2S; //
+
+
 
 END_VAR
 VAR
-	
+
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Allow turbo to run when gauges on both side are reading pressure below than SP and backing line valve is OPN *)
 
-						
-F_Turbo_Protection_ILK := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND 
-						   (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP)AND 
-							iq_stValve.i_xOpnLS;							
-				
+
+F_Turbo_Protection_ILK := (i_stISG.xPRESS_OK AND i_stISG.rPRESS < i_stTurbo.rInletPressureSP) AND
+                           (i_stBSG.xPRESS_OK AND i_stBSG.rPRESS < i_stTurbo.rBackingPressureSP)AND
+                            iq_stValve.i_xOpnLS;
+
 
 
 ]]></ST>

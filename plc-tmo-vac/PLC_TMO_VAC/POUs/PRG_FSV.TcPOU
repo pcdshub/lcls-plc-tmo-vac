@@ -3,50 +3,50 @@
   <POU Name="PRG_FSV" Id="{223741e2-9659-48ba-be92-e06c66eee1cf}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_FSV
 VAR
-	fastFaultSaveMyLife : FB_FastFault;
+    fastFaultSaveMyLife : FB_FastFault;
     bM1K1Veto_IN : BOOL;
-	bST3K4Veto_IN: BOOL;
-	bST4K4Veto_IN: BOOL;
-	ff6_ff4_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF6 to FF4 Link', i_Desc := 'Do not bypass! This is virtual FF6 fault, Please check ST4K4 downstream MR4K4_FSV ', i_TypeCode := 16#9999);
-	fb_VetoArbiter2: FB_VetoArbiter;
+    bST3K4Veto_IN: BOOL;
+    bST4K4Veto_IN: BOOL;
+    ff6_ff4_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF6 to FF4 Link', i_Desc := 'Do not bypass! This is virtual FF6 fault, Please check ST4K4 downstream MR4K4_FSV ', i_TypeCode := 16#9999);
+    fb_VetoArbiter2: FB_VetoArbiter;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 TV1K4_VFS_1(
-	i_xPMPS_OK:= TRUE, 
-	i_xExt_OK:= TRUE, 
-	i_xVeto_Enable:=TRUE,
-	i_sDevName:= 'TV1K4:VFS:01', 
-	io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput3 );
-	
+    i_xPMPS_OK:= TRUE,
+    i_xExt_OK:= TRUE,
+    i_xVeto_Enable:=TRUE,
+    i_sDevName:= 'TV1K4:VFS:01',
+    io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput3 );
+
 MR3K4_KBO_VFS_1(
-	i_xPMPS_OK:= TRUE, 
-	i_xExt_OK:= TRUE, 
-	i_xVeto_Enable:=TRUE,
-	i_sDevName:= 'MR3K4:KBO:VFS:1',
-	io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput4
+    i_xPMPS_OK:= TRUE,
+    i_xExt_OK:= TRUE,
+    i_xVeto_Enable:=TRUE,
+    i_sDevName:= 'MR3K4:KBO:VFS:1',
+    io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput4
 );
 
 
 
 MR4K4_KBO_VFS_1(
-	i_xPMPS_OK:= TRUE, 
-	i_xExt_OK:= TRUE, 
-	i_xVeto_Enable:=TRUE,
-	i_sDevName:= 'MR4K4:KBO:VFS:1',
-	io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput6
+    i_xPMPS_OK:= TRUE,
+    i_xExt_OK:= TRUE,
+    i_xVeto_Enable:=TRUE,
+    i_sDevName:= 'MR4K4:KBO:VFS:1',
+    io_fbFFHWO:= GVL_PMPS.g_FastFaultOutput6
 );
 
 
 
 // M1K1 Veto
-bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] 
+bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
 bST3K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] OR bM1K1Veto_IN;
 bST4K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4] OR bST3K4Veto_IN;
 
-(*FastFaultOuput*)	
+(*FastFaultOuput*)
 g_FastFaultOutput3.Execute(bAutoReset:= TRUE, i_xVeto:=bM1K1Veto_IN);
 
 g_FastFaultOutput4.Execute(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aVetoDevices[K_Stopper.ST3K4]

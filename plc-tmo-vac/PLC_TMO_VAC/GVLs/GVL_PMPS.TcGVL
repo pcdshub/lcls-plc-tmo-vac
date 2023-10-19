@@ -3,48 +3,48 @@
   <GVL Name="GVL_PMPS" Id="{4625b23c-c93c-4b67-8375-0fbf2be37f8b}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
-	
+
 //Example implementation of the FFO
     {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:01    '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1 (EL2202)]^Channel 1^Output'}
     g_FastFaultOutput1  :   FB_HardwareFFOutput:=(i_sNetID:='172.21.42.126.1.1');	//FFO for ST3K4_PPS's Upstream Components
-	
-	 {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:02  '}
+
+     {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:02  '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1 (EL2202)]^Channel 2^Output'}
     g_FastFaultOutput2  :   FB_HardwareFFOutput:=(i_sNetID:='172.21.42.126.1.1');	//FFO for ST3K4_PPS's Downstream Components
-	
+
    {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:03  '}
    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 1^Output'}
     g_FastFaultOutput3  :   FB_HardwareFFOutput;	//FFO for TV1K4-VFS-1
-	
+
     {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:04  '}
    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[CX0_E1A (EL2202)]^Channel 2^Output'}
-    g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR4K4_KBO_VFS_01 
-	
+    g_FastFaultOutput4  :   FB_HardwareFFOutput;  // FF0 for MR3K4_KBO_VFS_01 & MR4K4_KBO_VFS_01
+
      {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:05  '}
-	
-	g_FastFaultOutput5 :    FB_HardwareFFOutput;  // FFO for ST4K4 photo terminator downstream devices
-	
+
+    g_FastFaultOutput5 :    FB_HardwareFFOutput;  // FFO for ST4K4 photo terminator downstream devices
+
       {attribute 'pytmc' := 'pv: PLC:TMO:VAC:FFO:06  '}
     g_FastFaultOutput6 :    FB_HardwareFFOutput;  // FFO for ST4K4 photo terminator downstream MR4K4_KBO_VFS_01 device
-	
-	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF1    '}
-	xReset_PMPS_FFO1	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Upstream Components
-	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF2  '}
-	xReset_PMPS_FFO2	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Downstream Components
-	{attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF5  '}
-	xReset_PMPS_FFO5	:	BOOL	:=	FALSE;		//FFO RESET for ST4K4_PPS's Downstream Components
-	
-	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:01    '}
+
+    {attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF1    '}
+    xReset_PMPS_FFO1	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Upstream Components
+    {attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF2  '}
+    xReset_PMPS_FFO2	:	BOOL	:=	FALSE;		//FFO RESET for ST3K4_PPS's Downstream Components
+    {attribute 'pytmc' := '    pv: PLC:TMO:VAC:RESET:FF5  '}
+    xReset_PMPS_FFO5	:	BOOL	:=	FALSE;		//FFO RESET for ST4K4_PPS's Downstream Components
+
+    {attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:01    '}
     g_fbArbiter1    :   FB_Arbiter(1); //Veto group downstream of MR1K1
-	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:02    '}
-	g_fbArbiter2     :  FB_Arbiter(2); //Veto group downstream of ST3K4
-	{attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:03    '}
-	g_fbArbiter3     :  FB_Arbiter(3); //Veto group downstream of ST4K4
-	
-	xTMO_FEE_MPS_OK: BOOL := TRUE;
-	
-	xTMO_NEH_MPS_OK: BOOL := TRUE;
+    {attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:02    '}
+    g_fbArbiter2     :  FB_Arbiter(2); //Veto group downstream of ST3K4
+    {attribute 'pytmc' := '        pv: PLC:TMO:VAC:ARB:03    '}
+    g_fbArbiter3     :  FB_Arbiter(3); //Veto group downstream of ST4K4
+
+    xTMO_FEE_MPS_OK: BOOL := TRUE;
+
+    xTMO_NEH_MPS_OK: BOOL := TRUE;
 
 END_VAR]]></Declaration>
   </GVL>
