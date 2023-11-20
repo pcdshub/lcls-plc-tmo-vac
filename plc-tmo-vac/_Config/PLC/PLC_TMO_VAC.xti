@@ -3020,6 +3020,34 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -3112,7 +3140,7 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
 					<Comment>
-						<![CDATA[EL6692 Input ]]>
+						<![CDATA[EL6692 Input]]>
 					</Comment>
 					<Type>STRING(8)</Type>
 				</Var>
@@ -3154,37 +3182,9 @@ EL6692 TxPDO state
 					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
-					<Comment>
-						<![CDATA[IO]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
 					<Comment>
-						<![CDATA[EL6692 Output ]]>
+						<![CDATA[EL6692 Output]]>
 					</Comment>
 					<Type>STRING(8)</Type>
 				</Var>
@@ -3504,10 +3504,10 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_ EP1 (EP4374-0002)">
-				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
-				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E1_VFS (EL1004)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -3739,8 +3739,8 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_ EP1 (EP4374-0002)">
-				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_03.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E1 (EL1004)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
@@ -3908,9 +3908,9 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_WALL_WEST_EP01 (EP4374-0002)">
-				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_e2OO3_MODE" AutoLink="true"/>
