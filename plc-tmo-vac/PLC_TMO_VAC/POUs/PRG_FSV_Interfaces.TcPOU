@@ -3,16 +3,38 @@
   <POU Name="PRG_FSV_Interfaces" Id="{90b55864-6c2d-488c-9f5f-52239bfc6852}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_FSV_Interfaces
 VAR
+    //Reset Fault counter trigger
+    rtRstFaultCounter : R_TRIG;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-(*Vacuum Fast Shutter Valve*)
-TV1K4_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_Valve:=ST3K4_PPS_VGC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
+(*Vacuum Fast Shutter Valves*)
+rtRstFaultCounter(CLK := bResetFaultCounters);
+IF rtRstFaultCounter.Q THEN
+    bResetFaultCounters := FALSE;
+END_IF
 
-MR3K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_Valve:=MR3K4_KBO_VWC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
+TV1K4_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG,
+                    IG2:=LI2K4_IP1_GFS_02.IG,
+                    IG3:=LI2K4_IP1_GFS_03.IG,
+                    Veto_Valve:=ST3K4_PPS_VGC_01.iq_stValve,
+                    i_e2OO3_MODE:=eVFS2OO3Mode_TMO,
+                    i_ResetFaultCounter:=rtRstFaultCounter.Q);
 
-MR4K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG, IG2:=LI2K4_IP1_GFS_02.IG, IG3:=LI2K4_IP1_GFS_03.IG, Veto_valve:=MR4K4_KBO_VWC_01.iq_stValve, i_e2OO3_MODE:=eVFS2OO3Mode_TMO);
+MR3K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG,
+                        IG2:=LI2K4_IP1_GFS_02.IG,
+                        IG3:=LI2K4_IP1_GFS_03.IG,
+                        Veto_Valve:=MR3K4_KBO_VWC_01.iq_stValve,
+                        i_e2OO3_MODE:=eVFS2OO3Mode_TMO,
+                        i_ResetFaultCounter:=rtRstFaultCounter.Q);
+
+MR4K4_KBO_VFS_Interface(IG1:=LI2K4_IP1_GFS_01.IG,
+                        IG2:=LI2K4_IP1_GFS_02.IG,
+                        IG3:=LI2K4_IP1_GFS_03.IG,
+                        Veto_valve:=MR4K4_KBO_VWC_01.iq_stValve,
+                        i_e2OO3_MODE:=eVFS2OO3Mode_TMO,
+                        i_ResetFaultCounter:=rtRstFaultCounter.Q);
 ]]></ST>
     </Implementation>
   </POU>
