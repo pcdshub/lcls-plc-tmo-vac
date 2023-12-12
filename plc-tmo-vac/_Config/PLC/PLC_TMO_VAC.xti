@@ -1289,205 +1289,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
-					<Comment>
-						<![CDATA[ These variables are for IP1 EtherCat bridge 
-ETHERCAT BRIDGE COM STATUS
-EL6692 TxPDO state
-0: Other side is in OP state, >0: Error]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
-					<Comment>
-						<![CDATA[0: External device connected, 1: External device not connected]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
-					<Comment>
-						<![CDATA[0 = Data valid, 1 = Data invalid]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG1]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG2]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG3]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG1]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG2]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG3]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
-					<Comment>
-						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger</Name>
-					<Comment>
-						<![CDATA[inputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK</Name>
-					<Comment>
-						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State</Name>
-					<Comment>
-						<![CDATA[Interface]]>
-					</Comment>
-					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG1]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG2]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3</Name>
-					<Comment>
-						<![CDATA[Fault counter for IG3]]>
-					</Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -1697,6 +1498,205 @@ EL6692 TxPDO state
 						<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
+					<Comment>
+						<![CDATA[ These variables are for IP1 EtherCat bridge 
+ETHERCAT BRIDGE COM STATUS
+EL6692 TxPDO state
+0: Other side is in OP state, >0: Error]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Comment>
+						<![CDATA[0: External device connected, 1: External device not connected]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG1</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG1]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG2</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG2]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_nFltCount_IG3</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG3]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG1</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG1]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG2</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG2]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_nFltCount_IG3</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG3]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK</Name>
+					<Comment>
+						<![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger</Name>
+					<Comment>
+						<![CDATA[inputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK</Name>
+					<Comment>
+						<![CDATA[MPS Fault OK, is set when the Valve is Open and there is no trigger]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State</Name>
+					<Comment>
+						<![CDATA[Interface]]>
+					</Comment>
+					<Type GUID="{73C99071-D30E-478E-AF4C-873F5C405025}" Namespace="LCLS_Vacuum">E_VGC</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG1</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG1]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG2</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG2]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_nFltCount_IG3</Name>
+					<Comment>
+						<![CDATA[Fault counter for IG3]]>
+					</Comment>
+					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.MR2K4_KBO_GPI_01.i_iPRESS_R</Name>
@@ -2420,6 +2420,88 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
+					<Comment>
+						<![CDATA[ Enable High Voltage when TRUE]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2640,88 +2722,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when TRUE]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
