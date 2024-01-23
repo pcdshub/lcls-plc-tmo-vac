@@ -5,11 +5,12 @@
 VAR
 
     fbLogHandler : FB_LogHandler;
-
+    i:INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[i := i + 1;
+
 fbLogHandler();
 
 (* FEE devices*)
