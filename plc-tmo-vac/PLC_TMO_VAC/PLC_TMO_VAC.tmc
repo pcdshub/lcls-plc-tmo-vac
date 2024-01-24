@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{6E9CFAB8-DE8F-B83F-44E5-0A2C1A453084}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{AF598D40-6D4C-2632-13C0-E7CFBE89FBFA}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</Name>
@@ -31695,11 +31695,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -31958,11 +31953,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -32064,11 +32054,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -32228,11 +32213,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -32355,11 +32335,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -32501,11 +32476,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -33267,11 +33237,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -33432,11 +33397,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -33539,11 +33499,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -33698,11 +33653,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -33825,11 +33775,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -34005,11 +33950,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -34292,11 +34232,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -35093,11 +35028,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -35189,11 +35119,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -38969,7 +38894,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>FSVTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>GVL_FS_Devices.TV1K4_VFS_1.i_xOpnLS</Name>
             <Comment>VFS Open limit switch input</Comment>
@@ -39638,7 +39563,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>FSVTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>GVL_FS_Devices.TV1K4_VFS_1.q_xClose_A</Name>
             <Comment>3x Valve Close output signals (current req.)</Comment>
@@ -40211,7 +40136,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>FSVTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>GVL_Logger.bTrickleTripped</Name>
             <Comment> Global trickle trip flag</Comment>
@@ -41437,7 +41362,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>FSVTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.AccumulatedFF</Name>
             <Comment> Any time a FF occurs</Comment>
@@ -41462,7 +41387,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
             <BitSize>1760</BitSize>
@@ -43803,7 +43728,7 @@ EL6692 TxPDO state
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
             <BitSize>1760</BitSize>
@@ -45361,7 +45286,7 @@ EL6692 TxPDO state
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>GVL_Logger.iLogPort</Name>
             <BitSize>16</BitSize>
@@ -48901,12 +48826,18 @@ K4S2_02_E18 (EL6001)
             </Properties>
             <BitOffs>655048160</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>MAIN.i</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <BitOffs>659904208</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">20</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PRG_Roughing_Pumps.TM1K4_PTM_01_xExtIlkOK</Name>
             <BitSize>8</BitSize>
@@ -48921,7 +48852,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="InputDst" CreateSymbols="true">32</AreaNo>
           <Name>ComTask Inputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -49244,7 +49175,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">33</AreaNo>
           <Name>ComTask Outputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
             <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
@@ -49455,7 +49386,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="Internal" CreateSymbols="true">35</AreaNo>
           <Name>ComTask Internal</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -57103,7 +57034,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">36</AreaNo>
           <Name>ComTask Retains</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82640896</ByteSize>
+          <ByteSize>82706432</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -57164,15 +57095,15 @@ K4S2_02_E18 (EL6001)
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-12-12T09:00:56</Value>
+          <Value>2024-01-23T14:42:25</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>696320</Value>
+          <Value>634880</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>81453056</Value>
+          <Value>81387520</Value>
         </Property>
       </Properties>
     </Module>
