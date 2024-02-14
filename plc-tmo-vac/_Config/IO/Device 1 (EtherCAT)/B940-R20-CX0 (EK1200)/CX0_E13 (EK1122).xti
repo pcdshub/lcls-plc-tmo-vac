@@ -10,5 +10,8 @@
 		<Box File="IP1_ECAT (EL6692).xti" Id="130">
 			<EtherCAT PortABoxInfo="#x03000081"/>
 		</Box>
+		<Box File="Dream_ECAT (EL6695-0002).xti" Id="122">
+			<EtherCAT PortABoxInfo="#x01000081"/>
+		</Box>
 	</Box>
 </TcSmItem>

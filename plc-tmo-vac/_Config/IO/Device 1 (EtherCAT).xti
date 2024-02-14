@@ -38,10 +38,10 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Image Id="2" AddrType="10" ImageType="3">
+		<Image Id="3" AddrType="10" ImageType="3">
 			<Name>Image-2</Name>
 		</Image>
-		<Image Id="3" AddrType="10" ImageType="3">
+		<Image Id="4" AddrType="10" ImageType="3">
 			<Name>Image-3</Name>
 		</Image>
 		<Box File="B940-R20-CX0 (EK1200).xti" Id="24">
