@@ -1,18 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30" TcVersionFixed="true">
-	<Project ProjectGUID="{736B402B-341F-4CB5-9697-7DBC72653710}" TargetNetId="172.21.132.22.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x306">
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35" TcVersionFixed="true">
+	<Project ProjectGUID="{736B402B-341F-4CB5-9697-7DBC72653710}" TargetNetId="172.21.132.78.1.1" Target64Bit="true" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x306">
 		<System>
+			<Settings MaxCpus="4"/>
 			<Licenses IgnoreProjectLicenses="true" CacheOrCheckLicensesOnStartup="true">
 				<Target BkhfOrder="00359194">
-					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
-					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
-					<ManualSelect Instances="1">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
 					<ManualSelect>{B27B051A-CA6A-42EA-833E-82CC92903D83}</ManualSelect>
-					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
-					<TargetSelect TargetId="2">{6952449D-F68C-49A2-ADE4-8639D85B33A4}</TargetSelect>
-					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
+					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
+					<ManualSelect Instances="1">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
+					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
 					<TargetSelect TargetId="2">{B27B051A-CA6A-42EA-833E-82CC92903D83}</TargetSelect>
-					<LicenseDevice DongleHardwareId="2" DongleDevice="#x0302001d" DongleSystemId="{C2375E2E-4394-2A83-87D8-AB937C3C9DE7}"/>
+					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
+					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
+					<TargetSelect TargetId="2">{6952449D-F68C-49A2-ADE4-8639D85B33A4}</TargetSelect>
+					<LicenseDevice DongleHardwareId="2" DongleDevice="#x0302001d" DongleLevel="50" DongleSystemId="{9F45176C-52BE-4026-5FDA-3369033FA32D}" DongleSerialNumber="0100096327"/>
 				</Target>
 			</Licenses>
 			<Tasks>
@@ -35,11 +36,11 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{08502003-2002-0850-0020-500801205008}" Id="#x02030060" Watchdog="14000000040000000400000004000000"/>
-		<MappingInfo Identifier="{08502001-0020-0304-0020-500820000403}" Id="#x02030040" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{08502002-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0220-500842000403}" Id="#x02030050"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2003-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500821000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-2001-0850-0220-500832000403}" Id="#x02030050"/>
+		<MappingInfo Identifier="{08502001-0030-0304-0020-500830000403}" Id="#x02030040" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502002-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502003-2002-0850-0020-500801205008}" Id="#x02030060" Watchdog="14000000040000000400000004000000"/>
 	</Mappings>
 </TcSmProject>
