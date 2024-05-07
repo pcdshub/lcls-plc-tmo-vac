@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL_DREAM_ECAT" Id="{7acefa53-a062-4983-b6f9-38e9784ce4a1}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+   (* These variables are for DREAM EtherCat bridge *)
+   (*ETHERCAT BRIDGE COM STATUS*)
+   //EL6695 TxPDO state
+   //0: Other side is in OP state, >0: Error
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^SYNC Inputs^TxPDO state'}
+   bDreamEcatBridge_TxPDO_state AT %I* : BOOL;
+
+   //0: External device connected, 1: External device not connected
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^SYNC Inputs^External device not connected'}
+   bDreamEcatBridge_External_device_not_connected AT %I* : BOOL;
+
+   //0 = Data valid, 1 = Data invalid
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^WcState^WcState'}
+   bDreamEcatBridge_WcState AT %I* : BOOL;
+
+   //Detecting ethercat communication errror
+   {attribute 'pytmc' := 'pv: TMO:DREAM:ENDSTATION:ETHERCAT_ERROR'}
+   bDREAM_ECAT_COM_ERROR : BOOL;
+
+   //DREAM EL6695 OUTPUTS
+   {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Outputs^HUTCH_PLC_NAME'}
+   sHutchPlcName	AT %Q*	: STRING(8) := 'TMO';
+
+   //DREAM EL6695 INPUTS
+   {attribute 'pytmc'    := 'pv: TMO:IP2:PLC:NAME'}
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^ENDSTATION_PLC_NAME'}
+   DREAM_PLC_NAME AT %I*  : STRING(8);
+
+   {attribute 'pytmc'    := 'pv: TMO:DREAM:TURBOS:ALL_AT_SPD'}
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_TURBOS_ALL_AtSpd'}
+   DREAM_TURBOS_ALL_AtSpd AT %I* : BOOL;
+
+   {attribute 'pytmc'    := 'pv: TMO:DREAM:HV_SAFETY_ENABLE'}
+   {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_HV_SAFETY_ENABLE'}
+   DREAM_HV_SAFETY_ENABLE AT %I* : BOOL;
+
+   {attribute 'pytmc' :=' pv: TMO:DREAM:MAIN:GAUGE'}
+   {attribute 'TcLinkTo' := '.i_xAT_VAC             := TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_MAIN_xAT_VAC;
+                             .i_xPRESS_OK           := TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_MAIN_xPRESS_OK;
+                             .i_rPRESS              := TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_MAIN_rPRESS
+   '}
+   DREAM_MAIN_GAUGE : FB_Gauge_Interface;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

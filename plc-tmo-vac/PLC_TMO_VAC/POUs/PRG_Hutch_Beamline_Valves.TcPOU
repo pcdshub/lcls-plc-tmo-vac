@@ -172,7 +172,7 @@ MR4K4_KBO_VWC_01(
 // when dream arrives, this needs to be changes to dream gauge(downstream)
 MR5K4_KBO_VWC_01(
                 i_stUSG := MR4K4_KBO_GCC_01.IG,
-                i_stDSG:= TM2K4_KBO_GCC_01.IG,
+                i_stDSG := DREAM_MAIN_GAUGE.VG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
                 i_xPMPS_OK := TRUE,
@@ -187,8 +187,8 @@ MR5K4_KBO_VWC_01(
 );
 //Currently there is no dream, so TM2K4 valve is always open during this configuration
 TM2K4_KBO_VWC_01(
-                i_stUSG := TM2K4_KBO_GCC_01.IG,
-                i_stDSG:= TM2K4_KBO_GCC_01.IG,
+                i_stUSG := DREAM_MAIN_GAUGE.VG,
+                i_stDSG := TM2K4_KBO_GCC_01.IG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
                 i_xPMPS_OK := TRUE,

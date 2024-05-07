@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="GVL_IP1_ECAT" Id="{f7a7056a-1884-4634-b0cb-2582a1f6dc5a}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -29,8 +29,7 @@ VAR_GLOBAL
 
     //EL6692 Output
 
-  {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^HUTCH_PLC_NAME
-    '}
+  {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^HUTCH_PLC_NAME'}
    My_PLC_NAME	AT %Q*	: STRING(8) := 'TMO';
 
     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS

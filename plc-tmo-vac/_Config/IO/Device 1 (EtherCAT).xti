@@ -111,6 +111,7 @@
 			<SyncUnit Name="IP1_ECAT (EL6692)" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="vls" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="K4-S8-DRL-01" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="DREAM_ECAT" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

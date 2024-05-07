@@ -9,10 +9,7 @@
 					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
 					<ManualSelect Instances="1">{103F30C9-DF25-439E-837B-9DF80CB9356C}</ManualSelect>
 					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
-					<TargetSelect TargetId="2">{B27B051A-CA6A-42EA-833E-82CC92903D83}</TargetSelect>
 					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
-					<TargetSelect TargetId="2">{103F30C9-DF25-439E-837B-9DF80CB9356C}</TargetSelect>
-					<TargetSelect TargetId="2">{6952449D-F68C-49A2-ADE4-8639D85B33A4}</TargetSelect>
 					<LicenseDevice DongleHardwareId="2" DongleDevice="#x0302001d" DongleLevel="50" DongleSystemId="{9F45176C-52BE-4026-5FDA-3369033FA32D}" DongleSerialNumber="0100096327"/>
 				</Target>
 			</Licenses>

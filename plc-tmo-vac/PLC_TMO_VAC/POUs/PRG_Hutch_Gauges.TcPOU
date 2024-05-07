@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_Hutch_Gauges" Id="{3363ae0b-7e70-402f-8251-bbfa3badc357}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_Hutch_Gauges
 VAR
@@ -73,10 +73,11 @@ END_VAR
     PF2K4_WFS_GCC_01.M_SetBits(30518);
     PF2K4_WFS_GCC_01(PG:=TM2K4_KBO_GPI_01.PG , IG=> );
 
-//Read IP1 main chamber pressure
+    //Read IP1 main chamber pressure
+    IP1_MAIN_GAUGE( VG=> );
 
-  IP1_MAIN_GAUGE( VG=> );
-
+    //Read DREAM main chamber pressure
+    DREAM_MAIN_GAUGE();
 
 
 (* Auto switch on cold cathode gauges if interlock permits *)
