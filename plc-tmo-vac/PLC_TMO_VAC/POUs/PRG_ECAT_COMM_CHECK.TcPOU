@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_ECAT_COMM_CHECK" Id="{aa241f3d-e544-47fe-9c03-27baee63cd5a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_ECAT_COMM_CHECK
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//bDREAM_ECAT_COM_ERROR = TRUE means that there is an EtherCAT Bridge Communication error.
+//Not used at the moment, may be used in the future.
+bDREAM_ECAT_COM_ERROR := (bDreamEcatBridge_TxPDO_state OR bDreamEcatBridge_External_device_not_connected OR bDreamEcatBridge_WcState);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

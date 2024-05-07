@@ -72,11 +72,7 @@ xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS
      xDifPressureOK or TMO_ROUGH1_VRC_02 is closed
      AND if LAMP is connected, LAMP_ROUGH_VRC01 and VRC02 are open OR TMO_ROUGH2_VRC01 is open. *)
 
-//bDREAM_ECAT_COM_ERROR := TRUE means that there is an EtherCAT Bridge Communication error.
-//Not used at the moment, may be used in the future. 
-bDREAM_ECAT_COM_ERROR := (bDreamEcatBridge_TxPDO_state OR bDreamEcatBridge_External_device_not_connected OR bDreamEcatBridge_WcState);
-
-//xEcatBridge_COM_ERROR := TRUE means that there is an EtherCAT Bridge Communication error.
+//IP1_ECAT_COM_ERROR = TRUE means that there is an EtherCAT Bridge Communication error.
 IP1_ECAT_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
 
 xLAMP_VRC01_VRC02_atOpnLS := IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR

@@ -45,6 +45,9 @@ VAR_GLOBAL
                              .i_rPRESS              := TIIB[CX0_E13 (EK1122)]^DREAM_ECAT (EL6695-0002)^IO Inputs^DREAM_MAIN_rPRESS
    '}
    DREAM_MAIN_GAUGE : FB_Gauge_Interface;
+
+   //gauge structure, which can be override if there is an Ethercat communication error
+   stDreamMainGauge : ST_VG;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

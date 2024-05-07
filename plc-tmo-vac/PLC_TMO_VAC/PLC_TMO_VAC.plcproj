@@ -115,7 +115,7 @@
     <Compile Include="POUs\PRG_Roughing_Pumps.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_Section_2.TcPOU">
+    <Compile Include="POUs\PRG_ECAT_COMM_CHECK.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="MAIN" Id="{53e436ba-9af9-4ca4-ad7b-a6b2399fa417}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 
     fbLogHandler : FB_LogHandler;
-    i:INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[i := i + 1;
-
-fbLogHandler();
+      <ST><![CDATA[fbLogHandler();
+(* Check for error on bridge communication *)
+PRG_ECAT_COMM_CHECK();
 
 (* FEE devices*)
 PRG_FEE();
