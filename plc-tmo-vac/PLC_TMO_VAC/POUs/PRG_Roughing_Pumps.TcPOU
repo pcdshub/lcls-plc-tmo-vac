@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_Roughing_Pumps" Id="{87120f5c-8975-4cdd-a125-ee85e558c6d5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_Roughing_Pumps
 VAR
@@ -72,7 +72,7 @@ xDifPressureOK := (ABS(TMO_ROUGH1_GPI_02.PG.rPRESS - TMO_ROUGH1_GPI_03.PG.rPRESS
      xDifPressureOK or TMO_ROUGH1_VRC_02 is closed
      AND if LAMP is connected, LAMP_ROUGH_VRC01 and VRC02 are open OR TMO_ROUGH2_VRC01 is open. *)
 
-//xEcatBridge_COM_ERROR := TRUE means that there is an EtherCAT Bridge Communication error.
+//IP1_ECAT_COM_ERROR = TRUE means that there is an EtherCAT Bridge Communication error.
 IP1_ECAT_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_not_connected OR xEcatBridge_WcState);
 
 xLAMP_VRC01_VRC02_atOpnLS := IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR
