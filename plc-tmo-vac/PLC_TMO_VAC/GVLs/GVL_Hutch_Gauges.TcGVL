@@ -91,7 +91,7 @@ VAR_GLOBAL
     // adding a new GPI here
     {attribute 'pytmc' :=' pv: IM5K4:PPM:GPI:01 '}
    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E18 (EL3174)^AI Standard Channel 3^Value '}
-    IM5K4_IP1_GPI_01 : FB_MKS275;
+    IM5K4_PPM_GPI_01 : FB_MKS275;
 
     {attribute 'pytmc' :=' pv: PA2K4:IP1:GPI:01 '}
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E15 (EL3174)^AI Standard Channel 4^Value '}

@@ -117,7 +117,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
     SP1L0_KMONO_PIP_01(i_stGauge:=SP1L0_KMONO_GCC_01.IG, stPump=>);*)
 
     MR1K4_SOMS_PIP_01(i_stGauge := USG_PIP, stPump=>);
-    TV1K4_PIP_01(i_stGauge := TV1K4_GCC_01.IG, stPump=>);
+    TV1K4_PIP_01(i_stGauge := TV1K4_GPI_01.PG, stPump=>);
 //	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
 //change St1K4 PIP interlock from ST1K4_TEST_GCC_01 to ST1K4:TEST_GPI_01 due to ST1K4_GCC broken
     ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GPI_01.PG, stPump=>);
