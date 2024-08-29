@@ -416,7 +416,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{CCFD2AF2-664E-2B5E-A663-F36BB82BE2C8}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{5045DE0F-09E8-E863-07A9-66DCB6A2387F}">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -911,6 +911,24 @@
 					<Type>BIT</Type>
 				</Var>
 				<Var>
+					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_TxPDO_state</Name>
+					<Comment><![CDATA[ These variables are for DREAM EtherCat bridge 
+ETHERCAT BRIDGE COM STATUS
+EL6695 TxPDO state
+0: Other side is in OP state, >0: Error]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_External_device_not_connected</Name>
+					<Comment><![CDATA[0: External device connected, 1: External device not connected]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_WcState</Name>
+					<Comment><![CDATA[0 = Data valid, 1 = Data invalid]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
 					<Comment><![CDATA[ upstream vacuum <10E-6, for mirror VGC interlock ]]></Comment>
 					<Type>BOOL</Type>
@@ -918,6 +936,56 @@
 				<Var>
 					<Name>GVL_FEE_Device.USVacOk_LO</Name>
 					<Comment><![CDATA[ upstream vacuum <10E-4, for Ion pump interlock ]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
+					<Comment><![CDATA[ These variables are for IP1 EtherCat bridge 
+ETHERCAT BRIDGE COM STATUS
+EL6692 TxPDO state
+0: Other side is in OP state, >0: Error]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Comment><![CDATA[0: External device connected, 1: External device not connected]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment><![CDATA[0 = Data valid, 1 = Data invalid]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_rPRESS</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xPRESS_OK</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1082,28 +1150,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
-					<Comment><![CDATA[ These variables are for IP1 EtherCat bridge 
-ETHERCAT BRIDGE COM STATUS
-EL6692 TxPDO state
-0: Other side is in OP state, >0: Error]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
-					<Comment><![CDATA[0: External device connected, 1: External device not connected]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
-					<Comment><![CDATA[0 = Data valid, 1 = Data invalid]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK</Name>
 					<Comment><![CDATA[Valve Vacuum OK, is set to False when there is Vacuum Fault]]></Comment>
 					<Type>BOOL</Type>
@@ -1259,18 +1305,8 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_iPRESS_R</Name>
-					<Comment><![CDATA[ Controls and I/Os]]></Comment>
+					<Comment><![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]></Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON</Name>
-					<Comment><![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xDisc_Active</Name>
-					<Comment><![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]></Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_iPRESS_R</Name>
@@ -1309,18 +1345,8 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_iPRESS_R</Name>
-					<Comment><![CDATA[ Controls and I/Os]]></Comment>
+					<Comment><![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]></Comment>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xHV_ON</Name>
-					<Comment><![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xDisc_Active</Name>
-					<Comment><![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]></Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.PA2K4_IP1_GPI_01.i_iPRESS_R</Name>
@@ -1661,22 +1687,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
 					<Type>REAL</Type>
 				</Var>
@@ -1689,34 +1699,9 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_TxPDO_state</Name>
-					<Comment><![CDATA[ These variables are for DREAM EtherCat bridge 
-ETHERCAT BRIDGE COM STATUS
-EL6695 TxPDO state
-0: Other side is in OP state, >0: Error]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_External_device_not_connected</Name>
-					<Comment><![CDATA[0: External device connected, 1: External device not connected]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_rPRESS</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xAT_VAC</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xPRESS_OK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_WcState</Name>
-					<Comment><![CDATA[0 = Data valid, 1 = Data invalid]]></Comment>
-					<Type>BOOL</Type>
+					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.i_iPRESS_R</Name>
+					<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+					<Type>INT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="1" AreaNo="17">
@@ -1727,6 +1712,14 @@ EL6695 TxPDO state
 				</Var>
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1789,14 +1782,6 @@ EL6695 TxPDO state
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO</Name>
 					<Comment><![CDATA[ Enable High Voltage when TRUE]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1983,7 +1968,7 @@ EL6695 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.q_xHV_DIS</Name>
-					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
+					<Comment><![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2013,7 +1998,7 @@ EL6695 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.q_xHV_DIS</Name>
-					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
+					<Comment><![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2230,6 +2215,10 @@ EL6695 TxPDO state
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2239,10 +2228,6 @@ EL6695 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2282,25 +2267,6 @@ EL6695 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
-					<Comment><![CDATA[EL6692 Input]]></Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment><![CDATA[ True if any hutch turbo is not at speed or fault ]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.DREAM_PLC_NAME</Name>
-					<Comment><![CDATA[DREAM EL6695 INPUTS]]></Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
 					<Name>GVL_DREAM_ECAT.DREAM_TURBOS_ALL_AtSpd</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2328,6 +2294,25 @@ EL6695 TxPDO state
 					<Comment><![CDATA[SERIAL IO]]></Comment>
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.DREAM_PLC_NAME</Name>
+					<Comment><![CDATA[DREAM EL6695 INPUTS]]></Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
+					<Comment><![CDATA[EL6692 Input]]></Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment><![CDATA[ True if any hutch turbo is not at speed or fault ]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
 				<Name>ComTask Outputs</Name>
@@ -2335,16 +2320,6 @@ EL6695 TxPDO state
 					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
 					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
-					<Comment><![CDATA[EL6692 Output]]></Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.sHutchPlcName</Name>
-					<Comment><![CDATA[DREAM EL6695 OUTPUTS]]></Comment>
-					<Type>STRING(8)</Type>
 				</Var>
 				<Var>
 					<Name>GVL_COM.K4S2_02_E10_stComOut</Name>
@@ -2361,6 +2336,16 @@ EL6695 TxPDO state
 				<Var>
 					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
 					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.sHutchPlcName</Name>
+					<Comment><![CDATA[DREAM EL6695 OUTPUTS]]></Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.My_PLC_NAME</Name>
+					<Comment><![CDATA[EL6692 Output]]></Comment>
+					<Type>STRING(8)</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8" ContextId="2" AreaNo="36">
@@ -2965,10 +2950,6 @@ EL6695 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E8 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_ EP1 (EP4374-0002)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_03.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
@@ -2996,6 +2977,7 @@ EL6695 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E18 (EL3174)">
+				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
@@ -3003,8 +2985,6 @@ EL6695 TxPDO state
 				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E20 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
