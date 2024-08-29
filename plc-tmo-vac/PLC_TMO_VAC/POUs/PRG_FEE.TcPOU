@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_FEE" Id="{49021430-2479-452d-9fb0-1e4b70e05342}" SpecialFunc="None">
     <Declaration><![CDATA[ PROGRAM PRG_FEE
 VAR
@@ -98,7 +98,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 );
 
     ST3K4_PPS_VGC_01(
-                i_stUSG := ST2K4_BCS_GCC_01.IG,
+                i_stUSG := ST2K4_BCS_PIP_01.q_IG,
                 i_stDSG:= PC4K4_XTES_PIP_01.q_IG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
@@ -121,8 +121,8 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 //	ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GCC_01.IG, stPump=>);
 //change St1K4 PIP interlock from ST1K4_TEST_GCC_01 to ST1K4:TEST_GPI_01 due to ST1K4_GCC broken
     ST1K4_TEST_PIP_01(i_stGauge := ST1K4_TEST_GPI_01.PG, stPump=>);
-    ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
-    ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GCC_01.IG, stPump=>);
+    ST2K4_BCS_PIP_01(i_stGauge := ST2K4_BCS_GPI_01.PG, stPump=>);
+    ST3K4_PPS_PIP_01(i_stGauge := ST2K4_BCS_GPI_01.PG, stPump=>);
     PC4K4_XTES_PIP_01(i_stGauge := PC4K4_XTES_GPI_01.PG, stPump=>);
             ]]></ST>
     </Implementation>
