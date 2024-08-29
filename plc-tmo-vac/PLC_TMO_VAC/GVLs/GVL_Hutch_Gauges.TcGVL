@@ -88,7 +88,7 @@ VAR_GLOBAL
                                   .q_xHV_DIS		:= 	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E14 (EL2624)^Channel 2^Output	'}
     IM5K4_PPM_GCC_01 : FB_MX7M;
 
-    // adding a new GPI here, need to check the link.
+    // adding a new GPI here
     {attribute 'pytmc' :=' pv: IM5K4:PPM:GPI:01 '}
    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E18 (EL3174)^AI Standard Channel 3^Value '}
     IM5K4_IP1_GPI_01 : FB_MKS275;
