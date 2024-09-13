@@ -416,7 +416,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{5045DE0F-09E8-E863-07A9-66DCB6A2387F}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{CF042F41-FFCE-85A1-03E8-53966F980E16}">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -899,18 +899,6 @@
 			<Vars VarGrpType="1" ContextId="1" AreaNo="16">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
-					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
-				</Var>
-				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_TxPDO_state</Name>
 					<Comment><![CDATA[ These variables are for DREAM EtherCat bridge 
 ETHERCAT BRIDGE COM STATUS
@@ -986,33 +974,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xPRESS_OK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1597,6 +1558,62 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.i_iPRESS_R</Name>
+					<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xOpnLS</Name>
 					<Comment><![CDATA[IO]]></Comment>
 					<Type>BOOL</Type>
@@ -1686,30 +1703,9 @@ EL6692 TxPDO state
 					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS</Name>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.i_iPRESS_R</Name>
-					<Comment><![CDATA[ input Pressure // Link to analog Input]]></Comment>
-					<Type>INT</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="1" AreaNo="17">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
-					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
-				</Var>
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
@@ -1720,18 +1716,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2155,6 +2139,58 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
+					<Comment><![CDATA[IO]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01.q_xOPN_DO</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2192,42 +2228,6 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition</Name>
-					<Comment><![CDATA[IO]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>

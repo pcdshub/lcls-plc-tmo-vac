@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<TargetInfo>
+		<TcTargetDesc>
+			<TargetType>TC/BSD-OS</TargetType>
+			<TargetVersion>
+				<Version>3</Version>
+				<Revision>1</Revision>
+				<Build>4026</Build>
+			</TargetVersion>
+			<TargetFeatures>
+				<NetId>172.21.132.78.1.1</NetId>
+			</TargetFeatures>
+			<Hardware>
+				<Model>CX5240-0185</Model>
+				<SerialNo>000t975n</SerialNo>
+				<CPUVersion>2.8</CPUVersion>
+				<Date>30.10.23</Date>
+				<CPUArchitecture>9</CPUArchitecture>
+			</Hardware>
+			<OsImage>
+				<ImageDevice>CX5240-0185</ImageDevice>
+				<ImageVersion>13.2.2.0,2</ImageVersion>
+				<OsName>TwinCAT/BSD</OsName>
+				<OsVersion>13.2</OsVersion>
+			</OsImage>
+		</TcTargetDesc>
+	</TargetInfo>
+	<LicenseInfo>
+		<SystemId Level="50">{9F45176C-52BE-4026-5FDA-3369033FA32D}</SystemId>
+		<PurchaseOrder><![CDATA[01264578]]></PurchaseOrder>
+		<IssueTime>2024-03-15T16:52:00</IssueTime>
+		<License>
+			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
+			<Name>TC3 PLC</Name>
+			<OrderNo>TC1200</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{520DE751-9DB6-47CB-8240-BD5C466E7E64}</LicenseId>
+			<Name>TC3 NC PTP</Name>
+			<OrderNo>TF5000</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</LicenseId>
+			<Name>TC3 Serial-Communication</Name>
+			<OrderNo>TF6340</OrderNo>
+		</License>
+		<License ManuallyAdded="true">
+			<LicenseId>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</LicenseId>
+			<Name>TC3 TCP/IP</Name>
+			<OrderNo>TF6310</OrderNo>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>
