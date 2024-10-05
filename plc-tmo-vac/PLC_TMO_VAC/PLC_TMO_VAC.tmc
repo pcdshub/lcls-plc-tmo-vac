@@ -1,22 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{5045DE0F-09E8-E863-07A9-66DCB6A2387F}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{FD9642B6-1A2F-04A5-A050-D295F00021D9}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
-    <DataType>
-      <Name Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</Name>
-      <Comment> Integer to string format prefixes </Comment>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>HASHPREFIX_IEC</Text>
-        <Enum>0</Enum>
-        <Comment> 2#, 8#, 16# </Comment>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>HASHPREFIX_STDC</Text>
-        <Enum>1</Enum>
-        <Comment> 0 for octal type, 0x, 0X for hex else none  </Comment>
-      </EnumInfo>
-    </DataType>
     <DataType>
       <Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
       <BitSize>64</BitSize>
@@ -9900,51 +9884,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Name>
-      <Comment> Local or remote endpoint address to which to connect a socket </Comment>
-      <BitSize>160</BitSize>
-      <SubItem>
-        <Name>nPort</Name>
-        <Type>UDINT</Type>
-        <Comment> Internet Protocol (IP) port. </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>sAddr</Name>
-        <Type>STRING(15)</Type>
-        <Comment> String containing an (Ipv4) Internet Protocol dotted address. </Comment>
-        <BitSize>128</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_General.Tc2_TcpIp">T_HSOCKET</Name>
-      <Comment> Connectionless or connection oriented socket handle </Comment>
-      <BitSize>352</BitSize>
-      <SubItem>
-        <Name>handle</Name>
-        <Type>UDINT</Type>
-        <Comment> Connection handle </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>localAddr</Name>
-        <Type Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Type>
-        <Comment> Local address to which to connect a socket</Comment>
-        <BitSize>160</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>remoteAddr</Name>
-        <Type Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Type>
-        <Comment> Remote endpoint address to which to connect a socket</Comment>
-        <BitSize>160</BitSize>
-        <BitOffs>192</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
       <Name GUID="{944726B1-A958-40A6-B97D-51A67664C20E}" TcBaseType="true" CName="TcEventConfirmationState*">TcEventConfirmationState</Name>
       <BitSize>16</BitSize>
       <BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
@@ -13123,6 +13062,51 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
       <Comment> IPv4 network host address string. </Comment>
       <BitSize>128</BitSize>
       <BaseType>STRING(15)</BaseType>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Name>
+      <Comment> Local or remote endpoint address to which to connect a socket </Comment>
+      <BitSize>160</BitSize>
+      <SubItem>
+        <Name>nPort</Name>
+        <Type>UDINT</Type>
+        <Comment> Internet Protocol (IP) port. </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sAddr</Name>
+        <Type>STRING(15)</Type>
+        <Comment> String containing an (Ipv4) Internet Protocol dotted address. </Comment>
+        <BitSize>128</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_General.Tc2_TcpIp">T_HSOCKET</Name>
+      <Comment> Connectionless or connection oriented socket handle </Comment>
+      <BitSize>352</BitSize>
+      <SubItem>
+        <Name>handle</Name>
+        <Type>UDINT</Type>
+        <Comment> Connection handle </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>localAddr</Name>
+        <Type Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Type>
+        <Comment> Local address to which to connect a socket</Comment>
+        <BitSize>160</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>remoteAddr</Name>
+        <Type Namespace="LCLS_General.Tc2_TcpIp">ST_SockAddr</Type>
+        <Comment> Remote endpoint address to which to connect a socket</Comment>
+        <BitSize>160</BitSize>
+        <BitOffs>192</BitOffs>
+      </SubItem>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General.Tc2_TcpIp">E_SocketConnectionlessState</Name>
@@ -17631,132 +17615,6 @@ ELSE:
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
-      <Comment> This data type will be used as a software character buffer
-   between serial line I/O and user functions as ReceiveByte
-   or SendByte.
-</Comment>
-      <BitSize>2512</BitSize>
-      <SubItem>
-        <Name>Buffer</Name>
-        <Type>BYTE</Type>
-        <ArrayInfo>
-          <LBound>0</LBound>
-          <Elements>301</Elements>
-        </ArrayInfo>
-        <Comment> ringbuffer </Comment>
-        <BitSize>2408</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>RdIdx</Name>
-        <Type>UINT</Type>
-        <Comment> first valid byte in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2416</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>WrIdx</Name>
-        <Type>UINT</Type>
-        <Comment> first invalid byte in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2432</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Count</Name>
-        <Type>UINT</Type>
-        <Comment> number of bytes in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2448</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>FreeByte</Name>
-        <Type>UINT</Type>
-        <Comment> number of free bytes in ringbuffer </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2464</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>Error</Name>
-        <Type>UINT</Type>
-        <Comment> error code of serial line interface </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>2480</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>blocked</Name>
-        <Type>BOOL</Type>
-        <Comment> semaphore for task synchronization </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>2496</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_Vacuum">FB_Gauge_Interface</Name>
-      <Comment> This function block is created for interface devices between different PLC
- Not all the Variables in the original structure is required, just few signals 
- They have to be linked to the custom created variables on the EL6692/5 primary side</Comment>
-      <BitSize>1216</BitSize>
-      <SubItem>
-        <Name>VG</Name>
-        <Type Namespace="LCLS_Vacuum">ST_VG</Type>
-        <BitSize>1056</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv:</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_rPRESS</Name>
-        <Type>REAL</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>1120</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xAT_VAC</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>1152</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xPRESS_OK</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>1160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
       <Name Namespace="LCLS_Vacuum">ST_ValveBase</Name>
       <BitSize>800</BitSize>
       <SubItem>
@@ -19462,6 +19320,132 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Property>
         <Property>
           <Name>reflection</Name>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
+      <Comment> This data type will be used as a software character buffer
+   between serial line I/O and user functions as ReceiveByte
+   or SendByte.
+</Comment>
+      <BitSize>2512</BitSize>
+      <SubItem>
+        <Name>Buffer</Name>
+        <Type>BYTE</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>301</Elements>
+        </ArrayInfo>
+        <Comment> ringbuffer </Comment>
+        <BitSize>2408</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>RdIdx</Name>
+        <Type>UINT</Type>
+        <Comment> first valid byte in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2416</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>WrIdx</Name>
+        <Type>UINT</Type>
+        <Comment> first invalid byte in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2432</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Count</Name>
+        <Type>UINT</Type>
+        <Comment> number of bytes in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2448</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>FreeByte</Name>
+        <Type>UINT</Type>
+        <Comment> number of free bytes in ringbuffer </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2464</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Error</Name>
+        <Type>UINT</Type>
+        <Comment> error code of serial line interface </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>2480</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>blocked</Name>
+        <Type>BOOL</Type>
+        <Comment> semaphore for task synchronization </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>2496</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">FB_Gauge_Interface</Name>
+      <Comment> This function block is created for interface devices between different PLC
+ Not all the Variables in the original structure is required, just few signals 
+ They have to be linked to the custom created variables on the EL6692/5 primary side</Comment>
+      <BitSize>1216</BitSize>
+      <SubItem>
+        <Name>VG</Name>
+        <Type Namespace="LCLS_Vacuum">ST_VG</Type>
+        <BitSize>1056</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv:</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_rPRESS</Name>
+        <Type>REAL</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>1120</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xAT_VAC</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>1152</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xPRESS_OK</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>1160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
         </Property>
       </Properties>
     </DataType>
@@ -39530,6 +39514,22 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
       </Properties>
     </DataType>
     <DataType>
+      <Name Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</Name>
+      <Comment> Integer to string format prefixes </Comment>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>HASHPREFIX_IEC</Text>
+        <Enum>0</Enum>
+        <Comment> 2#, 8#, 16# </Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>HASHPREFIX_STDC</Text>
+        <Enum>1</Enum>
+        <Comment> 0 for octal type, 0x, 0X for hex else none  </Comment>
+      </EnumInfo>
+    </DataType>
+    <DataType>
       <Name Namespace="LCLS_General.Tc2_Utilities">E_SBCSType</Name>
       <Comment> Windows SBCS (Single Byte Character Set) Code Pages </Comment>
       <BitSize>16</BitSize>
@@ -50751,7 +50751,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>FSVTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>GVL_FS_Devices.TV1K4_VFS_1.i_xOpnLS</Name>
             <Comment>VFS Open limit switch input</Comment>
@@ -51420,7 +51420,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>FSVTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>GVL_FS_Devices.TV1K4_VFS_1.q_xClose_A</Name>
             <Comment>3x Valve Close output signals (current req.)</Comment>
@@ -51993,7 +51993,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>FSVTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>GVL_Logger.bTrickleTripped</Name>
             <Comment> Global trickle trip flag</Comment>
@@ -52095,789 +52095,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <BitOffs>3073248</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Global_Variables.AMSPORT_R3_SYSSERV</Name>
-            <Comment> TwinCAT System Service </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>10000</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3163568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>200</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165408</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_TIMESERVICES</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>400</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165472</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_DATEANDTIME</Name>
-            <Comment> Date/time </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_TIMEZONINFORMATION</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>6</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_ERROR</Name>
-            <Comment> Error icon </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>4</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.DEFAULT_ADS_TIMEOUT</Name>
-            <Comment> Default ADS timeout value </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>TIME</BaseType>
-            <Default>
-              <DateTime>5000</DateTime>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3166624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE</Name>
-            <Comment> Global hash prefix type constant used for binary, octal or hexadecimal string format type </Comment>
-            <BitSize>16</BitSize>
-            <BaseType Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</BaseType>
-            <Default>
-              <EnumText>E_HashPrefixTypes.HASHPREFIX_IEC</EnumText>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3168240</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FORMAT_MAX_ARGS</Name>
-            <Comment> Format string constant: Max. number of format arguments in FB_FormatString </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>10</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231616</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FLOATREC_EXP_IS_NAN</Name>
-            <Comment> T_FloatRec type and F_GetFloatRec function constant: The value is #NAN or -#NAN </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>-32768</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231632</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FLOATREC_EXP_IS_INF</Name>
-            <Comment> T_FloatRec type and F_GetFloatRec function constant: The value is #INF or -#INF </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>32767</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231648</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FLOATREC_MAX_DIGITS</Name>
-            <Comment> T_FloatRec type and F_GetFloatRec function constant: Max. number of significant digits. Note: double precision floats have max. 15 significant digits </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>20</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231664</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FLOATREC_MAX_PRECISION</Name>
-            <Comment> T_FloatRec type and F_GetFloatRec function constant: Max. floating point precision (1e-307) </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>307</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231680</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FLOATREC_MIN_PRECISION</Name>
-            <Comment> T_FloatRec type and F_GetFloatRec function constant: Min. floating point precision </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_NOERROR</Name>
-            <Comment> FB_FormatString function block error code: No error </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231712</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_PERCENTSIGNPOSITION</Name>
-            <Comment> FB_FormatString function block error code: Percent sign (%) at invalid position </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>16</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231744</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_ASTERISKPOSITION</Name>
-            <Comment> FB_FormatString function block error code: Asterisk parameter at invalid position </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>32</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231776</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_WIDTHVALUE</Name>
-            <Comment> FB_FormatString function block error code: Invalid width field value </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>64</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231808</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_PRECISIONVALUE</Name>
-            <Comment> FB_FormatString function block error code: Invalid precision field value </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>128</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231840</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_FLAGPOSITION</Name>
-            <Comment> FB_FormatString function block error code: One of the flags at invalid position </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>256</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231872</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_WIDTHPRECISIONVALPOS</Name>
-            <Comment> FB_FormatString function block error code: The width or precision field  value at invalid position</Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>512</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231904</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_PRECISIONDOTPOSITION</Name>
-            <Comment> FB_FormatString function block error code: Dot "." sign of precision field at invalid  position </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>1024</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3231936</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_ARGTYPEINVALID</Name>
-            <Comment> FB_FormatString function block error code: Different type field and argument parameter</Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>4096</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232000</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_UNACCEPTEDPARAMETER</Name>
-            <Comment> FB_FormatString function block error code: Invalid format string parameters </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>8192</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232032</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_INSUFFICIENTARGS</Name>
-            <Comment> FB_FormatString function block error code: To much arguments in format string </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>16384</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232064</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FMTERR_DESTBUFFOVERFLOW</Name>
-            <Comment> FB_FormatString function block error code: Destination string buffer overflow (formatted string is to long ) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>32768</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232096</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET</Name>
-            <Comment> Number of past days since year zero until 1 January 1601 </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>584389</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232160</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FORMAT_HEXASC_CODES</Name>
-            <BitSize>256</BitSize>
-            <BaseType>BYTE</BaseType>
-            <ArrayInfo>
-              <LBound>0</LBound>
-              <Elements>2</Elements>
-            </ArrayInfo>
-            <ArrayInfo>
-              <LBound>0</LBound>
-              <Elements>16</Elements>
-            </ArrayInfo>
-            <Default>
-              <SubItem>
-                <Name>[0,0]</Name>
-                <Value>48</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,1]</Name>
-                <Value>49</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,2]</Name>
-                <Value>50</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,3]</Name>
-                <Value>51</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,4]</Name>
-                <Value>52</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,5]</Name>
-                <Value>53</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,6]</Name>
-                <Value>54</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,7]</Name>
-                <Value>55</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,8]</Name>
-                <Value>56</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,9]</Name>
-                <Value>57</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,10]</Name>
-                <Value>97</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,11]</Name>
-                <Value>98</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,12]</Name>
-                <Value>99</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,13]</Name>
-                <Value>100</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,14]</Name>
-                <Value>101</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,15]</Name>
-                <Value>102</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,0]</Name>
-                <Value>48</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,1]</Name>
-                <Value>49</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,2]</Name>
-                <Value>50</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,3]</Name>
-                <Value>51</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,4]</Name>
-                <Value>52</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,5]</Name>
-                <Value>53</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,6]</Name>
-                <Value>54</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,7]</Name>
-                <Value>55</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,8]</Name>
-                <Value>56</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,9]</Name>
-                <Value>57</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,10]</Name>
-                <Value>65</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,11]</Name>
-                <Value>66</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,12]</Name>
-                <Value>67</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,13]</Name>
-                <Value>68</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,14]</Name>
-                <Value>69</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,15]</Name>
-                <Value>70</Value>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232320</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.FORMAT_DECASC_CODES</Name>
-            <Comment> ASCII to decimal and decimal digits to ASCII codes </Comment>
-            <BitSize>80</BitSize>
-            <BaseType>BYTE</BaseType>
-            <ArrayInfo>
-              <LBound>0</LBound>
-              <Elements>10</Elements>
-            </ArrayInfo>
-            <Default>
-              <SubItem>
-                <Name>[0]</Name>
-                <Value>48</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1]</Name>
-                <Value>49</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[2]</Name>
-                <Value>50</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[3]</Name>
-                <Value>51</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[4]</Name>
-                <Value>52</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[5]</Name>
-                <Value>53</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[6]</Name>
-                <Value>54</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[7]</Name>
-                <Value>55</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[8]</Name>
-                <Value>56</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[9]</Name>
-                <Value>57</Value>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3232576</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMTIME_MAX_MONTHDAYS</Name>
-            <BitSize>384</BitSize>
-            <BaseType>WORD</BaseType>
-            <ArrayInfo>
-              <LBound>0</LBound>
-              <Elements>2</Elements>
-            </ArrayInfo>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>12</Elements>
-            </ArrayInfo>
-            <Default>
-              <SubItem>
-                <Name>[0,1]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,2]</Name>
-                <Value>28</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,3]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,4]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,5]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,6]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,7]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,8]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,9]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,10]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,11]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[0,12]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,1]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,2]</Name>
-                <Value>29</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,3]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,4]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,5]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,6]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,7]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,8]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,9]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,10]</Name>
-                <Value>31</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,11]</Name>
-                <Value>30</Value>
-              </SubItem>
-              <SubItem>
-                <Name>[1,12]</Name>
-                <Value>31</Value>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3238064</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.EMPTY_GUID_STRUCT</Name>
-            <BitSize>128</BitSize>
-            <BaseType GUID="{18071995-0000-0000-0000-000000000021}">GUID</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.Data1</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data2</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data3</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[0]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[1]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[2]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[3]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[4]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[5]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[6]</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.Data4[7]</Name>
-                <Value>0</Value>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3372384</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>PRG_FSV.bM1K1Veto_IN</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -52899,6 +52116,20 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <BitOffs>633615312</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PMPS_GVL.MAX_VETO_DEVICES</Name>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>16</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>633620288</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PMPS_GVL.stCurrentBeamParameters</Name>
             <Comment>Currently active BP set, broadcast by the line arbiter PLC</Comment>
             <BitSize>1760</BitSize>
@@ -52916,21 +52147,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633617088</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PMPS_GVL.MAX_VETO_DEVICES</Name>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>16</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>633620288</BitOffs>
+            <BitOffs>633620384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_GVL.cstFullBeam</Name>
@@ -52950,7 +52167,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633620384</BitOffs>
+            <BitOffs>633622144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_GVL.MAX_APERTURES</Name>
@@ -53222,7 +52439,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>FSVTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.AccumulatedFF</Name>
             <Comment> Any time a FF occurs</Comment>
@@ -53247,7 +52464,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
             <BitSize>1760</BitSize>
@@ -53262,7 +52479,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>639626752</BitOffs>
+            <BitOffs>640474432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
@@ -53283,7 +52500,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>639630272</BitOffs>
+            <BitOffs>640477952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
@@ -53304,7 +52521,32 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>639630273</BitOffs>
+            <BitOffs>640477953</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>640802752</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>640802760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DREAM_ECAT.bDreamEcatBridge_TxPDO_state</Name>
@@ -53621,81 +52863,6 @@ EL6692 TxPDO state
               </Property>
             </Properties>
             <BitOffs>641037896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641223296</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641223304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641407680</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641407688</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641592064</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641592072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FEE_Device.TV1K4_GPI_01.i_iPRESS_R</Name>
@@ -55345,6 +54512,56 @@ EL6692 TxPDO state
             <BitOffs>647587800</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648655040</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648655048</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648839424</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648839432</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xOpnLS</Name>
             <Comment>IO</Comment>
             <BitSize>8</BitSize>
@@ -55355,7 +54572,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648655168</BitOffs>
+            <BitOffs>649023936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xClsLS</Name>
@@ -55367,7 +54584,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648655176</BitOffs>
+            <BitOffs>649023944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xOpnLS</Name>
@@ -55380,7 +54597,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648839744</BitOffs>
+            <BitOffs>649208512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xClsLS</Name>
@@ -55392,7 +54609,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648839752</BitOffs>
+            <BitOffs>649208520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xOpnLS</Name>
@@ -55405,7 +54622,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649024320</BitOffs>
+            <BitOffs>649393088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xClsLS</Name>
@@ -55417,7 +54634,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649024328</BitOffs>
+            <BitOffs>649393096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.PC5K4_VWC_01.i_xOpnLS</Name>
@@ -55430,7 +54647,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649208896</BitOffs>
+            <BitOffs>649577664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.PC5K4_VWC_01.i_xClsLS</Name>
@@ -55442,7 +54659,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649208904</BitOffs>
+            <BitOffs>649577672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xOpnLS</Name>
@@ -55455,7 +54672,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649393472</BitOffs>
+            <BitOffs>649762240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xClsLS</Name>
@@ -55467,7 +54684,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649393480</BitOffs>
+            <BitOffs>649762248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS</Name>
@@ -55480,7 +54697,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649578048</BitOffs>
+            <BitOffs>649946816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS</Name>
@@ -55492,7 +54709,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649578056</BitOffs>
+            <BitOffs>649946824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xOpnLS</Name>
@@ -55505,7 +54722,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649762624</BitOffs>
+            <BitOffs>650131392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xClsLS</Name>
@@ -55517,7 +54734,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649762632</BitOffs>
+            <BitOffs>650131400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xOpnLS</Name>
@@ -55530,7 +54747,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649947200</BitOffs>
+            <BitOffs>650315968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xClsLS</Name>
@@ -55542,57 +54759,7 @@ EL6692 TxPDO state
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649947208</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650131776</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650131784</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xOpnLS</Name>
-            <Comment>IO</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650316352</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650316360</BitOffs>
+            <BitOffs>650315976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
@@ -55631,6 +54798,56 @@ EL6692 TxPDO state
             <BitOffs>650320456</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653651008</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653651016</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xOpnLS</Name>
+            <Comment>IO</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653835584</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653835592</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_Hutch_Gauges.IM5K4_PPM_GPI_01.i_iPRESS_R</Name>
             <Comment> input Pressure // Link to analog Input</Comment>
             <BitSize>16</BitSize>
@@ -55648,23 +54865,7 @@ EL6692 TxPDO state
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82771968</ByteSize>
-          <Symbol>
-            <Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
-            <BitSize>1760</BitSize>
-            <BaseType GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[PMPS_PRE]^IO Outputs^RequestedBP</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>639628512</BitOffs>
-          </Symbol>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
             <BitSize>8</BitSize>
@@ -55684,6 +54885,34 @@ EL6692 TxPDO state
               </Property>
             </Properties>
             <BitOffs>639949416</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
+            <BitSize>1760</BitSize>
+            <BaseType GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[PMPS_PRE]^IO Outputs^RequestedBP</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>640476192</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>640802768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
@@ -55730,42 +54959,6 @@ EL6692 TxPDO state
               </Property>
             </Properties>
             <BitOffs>641025376</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641223312</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641407696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641592080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS</Name>
@@ -56944,6 +56137,30 @@ EL6692 TxPDO state
             <BitOffs>647587832</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648655056</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648839440</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01.q_xOPN_DO</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -56953,7 +56170,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648655184</BitOffs>
+            <BitOffs>649023952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR3K4_KBO_VWC_01.q_xOPN_DO</Name>
@@ -56965,7 +56182,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648839760</BitOffs>
+            <BitOffs>649208528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.LI3K4_IP1_VWC_01.q_xOPN_DO</Name>
@@ -56977,7 +56194,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649024336</BitOffs>
+            <BitOffs>649393104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.PC5K4_VWC_01.q_xOPN_DO</Name>
@@ -56989,7 +56206,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649208912</BitOffs>
+            <BitOffs>649577680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR4K4_KBO_VWC_01.q_xOPN_DO</Name>
@@ -57001,7 +56218,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649393488</BitOffs>
+            <BitOffs>649762256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO</Name>
@@ -57013,7 +56230,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649578064</BitOffs>
+            <BitOffs>649946832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO</Name>
@@ -57025,7 +56242,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649762640</BitOffs>
+            <BitOffs>650131408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.q_xOPN_DO</Name>
@@ -57037,31 +56254,7 @@ EL6692 TxPDO state
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649947216</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650131792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650316368</BitOffs>
+            <BitOffs>650315984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
@@ -57201,12 +56394,36 @@ EL6692 TxPDO state
             </Properties>
             <BitOffs>652418216</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653651024</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>653835600</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>GVL_Logger.iLogPort</Name>
             <BitSize>16</BitSize>
@@ -57316,275 +56533,6 @@ EL6692 TxPDO state
             <BitOffs>3073280</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_HINT</Name>
-            <Comment> Hint icon </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165728</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_LOG</Name>
-            <Comment> Write message to log file </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>16</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3165824</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.MAX_STRING_LENGTH</Name>
-            <Comment> Max. length of T_MaxString (inclusive null delimiter) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>255</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3166720</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.MAX_ADAPTER_NAME_LENGTH</Name>
-            <Comment> Max. System Service local adapter name length (256 + 4 inkl. \0) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>259</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH</Name>
-            <Comment> Max. System Service local adapter descirpion length (128 + 4 inkl. \0) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>131</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229824</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH</Name>
-            <Comment> Max. System Service local adapter physical address length (bytes[0..7]) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>7</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229856</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_IPHELPERAPI</Name>
-            <Comment> IPHELPERAPI index group </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>701</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229888</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_IPHOSTNAME</Name>
-            <Comment> IPHOSTNAME index group </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>702</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229920</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.IPHELPERAPI_ADAPTERSINFO</Name>
-            <Comment> IPHELPERAPI index offset </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3229952</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.MAX_LOCAL_ADAPTERS</Name>
-            <Comment> Max. number of local network adapters </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>5</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3230016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.AMSPORT_TCPIPSRV</Name>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>10201</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3375696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TCPADS_IGR_CONLIST</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>2147483649</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3376416</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TCPADS_IGR_CLOSEBYHDL</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>2147483650</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3376448</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TCPADS_IGR_SENDTOBYHDL</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>2147483655</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3376608</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TCPADSCONLST_IOF_UDPBIND</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>5</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3376864</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TCPADS_NULL_HSOCKET</Name>
-            <Comment> Empty (not initialized) socket </Comment>
-            <BitSize>352</BitSize>
-            <BaseType Namespace="LCLS_General.Tc2_TcpIp">T_HSOCKET</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.handle</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.remoteAddr.nPort</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.remoteAddr.sAddr</Name>
-                <String/>
-              </SubItem>
-              <SubItem>
-                <Name>.localAddr.nPort</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.localAddr.sAddr</Name>
-                <String/>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3376960</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.CONNECT_MODE_ENABLEDBG</Name>
-            <Comment> Enables/Disables debugging messages </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>2147483648</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>3377376</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>Constants.gc_GaugeValidState</Name>
             <BitSize>16</BitSize>
             <BaseType>INT</BaseType>
@@ -57631,7 +56579,7 @@ EL6692 TxPDO state
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>633615328</BitOffs>
+            <BitOffs>633615680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_GVL.EXCLUDED_ASSERTION_ID</Name>
@@ -57662,26 +56610,6 @@ EL6692 TxPDO state
               </Property>
             </Properties>
             <BitOffs>633620256</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PMPS_GVL.cst0RateBeam</Name>
-            <BitSize>1760</BitSize>
-            <BaseType Namespace="PMPS">ST_BeamParams</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(PREFIX)0RateBeamCnst
-		io: i
-        archive: 1Hz monitor
-        field: DESC 0-rate beam constant
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>633622144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_PARAM.MAX_FAST_FAULTS</Name>
@@ -57740,6 +56668,26 @@ EL6692 TxPDO state
             <BitOffs>633627136</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PMPS_GVL.cst0RateBeam</Name>
+            <BitSize>1760</BitSize>
+            <BaseType Namespace="PMPS">ST_BeamParams</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(PREFIX)0RateBeamCnst
+		io: i
+        archive: 1Hz monitor
+        field: DESC 0-rate beam constant
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>633797120</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>MAIN.fbLogHandler</Name>
             <BitSize>5798336</BitSize>
             <BaseType Namespace="LCLS_General">FB_LogHandler</BaseType>
@@ -57757,12 +56705,6 @@ EL6692 TxPDO state
             <BitSize>1056</BitSize>
             <BaseType Namespace="LCLS_Vacuum">ST_VG</BaseType>
             <BitOffs>639624096</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_PMPS.fbArbiterIO</Name>
-            <BitSize>145024</BitSize>
-            <BaseType Namespace="PMPS">FB_SubSysToArbiter_IO</BaseType>
-            <BitOffs>639625792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PMPS.bRemove</Name>
@@ -57973,15 +56915,32 @@ EL6692 TxPDO state
             <BitOffs>639949120</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_Roughing_Pumps.dummy_fbArbiter1</Name>
-            <BitSize>495744</BitSize>
-            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
+            <Name>PRG_PMPS.fbArbiterIO</Name>
+            <BitSize>145024</BitSize>
+            <BaseType Namespace="PMPS">FB_SubSysToArbiter_IO</BaseType>
+            <BitOffs>640473472</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_01</Name>
+            <Comment> Isolation gate valves</Comment>
+            <BitSize>184384</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
             <Properties>
               <Property>
-                <Name>old_input_assignments</Name>
+                <Name>pytmc</Name>
+                <Value> pv: TV1K4:VGC:01 </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 1^Input;
+                                 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 2^Input;
+                                .q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 11^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>640473472</BitOffs>
+            <BitOffs>640618496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_Roughing_Pumps.PA1K4_IP1_PTM_03_xExtIlkOK</Name>
@@ -58374,68 +57333,15 @@ K4S2_02_E18 (EL6001)
             <BitOffs>641039032</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_01</Name>
-            <Comment> Isolation gate valves</Comment>
-            <BitSize>184384</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
+            <Name>PRG_Roughing_Pumps.dummy_fbArbiter1</Name>
+            <BitSize>495744</BitSize>
+            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
             <Properties>
               <Property>
-                <Name>pytmc</Name>
-                <Value> pv: TV1K4:VGC:01 </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 1^Input;
-                                 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 2^Input;
-                                .q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 11^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
+                <Name>old_input_assignments</Name>
               </Property>
             </Properties>
             <BitOffs>641039040</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.TV1K4_VGC_02</Name>
-            <BitSize>184384</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value> pv: TV1K4:VGC:02 </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 5^Input;
-                                 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 6^Input;
-                                 .q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 15^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>641223424</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01</Name>
-            <BitSize>184384</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value> pv: ST3K4:PPS:VGC:01 </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.i_xOpnLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 1^Input;
-                                 .i_xClsLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 2^Input;
-                                 .q_xOPN_DO	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 11^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>641407808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FEE_Device.TV1K4_GPI_01</Name>
@@ -59840,6 +58746,48 @@ K4S2_02_E18 (EL6001)
             <BitOffs>647614080</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_FEE_Device.TV1K4_VGC_02</Name>
+            <BitSize>184384</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value> pv: TV1K4:VGC:02 </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.i_xOpnLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 5^Input;
+                                 .i_xClsLS	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 6^Input;
+                                 .q_xOPN_DO	:=	TIIB[B940_K4S20_EB1  (EP2338-0002)]^Channel 15^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648470784</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_FEE_Device.ST3K4_PPS_VGC_01</Name>
+            <BitSize>184384</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VGC</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value> pv: ST3K4:PPS:VGC:01 </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.i_xOpnLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 1^Input;
+                                 .i_xClsLS	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 2^Input;
+                                 .q_xOPN_DO	:=	TIIB[B940_K4S33_EB1 (EP2338-0002)]^Channel 11^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648655168</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_Hutch_Valves.MR2K4_KBO_VWC_01</Name>
             <Comment>  Beamline Windows Valve </Comment>
             <BitSize>184576</BitSize>
@@ -59859,7 +58807,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648470784</BitOffs>
+            <BitOffs>648839552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR3K4_KBO_VWC_01</Name>
@@ -59880,7 +58828,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648655360</BitOffs>
+            <BitOffs>649024128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.LI3K4_IP1_VWC_01</Name>
@@ -59901,7 +58849,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648839936</BitOffs>
+            <BitOffs>649208704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.PC5K4_VWC_01</Name>
@@ -59922,7 +58870,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649024512</BitOffs>
+            <BitOffs>649393280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR4K4_KBO_VWC_01</Name>
@@ -59943,7 +58891,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649209088</BitOffs>
+            <BitOffs>649577856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.MR5K4_KBO_VWC_01</Name>
@@ -59964,7 +58912,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649393664</BitOffs>
+            <BitOffs>649762432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TM2K4_KBO_VWC_01</Name>
@@ -59985,7 +58933,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649578240</BitOffs>
+            <BitOffs>649947008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_01</Name>
@@ -60007,49 +58955,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649762816</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02</Name>
-            <BitSize>184576</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VGC_2S</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value> pv: TMO:ROUGH1:VRC:02 </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.i_xOpnLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 1^Input;
-                                 .i_xClsLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 2^Input;
-                                .q_xOPN_DO	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E2 (EL2004)^Channel 1^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649947392</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01</Name>
-            <BitSize>184576</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_VGC_2S</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value> pv: TMO:ROUGH2:VRC:01 </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 3^Input;
-                                 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 4^Input;
-                                .q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E20 (EL2004)^Channel 2^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>650131968</BitOffs>
+            <BitOffs>650131584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01</Name>
@@ -60250,6 +59156,48 @@ K4S2_02_E18 (EL6001)
             <BitOffs>652417920</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH1_VRC_02</Name>
+            <BitSize>184576</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VGC_2S</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value> pv: TMO:ROUGH1:VRC:02 </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.i_xOpnLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 1^Input;
+                                 .i_xClsLS	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E1 (EL1004)^Channel 2^Input;
+                                .q_xOPN_DO	:=	TIIB[TMO_K4S6_DRL_01 (EK1100)]^K4S6_01_E2 (EL2004)^Channel 1^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>653466624</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Hutch_Valves.TMO_ROUGH2_VRC_01</Name>
+            <BitSize>184576</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_VGC_2S</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value> pv: TMO:ROUGH2:VRC:01 </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.i_xOpnLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 3^Input;
+                                 .i_xClsLS	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E19 (EL1004)^Channel 4^Input;
+                                .q_xOPN_DO	:=	TIIB[TMO_K4S2_DRL_02 (EK1100)]^K4S2_02_E20 (EL2004)^Channel 2^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>653651200</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_PMPS.g_fbArbiter1</Name>
             <Comment>Veto group downstream of MR1K1</Comment>
             <BitSize>495744</BitSize>
@@ -60266,7 +59214,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>653466624</BitOffs>
+            <BitOffs>653835776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_PMPS.g_fbArbiter2</Name>
@@ -60285,26 +59233,7 @@ K4S2_02_E18 (EL6001)
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>653962368</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_PMPS.g_fbArbiter3</Name>
-            <Comment>Veto group downstream of ST4K4</Comment>
-            <BitSize>495744</BitSize>
-            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>        pv: PLC:TMO:VAC:ARB:03    </Value>
-              </Property>
-              <Property>
-                <Name>old_input_assignments</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>654458112</BitOffs>
+            <BitOffs>654331520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Variables.iHV_LOOP_FIM_PRESSURE</Name>
@@ -60844,12 +59773,31 @@ K4S2_02_E18 (EL6001)
             </Properties>
             <BitOffs>661112320</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL_PMPS.g_fbArbiter3</Name>
+            <Comment>Veto group downstream of ST4K4</Comment>
+            <BitSize>495744</BitSize>
+            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>        pv: PLC:TMO:VAC:ARB:03    </Value>
+              </Property>
+              <Property>
+                <Name>old_input_assignments</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>667005824</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">20</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PRG_Roughing_Pumps.TM1K4_PTM_01_xExtIlkOK</Name>
             <BitSize>8</BitSize>
@@ -60864,7 +59812,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="InputDst" CreateSymbols="true">32</AreaNo>
           <Name>ComTask Inputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -61257,7 +60205,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">33</AreaNo>
           <Name>ComTask Outputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
             <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
@@ -61490,7 +60438,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="Internal" CreateSymbols="true">35</AreaNo>
           <Name>ComTask Internal</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -63700,6 +62648,21 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3163552</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.AMSPORT_R3_SYSSERV</Name>
+            <Comment> TwinCAT System Service </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>10000</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3163568</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.AMSPORT_R3_SCOPESERVER</Name>
             <Comment> TwinCAT Scope Server </Comment>
             <BitSize>16</BitSize>
@@ -64678,6 +63641,20 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3165376</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>200</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165408</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_SENDEMAIL</Name>
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
@@ -64690,6 +63667,20 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3165440</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_TIMESERVICES</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>400</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_STARTPROCESS</Name>
@@ -64718,6 +63709,21 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3165536</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_DATEANDTIME</Name>
+            <Comment> Date/time </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TIMESERVICE_SYSTEMTIMES</Name>
@@ -64762,6 +63768,35 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3165664</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.TIMESERVICE_TIMEZONINFORMATION</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>6</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165696</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_HINT</Name>
+            <Comment> Hint icon </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165728</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.ADSLOG_MSGTYPE_WARN</Name>
             <Comment> Warning icon </Comment>
             <BitSize>32</BitSize>
@@ -64775,6 +63810,36 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3165760</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_ERROR</Name>
+            <Comment> Error icon </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>4</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165792</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_LOG</Name>
+            <Comment> Write message to log file </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>16</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3165824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSLOG_MSGTYPE_MSGBOX</Name>
@@ -65191,6 +64256,21 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3166608</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.DEFAULT_ADS_TIMEOUT</Name>
+            <Comment> Default ADS timeout value </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>TIME</BaseType>
+            <Default>
+              <DateTime>5000</DateTime>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3166624</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.PI</Name>
             <BitSize>64</BitSize>
             <BaseType>LREAL</BaseType>
@@ -65203,6 +64283,21 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3166656</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.MAX_STRING_LENGTH</Name>
+            <Comment> Max. length of T_MaxString (inclusive null delimiter) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>255</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3166720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.eWatchdogConfig</Name>
@@ -65337,6 +64432,21 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3168224</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE</Name>
+            <Comment> Global hash prefix type constant used for binary, octal or hexadecimal string format type </Comment>
+            <BitSize>16</BitSize>
+            <BaseType Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</BaseType>
+            <Default>
+              <EnumText>E_HashPrefixTypes.HASHPREFIX_IEC</EnumText>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3168240</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.GLOBAL_SBCS_TABLE</Name>
             <Comment>Windows SBCS (Single Byte Character Set) Code Page Table </Comment>
             <BitSize>16</BitSize>
@@ -65397,6 +64507,96 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3168288</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.MAX_ADAPTER_NAME_LENGTH</Name>
+            <Comment> Max. System Service local adapter name length (256 + 4 inkl. \0) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>259</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229792</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH</Name>
+            <Comment> Max. System Service local adapter descirpion length (128 + 4 inkl. \0) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>131</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229824</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH</Name>
+            <Comment> Max. System Service local adapter physical address length (bytes[0..7]) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>7</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229856</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_IPHELPERAPI</Name>
+            <Comment> IPHELPERAPI index group </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>701</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229888</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_IPHOSTNAME</Name>
+            <Comment> IPHOSTNAME index group </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>702</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229920</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.IPHELPERAPI_ADAPTERSINFO</Name>
+            <Comment> IPHELPERAPI index offset </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3229952</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.IPHELPERAPI_IPADDRBYHOSTNAME</Name>
             <Comment> IPHELPERAPI index offset </Comment>
             <BitSize>32</BitSize>
@@ -65410,6 +64610,21 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3229984</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.MAX_LOCAL_ADAPTERS</Name>
+            <Comment> Max. number of local network adapters </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>5</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3230016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_ADDREMOTE</Name>
@@ -65686,6 +64901,216 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3231584</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.FORMAT_MAX_ARGS</Name>
+            <Comment> Format string constant: Max. number of format arguments in FB_FormatString </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>10</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231616</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FLOATREC_EXP_IS_NAN</Name>
+            <Comment> T_FloatRec type and F_GetFloatRec function constant: The value is #NAN or -#NAN </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>-32768</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231632</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FLOATREC_EXP_IS_INF</Name>
+            <Comment> T_FloatRec type and F_GetFloatRec function constant: The value is #INF or -#INF </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>32767</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FLOATREC_MAX_DIGITS</Name>
+            <Comment> T_FloatRec type and F_GetFloatRec function constant: Max. number of significant digits. Note: double precision floats have max. 15 significant digits </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>20</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231664</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FLOATREC_MAX_PRECISION</Name>
+            <Comment> T_FloatRec type and F_GetFloatRec function constant: Max. floating point precision (1e-307) </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>307</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231680</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FLOATREC_MIN_PRECISION</Name>
+            <Comment> T_FloatRec type and F_GetFloatRec function constant: Min. floating point precision </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231696</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_NOERROR</Name>
+            <Comment> FB_FormatString function block error code: No error </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231712</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_PERCENTSIGNPOSITION</Name>
+            <Comment> FB_FormatString function block error code: Percent sign (%) at invalid position </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>16</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231744</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_ASTERISKPOSITION</Name>
+            <Comment> FB_FormatString function block error code: Asterisk parameter at invalid position </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>32</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231776</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_WIDTHVALUE</Name>
+            <Comment> FB_FormatString function block error code: Invalid width field value </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>64</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_PRECISIONVALUE</Name>
+            <Comment> FB_FormatString function block error code: Invalid precision field value </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>128</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_FLAGPOSITION</Name>
+            <Comment> FB_FormatString function block error code: One of the flags at invalid position </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>256</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231872</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_WIDTHPRECISIONVALPOS</Name>
+            <Comment> FB_FormatString function block error code: The width or precision field  value at invalid position</Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>512</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231904</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_PRECISIONDOTPOSITION</Name>
+            <Comment> FB_FormatString function block error code: Dot "." sign of precision field at invalid  position </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>1024</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3231936</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.FMTERR_TYPEFIELDVALUE</Name>
             <Comment> FB_FormatString function block error code: Invalid (unsupported) type field value </Comment>
             <BitSize>32</BitSize>
@@ -65701,6 +65126,66 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3231968</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.FMTERR_ARGTYPEINVALID</Name>
+            <Comment> FB_FormatString function block error code: Different type field and argument parameter</Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>4096</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_UNACCEPTEDPARAMETER</Name>
+            <Comment> FB_FormatString function block error code: Invalid format string parameters </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>8192</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232032</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_INSUFFICIENTARGS</Name>
+            <Comment> FB_FormatString function block error code: To much arguments in format string </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>16384</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FMTERR_DESTBUFFOVERFLOW</Name>
+            <Comment> FB_FormatString function block error code: Destination string buffer overflow (formatted string is to long ) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>32768</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232096</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.FMTERR_INVALIDPOINTERINPUT</Name>
             <Comment> FB_FormatString function block error code: Invalid pointer input </Comment>
             <BitSize>32</BitSize>
@@ -65714,6 +65199,21 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3232128</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET</Name>
+            <Comment> Number of past days since year zero until 1 January 1601 </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>584389</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_ARG_VALUE</Name>
@@ -65740,6 +65240,330 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3232192</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FORMAT_HEXASC_CODES</Name>
+            <BitSize>256</BitSize>
+            <BaseType>BYTE</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>16</Elements>
+            </ArrayInfo>
+            <Default>
+              <SubItem>
+                <Name>[0,0]</Name>
+                <Value>48</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,1]</Name>
+                <Value>49</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,2]</Name>
+                <Value>50</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,3]</Name>
+                <Value>51</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,4]</Name>
+                <Value>52</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,5]</Name>
+                <Value>53</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,6]</Name>
+                <Value>54</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,7]</Name>
+                <Value>55</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,8]</Name>
+                <Value>56</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,9]</Name>
+                <Value>57</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,10]</Name>
+                <Value>97</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,11]</Name>
+                <Value>98</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,12]</Name>
+                <Value>99</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,13]</Name>
+                <Value>100</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,14]</Name>
+                <Value>101</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,15]</Name>
+                <Value>102</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,0]</Name>
+                <Value>48</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,1]</Name>
+                <Value>49</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,2]</Name>
+                <Value>50</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,3]</Name>
+                <Value>51</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,4]</Name>
+                <Value>52</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,5]</Name>
+                <Value>53</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,6]</Name>
+                <Value>54</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,7]</Name>
+                <Value>55</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,8]</Name>
+                <Value>56</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,9]</Name>
+                <Value>57</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,10]</Name>
+                <Value>65</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,11]</Name>
+                <Value>66</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,12]</Name>
+                <Value>67</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,13]</Name>
+                <Value>68</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,14]</Name>
+                <Value>69</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,15]</Name>
+                <Value>70</Value>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.FORMAT_DECASC_CODES</Name>
+            <Comment> ASCII to decimal and decimal digits to ASCII codes </Comment>
+            <BitSize>80</BitSize>
+            <BaseType>BYTE</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>10</Elements>
+            </ArrayInfo>
+            <Default>
+              <SubItem>
+                <Name>[0]</Name>
+                <Value>48</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1]</Name>
+                <Value>49</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[2]</Name>
+                <Value>50</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[3]</Name>
+                <Value>51</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[4]</Name>
+                <Value>52</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[5]</Name>
+                <Value>53</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[6]</Name>
+                <Value>54</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[7]</Name>
+                <Value>55</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[8]</Name>
+                <Value>56</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[9]</Name>
+                <Value>57</Value>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3232576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMTIME_MAX_MONTHDAYS</Name>
+            <BitSize>384</BitSize>
+            <BaseType>WORD</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>12</Elements>
+            </ArrayInfo>
+            <Default>
+              <SubItem>
+                <Name>[0,1]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,2]</Name>
+                <Value>28</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,3]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,4]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,5]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,6]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,7]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,8]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,9]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,10]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,11]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[0,12]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,1]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,2]</Name>
+                <Value>29</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,3]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,4]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,5]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,6]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,7]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,8]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,9]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,10]</Name>
+                <Value>31</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,11]</Name>
+                <Value>30</Value>
+              </SubItem>
+              <SubItem>
+                <Name>[1,12]</Name>
+                <Value>31</Value>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3238064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_MAX_YEARSDAY</Name>
@@ -66251,6 +66075,63 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3370648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.EMPTY_GUID_STRUCT</Name>
+            <BitSize>128</BitSize>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000021}">GUID</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.Data1</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data2</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data3</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[0]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[1]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[2]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[3]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[4]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[5]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[6]</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.Data4[7]</Name>
+                <Value>0</Value>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3372384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_GUID_STRING</Name>
@@ -66968,6 +66849,20 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3375680</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.AMSPORT_TCPIPSRV</Name>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>10201</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3375696</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Constants.SUCCESS_EVENT</Name>
             <BitSize>192</BitSize>
             <BaseType GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}">TcEventEntry</BaseType>
@@ -67175,6 +67070,34 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3376384</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.TCPADS_IGR_CONLIST</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>2147483649</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3376416</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TCPADS_IGR_CLOSEBYHDL</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>2147483650</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3376448</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.TCPADS_IGR_SENDBYHDL</Name>
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
@@ -67229,6 +67152,20 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3376576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TCPADS_IGR_SENDTOBYHDL</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>2147483655</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3376608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCPADS_IGR_MULTICAST_ADDBYHDL</Name>
@@ -67329,6 +67266,20 @@ K4S2_02_E18 (EL6001)
             <BitOffs>3376832</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>Global_Variables.TCPADSCONLST_IOF_UDPBIND</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>5</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3376864</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Global_Variables.TCPADSCONLST_IOF_GETHNDLBYADDR</Name>
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
@@ -67355,6 +67306,40 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3376928</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TCPADS_NULL_HSOCKET</Name>
+            <Comment> Empty (not initialized) socket </Comment>
+            <BitSize>352</BitSize>
+            <BaseType Namespace="LCLS_General.Tc2_TcpIp">T_HSOCKET</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.handle</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.remoteAddr.nPort</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.remoteAddr.sAddr</Name>
+                <String/>
+              </SubItem>
+              <SubItem>
+                <Name>.localAddr.nPort</Name>
+                <Value>0</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.localAddr.sAddr</Name>
+                <String/>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3376960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.LISTEN_MODE_CLOSEALL</Name>
@@ -67385,6 +67370,21 @@ K4S2_02_E18 (EL6001)
               </Property>
             </Properties>
             <BitOffs>3377344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.CONNECT_MODE_ENABLEDBG</Name>
+            <Comment> Enables/Disables debugging messages </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>2147483648</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>3377376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_THROTTLE_MODE</Name>
@@ -68605,19 +68605,19 @@ K4S2_02_E18 (EL6001)
             <Name>PRG_FSV.fb_VetoArbiter2</Name>
             <BitSize>28352</BitSize>
             <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
-            <BitOffs>633784320</BitOffs>
+            <BitOffs>639625792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PMPS.fb_VetoArbiter</Name>
             <BitSize>28352</BitSize>
             <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
-            <BitOffs>639770880</BitOffs>
+            <BitOffs>639654144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PMPS.fb_VetoArbiter2</Name>
             <BitSize>28352</BitSize>
             <BaseType Namespace="PMPS">FB_VetoArbiter</BaseType>
-            <BitOffs>639825152</BitOffs>
+            <BitOffs>639682496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_Hutch_Beamline_Valves.xAll_Turbo_isRunning</Name>
@@ -69131,7 +69131,7 @@ K4S2_02_E18 (EL6001)
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">36</AreaNo>
           <Name>ComTask Retains</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82771968</ByteSize>
+          <ByteSize>83558400</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -69192,11 +69192,11 @@ K4S2_02_E18 (EL6001)
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-08-29T14:46:28</Value>
+          <Value>2024-10-04T18:10:47</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>729088</Value>
+          <Value>774144</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
