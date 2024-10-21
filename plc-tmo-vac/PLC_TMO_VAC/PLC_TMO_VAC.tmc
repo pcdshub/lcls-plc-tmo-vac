@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F512490A-5186-2034-3370-F91031E29CF9}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{B4701B40-0206-6E73-1D22-B2DC231AD52B}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</Name>
@@ -3672,6 +3672,14 @@
         </Default>
       </SubItem>
       <Method>
+        <Name>AddUlint</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
         <Name>AddKeyNumber</Name>
         <Parameter>
           <Name>key</Name>
@@ -3724,6 +3732,20 @@
         </Parameter>
       </Method>
       <Method>
+        <Name>AddKeyNull</Name>
+        <Parameter>
+          <Name>key</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
         <Name>IsComplete</Name>
         <ReturnType>BOOL</ReturnType>
         <ReturnBitSize>8</ReturnBitSize>
@@ -3737,25 +3759,17 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>AddHexBinary</Name>
-        <Parameter>
-          <Name>pBytes</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nBytes</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name>AddLint</Name>
         <Parameter>
           <Name>value</Name>
           <Type>LINT</Type>
           <BitSize>64</BitSize>
         </Parameter>
+      </Method>
+      <Method>
+        <Name>StartObject</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
         <Name>AddLreal</Name>
@@ -3780,12 +3794,6 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>ResetDocument</Name>
-        <Comment> | Resets the internal JSON document if a new document should be created with the same SaxWriter instance.</Comment>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
         <Name>AddKeyLreal</Name>
         <Parameter>
           <Name>key</Name>
@@ -3805,36 +3813,36 @@
         </Parameter>
       </Method>
       <Method>
-        <Name>StartObject</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
+        <Name>AddFileTime</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000046}">FILETIME</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
       </Method>
       <Method>
-        <Name>GetDocumentLength</Name>
-        <Comment>| Returns the size of the JSON document in bytes (including the null termination).</Comment>
-        <ReturnType>UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
+        <Name>AddNull</Name>
+      </Method>
+      <Method>
+        <Name>AddReal</Name>
         <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <Name>value</Name>
+          <Type>REAL</Type>
           <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
         </Parameter>
-        <Local>
-          <Name>n</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>p</Name>
-          <Type PointerTo="1">STRING(80)</Type>
+      </Method>
+      <Method>
+        <Name>AddHexBinary</Name>
+        <Parameter>
+          <Name>pBytes</Name>
+          <Type PointerTo="1">BYTE</Type>
           <BitSize>64</BitSize>
-        </Local>
+        </Parameter>
+        <Parameter>
+          <Name>nBytes</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
       </Method>
       <Method>
         <Name>AddKeyDcTime</Name>
@@ -3861,20 +3869,6 @@
           <Name>value</Name>
           <Type>DATE_AND_TIME</Type>
           <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddRawObject</Name>
-        <Parameter>
-          <Name>rawJson</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
         </Parameter>
       </Method>
       <Method>
@@ -3920,33 +3914,6 @@
           <Type>BOOL</Type>
           <BitSize>8</BitSize>
         </Parameter>
-      </Method>
-      <Method>
-        <Name>GetDocument</Name>
-        <Comment> | Returns the JSON document. If its size is more than 255 bytes the method CopyDocument() has to be used.</Comment>
-        <ReturnType>STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Local>
-          <Name>p</Name>
-          <Type PointerTo="1">SINT</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>n</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AddDint</Name>
@@ -3998,6 +3965,153 @@
         </Parameter>
       </Method>
       <Method>
+        <Name>ResetDocument</Name>
+        <Comment> | Resets the internal JSON document if a new document should be created with the same SaxWriter instance.</Comment>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>GetMaxDecimalPlaces</Name>
+        <ReturnType>DINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Local>
+          <Name>dp</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddRawObject</Name>
+        <Parameter>
+          <Name>rawJson</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetDocumentLength</Name>
+        <Comment>| Returns the size of the JSON document in bytes (including the null termination).</Comment>
+        <ReturnType>UDINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Parameter>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Local>
+          <Name>n</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>p</Name>
+          <Type PointerTo="1">STRING(80)</Type>
+          <BitSize>64</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddBool</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetDocument</Name>
+        <Comment> | Returns the JSON document. If its size is more than 255 bytes the method CopyDocument() has to be used.</Comment>
+        <ReturnType>STRING(255)</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+        <Parameter>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Local>
+          <Name>p</Name>
+          <Type PointerTo="1">SINT</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>n</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AddBase64</Name>
+        <Parameter>
+          <Name>pBytes</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nBytes</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AddDcTime</Name>
+        <Parameter>
+          <Name>value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000047}">DCTIME</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AddKeyDateTime</Name>
+        <Parameter>
+          <Name>key</Name>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>value</Name>
+          <Type>DATE_AND_TIME</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>EndArray</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>EndObject</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>StartArray</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>CopyDocument</Name>
         <Comment>| Copies the JSON document and returns its size in bytes (including the null termination).</Comment>
         <ReturnType>UDINT</ReturnType>
@@ -4030,120 +4144,6 @@
               <Value>Output</Value>
             </Property>
           </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUlint</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>GetMaxDecimalPlaces</Name>
-        <ReturnType>DINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>dp</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AddFileTime</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000046}">FILETIME</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddNull</Name>
-      </Method>
-      <Method>
-        <Name>AddKeyDateTime</Name>
-        <Parameter>
-          <Name>key</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DATE_AND_TIME</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBool</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBase64</Name>
-        <Parameter>
-          <Name>pBytes</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nBytes</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDcTime</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000047}">DCTIME</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddKeyNull</Name>
-        <Parameter>
-          <Name>key</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EndArray</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>EndObject</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>StartArray</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>AddReal</Name>
-        <Parameter>
-          <Name>value</Name>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
         </Parameter>
       </Method>
       <Properties>
@@ -5913,7 +5913,7 @@
         <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
-        <Name>UpdateLangId</Name>
+        <Name>OnArgumentsChanged</Name>
       </Method>
       <Method>
         <Name RpcEnable="plc" VTableIndex="8">__getipSourceInfo</Name>
@@ -6112,9 +6112,6 @@
         </Local>
       </Method>
       <Method>
-        <Name>OnArgumentsChanged</Name>
-      </Method>
-      <Method>
         <Name RpcEnable="plc" VTableIndex="11">__getsEventClassName</Name>
         <ReturnType RpcDirection="out">STRING(255)</ReturnType>
         <ReturnBitSize>2048</ReturnBitSize>
@@ -6275,6 +6272,9 @@
             </Property>
           </Properties>
         </Local>
+      </Method>
+      <Method>
+        <Name>UpdateLangId</Name>
       </Method>
       <Method>
         <Name>EqualsToEventEntryEx</Name>
@@ -6705,7 +6705,7 @@
         <BitSize>32</BitSize>
         <BitOffs>58176</BitOffs>
         <Default>
-          <DateTime>T#1ms</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -6721,7 +6721,7 @@
         <BitSize>32</BitSize>
         <BitOffs>58208</BitOffs>
         <Default>
-          <DateTime>T#100ms</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -6737,7 +6737,7 @@
         <BitSize>32</BitSize>
         <BitOffs>58240</BitOffs>
         <Default>
-          <DateTime>T#10m</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -7275,22 +7275,11 @@
         <Name>ExecuteNoLog</Name>
       </Action>
       <Action>
-        <Name>EvaluateOutput</Name>
-      </Action>
-      <Action>
         <Name>Execute</Name>
       </Action>
-      <Method>
-        <Name>EvaluateVetos</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>obsolete</Name>
-            <Value>Use EvaluateOverrides instead.</Value>
-          </Property>
-        </Properties>
-      </Method>
+      <Action>
+        <Name>EvaluateOutput</Name>
+      </Action>
       <Method>
         <Name>EvaluateOverrides</Name>
         <ReturnType>BOOL</ReturnType>
@@ -7349,41 +7338,14 @@
         </Properties>
       </Method>
       <Method>
-        <Name>Register</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
+        <Name>FormulateLogJson</Name>
+        <ReturnType>STRING(80)</ReturnType>
+        <ReturnBitSize>648</ReturnBitSize>
         <Parameter>
-          <Name>stFFInfo</Name>
-          <Type Namespace="PMPS">ST_FFInfo</Type>
-          <BitSize>6832</BitSize>
+          <Name>FF</Name>
+          <Type Namespace="PMPS">ST_FF</Type>
+          <BitSize>8128</BitSize>
         </Parameter>
-        <Parameter>
-          <Name>FFOName</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Idx</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Properties>
-          <Property>
-            <Name>no_check</Name>
-          </Property>
-        </Properties>
       </Method>
       <Method>
         <Name>IdxCheckIn</Name>
@@ -7421,14 +7383,52 @@
         </Properties>
       </Method>
       <Method>
-        <Name>FormulateLogJson</Name>
-        <ReturnType>STRING(80)</ReturnType>
-        <ReturnBitSize>648</ReturnBitSize>
+        <Name>Register</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
         <Parameter>
-          <Name>FF</Name>
-          <Type Namespace="PMPS">ST_FF</Type>
-          <BitSize>8128</BitSize>
+          <Name>stFFInfo</Name>
+          <Type Namespace="PMPS">ST_FFInfo</Type>
+          <BitSize>6832</BitSize>
         </Parameter>
+        <Parameter>
+          <Name>FFOName</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Idx</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Properties>
+          <Property>
+            <Name>no_check</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name>EvaluateVetos</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Properties>
+          <Property>
+            <Name>obsolete</Name>
+            <Value>Use EvaluateOverrides instead.</Value>
+          </Property>
+        </Properties>
       </Method>
       <Properties>
         <Property>
@@ -8637,7 +8637,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>116224</BitOffs>
         <Default>
-          <DateTime>T#60S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -8646,7 +8646,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>116256</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -8679,7 +8679,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>116736</BitOffs>
         <Default>
-          <DateTime>T#20MS</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -8694,7 +8694,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>117056</BitOffs>
         <Default>
-          <DateTime>T#2S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -8704,7 +8704,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>117088</BitOffs>
         <Default>
-          <DateTime>T#0.5S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -8713,7 +8713,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>117120</BitOffs>
         <Default>
-          <DateTime>T#10S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -10132,6 +10132,44 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Properties>
       </Method>
       <Method>
+        <Name>Init2</Name>
+        <Parameter>
+          <Name>ipEvent</Name>
+          <Type GUID="{4A9CB0E9-8969-4B85-B567-605110511200}">ITcEvent</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nTimestamp</Name>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Local>
+          <Name>ipArguments</Name>
+          <Type GUID="{BFC9A87A-F6DE-499A-AC45-F3B1A59315F9}">ITcArguments</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ipMessage</Name>
+          <Type GUID="{6474ED2C-E483-454E-A67D-233E6D337C08}">ITcMessage</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ipAlarm</Name>
+          <Type GUID="{EC6D4FF7-5805-4DDB-A316-27894E77D644}">ITcAlarm</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ipSourceInfo</Name>
+          <Type GUID="{F7BF6767-548B-493C-899B-06A477976F11}">ITcSourceInfo</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>conditionalshow</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
         <Name>Release</Name>
         <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -10181,44 +10219,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <Property>
             <Name>property</Name>
           </Property>
-          <Property>
-            <Name>conditionalshow</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>Init2</Name>
-        <Parameter>
-          <Name>ipEvent</Name>
-          <Type GUID="{4A9CB0E9-8969-4B85-B567-605110511200}">ITcEvent</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nTimestamp</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Local>
-          <Name>ipArguments</Name>
-          <Type GUID="{BFC9A87A-F6DE-499A-AC45-F3B1A59315F9}">ITcArguments</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ipMessage</Name>
-          <Type GUID="{6474ED2C-E483-454E-A67D-233E6D337C08}">ITcMessage</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ipAlarm</Name>
-          <Type GUID="{EC6D4FF7-5805-4DDB-A316-27894E77D644}">ITcAlarm</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ipSourceInfo</Name>
-          <Type GUID="{F7BF6767-548B-493C-899B-06A477976F11}">ITcSourceInfo</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Properties>
           <Property>
             <Name>conditionalshow</Name>
           </Property>
@@ -10395,47 +10395,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Properties>
       </Method>
       <Method>
-        <Name>TcQueryInterface</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>iid</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000025}" ReferenceTo="true">IID</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pipItf</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000018}" PointerTo="1">PVOID</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Local>
-          <Name>ipMessageListener</Name>
-          <Type GUID="{47B6BEE8-0ECB-4C92-9D93-FB11D3BA0336}">ITcMessageListener</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ipAlarmListener</Name>
-          <Type GUID="{C0CCD9D7-DDCD-4C2D-A24C-B1F3257C9A64}">ITcAlarmListener</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>c++_compatible</Name>
-          </Property>
-          <Property>
-            <Name>pack_mode</Name>
-            <Value>4</Value>
-          </Property>
-          <Property>
-            <Name>show</Name>
-          </Property>
-          <Property>
-            <Name>minimal_input_size</Name>
-            <Value>4</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
         <Name>OnMessageSent</Name>
         <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -10483,6 +10442,21 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <Parameter>
           <Name>pipAlarmFilterConfig</Name>
           <Type GUID="{70904B1B-F00E-4FCB-BE59-151086E9B8F6}" PointerTo="1">ITcEventFilterConfig</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Local>
+          <Name>hr</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>Execute</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Parameter>
+          <Name>ipListener</Name>
+          <Type Namespace="LCLS_General.Tc3_EventLogger">I_Listener</Type>
           <BitSize>64</BitSize>
         </Parameter>
         <Local>
@@ -10585,19 +10559,45 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Properties>
       </Method>
       <Method>
-        <Name>Execute</Name>
+        <Name>TcQueryInterface</Name>
         <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
         <Parameter>
-          <Name>ipListener</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger">I_Listener</Type>
+          <Name>iid</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000025}" ReferenceTo="true">IID</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pipItf</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}" PointerTo="1">PVOID</Type>
           <BitSize>64</BitSize>
         </Parameter>
         <Local>
-          <Name>hr</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
+          <Name>ipMessageListener</Name>
+          <Type GUID="{47B6BEE8-0ECB-4C92-9D93-FB11D3BA0336}">ITcMessageListener</Type>
+          <BitSize>64</BitSize>
         </Local>
+        <Local>
+          <Name>ipAlarmListener</Name>
+          <Type GUID="{C0CCD9D7-DDCD-4C2D-A24C-B1F3257C9A64}">ITcAlarmListener</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>c++_compatible</Name>
+          </Property>
+          <Property>
+            <Name>pack_mode</Name>
+            <Value>4</Value>
+          </Property>
+          <Property>
+            <Name>show</Name>
+          </Property>
+          <Property>
+            <Name>minimal_input_size</Name>
+            <Value>4</Value>
+          </Property>
+        </Properties>
       </Method>
       <Properties>
         <Property>
@@ -12103,26 +12103,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Properties>
       </Method>
       <Method>
-        <Name RpcEnable="plc" VTableIndex="2">__gethrErrorCode</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}" RpcDirection="out">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>hrError</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
         <Name>RequestRemote</Name>
         <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -12228,6 +12208,45 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Properties>
       </Method>
       <Method>
+        <Name RpcEnable="plc" VTableIndex="2">__gethrErrorCode</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}" RpcDirection="out">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Local>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>hrError</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name RpcEnable="plc" VTableIndex="6">__getsEventText</Name>
+        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+        <Local>
+          <Name>sEventText</Name>
+          <Type>STRING(255)</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+          <Property>
+            <Name>TcEncoding</Name>
+            <Value>UTF-8</Value>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
         <Name>Request</Name>
         <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -12257,25 +12276,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <Type GUID="{BFC9A87A-F6DE-499A-AC45-F3B1A59315F9}">ITcArguments</Type>
           <BitSize>64</BitSize>
         </Local>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="6">__getsEventText</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Local>
-          <Name>sEventText</Name>
-          <Type>STRING(255)</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
       </Method>
       <Properties>
         <Property>
@@ -12346,11 +12346,11 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitOffs>128</BitOffs>
       </SubItem>
       <Method>
-        <Name>GetJsonFromSymbol</Name>
-        <Comment> | generates a JSON string from a given symbol (via address/size).
- | Method returns TRUE if succeeded.</Comment>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
+        <Name>GetJsonStringFromSymbolProperties</Name>
+        <Comment>| Returns the JSON string. 
+| If its size is more than 255 bytes an empty string is returned and the method CopyJsonStringFromSymbolProperties() has to be used.</Comment>
+        <ReturnType>STRING(255)</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
         <Parameter>
           <Name>sDatatype</Name>
           <Comment> data type name of symbol - if unknown -&gt; retrieve with GetDatatypeByAddreee()</Comment>
@@ -12364,28 +12364,16 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           </Properties>
         </Parameter>
         <Parameter>
-          <Name>nData</Name>
-          <Comment> size of symbol</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pData</Name>
-          <Comment> address of sxmbol</Comment>
-          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <Name>sProperties</Name>
+          <Comment> multiple Properties separated by '|'</Comment>
+          <Type ReferenceTo="true">STRING(80)</Type>
           <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nJson</Name>
-          <Comment> size of json buffer </Comment>
-          <Type ReferenceTo="true">UDINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pJson</Name>
-          <Comment> json buffer</Comment>
-          <Type PointerTo="1">STRING(80)</Type>
-          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
         </Parameter>
         <Parameter>
           <Name>hrErrorCode</Name>
@@ -12398,6 +12386,16 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
             </Property>
           </Properties>
         </Parameter>
+        <Local>
+          <Name>nSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>pTmp</Name>
+          <Type PointerTo="1">STRING(80)</Type>
+          <BitSize>64</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>CopyJsonStringFromSymbolProperties</Name>
@@ -12543,58 +12541,6 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <Comment> address of symbol</Comment>
           <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
           <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Local>
-          <Name>nSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>pTmp</Name>
-          <Type PointerTo="1">STRING(80)</Type>
-          <BitSize>64</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>GetJsonStringFromSymbolProperties</Name>
-        <Comment>| Returns the JSON string. 
-| If its size is more than 255 bytes an empty string is returned and the method CopyJsonStringFromSymbolProperties() has to be used.</Comment>
-        <ReturnType>STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Parameter>
-          <Name>sDatatype</Name>
-          <Comment> data type name of symbol - if unknown -&gt; retrieve with GetDatatypeByAddreee()</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>sProperties</Name>
-          <Comment> multiple Properties separated by '|'</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
         </Parameter>
         <Parameter>
           <Name>hrErrorCode</Name>
@@ -12765,6 +12711,60 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
           <Name>pData</Name>
           <Comment> address of symbol</Comment>
           <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>hrErrorCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetJsonFromSymbol</Name>
+        <Comment> | generates a JSON string from a given symbol (via address/size).
+ | Method returns TRUE if succeeded.</Comment>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>sDatatype</Name>
+          <Comment> data type name of symbol - if unknown -&gt; retrieve with GetDatatypeByAddreee()</Comment>
+          <Type ReferenceTo="true">STRING(80)</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>nData</Name>
+          <Comment> size of symbol</Comment>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pData</Name>
+          <Comment> address of sxmbol</Comment>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nJson</Name>
+          <Comment> size of json buffer </Comment>
+          <Type ReferenceTo="true">UDINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pJson</Name>
+          <Comment> json buffer</Comment>
+          <Type PointerTo="1">STRING(80)</Type>
           <BitSize>64</BitSize>
         </Parameter>
         <Parameter>
@@ -13505,7 +13505,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>8</BitSize>
         <BitOffs>865952</BitOffs>
         <Default>
-          <Bool>nt :=</Bool>
+          <Bool>udint</Bool>
         </Default>
       </SubItem>
       <SubItem>
@@ -13543,42 +13543,12 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         </Parameter>
       </Method>
       <Method>
-        <Name>__getLogToVisualStudio</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Local>
-          <Name>LogToVisualStudio</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
         <Name>OnAlarmCleared</Name>
         <Parameter>
           <Name>fbEvent</Name>
           <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
           <BitSize>64</BitSize>
         </Parameter>
-      </Method>
-      <Method>
-        <Name>SendMessage</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>sMessage</Name>
-          <Type PointerTo="1">STRING(80)</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Local>
-          <Name>sLogStr</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>OnMessageSent</Name>
@@ -13708,6 +13678,36 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
               <Value>__FB_LISTENER__CONFIGURE__BSUBSCRIBED</Value>
             </Property>
           </Properties>
+        </Local>
+      </Method>
+      <Method>
+        <Name>__getLogToVisualStudio</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Local>
+          <Name>LogToVisualStudio</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name>SendMessage</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Parameter>
+          <Name>sMessage</Name>
+          <Type PointerTo="1">STRING(80)</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Local>
+          <Name>sLogStr</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
         </Local>
       </Method>
       <Method>
@@ -13908,7 +13908,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>96</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -14665,7 +14665,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <BitSize>32</BitSize>
         <BitOffs>96</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -15087,7 +15087,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#1h</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -15099,7 +15099,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#1s</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -15111,7 +15111,7 @@ The Fast shutter was tested with PLC task Cycle Base Time 50us with cycle time 0
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#10s</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -15685,37 +15685,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       </Method>
     </DataType>
     <DataType>
-      <Name Namespace="PMPS">T_HashTableEntry</Name>
-      <BitSize>128</BitSize>
-      <SubItem>
-        <Name>key</Name>
-        <Type>DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Key
-        io: i
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>value</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-      </SubItem>
-    </DataType>
-    <DataType>
       <Name Namespace="PMPS">ST_BP_ArbInternal</Name>
       <BitSize>2464</BitSize>
       <ExtendsType Namespace="PMPS">ST_BeamParams</ExtendsType>
@@ -15760,6 +15729,37 @@ These features aren't disabled, they just aren't used, think child/parent classe
     </Value>
           </Property>
         </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="PMPS">T_HashTableEntry</Name>
+      <BitSize>128</BitSize>
+      <SubItem>
+        <Name>key</Name>
+        <Type>DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Key
+        io: i
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>value</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
       </SubItem>
     </DataType>
     <DataType>
@@ -16438,28 +16438,28 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Default>
       </SubItem>
       <Action>
-        <Name>A_Reset</Name>
-      </Action>
-      <Action>
         <Name>A_Count</Name>
       </Action>
       <Action>
         <Name>DataPoolToEpics</Name>
       </Action>
       <Action>
-        <Name>A_Add</Name>
+        <Name>A_Lookup</Name>
       </Action>
       <Action>
         <Name>A_Remove</Name>
       </Action>
       <Action>
+        <Name>A_Reset</Name>
+      </Action>
+      <Action>
         <Name>A_GetFirst</Name>
       </Action>
       <Action>
-        <Name>A_GetNext</Name>
+        <Name>A_Add</Name>
       </Action>
       <Action>
-        <Name>A_Lookup</Name>
+        <Name>A_GetNext</Name>
       </Action>
       <Properties>
         <Property>
@@ -16686,7 +16686,7 @@ These features efficiently address the addition, removal, and verification of be
         <BitSize>8</BitSize>
         <BitOffs>237128</BitOffs>
         <Default>
-          <Bool> : u</Bool>
+          <Bool>true</Bool>
         </Default>
       </SubItem>
       <SubItem>
@@ -16720,42 +16720,30 @@ These features efficiently address the addition, removal, and verification of be
         <BitOffs>409664</BitOffs>
       </SubItem>
       <Method>
-        <Name>__getnEntryCount</Name>
-        <Comment> How many entries are in the arbiter now</Comment>
-        <ReturnType>UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>nEntryCount</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>CheckRequest</Name>
-        <Comment> Checks request ID is included in arbitration all the way to the accelerator interface
-Use like so:
-IF fbArbiter.CheckRequest(nStateIDAssertionToCheck) AND (other logic) THEN:
-    Request is found and active in arbitration,. Do something.
-ELSE:
-    Request was not found, or is not yet included in arbitration. Don't do something/ wait.
-
-</Comment>
+        <Name>RemoveRequest</Name>
+        <Comment> Removes request from abritration. </Comment>
         <ReturnType>BOOL</ReturnType>
         <ReturnBitSize>8</ReturnBitSize>
         <Parameter>
-          <Name>nReqID</Name>
+          <Name>nReqId</Name>
           <Type>DWORD</Type>
           <BitSize>32</BitSize>
         </Parameter>
         <Local>
-          <Name>BP</Name>
-          <Type Namespace="PMPS">ST_BeamParams</Type>
-          <BitSize>1760</BitSize>
+          <Name>fbLog</Name>
+          <Type Namespace="LCLS_General">FB_LogMessage</Type>
+          <BitSize>86080</BitSize>
+          <Properties>
+            <Property>
+              <Name>uselocation</Name>
+              <Value>__FB_ARBITER__REMOVEREQUEST__FBLOG</Value>
+            </Property>
+          </Properties>
+        </Local>
+        <Local>
+          <Name>BP_Int</Name>
+          <Type Namespace="PMPS">ST_BP_ArbInternal</Type>
+          <BitSize>2464</BitSize>
         </Local>
       </Method>
       <Method>
@@ -16886,6 +16874,42 @@ ELSE:
         </Properties>
       </Method>
       <Method>
+        <Name>CheckRequestInPool</Name>
+        <Comment> Verify request is at least in the local arbiter
+ Does not verify request has been included in arbitration.
+ Use CheckRequest instead.</Comment>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>nReqID</Name>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>CheckRequest</Name>
+        <Comment> Checks request ID is included in arbitration all the way to the accelerator interface
+Use like so:
+IF fbArbiter.CheckRequest(nStateIDAssertionToCheck) AND (other logic) THEN:
+    Request is found and active in arbitration,. Do something.
+ELSE:
+    Request was not found, or is not yet included in arbitration. Don't do something/ wait.
+
+</Comment>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>nReqID</Name>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Local>
+          <Name>BP</Name>
+          <Type Namespace="PMPS">ST_BeamParams</Type>
+          <BitSize>1760</BitSize>
+        </Local>
+      </Method>
+      <Method>
         <Name>AddRequest</Name>
         <Comment> Adds a request to the arbiter pool.
  Returns true if the request was successfully added, false if not enough space or a request with the same ID is already present.</Comment>
@@ -16927,44 +16951,20 @@ ELSE:
         </Local>
       </Method>
       <Method>
-        <Name>RemoveRequest</Name>
-        <Comment> Removes request from abritration. </Comment>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqId</Name>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
+        <Name>__getnEntryCount</Name>
+        <Comment> How many entries are in the arbiter now</Comment>
+        <ReturnType>UDINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
         <Local>
-          <Name>fbLog</Name>
-          <Type Namespace="LCLS_General">FB_LogMessage</Type>
-          <BitSize>86080</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__FB_ARBITER__REMOVEREQUEST__FBLOG</Value>
-            </Property>
-          </Properties>
-        </Local>
-        <Local>
-          <Name>BP_Int</Name>
-          <Type Namespace="PMPS">ST_BP_ArbInternal</Type>
-          <BitSize>2464</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>CheckRequestInPool</Name>
-        <Comment> Verify request is at least in the local arbiter
- Does not verify request has been included in arbitration.
- Use CheckRequest instead.</Comment>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Type>DWORD</Type>
+          <Name>nEntryCount</Name>
+          <Type>UDINT</Type>
           <BitSize>32</BitSize>
-        </Parameter>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
       </Method>
       <Method>
         <Name>RequestBP</Name>
@@ -17554,8 +17554,7 @@ ELSE:
         <BitSize>8</BitSize>
         <BitOffs>144960</BitOffs>
         <Default>
-          <Bool>,
-  </Bool>
+          <Bool>,</Bool>
         </Default>
       </SubItem>
       <SubItem>
@@ -18866,13 +18865,13 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>WaitingForFinalAssertion_DO</Name>
       </Action>
       <Action>
+        <Name>DeauthorizeTransition</Name>
+      </Action>
+      <Action>
         <Name>NewTarget_ENTRY</Name>
       </Action>
       <Action>
         <Name>AssertTransitionBP</Name>
-      </Action>
-      <Action>
-        <Name>AssertFinalBP</Name>
       </Action>
       <Action>
         <Name>WaitingForTransitionAssertion_DO</Name>
@@ -18893,7 +18892,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>WaitingForFinalAssertion_EXIT</Name>
       </Action>
       <Action>
-        <Name>DeauthorizeTransition</Name>
+        <Name>AssertFinalBP</Name>
       </Action>
       <Method>
         <Name>LogActions</Name>
@@ -19317,7 +19316,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183616</BitOffs>
         <Default>
-          <DateTime>T#60S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -19326,7 +19325,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183648</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -19336,7 +19335,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183680</BitOffs>
         <Default>
-          <DateTime>T#30S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -19424,13 +19423,13 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>ACT_IO</Name>
       </Action>
       <Action>
-        <Name>ACT_Persistent</Name>
-      </Action>
-      <Action>
         <Name>ACT_ResetAlarms</Name>
       </Action>
       <Action>
         <Name>ACT_PMPS</Name>
+      </Action>
+      <Action>
+        <Name>ACT_Persistent</Name>
       </Action>
       <Method>
         <Name>M_IsClosed</Name>
@@ -19879,13 +19878,13 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Default>
       </SubItem>
       <Action>
-        <Name>ACT_Logger</Name>
-      </Action>
-      <Action>
         <Name>ACT_Persistent</Name>
       </Action>
       <Action>
         <Name>IO</Name>
+      </Action>
+      <Action>
+        <Name>ACT_Logger</Name>
       </Action>
       <Method>
         <Name>M_SetBits</Name>
@@ -19958,7 +19957,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode.
         <BitSize>32</BitSize>
         <BitOffs>91200</BitOffs>
         <Default>
-          <DateTime>T#600S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -20731,7 +20730,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode.
         <BitSize>32</BitSize>
         <BitOffs>88064</BitOffs>
         <Default>
-          <DateTime>T#900S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -20850,7 +20849,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode.
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#10s</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -20895,7 +20894,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode.
         <BitSize>32</BitSize>
         <BitOffs>92608</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -21304,7 +21303,7 @@ For FAST shutter control</Comment>
         <BitSize>32</BitSize>
         <BitOffs>95488</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -21331,7 +21330,7 @@ For FAST shutter control</Comment>
         <BitSize>32</BitSize>
         <BitOffs>95968</BitOffs>
         <Default>
-          <DateTime>T#60S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -21631,10 +21630,10 @@ For FAST shutter control</Comment>
         </Properties>
       </SubItem>
       <Action>
-        <Name>ACT_Logger</Name>
+        <Name>IO</Name>
       </Action>
       <Action>
-        <Name>IO</Name>
+        <Name>ACT_Logger</Name>
       </Action>
       <Properties>
         <Property>
@@ -21668,7 +21667,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <BitSize>32</BitSize>
         <BitOffs>91168</BitOffs>
         <Default>
-          <DateTime>T#600S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -21964,7 +21963,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <BitSize>32</BitSize>
         <BitOffs>91200</BitOffs>
         <Default>
-          <DateTime>T#600S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -22223,7 +22222,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <BitSize>32</BitSize>
         <BitOffs>160</BitOffs>
         <Default>
-          <DateTime>T#10S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -22392,10 +22391,10 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         </Default>
       </SubItem>
       <Action>
-        <Name>ACT_Logger</Name>
+        <Name>ACT_IO</Name>
       </Action>
       <Action>
-        <Name>ACT_IO</Name>
+        <Name>ACT_Logger</Name>
       </Action>
       <Method>
         <Name>M_SetBits</Name>
@@ -22578,7 +22577,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#10s</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -22617,7 +22616,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <BitSize>32</BitSize>
         <BitOffs>92352</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -23761,7 +23760,7 @@ More?
         <Default>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#1S</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -23869,10 +23868,10 @@ More?
         <Name>ACT_Persistent</Name>
       </Action>
       <Action>
-        <Name>ACT_Logger</Name>
+        <Name>ACT_IO</Name>
       </Action>
       <Action>
-        <Name>ACT_IO</Name>
+        <Name>ACT_Logger</Name>
       </Action>
       <Method>
         <Name>M_Run</Name>
@@ -24809,7 +24808,7 @@ More?
         <BitSize>32</BitSize>
         <BitOffs>800</BitOffs>
         <Default>
-          <DateTime>TIME#1s0ms</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -25048,7 +25047,7 @@ More?
         <BitSize>32</BitSize>
         <BitOffs>96</BitOffs>
         <Default>
-          <DateTime>TIME#1s0ms</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -25312,7 +25311,7 @@ More?
         <BitSize>32</BitSize>
         <BitOffs>856672</BitOffs>
         <Default>
-          <DateTime>TIME#1s0ms</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
       </SubItem>
       <Properties>
@@ -25685,10 +25684,10 @@ Readbacks</Comment>
         <Name>ACT_Persistent</Name>
       </Action>
       <Action>
-        <Name>ACT_Logger</Name>
+        <Name>ACT_IO</Name>
       </Action>
       <Action>
-        <Name>ACT_IO</Name>
+        <Name>ACT_Logger</Name>
       </Action>
       <Method>
         <Name>M_Run</Name>
@@ -26150,7 +26149,7 @@ Readbacks</Comment>
         <BitSize>32</BitSize>
         <BitOffs>192</BitOffs>
         <Default>
-          <DateTime>TIME#1s0ms</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -26508,7 +26507,7 @@ Readbacks</Comment>
         <BitSize>32</BitSize>
         <BitOffs>96</BitOffs>
         <Default>
-          <DateTime>TIME#1s0ms</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
         <Properties>
           <Property>
@@ -26714,10 +26713,10 @@ Readbacks</Comment>
         <Name>a_ClearStatus</Name>
       </Action>
       <Action>
-        <Name>a_DriverErrorMesg</Name>
+        <Name>a_TransactionErrorMesg</Name>
       </Action>
       <Action>
-        <Name>a_TransactionErrorMesg</Name>
+        <Name>a_DriverErrorMesg</Name>
       </Action>
       <Properties>
         <Property>
@@ -26735,7 +26734,7 @@ Readbacks</Comment>
         <BitSize>32</BitSize>
         <BitOffs>64</BitOffs>
         <Default>
-          <DateTime>TIME#1S0MS</DateTime>
+          <DateTime>TIME</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -27246,7 +27245,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183744</BitOffs>
         <Default>
-          <DateTime>T#60S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -27255,7 +27254,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183776</BitOffs>
         <Default>
-          <DateTime>T#10s</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -27265,7 +27264,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>183808</BitOffs>
         <Default>
-          <DateTime>T#30S</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <SubItem>
@@ -27364,13 +27363,13 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>ACT_IO</Name>
       </Action>
       <Action>
-        <Name>ACT_Persistent</Name>
-      </Action>
-      <Action>
         <Name>ACT_ResetAlarms</Name>
       </Action>
       <Action>
         <Name>ACT_PMPS</Name>
+      </Action>
+      <Action>
+        <Name>ACT_Persistent</Name>
       </Action>
       <Method>
         <Name>M_IsClosed</Name>
@@ -40357,21 +40356,22 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <ReturnBitSize>32</ReturnBitSize>
       </Method>
       <Method>
-        <Name>Open</Name>
+        <Name>Write</Name>
         <Comment>
-    Opens a file
+    Writes the contents of the buffer into a file.
 </Comment>
         <ReturnType Namespace="LCLS_General.TcUnit.SysDir.SysTypes">RTS_IEC_RESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
         <Parameter>
-          <Name>FileName</Name>
-          <Comment> File name can contain an absolute or relative path to the file. Path entries must be separated with a Slash (/)</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
+          <Name>BufferPointer</Name>
+          <Comment> Call with ADR();</Comment>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
         </Parameter>
         <Parameter>
-          <Name>FileAccessMode</Name>
-          <Type Namespace="LCLS_General.TcUnit.SysFile">ACCESS_MODE</Type>
+          <Name>Size</Name>
+          <Comment> Call with SIZEOF();</Comment>
+          <Type>UDINT</Type>
           <BitSize>32</BitSize>
         </Parameter>
       </Method>
@@ -40390,22 +40390,21 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Parameter>
       </Method>
       <Method>
-        <Name>Write</Name>
+        <Name>Open</Name>
         <Comment>
-    Writes the contents of the buffer into a file.
+    Opens a file
 </Comment>
         <ReturnType Namespace="LCLS_General.TcUnit.SysDir.SysTypes">RTS_IEC_RESULT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
         <Parameter>
-          <Name>BufferPointer</Name>
-          <Comment> Call with ADR();</Comment>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
+          <Name>FileName</Name>
+          <Comment> File name can contain an absolute or relative path to the file. Path entries must be separated with a Slash (/)</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
         </Parameter>
         <Parameter>
-          <Name>Size</Name>
-          <Comment> Call with SIZEOF();</Comment>
-          <Type>UDINT</Type>
+          <Name>FileAccessMode</Name>
+          <Type Namespace="LCLS_General.TcUnit.SysFile">ACCESS_MODE</Type>
           <BitSize>32</BitSize>
         </Parameter>
       </Method>
@@ -40604,100 +40603,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Properties>
       </Method>
       <Method>
-        <Name>Clear</Name>
-        <Comment>
-    Clears the buffer and sets the length to 0
-</Comment>
-        <Local>
-          <Name>Count</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>__setAppend</Name>
-        <Comment>
-    Appends a string to the buffer
-</Comment>
-        <Parameter>
-          <Name>Append</Name>
-          <Comment>
-    Appends a string to the buffer
-</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>ByteIn</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ByteBuffer</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>__getBufferSize</Name>
-        <Comment>
-    Read current Buffersize
-</Comment>
-        <ReturnType>UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Local>
-          <Name>BufferSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>__setLength</Name>
-        <Comment>
-    Gets/Sets the current length (in bytes) of the streambuffer
-</Comment>
-        <Parameter>
-          <Name>Length</Name>
-          <Comment>
-    Gets/Sets the current length (in bytes) of the streambuffer
-</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>SetBuffer</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>PointerToBufferAddress</Name>
-          <Comment> Set buffer address (ADR ...)</Comment>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>SizeOfBuffer</Name>
-          <Comment> Set buffer size (SIZEOF ...)</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name>Copy</Name>
         <Comment>
     Copies a string from the character buffer
@@ -40756,6 +40661,100 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type>UDINT</Type>
           <BitSize>32</BitSize>
         </Local>
+      </Method>
+      <Method>
+        <Name>Clear</Name>
+        <Comment>
+    Clears the buffer and sets the length to 0
+</Comment>
+        <Local>
+          <Name>Count</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>__setLength</Name>
+        <Comment>
+    Gets/Sets the current length (in bytes) of the streambuffer
+</Comment>
+        <Parameter>
+          <Name>Length</Name>
+          <Comment>
+    Gets/Sets the current length (in bytes) of the streambuffer
+</Comment>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name>__getBufferSize</Name>
+        <Comment>
+    Read current Buffersize
+</Comment>
+        <ReturnType>UDINT</ReturnType>
+        <ReturnBitSize>32</ReturnBitSize>
+        <Local>
+          <Name>BufferSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
+      </Method>
+      <Method>
+        <Name>SetBuffer</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>PointerToBufferAddress</Name>
+          <Comment> Set buffer address (ADR ...)</Comment>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>SizeOfBuffer</Name>
+          <Comment> Set buffer size (SIZEOF ...)</Comment>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>__setAppend</Name>
+        <Comment>
+    Appends a string to the buffer
+</Comment>
+        <Parameter>
+          <Name>Append</Name>
+          <Comment>
+    Appends a string to the buffer
+</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>ByteIn</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ByteBuffer</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Properties>
+          <Property>
+            <Name>property</Name>
+          </Property>
+        </Properties>
       </Method>
       <Properties>
         <Property>
@@ -40959,6 +40958,13 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Parameter>
       </Method>
       <Method>
+        <Name>ToStartBuffer</Name>
+        <Comment>
+    Jump to the beginning of the XML data
+    XML.ToStartBuffer();
+</Comment>
+      </Method>
+      <Method>
         <Name>NewTag</Name>
         <Comment>
     Creates a new Tag:
@@ -40989,36 +40995,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>WriteDocumentHeader</Name>
-        <Comment>
-    Add your own preffered fileheader like:
-    XML: &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    
-    Start with calling this method before appending any other tags!
-
-    XML.WriteDocumentHeader('&lt;?xml version="1.0" encoding="UTF-8"?&gt;');
-</Comment>
-        <Parameter>
-          <Name>Header</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>NewComment</Name>
-        <Comment>
-    Adds a comment
-    XML: &lt;!-- MyComment --&gt;
-
-    XML.NewComment(Comment: = 'MyComment');
-</Comment>
-        <Parameter>
-          <Name>Comment</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
         <Name>__getLength</Name>
         <ReturnType>UDINT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
@@ -41034,9 +41010,29 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Properties>
       </Method>
       <Method>
+        <Name>ClearBuffer</Name>
+        <Comment>
+    Clears the contents of the entire buffer.
+</Comment>
+      </Method>
+      <Method>
         <Name>NewTagData</Name>
         <Parameter>
           <Name>Data</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>NewComment</Name>
+        <Comment>
+    Adds a comment
+    XML: &lt;!-- MyComment --&gt;
+
+    XML.NewComment(Comment: = 'MyComment');
+</Comment>
+        <Parameter>
+          <Name>Comment</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
@@ -41057,17 +41053,20 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Parameter>
       </Method>
       <Method>
-        <Name>ClearBuffer</Name>
+        <Name>WriteDocumentHeader</Name>
         <Comment>
-    Clears the contents of the entire buffer.
+    Add your own preffered fileheader like:
+    XML: &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    
+    Start with calling this method before appending any other tags!
+
+    XML.WriteDocumentHeader('&lt;?xml version="1.0" encoding="UTF-8"?&gt;');
 </Comment>
-      </Method>
-      <Method>
-        <Name>ToStartBuffer</Name>
-        <Comment>
-    Jump to the beginning of the XML data
-    XML.ToStartBuffer();
-</Comment>
+        <Parameter>
+          <Name>Header</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -41441,6 +41440,12 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>SetFailed</Name>
       </Method>
       <Method>
+        <Name>GetTestOrder</Name>
+        <Comment> Gets in which order/sequence relative to the order tests should this test be executed/evaluated. </Comment>
+        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>SetName</Name>
         <Parameter>
           <Name>Name</Name>
@@ -41452,14 +41457,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <Name>GetName</Name>
         <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
         <ReturnBitSize>2048</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>SetNumberOfAssertions</Name>
-        <Parameter>
-          <Name>NoOfAssertions</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
       </Method>
       <Method>
         <Name>SetTestOrder</Name>
@@ -41476,9 +41473,9 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
-        <Name>GetNumberOfAssertions</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>IsFailed</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
         <Name>SetFinished</Name>
@@ -41518,15 +41515,17 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <ReturnBitSize>8</ReturnBitSize>
       </Method>
       <Method>
-        <Name>GetTestOrder</Name>
-        <Comment> Gets in which order/sequence relative to the order tests should this test be executed/evaluated. </Comment>
-        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <Name>GetNumberOfAssertions</Name>
+        <ReturnType>UINT</ReturnType>
         <ReturnBitSize>16</ReturnBitSize>
       </Method>
       <Method>
-        <Name>IsFailed</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
+        <Name>SetNumberOfAssertions</Name>
+        <Parameter>
+          <Name>NoOfAssertions</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -42181,35 +42180,52 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitOffs>24640416</BitOffs>
       </SubItem>
       <Method>
-        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>GetNumberOfAssertsForTest</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>AddAssertResult</Name>
         <Parameter>
-          <Name>CompleteTestInstancePath</Name>
+          <Name>ExpectedSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedTypeClass</Name>
+          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedValue</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualTypeClass</Name>
+          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualValue</Name>
+          <Type PointerTo="1">BYTE</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
-        <Local>
-          <Name>Counter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfAsserts</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
       </Method>
       <Method>
-        <Name>CreateAssertResultInstance</Name>
+        <Name>GetDetectionCountThisCycle</Name>
+        <ReturnType>UINT</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
         <Parameter>
           <Name>ExpectedSize</Name>
           <Type>UDINT</Type>
@@ -42257,9 +42273,27 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>GetDetectionCountThisCycle</Name>
+        <Name>GetNumberOfAssertsForTest</Name>
         <ReturnType>UINT</ReturnType>
         <ReturnBitSize>16</ReturnBitSize>
+        <Parameter>
+          <Name>CompleteTestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Counter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+        <Local>
+          <Name>NumberOfAsserts</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>CreateAssertResultInstance</Name>
         <Parameter>
           <Name>ExpectedSize</Name>
           <Type>UDINT</Type>
@@ -42483,47 +42517,12 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>AddAssertResult</Name>
-        <Parameter>
-          <Name>ExpectedSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedTypeClass</Name>
-          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
+        <Local>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
           <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedValue</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualTypeClass</Name>
-          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualValue</Name>
-          <Type PointerTo="1">BYTE</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
+        </Local>
       </Method>
       <Properties>
         <Property>
@@ -42669,37 +42668,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitOffs>8480416</BitOffs>
       </SubItem>
       <Method>
-        <Name>CreateAssertResultInstance</Name>
-        <Parameter>
-          <Name>ExpectedsSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ExpectedsTypeClass</Name>
-          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualsSize</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>ActualsTypeClass</Name>
-          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
+        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
         <Local>
           <Name>IteratorCounter</Name>
           <Type>UINT</Type>
@@ -42707,9 +42676,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>GetDetectionCountThisCycle</Name>
-        <ReturnType>UINT</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
+        <Name>CreateAssertResultInstance</Name>
         <Parameter>
           <Name>ExpectedsSize</Name>
           <Type>UDINT</Type>
@@ -42926,7 +42893,39 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>CopyDetectionCountAndResetDetectionCountInThisCycle</Name>
+        <Name>GetDetectionCountThisCycle</Name>
+        <ReturnType>UINT</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
+        <Parameter>
+          <Name>ExpectedsSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ExpectedsTypeClass</Name>
+          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualsSize</Name>
+          <Type>UDINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>ActualsTypeClass</Name>
+          <Type Namespace="LCLS_General.TcUnit.IBaseLibrary">TypeClass</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
         <Local>
           <Name>IteratorCounter</Name>
           <Type>UINT</Type>
@@ -43494,21 +43493,21 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>AssertEquals_BYTE</Name>
+        <Name>AssertEquals_DWORD</Name>
         <Comment>
-    Asserts that two BYTEs are equal. If they are not, an assertion error is created.
+    Asserts that two DWORDs are equal. If they are not, an assertion error is created.
 </Comment>
         <Parameter>
           <Name>Expected</Name>
-          <Comment> BYTE expected value</Comment>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
+          <Comment> DWORD expected value</Comment>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
         </Parameter>
         <Parameter>
           <Name>Actual</Name>
-          <Comment> BYTE actual value</Comment>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
+          <Comment> DWORD actual value</Comment>
+          <Type>DWORD</Type>
+          <BitSize>32</BitSize>
         </Parameter>
         <Parameter>
           <Name>Message</Name>
@@ -44245,6 +44244,688 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
+        <Name>AssertFalse</Name>
+        <Comment>
+    Asserts that a condition is false. If it is not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Condition</Name>
+          <Comment> Condition to be checked</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AssertArray2dEquals_LREAL</Name>
+        <Comment>
+    Asserts that two LREAL 2D-arrays are equal to within a positive delta. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> LREAL 2d array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> LREAL 2d array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Delta</Name>
+          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>DimensionIndex</Name>
+          <Comment> Index when looping through Dimensions</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundExpecteds</Name>
+          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundExpecteds</Name>
+          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundActuals</Name>
+          <Comment> Lower bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundActuals</Name>
+          <Comment> Upper bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Comment> Size of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Comment> Size of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Offset</Name>
+          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedArrayIndex</Name>
+          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualArrayIndex</Name>
+          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Expected</Name>
+          <Comment> Single expected value</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Actual</Name>
+          <Comment> Single actual value</Comment>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_ULINT</Name>
+        <Comment>
+    Asserts that two ULINTs are equal. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> ULINT expected value</Comment>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> ULINT actual value</Comment>
+          <Type>ULINT</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_BOOL</Name>
+        <Comment>
+    Asserts that two BOOLs are equal. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> BOOL expected value</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> BOOL actual value</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertTrue</Name>
+        <Comment>
+    Asserts that a condition is true. If it is not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Condition</Name>
+          <Comment> Condition to be checked</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AssertEquals_USINT</Name>
+        <Comment>
+    Asserts that two USINTs are equal. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> USINT expected value</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> USINT actual value</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertArray2dEquals_REAL</Name>
+        <Comment>
+    Asserts that two REAL 2D-arrays are equal to within a positive delta. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> REAL 2d array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> REAL 2d array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>2</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Delta</Name>
+          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>DimensionIndex</Name>
+          <Comment> Index when looping through Dimensions</Comment>
+          <Type>USINT</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundExpecteds</Name>
+          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundExpecteds</Name>
+          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>LowerBoundActuals</Name>
+          <Comment> Lower bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>UpperBoundActuals</Name>
+          <Comment> Upper bounds of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Comment> Size of Expecteds array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Comment> Size of Actuals array in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Offset</Name>
+          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedArrayIndex</Name>
+          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualArrayIndex</Name>
+          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
+          <Type>DINT</Type>
+          <ArrayInfo>
+            <LBound>1</LBound>
+            <Elements>2</Elements>
+          </ArrayInfo>
+          <BitSize>64</BitSize>
+        </Local>
+        <Local>
+          <Name>Expected</Name>
+          <Comment> Single expected value</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>Actual</Name>
+          <Comment> Single actual value</Comment>
+          <Type>REAL</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertEquals_BYTE</Name>
+        <Comment>
+    Asserts that two BYTEs are equal. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expected</Name>
+          <Comment> BYTE expected value</Comment>
+          <Type>BYTE</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> BYTE actual value</Comment>
+          <Type>BYTE</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>AssertArrayEquals_USINT</Name>
+        <Comment>
+    Asserts that two USINT arrays are equal. If they are not, an assertion error is created.
+</Comment>
+        <Parameter>
+          <Name>Expecteds</Name>
+          <Comment> USINT array with expected values</Comment>
+          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>1</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Actuals</Name>
+          <Comment> USINT array with actual values</Comment>
+          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>variable_length_array</Name>
+            </Property>
+            <Property>
+              <Name>Dimensions</Name>
+              <Value>1</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>Equals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeEquals</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>Index</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualString</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+        </Local>
+        <Local>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfExpecteds</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>SizeOfActuals</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ExpectedsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>SetHasStartedRunning</Name>
+      </Method>
+      <Method>
+        <Name>SetTestFailed</Name>
+        <Parameter>
+          <Name>AssertionType</Name>
+          <Type Namespace="LCLS_General.TcUnit">E_AssertionType</Type>
+          <BitSize>8</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>AssertionMessage</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Local>
+        <Local>
+          <Name>NumberOfTestsToAnalyse</Name>
+          <Type>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <BitSize>16</BitSize>
+        </Local>
+      </Method>
+      <Method>
+        <Name>GetInstancePath</Name>
+        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+      </Method>
+      <Method>
         <Name>AssertEquals</Name>
         <Comment>
     Asserts that two objects (of any type) are equal. If they are not, an assertion error is created.
@@ -44554,533 +45235,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <Name>hasanytype</Name>
           </Property>
         </Properties>
-      </Method>
-      <Method>
-        <Name>AssertFalse</Name>
-        <Comment>
-    Asserts that a condition is false. If it is not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Condition</Name>
-          <Comment> Condition to be checked</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AssertEquals_SINT</Name>
-        <Comment>
-    Asserts that two SINTs are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> SINT expected value</Comment>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> SINT actual value</Comment>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertArray2dEquals_LREAL</Name>
-        <Comment>
-    Asserts that two LREAL 2D-arrays are equal to within a positive delta. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> LREAL 2d array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Actuals</Name>
-          <Comment> LREAL 2d array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">LREAL</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Delta</Name>
-          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>DimensionIndex</Name>
-          <Comment> Index when looping through Dimensions</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundExpecteds</Name>
-          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundExpecteds</Name>
-          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundActuals</Name>
-          <Comment> Lower bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundActuals</Name>
-          <Comment> Upper bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Comment> Size of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Comment> Size of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Offset</Name>
-          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedArrayIndex</Name>
-          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualArrayIndex</Name>
-          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Expected</Name>
-          <Comment> Single expected value</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Actual</Name>
-          <Comment> Single actual value</Comment>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_ULINT</Name>
-        <Comment>
-    Asserts that two ULINTs are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> ULINT expected value</Comment>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> ULINT actual value</Comment>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_BOOL</Name>
-        <Comment>
-    Asserts that two BOOLs are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> BOOL expected value</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> BOOL actual value</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_USINT</Name>
-        <Comment>
-    Asserts that two USINTs are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> USINT expected value</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> USINT actual value</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertEquals_LWORD</Name>
-        <Comment>
-    Asserts that two LWORDs are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expected</Name>
-          <Comment> LWORD expected value</Comment>
-          <Type>LWORD</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> LWORD actual value</Comment>
-          <Type>LWORD</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>AssertArrayEquals_USINT</Name>
-        <Comment>
-    Asserts that two USINT arrays are equal. If they are not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> USINT array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>1</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Actuals</Name>
-          <Comment> USINT array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="1">USINT</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>1</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>Index</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>SetHasStartedRunning</Name>
-      </Method>
-      <Method>
-        <Name>SetTestFailed</Name>
-        <Parameter>
-          <Name>AssertionType</Name>
-          <Type Namespace="LCLS_General.TcUnit">E_AssertionType</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>AssertionMessage</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
-          <BitSize>16</BitSize>
-        </Local>
-      </Method>
-      <Method>
-        <Name>GetInstancePath</Name>
-        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestOrderNumber</Name>
-        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
-        <Parameter>
-          <Name>TestName</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Local>
-          <Name>IteratorCounter</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Local>
-        <Local>
-          <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
-          <BitSize>16</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>GetNumberOfTests</Name>
@@ -45625,6 +45779,21 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
+        <Name>AddTestNameToInstancePath</Name>
+        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
+        <ReturnBitSize>2048</ReturnBitSize>
+        <Parameter>
+          <Name>TestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Parameter>
+        <Local>
+          <Name>CompleteTestInstancePath</Name>
+          <Type Namespace="Tc2_System">T_MaxString</Type>
+          <BitSize>2048</BitSize>
+        </Local>
+      </Method>
+      <Method>
         <Name>SetTestFinished</Name>
         <Comment> Marks the test as finished in this testsuite.
    Returns TRUE if test was found, and FALSE if a test with this name was not found in this testsuite
@@ -46116,56 +46285,24 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>AssertEquals_DWORD</Name>
-        <Comment>
-    Asserts that two DWORDs are equal. If they are not, an assertion error is created.
-</Comment>
+        <Name>GetTestOrderNumber</Name>
+        <ReturnType>UINT (0..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</ReturnType>
+        <ReturnBitSize>16</ReturnBitSize>
         <Parameter>
-          <Name>Expected</Name>
-          <Comment> DWORD expected value</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Comment> DWORD actual value</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
+          <Name>TestName</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
+          <Name>IteratorCounter</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
         </Local>
         <Local>
-          <Name>AlreadyReported</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
+          <Name>NumberOfTestsToAnalyse</Name>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <BitSize>16</BitSize>
         </Local>
-      </Method>
-      <Method>
-        <Name>AssertTrue</Name>
-        <Comment>
-    Asserts that a condition is true. If it is not, an assertion error is created.
-</Comment>
-        <Parameter>
-          <Name>Condition</Name>
-          <Comment> Condition to be checked</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Comment> The identifying message for the assertion error</Comment>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
       </Method>
       <Method>
         <Name>AssertEquals_INT</Name>
@@ -46236,45 +46373,21 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>AssertArray2dEquals_REAL</Name>
+        <Name>AssertEquals_SINT</Name>
         <Comment>
-    Asserts that two REAL 2D-arrays are equal to within a positive delta. If they are not, an assertion error is created.
+    Asserts that two SINTs are equal. If they are not, an assertion error is created.
 </Comment>
         <Parameter>
-          <Name>Expecteds</Name>
-          <Comment> REAL 2d array with expected values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
+          <Name>Expected</Name>
+          <Comment> SINT expected value</Comment>
+          <Type>SINT</Type>
+          <BitSize>8</BitSize>
         </Parameter>
         <Parameter>
-          <Name>Actuals</Name>
-          <Comment> REAL 2d array with actual values</Comment>
-          <Type PointerTo="1" RpcArrayDim="2">REAL</Type>
-          <BitSize>64</BitSize>
-          <Properties>
-            <Property>
-              <Name>variable_length_array</Name>
-            </Property>
-            <Property>
-              <Name>Dimensions</Name>
-              <Value>2</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Delta</Name>
-          <Comment> The maximum delta between the value of expected and actual for which both numbers are still considered equal, proportional to the expected value in that array cell</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
+          <Name>Actual</Name>
+          <Comment> SINT actual value</Comment>
+          <Type>SINT</Type>
+          <BitSize>8</BitSize>
         </Parameter>
         <Parameter>
           <Name>Message</Name>
@@ -46283,22 +46396,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>Equals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeEquals</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedString</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualString</Name>
+          <Name>TestInstancePath</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Local>
@@ -46306,124 +46404,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Name>AlreadyReported</Name>
           <Type>BOOL</Type>
           <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Local>
-        <Local>
-          <Name>DimensionIndex</Name>
-          <Comment> Index when looping through Dimensions</Comment>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundExpecteds</Name>
-          <Comment> Lower bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundExpecteds</Name>
-          <Comment> Upper bounds of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>LowerBoundActuals</Name>
-          <Comment> Lower bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>UpperBoundActuals</Name>
-          <Comment> Upper bounds of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfExpecteds</Name>
-          <Comment> Size of Expecteds array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>SizeOfActuals</Name>
-          <Comment> Size of Actuals array in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Offset</Name>
-          <Comment> Current Array index offsets from Lower Bound in each dimension</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ExpectedArrayIndex</Name>
-          <Comment> Array of current Expected array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>ActualArrayIndex</Name>
-          <Comment> Array of current Actual array indexes when looping through arrays</Comment>
-          <Type>DINT</Type>
-          <ArrayInfo>
-            <LBound>1</LBound>
-            <Elements>2</Elements>
-          </ArrayInfo>
-          <BitSize>64</BitSize>
-        </Local>
-        <Local>
-          <Name>Expected</Name>
-          <Comment> Single expected value</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>Actual</Name>
-          <Comment> Single actual value</Comment>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
         </Local>
       </Method>
       <Method>
@@ -46697,18 +46677,37 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Local>
       </Method>
       <Method>
-        <Name>AddTestNameToInstancePath</Name>
-        <ReturnType Namespace="Tc2_System">T_MaxString</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
+        <Name>AssertEquals_LWORD</Name>
+        <Comment>
+    Asserts that two LWORDs are equal. If they are not, an assertion error is created.
+</Comment>
         <Parameter>
-          <Name>TestInstancePath</Name>
+          <Name>Expected</Name>
+          <Comment> LWORD expected value</Comment>
+          <Type>LWORD</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Actual</Name>
+          <Comment> LWORD actual value</Comment>
+          <Type>LWORD</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>Message</Name>
+          <Comment> The identifying message for the assertion error</Comment>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
         </Parameter>
         <Local>
-          <Name>CompleteTestInstancePath</Name>
+          <Name>TestInstancePath</Name>
           <Type Namespace="Tc2_System">T_MaxString</Type>
           <BitSize>2048</BitSize>
+        </Local>
+        <Local>
+          <Name>AlreadyReported</Name>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
         </Local>
       </Method>
       <Method>
@@ -47296,7 +47295,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           </SubItem>
           <SubItem>
             <Name>.PT</Name>
-            <DateTime>T#10MS</DateTime>
+            <DateTime>T</DateTime>
           </SubItem>
         </Default>
       </SubItem>
@@ -47315,13 +47314,40 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         <BitSize>32</BitSize>
         <BitOffs>8321120</BitOffs>
         <Default>
-          <DateTime>T#10MS</DateTime>
+          <DateTime>T</DateTime>
         </Default>
       </SubItem>
       <Method>
         <Name>GetLogCount</Name>
         <ReturnType>UDINT</ReturnType>
         <ReturnBitSize>32</ReturnBitSize>
+      </Method>
+      <Method>
+        <Name>GetAndRemoveLogFromQueue</Name>
+        <Comment> Reads and removes the oldest message </Comment>
+        <Parameter>
+          <Name>AdsLogStringMessage</Name>
+          <Type Namespace="LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
+          <BitSize>4128</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>Error</Name>
+          <Comment> Buffer empty</Comment>
+          <Type>BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </Parameter>
       </Method>
       <Method>
         <Name>WriteLog</Name>
@@ -47358,33 +47384,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           <Type Namespace="LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
           <BitSize>4128</BitSize>
         </Local>
-      </Method>
-      <Method>
-        <Name>GetAndRemoveLogFromQueue</Name>
-        <Comment> Reads and removes the oldest message </Comment>
-        <Parameter>
-          <Name>AdsLogStringMessage</Name>
-          <Type Namespace="LCLS_General.TcUnit">ST_AdsLogStringMessage</Type>
-          <BitSize>4128</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>Error</Name>
-          <Comment> Buffer empty</Comment>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
       </Method>
       <Properties>
         <Property>
@@ -52021,7 +52020,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#1ms</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <Properties>
               <Property>
@@ -52051,7 +52050,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#100ms</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <Properties>
               <Property>
@@ -52066,7 +52065,7 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#10m</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <Properties>
               <Property>
@@ -57281,7 +57280,7 @@ EL6692 TxPDO state
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#10s</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <Properties>
               <Property>
@@ -57868,7 +57867,7 @@ EL6692 TxPDO state
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#30S</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <BitOffs>639947232</BitOffs>
           </Symbol>
@@ -67728,7 +67727,7 @@ K4S2_02_E18 (EL6001)
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#0MS</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <Properties>
               <Property>
@@ -68757,7 +68756,7 @@ K4S2_02_E18 (EL6001)
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
             <Default>
-              <DateTime>T#30S</DateTime>
+              <DateTime>T</DateTime>
             </Default>
             <BitOffs>640970304</BitOffs>
           </Symbol>
@@ -69240,11 +69239,11 @@ K4S2_02_E18 (EL6001)
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-10T11:19:24</Value>
+          <Value>2024-10-20T11:18:24</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>724992</Value>
+          <Value>729088</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
