@@ -15,7 +15,7 @@ VAR
     bM1K1Veto_IN : BOOL;
     bST3K4Veto_IN: BOOL;
     bST4K4Veto_IN: BOOL;
-//	bM1K3Veto_IN: BOOL;
+    bM1K3Veto_IN: BOOL; // adding MR1K3Veto In on 10-22-24
     bST1K4Veto_IN: BOOL;
 END_VAR
 ]]></Declaration>
@@ -23,18 +23,18 @@ END_VAR
       <ST><![CDATA[
 bM1K1Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]
                 AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
-//bM1K3Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
-//                AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN];
+bM1K3Veto_IN := NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                AND PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN];
 bST1K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K4];
-bST3K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] OR bM1K1Veto_IN OR bST1K4Veto_IN;
-bST4K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4] OR bST3K4Veto_IN OR bST1K4Veto_IN OR bM1K1Veto_IN;
+bST3K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4] OR bM1K1Veto_IN OR bM1K3Veto_IN OR bST1K4Veto_IN;
+bST4K4Veto_IN := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4] OR bST3K4Veto_IN OR bST1K4Veto_IN OR bM1K1Veto_IN OR bM1K3Veto_IN ;
 
 (*FastFaultOuput*)
 // Everything upstream ST3K4
-g_FastFaultOutput1.Execute(i_xVeto:=bM1K1Veto_IN , bAutoReset:= TRUE);
-//g_FastFaultOutput1.Execute(i_xVeto:=bM1K1Veto_IN OR bM1K3Veto_IN, bAutoReset:= TRUE);
+//g_FastFaultOutput1.Execute(i_xVeto:=bM1K1Veto_IN , bAutoReset:= TRUE);
+g_FastFaultOutput1.Execute(i_xVeto:=bM1K1Veto_IN OR bM1K3Veto_IN, bAutoReset:= TRUE);
 // Everything downstream of ST3K4
-g_FastFaultOutput2.Execute(i_xVeto:= bST3K4Veto_IN, bAutoReset:= TRUE);
+g_FastFaultOutput2.Execute(i_xVeto:= bST3K4Veto_IN OR bST1K4Veto_IN, bAutoReset:= TRUE);
 
 // Everything downstream of ST4K4
 g_FastFaultOutput5.Execute(i_xVeto:= bST4K4Veto_IN, bAutoReset:= TRUE);
@@ -45,7 +45,7 @@ ff5_ff2_link_vac(
 
 // Preemptive system
 fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
-    i_bVeto := bM1K1Veto_IN);
+    i_bVeto := bM1K1Veto_IN OR bM1K3Veto_IN);
 
 //fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4],
 //		HigherAuthority:=g_fbArbiter1 ,
