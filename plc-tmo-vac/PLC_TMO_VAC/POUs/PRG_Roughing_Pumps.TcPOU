@@ -78,19 +78,20 @@ IP1_ECAT_COM_ERROR := (xEcatBridge_TxPDO_state OR xEcatBridge_External_device_no
 xLAMP_VRC01_VRC02_atOpnLS := IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR
                               AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_COM_ERROR;
 
+//removing interlock from tmo_rough2_vrc_01 and IP1_VRC_02 interlock per James' request on 10-04-24
 TMO_ROUGH1_VRC_01_xExt_OK := ( xDifPressureOK OR TMO_ROUGH1_VRC_02.iq_stValve.i_xClsLS )
                             AND (
                                   IP1_ROUGH_VRC_01_AtOpnLS
                                   AND NOT IP1_ECAT_COM_ERROR
-                                  and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS
-                                  OR xLAMP_VRC01_VRC02_atOpnLS
+                               (*   and TMO_ROUGH2_VRC_01.iq_stValve.i_xOpnLS
+                                  OR xLAMP_VRC01_VRC02_atOpnLS *)
                                  );
 
 
 (* Set external interlock OK TRUE, when xDifPressureOK or TMO_ROUGH1_VRC_01 is closed *)
 
 TMO_ROUGH1_VRC_02_xExt_OK := xDifPressureOK  OR TMO_ROUGH1_VRC_01.iq_stValve.i_xClsLS;
-
+//make override of tmo_rough1_vrc-01 simple on 10-04-24
 
 TMO_ROUGH1_VRC_01(
                 i_stUSG := TMO_ROUGH1_GPI_02.PG,
@@ -99,14 +100,14 @@ TMO_ROUGH1_VRC_01(
                 i_xEPS_OK := TRUE,
                 i_xPMPS_OK := TRUE,
                 i_xExt_OK := TMO_ROUGH1_VRC_01_xExt_OK,
-                i_xOverrideMode := xSystemOverrideMode_TMO AND TMO_ROUGH1_VRC_01_xExt_OK,
+                i_xOverrideMode := xSystemOverrideMode_TMO AND xDifPressureOK(*TMO_ROUGH1_VRC_01_xExt_OK *),
                 i_xReset := False,
                 io_fbFFHWO :=dummy_FFFO,
                 fbArbiter := dummy_fbArbiter1,
 );
 
 
-
+//make override of tmo_rough1_vrc-02 simple on 10-04-24
 
 TMO_ROUGH1_VRC_02(
                 i_stUSG := TMO_ROUGH1_GPI_03.PG,
@@ -115,7 +116,7 @@ TMO_ROUGH1_VRC_02(
                 i_xEPS_OK := TRUE,
                 i_xPMPS_OK := TRUE,
                 i_xExt_OK := TMO_ROUGH1_VRC_02_xExt_OK,
-                i_xOverrideMode := xSystemOverrideMode_TMO AND TMO_ROUGH1_VRC_02_xExt_OK,
+                i_xOverrideMode := xSystemOverrideMode_TMO AND xDifPressureOK (*TMO_ROUGH1_VRC_02_xExt_OK*),
                 i_xReset := false,
                 io_fbFFHWO :=dummy_FFFO,
                 fbArbiter := dummy_fbArbiter1);
@@ -123,12 +124,12 @@ TMO_ROUGH1_VRC_02(
 
 (* Set TMO_ROUGH2_VRC01 external interlock OK TRUE, if LAMP is connected, and either LAMP_ROUGH_VRC01, VRC02 and VRC03 are open
                     or both TMO_ROUGH1_VRC_01 and lamp_rough_vrc03 are open*)
-
+//remove interlock with tmo_rough1_vrc_01 and IP1_rough_vrc_02, 01 and 03 interlocks per James's request on 10-04-24
 TMO_ROUGH2_VRC_01_xExt_OK := NOT IP1_ECAT_COM_ERROR AND
                         (  (IP1_ROUGH_VRC_01_AtOpnLS AND NOT IP1_ECAT_COM_ERROR
-                                                        AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_COM_ERROR
+                                                  (*      AND IP1_ROUGH_VRC_02_AtOpnLS AND NOT IP1_ECAT_COM_ERROR *)
                                                         AND IP1_ROUGH_VRC_03_AtOpnLS AND NOT IP1_ECAT_COM_ERROR )
-                          OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and IP1_ROUGH_VRC_03_AtOpnLS AND NOT IP1_ECAT_COM_ERROR)
+                        (*  OR ( TMO_ROUGH1_VRC_01.iq_stValve.i_xOpnLS and IP1_ROUGH_VRC_03_AtOpnLS AND NOT IP1_ECAT_COM_ERROR) *)
                           ) ;
 
 TMO_ROUGH2_VRC_01(
