@@ -98,7 +98,7 @@ GEM1_VGC_10(i_stUSG := USG_GCC.IG, i_stDSG:= GEM1_GCC_10.IG,i_xDis_DPIlk := TRUE
 );
 
     ST3K4_PPS_VGC_01(
-                i_stUSG := ST2K4_BCS_PIP_01.q_IG,
+                i_stUSG := ST2K4_BCS_GCC_01.IG,
                 i_stDSG:= PC4K4_XTES_GCC_01.IG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
