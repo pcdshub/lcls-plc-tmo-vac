@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="GVL_FEE_Device" Id="{1e099b9b-502c-4923-9f77-b69bd66fefa8}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -79,7 +79,10 @@ VAR_GLOBAL
 
     PC4K4_XTES_GCC_01 : FB_MKS500;
 
-
+    {attribute 'pytmc' :=' pv: PC4K4:XTES:GCC:02 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S33_EB2 (EP3174-0002)]^AI Standard Channel 3^Value;
+                                 .q_xHV_DIS		:= 	TIIB[B940_K4S33_EB3 (EP2624-0002)]^Channel 2^Output'}
+    PC4K4_XTES_GCC_02 : FB_MX7M;
 
 
 (* Ion Pumps *)
