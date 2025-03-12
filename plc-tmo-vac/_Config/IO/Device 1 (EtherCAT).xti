@@ -108,10 +108,10 @@
 			<EtherCAT PortABoxInfo="#x02000053"/>
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
-			<SyncUnit Name="IP1_ECAT (EL6692)" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="vls" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="K4-S8-DRL-01" NoDeleteIfUnused="true"/>
-			<SyncUnit Name="DREAM_ECAT" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="DreamECAT" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="IP1ECAT" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

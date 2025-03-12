@@ -9,17 +9,17 @@ VAR_GLOBAL
     (*ETHERCAT BRIDGE COM STATUS*)
     //EL6692 TxPDO state
     //0: Other side is in OP state, >0: Error
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^TxPDO state
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^SYNC Inputs^TxPDO state
     '}
     xEcatBridge_TxPDO_state AT %I* : BOOL;
 
     //0: External device connected, 1: External device not connected
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^SYNC Inputs^External device not connected
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^SYNC Inputs^External device not connected
     '}
     xEcatBridge_External_device_not_connected AT %I* : BOOL;
 
     //0 = Data valid, 1 = Data invalid
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^WcState^WcState
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^WcState^WcState
     '}
     xEcatBridge_WcState AT %I* : BOOL;
 
@@ -29,42 +29,42 @@ VAR_GLOBAL
 
     //EL6692 Output
 
-  {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^HUTCH_PLC_NAME'}
+  {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Outputs^HUTCH_PLC_NAME'}
    My_PLC_NAME	AT %Q*	: STRING(8) := 'TMO';
 
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS
     '}
    ROUGH1_VRC_01_AtOpnLS AT %Q* : BOOL := FALSE;
 
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS
     '}
    ROUGH2_VRC_01_AtOpnLS AT %Q* : BOOL := FALSE;
 
        //EL6692 Input
    {attribute 'pytmc' :=' pv: TMO:IP1:PLC:NAME '}
-   {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^ENDSTATION_PLC_NAME
+   {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^ENDSTATION_PLC_NAME
     '}
    IP1_PLC_NAME AT %I*  : STRING(8);
 
-   {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS
+   {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS
     '}
    IP1_ROUGH_VRC_01_AtOpnLS AT %I* : BOOL;
 
-     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS
+     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS
     '}
    IP1_ROUGH_VRC_02_AtOpnLS AT %I* : BOOL;
 
-     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS
+     {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS
     '}
    IP1_ROUGH_VRC_03_AtOpnLS AT %I* : BOOL;
 
     {attribute 'pytmc' :=' pv: TMO:IP1:TURBOS:ALL_AT_SPD'}
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_TURBOS_ALL_AtSpd
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_TURBOS_ALL_AtSpd
     '}
    IP1_TURBOS_ALL_AtSpd AT %I* : BOOL;
 
    {attribute 'pytmc' :=' pv: TMO:IP1:HV_SAFETY_ENABLE'}
-    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_HV_SAFETY_ENABLE
+    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_HV_SAFETY_ENABLE
     '}
    IP1_HV_SAFETY_ENABLE AT %I* : BOOL;
 
@@ -82,9 +82,9 @@ VAR_GLOBAL
   *)
 
    {attribute 'pytmc' :=' pv: TMO:IP1:MAIN:GAUGE'}
-   {attribute 'TcLinkTo' := 	'.i_xAT_VAC				:=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_MAIN_xAT_VAC;
-                             .i_xPRESS_OK			:=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_MAIN_xPRESS_OK;
-                             .i_rPRESS			    :=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT (EL6692)^IO Inputs^IP1_MAIN_rPRESS
+   {attribute 'TcLinkTo' := 	'.i_xAT_VAC				:=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_MAIN_xAT_VAC;
+                             .i_xPRESS_OK			:=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_MAIN_xPRESS_OK;
+                             .i_rPRESS			    :=	TIIB[CX0_E13 (EK1122)]^IP1_ECAT^IO Inputs^IP1_MAIN_rPRESS
     '}
     IP1_MAIN_GAUGE : FB_Gauge_Interface;
 

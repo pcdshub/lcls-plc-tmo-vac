@@ -7,10 +7,10 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00120000" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122 2 port EtherCAT junction" Desc="EK1122"/>
-		<Box File="IP1_ECAT (EL6692).xti" Id="130">
+		<Box File="IP1_ECAT.xti" Id="27">
 			<EtherCAT PortABoxInfo="#x03000081"/>
 		</Box>
-		<Box File="DREAM_ECAT (EL6695-0002).xti" Id="122">
+		<Box File="DREAM_ECAT.xti" Id="28">
 			<EtherCAT PortABoxInfo="#x01000081"/>
 		</Box>
 	</Box>

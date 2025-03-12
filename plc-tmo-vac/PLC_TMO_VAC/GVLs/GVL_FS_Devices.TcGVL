@@ -50,7 +50,7 @@
 
     {attribute 'pytmc' :=' pv: TV1K4:VFS:01 '}
     {attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_e2OO3_MODE;
-	                             .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_ResetFaultCounter;
+                                 .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_ResetFaultCounter;
                                  .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG1;
                                  .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG2;
                                  .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK_IG3;
@@ -121,7 +121,7 @@
 
     {attribute 'pytmc' :=' pv: MR3K4:KBO:VFS:01 '}
     {attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_e2OO3_MODE;
-	                             .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_ResetFaultCounter;
+                                 .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_ResetFaultCounter;
                                  .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG1;
                                  .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG2;
                                  .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK_IG3;
@@ -196,7 +196,7 @@
 
     {attribute 'pytmc' :=' pv: MR4K4:KBO:VFS:01 '}
     {attribute 'TcLinkTo' := 	'.q_e2OO3_MODE		:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_e2OO3_MODE;
-	                             .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_ResetFaultCounter;
+                                 .q_ResetFaultCounter :=TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_ResetFaultCounter;
                                  .q_xPRESS_OK_IG1	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG1;
                                  .q_xPRESS_OK_IG2	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG2;
                                  .q_xPRESS_OK_IG3	:= 	TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance^FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK_IG3;
