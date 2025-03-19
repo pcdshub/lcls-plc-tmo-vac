@@ -89,11 +89,11 @@ END_IF
 
 MR2K4_KBO_VWC_01(
                 i_stUSG := PC4K4_XTES_GCC_01.IG,
-                i_stDSG:= MR2K4_KBO_GCC_01.IG,
+                i_stDSG:= MR2K4_KBO_GCC_01.IG, 
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
                 i_xPMPS_OK := TRUE ,
-                i_xExt_OK := NOT xTurboFault,
+                i_xExt_OK := TRUE, // James request on Feb 2025
                 i_xOverrideMode := xSystemOverrideMode_TMO,
                 i_xReset := xReset_PMPS_FFO2,
                 iq_stValve =>,
@@ -202,12 +202,34 @@ TM2K4_KBO_VWC_01(
                 i_sDevName := 'TM2K4-KBO-VWC-01'
 );
 
-//VFV Valves
+//VFV Valves James request to change on Feb 2025
 TMO_ROUGH1_VFV_01(i_xExtIlkOK := FALSE);
-TMO_ROUGH1_VFV_02(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed());
-TMO_ROUGH1_VFV_03(i_xExtIlkOK := TMO_ROUGH1_VRC_02.M_IsClosed());
-TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed());
+TMO_ROUGH1_VFV_02(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed() AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
+TMO_ROUGH1_VFV_03(i_xExtIlkOK := TMO_ROUGH1_VRC_02.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed() AND PC5K4_VWC_01.M_IsClosed());
+//TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed());
+IF IP1_ECAT_COM_ERROR THEN //If IP1 and Tmo beamline detect communication error,assuming IP1_ROUGH_VRC_02 open, tend to vent entire end station
+    TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
+ELSIF (IP1_ROUGH_VRC_02_AtOpnLS )THEN // vent entire end station
+     TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
+    ELSE //vent part of the IP1 when IP1_ROUGH_VRC_02 is not open
+     TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH2_VRC_01.M_IsClosed());
+END_IF
 
+//MR5K4 and TM2K4 Inteface with DREAM
+//Close window valve from DREAM PLC
+IF bCLOSE_TMO_MR5K4_VWC THEN
+	MR5K4_KBO_VWC_01.M_Set_OPN_SW(FALSE);
+END_IF
+
+IF bCLOSE_TMO_TM2K4_VWC THEN
+	TM2K4_KBO_VWC_01.M_Set_OPN_SW(FALSE);
+END_IF
+
+//Send innformation about limit switch to DREAM PLC
+bTMO_MR5K4_VWC_CLOSED_LS := MR5K4_KBO_VWC_01.iq_stValve.i_xClsLS;
+bTMO_TM2K4_VWC_CLOSED_LS := TM2K4_KBO_VWC_01.iq_stValve.i_xClsLS;
+bTMO_MR5K4_VWC_OPEN_LS	:= MR5K4_KBO_VWC_01.iq_stValve.i_xOpnLS;
+bTMO_TM2K4_VWC_OPEN_LS	:= TM2K4_KBO_VWC_01.iq_stValve.i_xOpnLS;
 ]]></ST>
     </Implementation>
   </POU>

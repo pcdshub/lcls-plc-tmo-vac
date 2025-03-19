@@ -606,8 +606,8 @@
 		<EtherCAT SlaveType="3" AdsServerAddress="00000000021df703" FixedAdsServerNetId="true" PdiType="#x0008" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x1a273052" RevisionNo="#x00050002" InfoDataAddr="true" InfoDataNetId="true" TimeoutMailbox2="2000" GenerateOwnNetId="true" CheckRevisionNoType="3" PortPhys="17" DcTimeLoopControlOnly="true" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6695 EtherCAT Bridge terminal (Secondary)" Desc="EL6695-0002">
 			<SyncMan>0010000426000100010000008000da050004001026010000</SyncMan>
 			<SyncMan>0016000422000100020000008000da050004001622010000</SyncMan>
-			<SyncMan>001c09006400010003000000000000000000001c64010000</SyncMan>
-			<SyncMan>008e13002000010004000000000000000200008e20010000</SyncMan>
+			<SyncMan>001c0d006400010003000000000000000000001c64010000</SyncMan>
+			<SyncMan>008e15002000010004000000000000000200008e20010000</SyncMan>
 			<Fmmu>0000000000000000001c00020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000008e00010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -726,28 +726,46 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Inputs" Index="#x1a08" Flags="#x0020" SyncMan="3">
-				<Entry Name="ENDSTATION_PLC_NAME" BitLen="72" Index="#x6000" Sub="#x01">
+				<Entry Name="ENDSTATION_PLC_NAME" Index="#x6000" Sub="#x01">
 					<Type GUID="{18071995-0000-0000-0000-000900000009}">ARRAY [0..8] OF USINT</Type>
 				</Entry>
-				<Entry Name="DREAM_HV_SAFETY_ENABLE" BitLen="8" Index="#x6000" Sub="#x02">
+				<Entry Name="DREAM_HV_SAFETY_ENABLE" Index="#x6000" Sub="#x02">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="DREAM_TURBOS_ALL_AtSpd" BitLen="8" Index="#x6000" Sub="#x03">
+				<Entry Name="DREAM_TURBOS_ALL_AtSpd" Index="#x6000" Sub="#x03">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="DREAM_MAIN_xAT_VAC" BitLen="8" Index="#x6000" Sub="#x04">
+				<Entry Name="DREAM_MAIN_xAT_VAC" Index="#x6000" Sub="#x04">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="DREAM_MAIN_xPRESS_OK" BitLen="8" Index="#x6000" Sub="#x05">
+				<Entry Name="DREAM_MAIN_xPRESS_OK" Index="#x6000" Sub="#x05">
 					<Type>BOOL</Type>
 				</Entry>
-				<Entry Name="DREAM_MAIN_rPRESS" BitLen="32" Index="#x6000" Sub="#x06">
+				<Entry Name="DREAM_MAIN_rPRESS" Index="#x6000" Sub="#x06">
 					<Type>REAL</Type>
+				</Entry>
+				<Entry Name="CLOSE_TMO_MR5K4_VWC" Index="#x6000" Sub="#x07">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="CLOSE_TMO_TM2K4_VWC " Index="#x6000" Sub="#x08">
+					<Type>BOOL</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
-				<Entry Name="HUTCH_PLC_NAME" BitLen="72" Index="#x7000" Sub="#x01">
+				<Entry Name="HUTCH_PLC_NAME" Index="#x7000" Sub="#x01">
 					<Type GUID="{18071995-0000-0000-0000-000900000009}">ARRAY [0..8] OF USINT</Type>
+				</Entry>
+				<Entry Name="TMO_MR5K4_VWC_CLOSED_LS" Index="#x7000" Sub="#x02">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="TMO_TM2K4_VWC_CLOSED_LS" Index="#x7000" Sub="#x03">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="TMO_MR5K4_VWC_OPEN_LS" Index="#x7000" Sub="#x04">
+					<Type>BOOL</Type>
+				</Entry>
+				<Entry Name="TMO_TM2K4_VWC_OPEN_LS" Index="#x7000" Sub="#x05">
+					<Type>BOOL</Type>
 				</Entry>
 			</Pdo>
 			<CoeProfile ProfileNo="5001"/>
