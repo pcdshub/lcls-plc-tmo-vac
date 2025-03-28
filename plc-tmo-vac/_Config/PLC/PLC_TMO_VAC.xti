@@ -416,7 +416,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{7A2950CD-E43C-3548-AE16-17FFAD443F02}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{4CB05F8E-AD6D-555A-9992-FC21533C05F3}">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1096,6 +1096,11 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_02.i_iPRESS_R</Name>
+					<Comment><![CDATA[Pressure reading // 'TcLinkTo' (EL3174-0002 or EP3174-0002)^Input]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
 					<Name>GVL_FEE_Device.MR1K4_SOMS_PIP_01.i_iPRESS</Name>
 					<Type>INT</Type>
 				</Var>
@@ -1703,6 +1708,14 @@ EL6692 TxPDO state
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_MR5K4_VWC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_TM2K4_VWC</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="1" AreaNo="17">
 				<Name>PlcTask Outputs</Name>
@@ -1752,6 +1765,11 @@ EL6692 TxPDO state
 				<Var>
 					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS</Name>
 					<Comment><![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FEE_Device.PC4K4_XTES_GCC_02.q_xHV_DIS</Name>
+					<Comment><![CDATA[Enable High Voltage when True // 'TcLinkTo' (EL2624 or EP2624-0002)^Output]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2230,6 +2248,23 @@ EL6692 TxPDO state
 					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_CLOSED_LS</Name>
+					<Comment><![CDATA[Window valve interface]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_CLOSED_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_OPEN_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_OPEN_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8" ContextId="1" AreaNo="20">
 				<Name>PlcTask Retains</Name>
@@ -2576,9 +2611,14 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^DREAM_MAIN_rPRESS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^DREAM_MAIN_xAT_VAC" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.DREAM_MAIN_GAUGE.i_xPRESS_OK" VarB="IO Inputs^DREAM_MAIN_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.bCLOSE_TMO_MR5K4_VWC" VarB="IO Inputs^CLOSE_TMO_MR5K4_VWC" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.bDreamEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.bDreamEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^GVL_DREAM_ECAT.bDreamEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_DREAM_ECAT.bTMO_MR5K4_VWC_CLOSED_LS" VarB="IO Outputs^TMO_MR5K4_VWC_CLOSED_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_DREAM_ECAT.bTMO_MR5K4_VWC_OPEN_LS" VarB="IO Outputs^TMO_MR5K4_VWC_OPEN_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_DREAM_ECAT.bTMO_TM2K4_VWC_CLOSED_LS" VarB="IO Outputs^TMO_TM2K4_VWC_CLOSED_LS" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_DREAM_ECAT.bTMO_TM2K4_VWC_OPEN_LS" VarB="IO Outputs^TMO_TM2K4_VWC_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT">
 				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
@@ -2682,10 +2722,12 @@ EL6692 TxPDO state
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S33_EB2 (EP3174-0002)">
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_GCC_02.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S33_EB3 (EP2624-0002)">
 				<Link VarA="PlcTask Outputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^GVL_FEE_Device.PC4K4_XTES_GCC_02.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E1_MKS937B (EL3064)">
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
