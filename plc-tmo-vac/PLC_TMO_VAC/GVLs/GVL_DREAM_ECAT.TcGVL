@@ -48,7 +48,7 @@ VAR_GLOBAL
 
    //gauge structure, which can be override if there is an Ethercat communication error
    stDreamMainGauge : ST_VG;
-   
+
    //Window valve interface
    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT^IO Outputs^TMO_MR5K4_VWC_CLOSED_LS'}
    bTMO_MR5K4_VWC_CLOSED_LS	AT %Q*	: BOOL;
@@ -61,12 +61,12 @@ VAR_GLOBAL
 
    {attribute 'TcLinkTo' := 	'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT^IO Outputs^TMO_TM2K4_VWC_OPEN_LS'}
    bTMO_TM2K4_VWC_OPEN_LS	AT %Q*	: BOOL;
-   
+
    {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT^IO Inputs^CLOSE_TMO_MR5K4_VWC'}
    bCLOSE_TMO_MR5K4_VWC AT %I* : BOOL;
 
    {attribute 'TcLinkTo' := 'TIIB[CX0_E13 (EK1122)]^DREAM_ECAT^IO Inputs^CLOSE_TMO_TM2K4_VWC '}
-   bCLOSE_TMO_TM2K4_VWC  AT %I* : BOOL; 
+   bCLOSE_TMO_TM2K4_VWC  AT %I* : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
