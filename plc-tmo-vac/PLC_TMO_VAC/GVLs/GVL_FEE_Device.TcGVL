@@ -78,7 +78,7 @@ VAR_GLOBAL
                                  .q_xHV_DIS		:= 	TIIB[B940_K4S33_EB3 (EP2624-0002)]^Channel 1^Output	'}
 
     PC4K4_XTES_GCC_01 : FB_MKS500;
-	
+
     {attribute 'pytmc' :=' pv: PC4K4:XTES:GCC:02 '}
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R	:=	TIIB[B940_K4S33_EB2 (EP3174-0002)]^AI Standard Channel 3^Value;
                                  .q_xHV_DIS		:= 	TIIB[B940_K4S33_EB3 (EP2624-0002)]^Channel 2^Output'}
