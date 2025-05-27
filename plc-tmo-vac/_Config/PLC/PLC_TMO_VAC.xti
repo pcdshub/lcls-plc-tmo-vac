@@ -416,7 +416,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{4CB05F8E-AD6D-555A-9992-FC21533C05F3}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{02A8F4B5-5682-CC1A-E302-0240C7273DC2}">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -2794,7 +2794,7 @@ EL6692 TxPDO state
 				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E10 (EL6021)">
-				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0"/>
 				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[10]" VarB="COM TxPDO-Map Inputs^Data In 10" AutoLink="true"/>
 				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[11]" VarB="COM TxPDO-Map Inputs^Data In 11" AutoLink="true"/>
 				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[12]" VarB="COM TxPDO-Map Inputs^Data In 12" AutoLink="true"/>
